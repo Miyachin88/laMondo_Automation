@@ -9,7 +9,7 @@ import time
 import json
 import gspread
 
-# Safariに切り替えする
+# Safariに切り替え
 options = webdriver.safari.options.Options()
 driver = webdriver.Safari(options=options)
 #driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
