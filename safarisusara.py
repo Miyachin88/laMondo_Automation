@@ -9,6 +9,7 @@ import time
 import json
 import gspread
 
+
 # Safariに切り替えです
 options = webdriver.safari.options.Options()
 driver = webdriver.Safari(options=options)
