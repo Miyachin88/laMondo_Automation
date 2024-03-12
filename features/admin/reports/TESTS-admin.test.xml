@@ -1,0 +1,14 @@
+<testsuite name="admin.test.BBS Admin 16.管理画面の言語変更" tests="1" errors="0" failures="0" skipped="0" time="14.994682" timestamp="2024-03-12T12:58:50.577133" hostname="Kentas-MacBook-Pro.local"><testcase classname="admin.test.BBS Admin 16.管理画面の言語変更" name="[BBS A16-01]管理画面の言語変更（英語） Change admin panel language to English" status="passed" time="14.994682"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-BBS-65
+  Scenario: [BBS A16-01]管理画面の言語変更（英語） Change admin panel language to English
+    Given You are viewing any community ... passed in 11.790s
+    When Select English from the language change button on the upper right ... passed in 3.188s
+    Then The admin panel including the community names and post are displayed in English ... passed in 0.017s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase></testsuite>
