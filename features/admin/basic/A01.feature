@@ -2,7 +2,7 @@
 Feature: 日本人が管理画面にログインする Japanese administrator tries to log in to the Admin Panel
   @BDDTEST-GPT-754
   Scenario: [A01-01]メールアドレスを入力する Enter your email address on the login screen
-    Given Open the admin panel
+    Given Open the lamondo admin panel
     When メールアドレスを入力する Input email address
     Then PINコード入力画面に遷移し、PINコードが送信される Transit to the PIN code input screen and send the PIN code
 

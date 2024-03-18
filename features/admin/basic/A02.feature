@@ -5,19 +5,19 @@ Feature: A02基本設定をする Set Basic Settings
     Given ゲスト画面にウィジェットが表示されていない / The widget is not displayed on the guest screen
     When 「すべてのウィジェットを有効にする。」のトグルをONにする / Turn on the toggle for "Enable all widgets."
     Then ゲスト画面で該当のウィジェットが表示されている / The corresponding widget is displayed on the guest screen
-    And ゲスト画面を開くと、通常フローでGPT・スタッフに問い合わせが送信できる
+    Then ゲスト画面を開くと、通常フローでGPT・スタッフに問い合わせが送信できる
 
   @BDDTEST-GPT-761
   Scenario: [A02-02]ウィジェットを非表示にする Hide widget
     Given ゲスト画面にウィジェットが表示されている / The widget is displayed on the guest screen
     When 「すべてのウィジェットを有効にする。」のトグルをOFFにする / Turn off the toggle for "Enable all widgets."
     Then ゲスト画面で該当のウィジェットが表示されていない / The widget is not displayed on the guest screen
-    And ゲスト画面を開くと、「チャット機能は現在ご利用できません」が表示される
+    Then ゲスト画面を開くと、「チャット機能は現在ご利用できません」が表示される
 
   @BDDTEST-GPT-762
   Scenario: [A02-03]ゲストによる回答評価の利用を有にする（Survey）Make use of guest response evaluation (Survey)
     Given "チャット終了後の「ゲスト評価」を利用する。"トグルがOFFになっている "Use the guest evaluation after the chat. " is OFF
-    And ステップ④ゲストによる評価の「ゲストによる評価を利用する」がOFFになっている
+    Given ステップ④ゲストによる評価の「ゲストによる評価を利用する」がOFFになっている
     When "チャット終了後の「ゲスト評価」を利用する。"のトグルをONにする Turn on the "Use the guest evaluation after the chat."
     Then ステップ④ゲストによる評価の「ゲストによる評価を利用する」がONになる
 
