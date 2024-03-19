@@ -41,6 +41,6 @@ Feature: A02基本設定をする Set Basic Settings
 
   @BDDTEST-GPT-766
   Scenario: [A02-07]WorkCodeを編集する Edit workcode
-    Given ワークコードマスタに現在登録されているワークコード一覧が表示されている / A list of work codes currently registered in the work code master is displayed.
+    Given ワークコードマスタに現在登録されているワークコード一覧が表示されている2 / A list of work codes currently registered in the work code master is displayed.
     When 編集したいワークコードのペンシルマークをクリックし、名前を編集する / Click the pencil mark of the work code you want to edit, and edit name
     Then どこかをクリックすると保存され、スタッフ画面にも反映されている / Click anywhere to save it and reflect it on the staff screen

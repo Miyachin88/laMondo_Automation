@@ -5,8 +5,11 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from behave import*
 from bs4 import BeautifulSoup
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 import requests
 import time
+
 
 #ドライバのインストール
 driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
@@ -45,11 +48,15 @@ def chinsara_T(chinsara):
 #
 @given('ゲスト画面にウィジェットが表示されている / The widget is displayed on the guest screen')
 def chinsara_G(chinsara):
+    #現在のURLがhttps://beta-tenant-admin.im.kotozna.chat/ja/laMondo/widgetSetting
     print(chinsara)
 #
 @when('「すべてのウィジェットを有効にする。」のトグルをOFFにする / Turn off the toggle for "Enable all widgets."')
 def chinsara_W(chinsara):
-    time.sleep(3)
+    toggle_button = WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div/div[3]/div/table/thead/tr/th[3]/div/div/div/div[1]/div/div/div[2]/input')))  # 'toggle-button-id'はトグルボタンのID
+# トグルボタンをクリックしてONにする
+    if not toggle_button.is_selected():
+        toggle_button.click()
 #
 @then('ゲスト画面で該当のウィジェットが表示されていない / The widget is not displayed on the guest screen')
 def chinsara_T(chinsara):
@@ -142,7 +149,7 @@ def chinsara_T(chinsara):
 #https://jaqool.atlassian.net/browse/BBS-65
 
 #
-@given('ワークコードマスタに現在登録されているワークコード一覧が表示されている / A list of work codes currently registered in the work code master is displayed.')
+@given('ワークコードマスタに現在登録されているワークコード一覧が表示されている2 / A list of work codes currently registered in the work code master is displayed.')
 def chinsara_G(chinsara):
     print(chinsara)
 #
