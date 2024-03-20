@@ -32,6 +32,6 @@ Feature: 日本人が管理画面にログインする Japanese administrator tr
   Scenario: [A01-05]表示言語を変更する Changing display language
     Given 管理画面にログインしている3 You are logged in to the admin panel
     Given トップバーと基本設定画面が表示されている3 The top bar and the basic settings are displayed
-    When 地球儀アイコンを押下任意の言語を選択する Select the globe icon
+    When 地球儀アイコンを押下し任意の言語を選択 Select the globe icon
     Then 管理画面の表示言語が選択した言語で表示される The display language of admin panel will be displayed in the selected language
-    Then ただし、ワークコード名、ウィジェット名、グループ名、ユーザー名（アカウント名）は変わらない Work code names, widget names, group names, and user names won't be changed
+    Then ただし、ワークコード名、ウィジェット名、グループ名、ユーザー名（アカウント名）は変わらない Work code names, widget names, group names, and user names wont be changed

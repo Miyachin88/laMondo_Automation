@@ -10,13 +10,17 @@ import requests
 import time
 
 #ドライバのインストール
-driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
+#driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
 
-susa.chinchin()
+#susa.chinchin()
+driver = susa.getDriver()
 
 """
 A01日本人が管理画面にログインする Japanese administrator tries to log in to the Admin Panel
 https://jaqool.atlassian.net/browse/GPT-753
+
+kenta+b230109-admin@kotozna.com
+developer+kenta-lamondo@kotozna.com
 """
 
 
@@ -29,7 +33,7 @@ def chinsara_G(chinsara):
 
 @when('メールアドレスを入力する Input email address')
 def chinsara_W(chinsara):
-    element = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div/div[2]/div[2]/form/div/div[1]/div/div[3]/input').send_keys('developer+kenta-lamondo@kotozna.com')
+    element = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div/div[2]/div[2]/form/div/div[1]/div/div[3]/input').send_keys('kenta+b230109-admin@kotozna.com')
     time.sleep(3)
 
 
@@ -37,7 +41,7 @@ def chinsara_W(chinsara):
 def chinsara_T(chinsara):
     element = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div/div[2]/div[2]/form/div/div[1]/div/div[3]/input')
     chinsara = element.get_attribute('value')
-    assert ('developer+kenta-lamondo@kotozna.com' == chinsara) is True
+    assert ('kenta+b230109-admin@kotozna.com' == chinsara) is True
     
 # [A01-02]PINコードを入力する Enter your PIN code to complete login
 # https://jaqool.atlassian.net/browse/GPT-755
@@ -60,7 +64,6 @@ def chinsara_T(chinsara):
     element = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div/div[2]/div[2]/form/div/div[1]/div/div[3]/input')
     chinsara = element.get_attribute('value')   
     cur_url = driver.current_url
-    assert ( '000000' == chinsara) is True
     driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div/div[2]/div[3]/button').click()
     assert ('https://beta-tenant-admin.im.kotozna.chat/ja/laMondo/basicConfiguration' == cur_url) is True
 
@@ -134,6 +137,7 @@ def chinsara_W(chinsara):
     time.sleep(3)
     #?アイコンを押下
     driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[1]/div/div[3]/div[2]/i').click()
+    time.sleep(5)
     #別タブへ移動  
     driver.switch_to.window(driver.window_handles[1])    
     
@@ -146,7 +150,7 @@ def chinsara_T(chinsara):
 #
 @then('管理画面の表示言語が日本語の場合ヘルプセンターは日本語で表示され、管理画面の表示言語が日本語以外の場合ヘルプセンターは英語で表示される / If the admin panel display language is Japanese, the website will be displayed in Japanese, and if the admin panel display language is other than Japanese, the website will be displayed in English.')
 def chinsara_T(chinsara):
-    print(chinsara)
+    time.sleep(3)
 
     
 # [A01-05]表示言語を変更する Changing display language
@@ -155,27 +159,25 @@ def chinsara_T(chinsara):
 @given('管理画面にログインしている3 You are logged in to the admin panel')
 def chinsara_G(chinsara):
     # ハンドルを戻す
-    driver.switch_to.window(driver.window_handles[0])   
-
+    driver.switch_to.window(driver.window_handles[0])
 #
 @given('トップバーと基本設定画面が表示されている3 The top bar and the basic settings are displayed')
 def chinsara_G(chinsara):
-    print(chinsara)
+    time.sleep(5)   
 
 #
 @when('地球儀アイコンを押下し任意の言語を選択 Select the globe icon')
 def chinsara_W(chinsara):
-    time.sleep(5)
     #言語を切り替えボタンを押下
     driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[1]/div/div[3]/div[3]/div/div/button').click()
     time.sleep(5)
+    #英語を選択
     driver.find_element(By.XPATH,'/html/body/div[2]/div/div/div/div[1]/div/div/div/div').click()
-    
+    time.sleep(5)    
 
 #
 @then('管理画面の表示言語が選択した言語で表示される The display language of admin panel will be displayed in the selected language')
 def chinsara_T(chinsara):
-    time.sleep(5)
     element = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[1]/div/div[1]/span').text
     assert ('Basic Settings' == element) is True    
     

@@ -1,175 +1,91 @@
-<testsuite name="admin.basic.A01.日本人が管理画面にログインする Japanese administrator tries to log in to the Admin Panel" tests="5" errors="2" failures="1" skipped="0" time="53.139896" timestamp="2024-03-18T19:23:11.734725" hostname="Kentas-MBP"><testcase classname="admin.basic.A01.日本人が管理画面にログインする Japanese administrator tries to log in to the Admin Panel" name="[A01-01]メールアドレスを入力する Enter your email address on the login screen" status="passed" time="15.061482"><system-out>
+<testsuite name="admin.basic.A01.日本人が管理画面にログインする Japanese administrator tries to log in to the Admin Panel" tests="5" errors="0" failures="1" skipped="0" time="135.352769" timestamp="2024-03-20T10:20:42.980406" hostname="Kentas-MacBook-Pro.local"><testcase classname="admin.basic.A01.日本人が管理画面にログインする Japanese administrator tries to log in to the Admin Panel" name="[A01-01]メールアドレスを入力する Enter your email address on the login screen" status="passed" time="14.568835"><system-out>
 <![CDATA[
 @scenario.begin
 
   @BDDTEST-GPT-754
   Scenario: [A01-01]メールアドレスを入力する Enter your email address on the login screen
-    Given Open the lamondo admin panel ... passed in 11.880s
-    When メールアドレスを入力する Input email address ... passed in 3.160s
-    Then PINコード入力画面に遷移し、PINコードが送信される Transit to the PIN code input screen and send the PIN code ... passed in 0.021s
+    Given Open the lamondo admin panel ... passed in 11.403s
+    When メールアドレスを入力する Input email address ... passed in 3.146s
+    Then PINコード入力画面に遷移し、PINコードが送信される Transit to the PIN code input screen and send the PIN code ... passed in 0.020s
 
 @scenario.end
 --------------------------------------------------------------------------------
 ]]>
-</system-out></testcase><testcase classname="admin.basic.A01.日本人が管理画面にログインする Japanese administrator tries to log in to the Admin Panel" name="[A01-02]PINコードを入力する Enter your PIN code to complete login" status="failed" time="5.061969"><error type="NoSuchWindowException" message="Message: no such window: target window already closed&#10;from unknown error: web view not found&#10;  (Session info: chrome=122.0.6261.129)&#10;Stacktrace:&#10;0   chromedriver                        0x0000000102774524 chromedriver + 3966244&#10;1   chromedriver                        0x000000010276cab0 chromedriver + 3934896&#10;2   chromedriver                        0x00000001023efda0 chromedriver + 277920&#10;3   chromedriver                        0x00000001023cafb0 chromedriver + 126896&#10;4   chromedriver                        0x0000000102457414 chromedriver + 701460&#10;5   chromedriver                        0x000000010246a304 chromedriver + 779012&#10;6   chromedriver                        0x0000000102426fb0 chromedriver + 503728&#10;7   chromedriver                        0x0000000102427a28 chromedriver + 506408&#10;8   chromedriver                        0x000000010273970c chromedriver + 3725068&#10;9   chromedriver                        0x000000010273dc00 chromedriver + 3742720&#10;10  chromedriver                        0x00000001027221f4 chromedriver + 3629556&#10;11  chromedriver                        0x000000010273e6fc chromedriver + 3745532&#10;12  chromedriver                        0x000000010271556c chromedriver + 3577196&#10;13  chromedriver                        0x000000010275cf5c chromedriver + 3870556&#10;14  chromedriver                        0x000000010275d100 chromedriver + 3870976&#10;15  chromedriver                        0x000000010276c720 chromedriver + 3933984&#10;16  libsystem_pthread.dylib             0x000000018670af94 _pthread_start + 136&#10;17  libsystem_pthread.dylib             0x0000000186705d34 thread_start + 8">
+</system-out></testcase><testcase classname="admin.basic.A01.日本人が管理画面にログインする Japanese administrator tries to log in to the Admin Panel" name="[A01-02]PINコードを入力する Enter your PIN code to complete login" status="failed" time="15.157026"><failure type="AssertionError" message="">
 <![CDATA[
-Failing step: When PINコードを入力して「ログイン」をクリックEnter your PIN code and click "Login" ... failed in 0.008s
-Location: A01.feature:12
+Failing step: Then 管理画面にログイン完了する（＝基本設定のページが開く）Login to the management screen is completed (= the basic setting page opens) ... failed in 0.024s
+Location: A01.feature:13
 Traceback (most recent call last):
   File "/opt/homebrew/lib/python3.11/site-packages/behave/model.py", line 1812, in run
     match.run(runner.context)
   File "/opt/homebrew/lib/python3.11/site-packages/behave/matchers.py", line 103, in run
     self.func(context, *args, **kwargs)
-  File "../../steps/A01.py", line 54, in chinsara_W
-    driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div/div[2]/div[2]/form/div/div[1]/div/div[3]/input').send_keys('000000')
-    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 741, in find_element
-    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 347, in execute
-    self.error_handler.check_response(response)
-  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/errorhandler.py", line 229, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=122.0.6261.129)
-Stacktrace:
-0   chromedriver                        0x0000000102774524 chromedriver + 3966244
-1   chromedriver                        0x000000010276cab0 chromedriver + 3934896
-2   chromedriver                        0x00000001023efda0 chromedriver + 277920
-3   chromedriver                        0x00000001023cafb0 chromedriver + 126896
-4   chromedriver                        0x0000000102457414 chromedriver + 701460
-5   chromedriver                        0x000000010246a304 chromedriver + 779012
-6   chromedriver                        0x0000000102426fb0 chromedriver + 503728
-7   chromedriver                        0x0000000102427a28 chromedriver + 506408
-8   chromedriver                        0x000000010273970c chromedriver + 3725068
-9   chromedriver                        0x000000010273dc00 chromedriver + 3742720
-10  chromedriver                        0x00000001027221f4 chromedriver + 3629556
-11  chromedriver                        0x000000010273e6fc chromedriver + 3745532
-12  chromedriver                        0x000000010271556c chromedriver + 3577196
-13  chromedriver                        0x000000010275cf5c chromedriver + 3870556
-14  chromedriver                        0x000000010275d100 chromedriver + 3870976
-15  chromedriver                        0x000000010276c720 chromedriver + 3933984
-16  libsystem_pthread.dylib             0x000000018670af94 _pthread_start + 136
-17  libsystem_pthread.dylib             0x0000000186705d34 thread_start + 8
-
+  File "../../steps/A01.py", line 67, in chinsara_T
+    assert ( '000000' == chinsara) is True
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
 ]]>
-</error><system-out>
+</failure><system-out>
 <![CDATA[
 @scenario.begin
 
   @BDDTEST-GPT-755
   Scenario: [A01-02]PINコードを入力する Enter your PIN code to complete login
-    Given PINコード入力画面が表示されているThe PIN code entry screen is displayed ... passed in 5.054s
-    When PINコードを入力して「ログイン」をクリックEnter your PIN code and click "Login" ... failed in 0.008s
-    Then 管理画面にログイン完了する（＝基本設定のページが開く）Login to the management screen is completed (= the basic setting page opens) ... skipped in 0.000s
+    Given PINコード入力画面が表示されているThe PIN code entry screen is displayed ... passed in 5.057s
+    When PINコードを入力して「ログイン」をクリックEnter your PIN code and click "Login" ... passed in 10.076s
+    Then 管理画面にログイン完了する（＝基本設定のページが開く）Login to the management screen is completed (= the basic setting page opens) ... failed in 0.024s
 
 @scenario.end
 --------------------------------------------------------------------------------
 ]]>
-</system-out></testcase><testcase classname="admin.basic.A01.日本人が管理画面にログインする Japanese administrator tries to log in to the Admin Panel" name="[A01-03]使い方動画を閲覧する Watching how-to video" status="failed" time="30.010189"><error type="NoSuchWindowException" message="Message: no such window: target window already closed&#10;from unknown error: web view not found&#10;  (Session info: chrome=122.0.6261.129)&#10;Stacktrace:&#10;0   chromedriver                        0x0000000102774524 chromedriver + 3966244&#10;1   chromedriver                        0x000000010276cab0 chromedriver + 3934896&#10;2   chromedriver                        0x00000001023efda0 chromedriver + 277920&#10;3   chromedriver                        0x00000001023cafb0 chromedriver + 126896&#10;4   chromedriver                        0x0000000102457414 chromedriver + 701460&#10;5   chromedriver                        0x000000010246a304 chromedriver + 779012&#10;6   chromedriver                        0x0000000102426fb0 chromedriver + 503728&#10;7   chromedriver                        0x0000000102427a28 chromedriver + 506408&#10;8   chromedriver                        0x000000010273970c chromedriver + 3725068&#10;9   chromedriver                        0x000000010273dc00 chromedriver + 3742720&#10;10  chromedriver                        0x00000001027221f4 chromedriver + 3629556&#10;11  chromedriver                        0x000000010273e6fc chromedriver + 3745532&#10;12  chromedriver                        0x000000010271556c chromedriver + 3577196&#10;13  chromedriver                        0x000000010275cf5c chromedriver + 3870556&#10;14  chromedriver                        0x000000010275d100 chromedriver + 3870976&#10;15  chromedriver                        0x000000010276c720 chromedriver + 3933984&#10;16  libsystem_pthread.dylib             0x000000018670af94 _pthread_start + 136&#10;17  libsystem_pthread.dylib             0x0000000186705d34 thread_start + 8">
-<![CDATA[
-Failing step: Given 管理画面にログインしている1 / You are logged in to the admin panel ... failed in 30.010s
-Location: A01.feature:17
-Traceback (most recent call last):
-  File "/opt/homebrew/lib/python3.11/site-packages/behave/model.py", line 1812, in run
-    match.run(runner.context)
-  File "/opt/homebrew/lib/python3.11/site-packages/behave/matchers.py", line 103, in run
-    self.func(context, *args, **kwargs)
-  File "../../steps/A01.py", line 74, in chinsara_G
-    cur_url = driver.current_url
-              ^^^^^^^^^^^^^^^^^^
-  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 437, in current_url
-    return self.execute(Command.GET_CURRENT_URL)["value"]
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 347, in execute
-    self.error_handler.check_response(response)
-  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/errorhandler.py", line 229, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=122.0.6261.129)
-Stacktrace:
-0   chromedriver                        0x0000000102774524 chromedriver + 3966244
-1   chromedriver                        0x000000010276cab0 chromedriver + 3934896
-2   chromedriver                        0x00000001023efda0 chromedriver + 277920
-3   chromedriver                        0x00000001023cafb0 chromedriver + 126896
-4   chromedriver                        0x0000000102457414 chromedriver + 701460
-5   chromedriver                        0x000000010246a304 chromedriver + 779012
-6   chromedriver                        0x0000000102426fb0 chromedriver + 503728
-7   chromedriver                        0x0000000102427a28 chromedriver + 506408
-8   chromedriver                        0x000000010273970c chromedriver + 3725068
-9   chromedriver                        0x000000010273dc00 chromedriver + 3742720
-10  chromedriver                        0x00000001027221f4 chromedriver + 3629556
-11  chromedriver                        0x000000010273e6fc chromedriver + 3745532
-12  chromedriver                        0x000000010271556c chromedriver + 3577196
-13  chromedriver                        0x000000010275cf5c chromedriver + 3870556
-14  chromedriver                        0x000000010275d100 chromedriver + 3870976
-15  chromedriver                        0x000000010276c720 chromedriver + 3933984
-16  libsystem_pthread.dylib             0x000000018670af94 _pthread_start + 136
-17  libsystem_pthread.dylib             0x0000000186705d34 thread_start + 8
-
-]]>
-</error><system-out>
+</system-out></testcase><testcase classname="admin.basic.A01.日本人が管理画面にログインする Japanese administrator tries to log in to the Admin Panel" name="[A01-03]使い方動画を閲覧する Watching how-to video" status="passed" time="73.13505"><system-out>
 <![CDATA[
 @scenario.begin
 
   @BDDTEST-GPT-756
   Scenario: [A01-03]使い方動画を閲覧する Watching how-to video
-    Given 管理画面にログインしている1 / You are logged in to the admin panel ... failed in 30.010s
-    Given トップバーと基本設定画面が表示されている1 / The top bar and the basic settings are displayed ... skipped in 0.000s
-    When トップバーの[使い方動画を見る]ボタンを押下 / Select the [Using laMondo] button on the top bar ... skipped in 0.000s
-    Then ウィジェット1と記載されたウィンドウが開く / A window will open labeled Widget 1 ... skipped in 0.000s
-    Then 使い方動画が再生できる / How-to video can be played ... skipped in 0.000s
+    Given 管理画面にログインしている1 / You are logged in to the admin panel ... passed in 30.006s
+    Given トップバーと基本設定画面が表示されている1 / The top bar and the basic settings are displayed ... passed in 0.028s
+    When トップバーの[使い方動画を見る]ボタンを押下 / Select the [Using laMondo] button on the top bar ... passed in 13.053s
+    Then ウィジェット1と記載されたウィンドウが開く / A window will open labeled Widget 1 ... passed in 0.024s
+    Then 使い方動画が再生できる / How-to video can be played ... passed in 30.025s
 
 @scenario.end
 --------------------------------------------------------------------------------
+
+Captured stdout:
+OK
+OK
+
 ]]>
-</system-out></testcase><testcase classname="admin.basic.A01.日本人が管理画面にログインする Japanese administrator tries to log in to the Admin Panel" name="[A01-04]ヘルプセンターにアクセスする Open the help center link" status="passed" time="3.005994"><system-out>
+</system-out></testcase><testcase classname="admin.basic.A01.日本人が管理画面にログインする Japanese administrator tries to log in to the Admin Panel" name="[A01-04]ヘルプセンターにアクセスする Open the help center link" status="passed" time="14.146759"><system-out>
 <![CDATA[
 @scenario.begin
 
   @BDDTEST-GPT-757
   Scenario: [A01-04]ヘルプセンターにアクセスする Open the help center link
-    Given 管理画面にログインしている2 / You are logged in to the admin panel ... passed in 0.000s
-    Given トップバーと基本設定画面が表示されている2 / The top bar and the basic settings are displayed ... passed in 0.000s
-    When ？アイコンを押下 / Select "?" button ... passed in 3.005s
-    Then 別タブにて、"Kotozna laMondoヘルプセンター"サイトが開く / "Kotozna laMondo Help Center" website will be opend in a new tab ... passed in 0.000s
-    Then 管理画面の表示言語が日本語の場合ヘルプセンターは日本語で表示され、管理画面の表示言語が日本語以外の場合ヘルプセンターは英語で表示される / If the admin panel display language is Japanese, the website will be displayed in Japanese, and if the admin panel display language is other than Japanese, the website will be displayed in English. ... passed in 0.000s
+    Given 管理画面にログインしている2 / You are logged in to the admin panel ... passed in 3.047s
+    Given トップバーと基本設定画面が表示されている2 / The top bar and the basic settings are displayed ... passed in 0.001s
+    When ？アイコンを押下 / Select "?" button ... passed in 8.086s
+    Then 別タブにて、"Kotozna laMondoヘルプセンター"サイトが開く / "Kotozna laMondo Help Center" website will be opend in a new tab ... passed in 0.007s
+    Then 管理画面の表示言語が日本語の場合ヘルプセンターは日本語で表示され、管理画面の表示言語が日本語以外の場合ヘルプセンターは英語で表示される / If the admin panel display language is Japanese, the website will be displayed in Japanese, and if the admin panel display language is other than Japanese, the website will be displayed in English. ... passed in 3.005s
 
 @scenario.end
 --------------------------------------------------------------------------------
-
-Captured stdout:
-<behave.runner.Context object at 0x104859150>
-<behave.runner.Context object at 0x104859150>
-<behave.runner.Context object at 0x104859150>
-<behave.runner.Context object at 0x104859150>
-
 ]]>
-</system-out></testcase><testcase classname="admin.basic.A01.日本人が管理画面にログインする Japanese administrator tries to log in to the Admin Panel" name="[A01-05]表示言語を変更する Changing display language" status="failed" time="0.000262"><failure type="NoneType" message="None">
-<![CDATA[
-Failing step: When 地球儀アイコンを押下任意の言語を選択する Select the globe icon ... undefined in 0.000s
-Location: A01.feature:35
-None]]>
-</failure><system-out>
+</system-out></testcase><testcase classname="admin.basic.A01.日本人が管理画面にログインする Japanese administrator tries to log in to the Admin Panel" name="[A01-05]表示言語を変更する Changing display language" status="passed" time="18.3451"><system-out>
 <![CDATA[
 @scenario.begin
 
   @BDDTEST-GPT-758
   Scenario: [A01-05]表示言語を変更する Changing display language
-    Given 管理画面にログインしている3 You are logged in to the admin panel ... passed in 0.000s
-    Given トップバーと基本設定画面が表示されている3 The top bar and the basic settings are displayed ... passed in 0.000s
-    When 地球儀アイコンを押下任意の言語を選択する Select the globe icon ... undefined in 0.000s
-    Then 管理画面の表示言語が選択した言語で表示される The display language of admin panel will be displayed in the selected language ... skipped in 0.000s
-    Then ただし、ワークコード名、ウィジェット名、グループ名、ユーザー名（アカウント名）は変わらない Work code names, widget names, group names, and user names won't be changed ... undefined in 0.000s
+    Given 管理画面にログインしている3 You are logged in to the admin panel ... passed in 0.026s
+    Given トップバーと基本設定画面が表示されている3 The top bar and the basic settings are displayed ... passed in 5.005s
+    When 地球儀アイコンを押下し任意の言語を選択 Select the globe icon ... passed in 10.224s
+    Then 管理画面の表示言語が選択した言語で表示される The display language of admin panel will be displayed in the selected language ... passed in 0.027s
+    Then ただし、ワークコード名、ウィジェット名、グループ名、ユーザー名（アカウント名）は変わらない Work code names, widget names, group names, and user names wont be changed ... passed in 3.063s
 
 @scenario.end
 --------------------------------------------------------------------------------
-
-Captured stdout:
-<behave.runner.Context object at 0x104859150>
-<behave.runner.Context object at 0x104859150>
-
 ]]>
 </system-out></testcase></testsuite>

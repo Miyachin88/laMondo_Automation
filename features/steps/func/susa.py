@@ -8,8 +8,12 @@ from bs4 import BeautifulSoup
 import requests
 import time
 
+driver = ''
+
 #ドライバのインストール
-driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
+def getDriver():
+    driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
+    return driver
 
 def chinchin():
     print('chinchin')
