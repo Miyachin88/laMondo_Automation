@@ -28,7 +28,8 @@ developer+kenta-lamondo@kotozna.com
 # https://jaqool.atlassian.net/browse/GPT-754
 @given('Open the lamondo admin panel')
 def chinsara_G(chinsara):
-    driver.get('https://beta-tenant-admin.im.kotozna.chat/ja/login')
+    #driver.get('https://beta-tenant-admin.im.kotozna.chat/ja/login')
+    susa.login(driver, 'https://beta-tenant-admin.im.kotozna.chat/ja/login')
     time.sleep(10)
 
 @when('メールアドレスを入力する Input email address')

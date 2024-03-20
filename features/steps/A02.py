@@ -12,8 +12,8 @@ import time
 from func import susa
 
 #ドライバのインストール
-driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
-#driver = susa.installD()
+#driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
+driver = susa.getDriver()
 
 """
 A02基本設定をする Set Basic Settings
@@ -27,6 +27,7 @@ https://jaqool.atlassian.net/browse/GPT-759
 #
 @given('ゲスト画面にウィジェットが表示されていない / The widget is not displayed on the guest screen')
 def chinsara_G(chinsara):
+    susa.login(driver, 'https://beta-tenant-admin.im.kotozna.chat/ja/laMondo/widgetSetting')
     time.sleep(5)    
     #基本設定へ移動
     driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[1]/div/div[1]').click()

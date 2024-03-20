@@ -1,13 +1,13 @@
-<testsuite name="admin.basic.A02.A02基本設定をする Set Basic Settings" tests="7" errors="2" failures="1" skipped="0" time="37.076673" timestamp="2024-03-20T10:21:20.072745" hostname="Kentas-MacBook-Pro.local"><testcase classname="admin.basic.A02.A02基本設定をする Set Basic Settings" name="[A02-01]ウィジェットを表示する Show widget" status="failed" time="5.027709"><error type="NoSuchElementException" message="Message: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;/html/body/div[1]/div/div/div/div/div[2]/div[1]/div/div[1]&quot;}&#10;  (Session info: chrome=122.0.6261.129); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception&#10;Stacktrace:&#10;0   chromedriver                        0x0000000104ffc524 chromedriver + 3966244&#10;1   chromedriver                        0x0000000104ff4ab0 chromedriver + 3934896&#10;2   chromedriver                        0x0000000104c77da0 chromedriver + 277920&#10;3   chromedriver                        0x0000000104cba394 chromedriver + 549780&#10;4   chromedriver                        0x0000000104cf2bf0 chromedriver + 781296&#10;5   chromedriver                        0x0000000104caefb0 chromedriver + 503728&#10;6   chromedriver                        0x0000000104cafa28 chromedriver + 506408&#10;7   chromedriver                        0x0000000104fc170c chromedriver + 3725068&#10;8   chromedriver                        0x0000000104fc5c00 chromedriver + 3742720&#10;9   chromedriver                        0x0000000104faa1f4 chromedriver + 3629556&#10;10  chromedriver                        0x0000000104fc66fc chromedriver + 3745532&#10;11  chromedriver                        0x0000000104f9d56c chromedriver + 3577196&#10;12  chromedriver                        0x0000000104fe4f5c chromedriver + 3870556&#10;13  chromedriver                        0x0000000104fe5100 chromedriver + 3870976&#10;14  chromedriver                        0x0000000104ff4720 chromedriver + 3933984&#10;15  libsystem_pthread.dylib             0x00000001900aef94 _pthread_start + 136&#10;16  libsystem_pthread.dylib             0x00000001900a9d34 thread_start + 8">
+<testsuite name="admin.basic.A02.A02基本設定をする Set Basic Settings" tests="7" errors="2" failures="1" skipped="0" time="38.701177" timestamp="2024-03-20T10:44:45.399216" hostname="Kentas-MacBook-Pro.local"><testcase classname="admin.basic.A02.A02基本設定をする Set Basic Settings" name="[A02-01]ウィジェットを表示する Show widget" status="failed" time="6.580371"><error type="NoSuchElementException" message="Message: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;/html/body/div[1]/div/div/div/div/div[2]/div[1]/div/div[1]&quot;}&#10;  (Session info: chrome=122.0.6261.129); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception&#10;Stacktrace:&#10;0   chromedriver                        0x0000000102be8524 chromedriver + 3966244&#10;1   chromedriver                        0x0000000102be0ab0 chromedriver + 3934896&#10;2   chromedriver                        0x0000000102863da0 chromedriver + 277920&#10;3   chromedriver                        0x00000001028a6394 chromedriver + 549780&#10;4   chromedriver                        0x00000001028debf0 chromedriver + 781296&#10;5   chromedriver                        0x000000010289afb0 chromedriver + 503728&#10;6   chromedriver                        0x000000010289ba28 chromedriver + 506408&#10;7   chromedriver                        0x0000000102bad70c chromedriver + 3725068&#10;8   chromedriver                        0x0000000102bb1c00 chromedriver + 3742720&#10;9   chromedriver                        0x0000000102b961f4 chromedriver + 3629556&#10;10  chromedriver                        0x0000000102bb26fc chromedriver + 3745532&#10;11  chromedriver                        0x0000000102b8956c chromedriver + 3577196&#10;12  chromedriver                        0x0000000102bd0f5c chromedriver + 3870556&#10;13  chromedriver                        0x0000000102bd1100 chromedriver + 3870976&#10;14  chromedriver                        0x0000000102be0720 chromedriver + 3933984&#10;15  libsystem_pthread.dylib             0x00000001900aef94 _pthread_start + 136&#10;16  libsystem_pthread.dylib             0x00000001900a9d34 thread_start + 8">
 <![CDATA[
-Failing step: Given ゲスト画面にウィジェットが表示されていない / The widget is not displayed on the guest screen ... failed in 5.028s
+Failing step: Given ゲスト画面にウィジェットが表示されていない / The widget is not displayed on the guest screen ... failed in 6.580s
 Location: A02.feature:5
 Traceback (most recent call last):
   File "/opt/homebrew/lib/python3.11/site-packages/behave/model.py", line 1812, in run
     match.run(runner.context)
   File "/opt/homebrew/lib/python3.11/site-packages/behave/matchers.py", line 103, in run
     self.func(context, *args, **kwargs)
-  File "../../steps/A02.py", line 32, in chinsara_G
+  File "../../steps/A02.py", line 33, in chinsara_G
     driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[1]/div/div[1]').click()
     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 741, in find_element
@@ -20,21 +20,21 @@ Traceback (most recent call last):
 selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"/html/body/div[1]/div/div/div/div/div[2]/div[1]/div/div[1]"}
   (Session info: chrome=122.0.6261.129); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Stacktrace:
-0   chromedriver                        0x0000000104ffc524 chromedriver + 3966244
-1   chromedriver                        0x0000000104ff4ab0 chromedriver + 3934896
-2   chromedriver                        0x0000000104c77da0 chromedriver + 277920
-3   chromedriver                        0x0000000104cba394 chromedriver + 549780
-4   chromedriver                        0x0000000104cf2bf0 chromedriver + 781296
-5   chromedriver                        0x0000000104caefb0 chromedriver + 503728
-6   chromedriver                        0x0000000104cafa28 chromedriver + 506408
-7   chromedriver                        0x0000000104fc170c chromedriver + 3725068
-8   chromedriver                        0x0000000104fc5c00 chromedriver + 3742720
-9   chromedriver                        0x0000000104faa1f4 chromedriver + 3629556
-10  chromedriver                        0x0000000104fc66fc chromedriver + 3745532
-11  chromedriver                        0x0000000104f9d56c chromedriver + 3577196
-12  chromedriver                        0x0000000104fe4f5c chromedriver + 3870556
-13  chromedriver                        0x0000000104fe5100 chromedriver + 3870976
-14  chromedriver                        0x0000000104ff4720 chromedriver + 3933984
+0   chromedriver                        0x0000000102be8524 chromedriver + 3966244
+1   chromedriver                        0x0000000102be0ab0 chromedriver + 3934896
+2   chromedriver                        0x0000000102863da0 chromedriver + 277920
+3   chromedriver                        0x00000001028a6394 chromedriver + 549780
+4   chromedriver                        0x00000001028debf0 chromedriver + 781296
+5   chromedriver                        0x000000010289afb0 chromedriver + 503728
+6   chromedriver                        0x000000010289ba28 chromedriver + 506408
+7   chromedriver                        0x0000000102bad70c chromedriver + 3725068
+8   chromedriver                        0x0000000102bb1c00 chromedriver + 3742720
+9   chromedriver                        0x0000000102b961f4 chromedriver + 3629556
+10  chromedriver                        0x0000000102bb26fc chromedriver + 3745532
+11  chromedriver                        0x0000000102b8956c chromedriver + 3577196
+12  chromedriver                        0x0000000102bd0f5c chromedriver + 3870556
+13  chromedriver                        0x0000000102bd1100 chromedriver + 3870976
+14  chromedriver                        0x0000000102be0720 chromedriver + 3933984
 15  libsystem_pthread.dylib             0x00000001900aef94 _pthread_start + 136
 16  libsystem_pthread.dylib             0x00000001900a9d34 thread_start + 8
 
@@ -45,7 +45,7 @@ Stacktrace:
 
   @BDDTEST-GPT-760
   Scenario: [A02-01]ウィジェットを表示する Show widget
-    Given ゲスト画面にウィジェットが表示されていない / The widget is not displayed on the guest screen ... failed in 5.028s
+    Given ゲスト画面にウィジェットが表示されていない / The widget is not displayed on the guest screen ... failed in 6.580s
     When 「すべてのウィジェットを有効にする。」のトグルをONにする / Turn on the toggle for "Enable all widgets." ... skipped in 0.000s
     Then ゲスト画面で該当のウィジェットが表示されている / The corresponding widget is displayed on the guest screen ... skipped in 0.000s
     Then ゲスト画面を開くと、通常フローでGPT・スタッフに問い合わせが送信できる ... skipped in 0.000s
@@ -53,43 +53,43 @@ Stacktrace:
 @scenario.end
 --------------------------------------------------------------------------------
 ]]>
-</system-out></testcase><testcase classname="admin.basic.A02.A02基本設定をする Set Basic Settings" name="[A02-02]ウィジェットを非表示にする Hide widget" status="failed" time="20.030826"><error type="TimeoutException" message="Message: &#10;Stacktrace:&#10;0   chromedriver                        0x0000000104ffc524 chromedriver + 3966244&#10;1   chromedriver                        0x0000000104ff4ab0 chromedriver + 3934896&#10;2   chromedriver                        0x0000000104c77da0 chromedriver + 277920&#10;3   chromedriver                        0x0000000104cba394 chromedriver + 549780&#10;4   chromedriver                        0x0000000104cf2bf0 chromedriver + 781296&#10;5   chromedriver                        0x0000000104caefb0 chromedriver + 503728&#10;6   chromedriver                        0x0000000104cafa28 chromedriver + 506408&#10;7   chromedriver                        0x0000000104fc170c chromedriver + 3725068&#10;8   chromedriver                        0x0000000104fc5c00 chromedriver + 3742720&#10;9   chromedriver                        0x0000000104faa1f4 chromedriver + 3629556&#10;10  chromedriver                        0x0000000104fc66fc chromedriver + 3745532&#10;11  chromedriver                        0x0000000104f9d56c chromedriver + 3577196&#10;12  chromedriver                        0x0000000104fe4f5c chromedriver + 3870556&#10;13  chromedriver                        0x0000000104fe5100 chromedriver + 3870976&#10;14  chromedriver                        0x0000000104ff4720 chromedriver + 3933984&#10;15  libsystem_pthread.dylib             0x00000001900aef94 _pthread_start + 136&#10;16  libsystem_pthread.dylib             0x00000001900a9d34 thread_start + 8">
+</system-out></testcase><testcase classname="admin.basic.A02.A02基本設定をする Set Basic Settings" name="[A02-02]ウィジェットを非表示にする Hide widget" status="failed" time="20.102023"><error type="TimeoutException" message="Message: &#10;Stacktrace:&#10;0   chromedriver                        0x0000000102be8524 chromedriver + 3966244&#10;1   chromedriver                        0x0000000102be0ab0 chromedriver + 3934896&#10;2   chromedriver                        0x0000000102863da0 chromedriver + 277920&#10;3   chromedriver                        0x00000001028a6394 chromedriver + 549780&#10;4   chromedriver                        0x00000001028debf0 chromedriver + 781296&#10;5   chromedriver                        0x000000010289afb0 chromedriver + 503728&#10;6   chromedriver                        0x000000010289ba28 chromedriver + 506408&#10;7   chromedriver                        0x0000000102bad70c chromedriver + 3725068&#10;8   chromedriver                        0x0000000102bb1c00 chromedriver + 3742720&#10;9   chromedriver                        0x0000000102b961f4 chromedriver + 3629556&#10;10  chromedriver                        0x0000000102bb26fc chromedriver + 3745532&#10;11  chromedriver                        0x0000000102b8956c chromedriver + 3577196&#10;12  chromedriver                        0x0000000102bd0f5c chromedriver + 3870556&#10;13  chromedriver                        0x0000000102bd1100 chromedriver + 3870976&#10;14  chromedriver                        0x0000000102be0720 chromedriver + 3933984&#10;15  libsystem_pthread.dylib             0x00000001900aef94 _pthread_start + 136&#10;16  libsystem_pthread.dylib             0x00000001900a9d34 thread_start + 8">
 <![CDATA[
-Failing step: When 「すべてのウィジェットを有効にする。」のトグルをOFFにする / Turn off the toggle for "Enable all widgets." ... failed in 20.031s
+Failing step: When 「すべてのウィジェットを有効にする。」のトグルをOFFにする / Turn off the toggle for "Enable all widgets." ... failed in 20.102s
 Location: A02.feature:13
 Traceback (most recent call last):
   File "/opt/homebrew/lib/python3.11/site-packages/behave/model.py", line 1812, in run
     match.run(runner.context)
   File "/opt/homebrew/lib/python3.11/site-packages/behave/matchers.py", line 103, in run
     self.func(context, *args, **kwargs)
-  File "../../steps/A02.py", line 100, in chinsara_W
+  File "../../steps/A02.py", line 101, in chinsara_W
     toggle_button = WebDriverWait(driver, 20).until(EC.visibility_of_element_located((By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div/div[3]/div/table/thead/tr/th[3]/div/div/div/div[1]/div/div/div[2]/input')))  # 'toggle-button-id'はトグルボタンのID
                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/support/wait.py", line 105, in until
     raise TimeoutException(message, screen, stacktrace)
 selenium.common.exceptions.TimeoutException: Message: 
 Stacktrace:
-0   chromedriver                        0x0000000104ffc524 chromedriver + 3966244
-1   chromedriver                        0x0000000104ff4ab0 chromedriver + 3934896
-2   chromedriver                        0x0000000104c77da0 chromedriver + 277920
-3   chromedriver                        0x0000000104cba394 chromedriver + 549780
-4   chromedriver                        0x0000000104cf2bf0 chromedriver + 781296
-5   chromedriver                        0x0000000104caefb0 chromedriver + 503728
-6   chromedriver                        0x0000000104cafa28 chromedriver + 506408
-7   chromedriver                        0x0000000104fc170c chromedriver + 3725068
-8   chromedriver                        0x0000000104fc5c00 chromedriver + 3742720
-9   chromedriver                        0x0000000104faa1f4 chromedriver + 3629556
-10  chromedriver                        0x0000000104fc66fc chromedriver + 3745532
-11  chromedriver                        0x0000000104f9d56c chromedriver + 3577196
-12  chromedriver                        0x0000000104fe4f5c chromedriver + 3870556
-13  chromedriver                        0x0000000104fe5100 chromedriver + 3870976
-14  chromedriver                        0x0000000104ff4720 chromedriver + 3933984
+0   chromedriver                        0x0000000102be8524 chromedriver + 3966244
+1   chromedriver                        0x0000000102be0ab0 chromedriver + 3934896
+2   chromedriver                        0x0000000102863da0 chromedriver + 277920
+3   chromedriver                        0x00000001028a6394 chromedriver + 549780
+4   chromedriver                        0x00000001028debf0 chromedriver + 781296
+5   chromedriver                        0x000000010289afb0 chromedriver + 503728
+6   chromedriver                        0x000000010289ba28 chromedriver + 506408
+7   chromedriver                        0x0000000102bad70c chromedriver + 3725068
+8   chromedriver                        0x0000000102bb1c00 chromedriver + 3742720
+9   chromedriver                        0x0000000102b961f4 chromedriver + 3629556
+10  chromedriver                        0x0000000102bb26fc chromedriver + 3745532
+11  chromedriver                        0x0000000102b8956c chromedriver + 3577196
+12  chromedriver                        0x0000000102bd0f5c chromedriver + 3870556
+13  chromedriver                        0x0000000102bd1100 chromedriver + 3870976
+14  chromedriver                        0x0000000102be0720 chromedriver + 3933984
 15  libsystem_pthread.dylib             0x00000001900aef94 _pthread_start + 136
 16  libsystem_pthread.dylib             0x00000001900a9d34 thread_start + 8
 
 
 Captured stdout:
-<behave.runner.Context object at 0x102541610>]]>
+<behave.runner.Context object at 0x100769410>]]>
 </error><system-out>
 <![CDATA[
 @scenario.begin
@@ -97,7 +97,7 @@ Captured stdout:
   @BDDTEST-GPT-761
   Scenario: [A02-02]ウィジェットを非表示にする Hide widget
     Given ゲスト画面にウィジェットが表示されている / The widget is displayed on the guest screen ... passed in 0.000s
-    When 「すべてのウィジェットを有効にする。」のトグルをOFFにする / Turn off the toggle for "Enable all widgets." ... failed in 20.031s
+    When 「すべてのウィジェットを有効にする。」のトグルをOFFにする / Turn off the toggle for "Enable all widgets." ... failed in 20.102s
     Then ゲスト画面で該当のウィジェットが表示されていない / The widget is not displayed on the guest screen ... skipped in 0.000s
     Then ゲスト画面を開くと、「チャット機能は現在ご利用できません」が表示される ... skipped in 0.000s
 
@@ -105,10 +105,10 @@ Captured stdout:
 --------------------------------------------------------------------------------
 
 Captured stdout:
-<behave.runner.Context object at 0x102541610>
+<behave.runner.Context object at 0x100769410>
 
 ]]>
-</system-out></testcase><testcase classname="admin.basic.A02.A02基本設定をする Set Basic Settings" name="[A02-03]ゲストによる回答評価の利用を有にする（Survey）Make use of guest response evaluation (Survey)" status="failed" time="0.000159"><failure type="NoneType" message="None">
+</system-out></testcase><testcase classname="admin.basic.A02.A02基本設定をする Set Basic Settings" name="[A02-03]ゲストによる回答評価の利用を有にする（Survey）Make use of guest response evaluation (Survey)" status="failed" time="0.000113"><failure type="NoneType" message="None">
 <![CDATA[
 Failing step: Given ステップ④ゲストによる評価の「ゲストによる評価を利用する」がOFFになっている ... undefined in 0.000s
 Location: A02.feature:20
@@ -128,46 +128,46 @@ None]]>
 --------------------------------------------------------------------------------
 
 Captured stdout:
-<behave.runner.Context object at 0x102541610>
+<behave.runner.Context object at 0x100769410>
 
 ]]>
-</system-out></testcase><testcase classname="admin.basic.A02.A02基本設定をする Set Basic Settings" name="[A02-04]ゲストによる回答評価の利用を無にする（Survey）Eliminate the use of guest response ratings (Survey)" status="passed" time="3.00171"><system-out>
+</system-out></testcase><testcase classname="admin.basic.A02.A02基本設定をする Set Basic Settings" name="[A02-04]ゲストによる回答評価の利用を無にする（Survey）Eliminate the use of guest response ratings (Survey)" status="passed" time="3.003899"><system-out>
 <![CDATA[
 @scenario.begin
 
   @BDDTEST-GPT-763
   Scenario: [A02-04]ゲストによる回答評価の利用を無にする（Survey）Eliminate the use of guest response ratings (Survey)
     Given "チャット終了後の「ゲスト評価」を利用する。"トグルがONになっている""Use the" guest evaluation "after the chat. " is ON" ... passed in 0.000s
-    When 「チャット終了後の「ゲスト評価」を利用する。」のトグルをOFFにする"Use the" guest evaluation "after the chat. Toggle off" ... passed in 3.001s
+    When 「チャット終了後の「ゲスト評価」を利用する。」のトグルをOFFにする"Use the" guest evaluation "after the chat. Toggle off" ... passed in 3.003s
     Then ゲスト画面で、チャット終了後に回答評価が表示されなくなる On the guest screen, the answer rating is no longer displayed after the chat ends ... passed in 0.000s
 
 @scenario.end
 --------------------------------------------------------------------------------
 
 Captured stdout:
-<behave.runner.Context object at 0x102541610>
-<behave.runner.Context object at 0x102541610>
+<behave.runner.Context object at 0x100769410>
+<behave.runner.Context object at 0x100769410>
 
 ]]>
-</system-out></testcase><testcase classname="admin.basic.A02.A02基本設定をする Set Basic Settings" name="[A02-05]WorkCodeを追加する Add work code" status="passed" time="3.005388"><system-out>
+</system-out></testcase><testcase classname="admin.basic.A02.A02基本設定をする Set Basic Settings" name="[A02-05]WorkCodeを追加する Add work code" status="passed" time="3.003436"><system-out>
 <![CDATA[
 @scenario.begin
 
   @BDDTEST-GPT-764
   Scenario: [A02-05]WorkCodeを追加する Add work code
     Given 基本設定画面のワークコードマスタに、現在登録されているワークコード一覧が表示されている / A list of work codes currently registered in the work code master is displayed. ... passed in 0.000s
-    When 「＋」ボタンを押し、ワークコード名を入力して保存する / Press the "+" button, enter a name and save ... passed in 3.005s
+    When 「＋」ボタンを押し、ワークコード名を入力して保存する / Press the "+" button, enter a name and save ... passed in 3.003s
     Then ワークコード一覧に数字→アルファベット→ひらがな→漢字の順に新たなワークコードが追加され、スタッフ画面にも同様に表示される / A new work code is added to the work code list in the order of numbers → alphabet → hiragana → kanji, and the same is displayed on the staff screen. ... passed in 0.000s
 
 @scenario.end
 --------------------------------------------------------------------------------
 
 Captured stdout:
-<behave.runner.Context object at 0x102541610>
-<behave.runner.Context object at 0x102541610>
+<behave.runner.Context object at 0x100769410>
+<behave.runner.Context object at 0x100769410>
 
 ]]>
-</system-out></testcase><testcase classname="admin.basic.A02.A02基本設定をする Set Basic Settings" name="[A02-06]WorkCodeを削除する Delete workcode" status="passed" time="3.00533"><system-out>
+</system-out></testcase><testcase classname="admin.basic.A02.A02基本設定をする Set Basic Settings" name="[A02-06]WorkCodeを削除する Delete workcode" status="passed" time="3.005595"><system-out>
 <![CDATA[
 @scenario.begin
 
@@ -181,11 +181,11 @@ Captured stdout:
 --------------------------------------------------------------------------------
 
 Captured stdout:
-<behave.runner.Context object at 0x102541610>
-<behave.runner.Context object at 0x102541610>
+<behave.runner.Context object at 0x100769410>
+<behave.runner.Context object at 0x100769410>
 
 ]]>
-</system-out></testcase><testcase classname="admin.basic.A02.A02基本設定をする Set Basic Settings" name="[A02-07]WorkCodeを編集する Edit workcode" status="passed" time="3.005551"><system-out>
+</system-out></testcase><testcase classname="admin.basic.A02.A02基本設定をする Set Basic Settings" name="[A02-07]WorkCodeを編集する Edit workcode" status="passed" time="3.005739"><system-out>
 <![CDATA[
 @scenario.begin
 
@@ -199,8 +199,8 @@ Captured stdout:
 --------------------------------------------------------------------------------
 
 Captured stdout:
-<behave.runner.Context object at 0x102541610>
-<behave.runner.Context object at 0x102541610>
+<behave.runner.Context object at 0x100769410>
+<behave.runner.Context object at 0x100769410>
 
 ]]>
 </system-out></testcase></testsuite>

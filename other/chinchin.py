@@ -184,7 +184,7 @@ toggle_button.click()
 #再度ON
 time.sleep(10)
 toggle_button.click()
-print('A02-1OK')
+print('A02-1-1 OK')
 #ウィジェット設定へ移動
 driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[1]/div/div[2]').click()
 time.sleep(10)
@@ -212,4 +212,107 @@ toggle_button = WebDriverWait(driver,180).until(EC.visibility_of_element_located
 element = toggle_button.text
 print(element)
 if 'あごぽよクリーニング香椎本店のチャットボットへようこそ！チャットサービスはlaMondoを搭載しています。' == element:
-    print('A02-2OK')
+    print('A02-1-2 OK')
+
+#これは元の画面に戻るだけ
+# タブのハンドルを取得する
+tab_handles = driver.window_handles
+# 1番目のタブに切り替える
+second_tab_handle = tab_handles[0]
+driver.switch_to.window(second_tab_handle)
+time.sleep(10)
+#戻るボタンをクリック
+driver.find_element(By.XPATH,'/html/body/div[2]/div/div[2]/div/div[4]/div[2]/button').click()
+
+
+#Scenario: [A02-02]ウィジェットを非表示にする Hide widget
+#https://jaqool.atlassian.net/browse/GPT-761
+#基本設定へ移動
+driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[1]/div/div[1]').click()
+#ウインドウを現在の画面に戻す
+driver.current_window_handle
+time.sleep(3)
+#ウィジェットをOFF
+toggle_button = WebDriverWait(driver,30).until(EC.visibility_of_element_located((By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div/div/div')))
+toggle_button.click()
+time.sleep(3)
+# タブのハンドルを取得する
+tab_handles = driver.window_handles
+# 2番目のタブに切り替える
+second_tab_handle = tab_handles[1]
+driver.switch_to.window(second_tab_handle)
+time.sleep(10)
+driver.refresh()
+time.sleep(10)
+#ページのアクセス不可文言を確認
+toggle_button = WebDriverWait(driver,180).until(EC.visibility_of_element_located((By.XPATH, '/html/body/div[2]/div[2]/p')))
+element = toggle_button.text
+print(element)
+if 'チャット機能は現在ご利用いただけません。' == element:
+    print('A02-2 OK')
+
+
+#これは元の画面に戻るだけ
+# タブのハンドルを取得する
+tab_handles = driver.window_handles
+# 1番目のタブに切り替える
+second_tab_handle = tab_handles[0]
+driver.switch_to.window(second_tab_handle)
+time.sleep(3)
+#ウィジェットをON
+toggle_button = WebDriverWait(driver,30).until(EC.visibility_of_element_located((By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div/div/div')))
+toggle_button.click()
+time.sleep(3)
+#Scenario: [A02-03]ゲストによる回答評価の利用を有にする（Survey）Make use of guest response evaluation (Survey)
+#https://jaqool.atlassian.net/browse/GPT-761
+#ゲスト評価をOFF
+toggle_button = WebDriverWait(driver,30).until(EC.visibility_of_element_located((By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[2]/div/div/div')))
+toggle_button.click()
+time.sleep(3)
+#ゲスト評価をON
+toggle_button = WebDriverWait(driver,30).until(EC.visibility_of_element_located((By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[2]/div/div/div')))
+toggle_button.click()
+# タブのハンドルを取得する
+tab_handles = driver.window_handles
+# 2番目のタブに切り替える
+second_tab_handle = tab_handles[1]
+driver.switch_to.window(second_tab_handle)
+time.sleep(10)
+driver.refresh()
+time.sleep(10)
+# iframeに切り替え
+iframe = driver.find_element(By.ID,'ktzn-tm-frame')
+driver.switch_to.frame(iframe)
+time.sleep(5)
+# スタートボタンを押下
+element = driver.find_element(By.XPATH,'/html/body/span/div/div[1]/div/main/div/div/div[2]/div/div/div[6]/div/div')
+driver.execute_script('arguments[0].click();', element)
+time.sleep(10)
+# メッセージを入力
+element = driver.find_element(By.XPATH, '//*[@id="inputMessage"]').send_keys('A02-03 test todays weather')
+# メッセージを送信
+driver.find_element(By.XPATH,'/html/body/span/div/div[1]/div/main/div/div/div[2]/div[2]/div/button[2]').click()
+time.sleep(30)
+#チャットを評価の文言を確認
+evalchat = WebDriverWait(driver,180).until(EC.visibility_of_element_located((By.XPATH, '/html/body/span/div/div[1]/div/main/div/div/div[2]/div[2]/div/div')))
+element = evalchat.text
+print(element)
+if 'チャットを評価！' == element:
+    print('A02-3 OK')
+
+
+#Scenario: [A02-04]ゲストによる回答評価の利用を無にする（Survey）Eliminate the use of guest response ratings (Survey)
+#https://jaqool.atlassian.net/browse/GPT-763
+
+
+#Scenario: [A02-05]WorkCodeを追加する Add work code
+#https://jaqool.atlassian.net/browse/GPT-764
+
+
+#Scenario: [A02-06]WorkCodeを削除する Delete workcode
+#https://jaqool.atlassian.net/browse/GPT-765
+
+
+#Scenario: [A02-07]WorkCodeを編集する Edit workcode
+#https://jaqool.atlassian.net/browse/GPT-766
+

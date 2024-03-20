@@ -17,3 +17,6 @@ def getDriver():
 
 def chinchin():
     print('chinchin')
+
+def login(driver,url):
+    driver.get(url)
