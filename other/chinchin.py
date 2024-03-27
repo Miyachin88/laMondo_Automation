@@ -8,6 +8,7 @@ import time
 from selenium.webdriver.support.ui import WebDriverWait
 import json
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import NoSuchElementException
 
 
 driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
@@ -289,12 +290,13 @@ element = driver.find_element(By.XPATH,'/html/body/span/div/div[1]/div/main/div/
 driver.execute_script('arguments[0].click();', element)
 time.sleep(10)
 # メッセージを入力
-element = driver.find_element(By.XPATH, '//*[@id="inputMessage"]').send_keys('A02-03 test todays weather')
+element = driver.find_element(By.XPATH, '//*[@id="inputMessage"]').send_keys('A02-03 こんにちは')
 # メッセージを送信
 driver.find_element(By.XPATH,'/html/body/span/div/div[1]/div/main/div/div/div[2]/div[2]/div/button[2]').click()
 time.sleep(30)
 #チャットを評価の文言を確認
 evalchat = WebDriverWait(driver,180).until(EC.visibility_of_element_located((By.XPATH, '/html/body/span/div/div[1]/div/main/div/div/div[2]/div[2]/div/div')))
+
 element = evalchat.text
 print(element)
 if 'チャットを評価！' == element:
@@ -304,15 +306,95 @@ if 'チャットを評価！' == element:
 #Scenario: [A02-04]ゲストによる回答評価の利用を無にする（Survey）Eliminate the use of guest response ratings (Survey)
 #https://jaqool.atlassian.net/browse/GPT-763
 
+#これは元の画面に戻るだけ
+# タブのハンドルを取得する
+tab_handles = driver.window_handles
+# 1番目のタブに切り替える
+second_tab_handle = tab_handles[0]
+driver.switch_to.window(second_tab_handle)
+time.sleep(3)
+#ゲスト評価をOFF
+toggle_button = WebDriverWait(driver,30).until(EC.visibility_of_element_located((By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[2]/div/div/div')))
+toggle_button.click()
+time.sleep(3)
+# タブのハンドルを取得する
+tab_handles = driver.window_handles
+# 2番目のタブに切り替える
+second_tab_handle = tab_handles[1]
+driver.switch_to.window(second_tab_handle)
+time.sleep(10)
+#一度リロード
+driver.refresh()
+time.sleep(10)
+# iframeに切り替え
+iframe = driver.find_element(By.ID,'ktzn-tm-frame')
+driver.switch_to.frame(iframe)
+time.sleep(5)
+# スタートボタンを押下
+element = driver.find_element(By.XPATH,'/html/body/span/div/div[1]/div/main/div/div/div[2]/div/div/div[6]/div/div')
+driver.execute_script('arguments[0].click();', element)
+time.sleep(10)
+# メッセージを入力
+element = driver.find_element(By.XPATH, '//*[@id="inputMessage"]').send_keys('A02-04 こんにちは')
+# メッセージを送信
+driver.find_element(By.XPATH,'/html/body/span/div/div[1]/div/main/div/div/div[2]/div[2]/div/button[2]').click()
+time.sleep(30)
+#チャットを評価の文言がないことを判定
+evalchat = WebDriverWait(driver,180).until(EC.visibility_of_element_located((By.XPATH, '/html/body/span/div/div[1]/div/main/div/div/div[2]/div[2]/div/div')))
+
+element = evalchat.text
+print(element)
+if 'チャットを評価！' != element:
+    print('A02-4 OK')
 
 #Scenario: [A02-05]WorkCodeを追加する Add work code
 #https://jaqool.atlassian.net/browse/GPT-764
 
+#Given 基本設定画面のワークコードマスタに、現在登録されているワークコード一覧が表示されている / A list of work codes currently registered in the work code master is displayed.
+# タブのハンドルを取得する
+tab_handles = driver.window_handles
+# 1番目のタブに切り替える
+second_tab_handle = tab_handles[0]
+driver.switch_to.window(second_tab_handle)
+time.sleep(5)
+#When 「＋」ボタンを押し、ワークコード名を入力して保存する / Press the "+" button, enter a name and save
+driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[3]/div[1]/div[2]/div[1]/button').click()
+time.sleep(2)
+driver.switch_to.window
+time.sleep(2)
+element = driver.find_element(By.XPATH, '/html/body/div[2]/div/div[2]/div/div[3]/div/form/div[2]/div[1]/div/div[3]/input').send_keys('ワークコードテスト')
+time.sleep(3)
+#保存ボタンを押下して、ワークコードを保存
+driver.find_element(By.XPATH,'/html/body/div[2]/div/div[2]/div/div[4]/div[3]/button').click()
+time.sleep(3)
+driver.switch_to.window
+#ウィジェット設定へ移動
+driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[1]/div/div[2]').click()
+time.sleep(3)
+#基本設定へ移動
+driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[1]/div/div[1]').click()
+time.sleep(5)  
+#Then ワークコード一覧に数字→アルファベット→ひらがな→漢字の順に新たなワークコードが追加され、スタッフ画面にも同様に表示される / A new work code is added to the work code list in the order of numbers → alphabet → hiragana → kanji, and the same is displayed on the staff screen.
+evalchat = WebDriverWait(driver,180).until(EC.visibility_of_element_located((By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[3]/div[2]/div/table/tbody/tr[5]/td[2]/span')))
+#作成したワークコードの名前を判定
+element = evalchat.text
+print(element)
+if 'ワークコードテスト' == element:
+    print('A02-5 OK')
 
 #Scenario: [A02-06]WorkCodeを削除する Delete workcode
 #https://jaqool.atlassian.net/browse/GPT-765
 
+#Given ワークコードマスタに現在登録されているワークコード一覧が表示されている / A list of work codes currently registered in the work code master is displayed.
+#When 削除したいワークコードに✅をし、ごみ箱ボタンをクリックする /✅ on the work code you want to delete and click the Recycle Bin button
+#Then ワークコード一覧から削除され、スタッフ画面にも反映されている / It has been deleted from the work code list and reflected on the staff screen.
 
 #Scenario: [A02-07]WorkCodeを編集する Edit workcode
 #https://jaqool.atlassian.net/browse/GPT-766
+
+#Given ワークコードマスタに現在登録されているワークコード一覧が表示されている / A list of work codes currently registered in the work code master is displayed.
+#When 編集したいワークコードのペンシルマークをクリックし、名前を編集する / Click the pencil mark of the work code you want to edit, and edit name
+#Then どこかをクリックすると保存され、スタッフ画面にも反映されている / Click anywhere to save it and reflect it on the staff screen
+
+
 
