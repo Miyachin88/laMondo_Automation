@@ -38,7 +38,7 @@ https://jaqool.atlassian.net/browse/GPT-753
 """
 
 
-# [A01-01]メールアドレスを入力する Enter your email address on the login screen
+# [AB01-01]メールアドレスを入力する Enter your email address on the login screen
 # https://jaqool.atlassian.net/browse/GPT-754
 
 driver.get('https://beta-tenant-admin.im.kotozna.chat/ja/login')
@@ -53,7 +53,7 @@ time.sleep(3)
 element = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div/div[2]/div[2]/form/div/div[1]/div/div[3]/input')
 chinsara = element.get_attribute('value')
 
-# [A01-02]PINコードを入力する Enter your PIN code to complete login
+# [AB01-02]PINコードを入力する Enter your PIN code to complete login
 # https://jaqool.atlassian.net/browse/GPT-755
 #
 
@@ -73,7 +73,7 @@ chinsara = element.get_attribute('value')
 cur_url = driver.current_url
 driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div/div[2]/div[3]/button').click()
 
-# [A01-03]使い方動画を閲覧する Watching how-to video
+# [AB01-03]使い方動画を閲覧する Watching how-to video
 # https://jaqool.atlassian.net/browse/GPT-756
 # 
 
@@ -118,7 +118,7 @@ if 'https://www.youtube.com/embed/e23dN762YTg' == movsrc:
 
 
 
-# [A01-04]ヘルプセンターにアクセスする Open the help center link
+# [AB01-04]ヘルプセンターにアクセスする Open the help center link
 # https://jaqool.atlassian.net/browse/GPT-757
 #
 
@@ -138,6 +138,8 @@ driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[1]/div/div[
 #別タブへ移動  
 driver.switch_to.window(driver.window_handles[1])    
 
+# [AB01-05]表示言語を変更する Changing display language
+# https://jaqool.atlassian.net/browse/GPT-758
 #
 
 cur_url = driver.current_url
@@ -148,6 +150,8 @@ if 'https://lamondo.manual.kotozna.com/ja/home' == cur_url:
 
 driver.switch_to.window(driver.window_handles[0]) 
 time.sleep(5)
+
+
 #言語を切り替えボタンを押下
 driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[1]/div/div[3]/div[3]/div/div/button').click()
 time.sleep(5)
@@ -164,6 +168,22 @@ element = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2
 if 'あごぽよクリーニング香椎本店' == element:
     print('5-2OK')
     
+
+# [AB01-06]ハンバーガーボタンで表示方法を変更 Changing display with Hamburger button
+# https://jaqool.atlassian.net/browse/GPT-1060
+#ハンバーガーボタンをクリック
+driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[1]/div/div[1]').click()
+time.sleep(3)
+element = driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[1]')
+width = element.get_attribute('style')
+if width[7:9] == '60':
+    print('AB01-06 OK')
+else :
+    print(width[7:9])
+
+time.sleep(3)    
+driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[1]/div/div[1]').click()
+
 
 #Scenario: [A02-01]ウィジェットを表示する Show widget
 #https://jaqool.atlassian.net/browse/BBS-65
