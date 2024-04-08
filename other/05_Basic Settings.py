@@ -10,8 +10,15 @@ import json
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.alert import Alert
+from selenium.webdriver.chrome.options import Options
+
+
+# Chromeオプションを設定:通知を拒否
+chrome_options = Options()
+chrome_options.add_argument("--disable-notifications")
 
 driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
+
 
 def chinchin():
     # 
@@ -44,11 +51,8 @@ https://jaqool.atlassian.net/browse/GPT-753
 driver.get('https://beta-tenant-admin.im.kotozna.chat/ja/login')
 time.sleep(10)
 
-
 element = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div/div[2]/div[2]/form/div/div[1]/div/div[3]/input').send_keys('kenta+b230109-admin@kotozna.com')
 time.sleep(3)
-
-
 
 element = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div/div[2]/div[2]/form/div/div[1]/div/div[3]/input')
 chinsara = element.get_attribute('value')
