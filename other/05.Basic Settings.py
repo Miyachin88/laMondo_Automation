@@ -9,7 +9,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 import json
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import NoSuchElementException
-
+from selenium.webdriver.common.alert import Alert
 
 driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
 
@@ -405,16 +405,115 @@ if 'ワークコードテスト' == element:
 #Scenario: [A02-06]WorkCodeを削除する Delete workcode
 #https://jaqool.atlassian.net/browse/GPT-765
 
+#ワークコードのチェックボックスをチェック
+driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[3]/div[2]/div/table/tbody/tr[5]/td[1]/div/div[1]/div/div/div/input').click()
+time.sleep(3)
+#ゴミ箱をクリック
+driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[3]/div[1]/div[2]/div[2]/button').click()
+time.sleep(3)
+#Then ワークコード一覧に数字→アルファベット→ひらがな→カタカナ→漢字の順に新たなワークコードが追加され、スタッフ画面にも同様に表示される / A new work code is added to the work code list in the order of numbers → alphabet → hiragana → kanji, and the same is displayed on the staff screen.
+wkcddelete = WebDriverWait(driver,180).until(EC.visibility_of_element_located((By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[3]/div[2]/div/table/tbody/tr[5]/td[2]/span')))
+#作成したワークコードの名前を判定
+element = wkcddelete.text
+print(element)
+if '一般' == element:
+    print('A02-6 OK')
+else :
+    print('A02-6 NG')
+
 #Given ワークコードマスタに現在登録されているワークコード一覧が表示されている / A list of work codes currently registered in the work code master is displayed.
 #When 削除したいワークコードに✅をし、ごみ箱ボタンをクリックする /✅ on the work code you want to delete and click the Recycle Bin button
 #Then ワークコード一覧から削除され、スタッフ画面にも反映されている / It has been deleted from the work code list and reflected on the staff screen.
 
 #Scenario: [A02-07]WorkCodeを編集する Edit workcode
 #https://jaqool.atlassian.net/browse/GPT-766
+#ゲスト評価をONに戻す
+toggle_button = WebDriverWait(driver,30).until(EC.visibility_of_element_located((By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[2]/div/div/div')))
+toggle_button.click()
+
+##ワークコードテストを追加
+#When 「＋」ボタンを押し、ワークコード名を入力して保存する / Press the "+" button, enter a name and save
+driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[3]/div[1]/div[2]/div[1]/button').click()
+time.sleep(2)
+driver.switch_to.window
+time.sleep(2)
+element = driver.find_element(By.XPATH, '/html/body/div[2]/div/div[2]/div/div[3]/div/form/div[2]/div[1]/div/div[3]/input').send_keys('ワークコードテスト')
+time.sleep(3)
+#保存ボタンを押下して、ワークコードを保存
+driver.find_element(By.XPATH,'/html/body/div[2]/div/div[2]/div/div[4]/div[3]/button').click()
+time.sleep(3)
+driver.switch_to.window
+time.sleep(3)
+#ワークコードテストの名称を編集
+driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[3]/div[2]/div/table/tbody/tr[5]/td[3]/div/div/button').click()
+
+#ワークコードテストの名称を編集して
+wait = WebDriverWait(driver, 300)
+edittext = wait.until(EC.visibility_of_element_located((By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[3]/div[2]/div/table/tbody/tr[5]/td[2]/div/form/div/div/div/div[3]/input')))
+edittext.clear()
+time.sleep(3)
+edittext.send_keys('編集')
+time.sleep(3)
+#ワークコードのチェックボックスをチェック
+wait2 = WebDriverWait(driver, 300)
+wkcd = wait2.until(EC.visibility_of_element_located((By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[3]/div[2]/div/table/tbody/tr[5]/td[3]/div/div/button/span[3]/i')))
+wkcd.click()
+driver.refresh()
+time.sleep(10)
+#編集後の名前をチェック
+editcheck = WebDriverWait(driver,180).until(EC.visibility_of_element_located((By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[3]/div[2]/div/table/tbody/tr[5]/td[2]/span')))
+#作成したワークコードの名前を判定
+element = editcheck.text
+print(element)
+if 'ワークコードテスト編集' == element:
+    print('A02-7 OK')
+else:
+    print(element)
+
+#終わったらワークコードを削除する。
+time.sleep(10)
+driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[3]/div[2]/div/table/tbody/tr[5]/td[1]/div/div[1]/div/div/div/input').click()
+time.sleep(3)
+#ゴミ箱をクリック
+driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[3]/div[1]/div[2]/div[2]/button').click()
+time.sleep(10)
+
+
+#Scenario: [AB03-01]スタッフ画面へのリンクをクリックする Go to the staff panel via the link
+#https://jaqool.atlassian.net/browse/GPT-767
 
 #Given ワークコードマスタに現在登録されているワークコード一覧が表示されている / A list of work codes currently registered in the work code master is displayed.
 #When 編集したいワークコードのペンシルマークをクリックし、名前を編集する / Click the pencil mark of the work code you want to edit, and edit name
 #Then どこかをクリックすると保存され、スタッフ画面にも反映されている / Click anywhere to save it and reflect it on the staff screen
+#スタッフ画面を開くを押下
+driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[1]/div/div[6]/div/button').click()
+time.sleep(10)
+#別タブへ移動  
+# 現在のタブのハンドルを取得
+current_handle = driver.current_window_handle
+# タブのハンドルのリストを取得
+all_handles = driver.window_handles
+# 2番目のタブのハンドルを特定
+target_handle = all_handles[1]
+# 2番目のタブに切り替え
+driver.switch_to.window(target_handle)
 
-
-
+cur_url = driver.current_url
+print(cur_url)
+"""
+# ポップアップダイアログに切り替える
+alert = Alert(driver)
+# ポップアップダイアログのテキストを表示
+print(alert.text)
+# ポップアップダイアログで「許可する」ボタンをクリック
+alert.accept()
+# ポップアップダイアログが閉じるまで待機
+WebDriverWait(driver, 10).until(EC.alert_is_present())
+"""
+# URL取得
+cur_url = driver.current_url
+if 'https://lamondo.im.kotozna.chat/beta/index.html?hash_code=36c172acb1c1fb341e6c56891231b9b33d34a88cb01d7452f9dde711e64e1be2' in cur_url:
+    # 特定の文字列が含まれている場合の処理
+    print("A03-1 OK")
+else:
+    print("A03-1 NG")
