@@ -10,6 +10,7 @@ import json
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.alert import Alert
+from selenium.webdriver.common.keys import Keys
 
 driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
 
@@ -79,9 +80,16 @@ if 'mdi-minus mdi v-icon notranslate v-theme--light v-icon--size-default' in not
 
 #Given 現在登録されているウィジェット一覧が表示されているA list of currently registered widgets is displayed.
 #When 右上の追加ボタンをクリックするClick the add button in the upper right
+driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div/div[2]/div[2]/div/button').click()
+time.sleep(5)
 #Then 「❶担当グループ」から「❼スニペット」までの登録面に遷移するTransition to the registration side from "❶ charge group" to "❼ snippet"
-
-
+#現在のURLが”newWidgetSetting”であることを確認
+cur_url = driver.current_url
+if 'https://beta-tenant-admin.im.kotozna.chat/ja/laMondo/newWidgetSetting' in cur_url:
+    #ウィジェット設定へ移動
+    print("AW01-02 OK")
+else :
+    print("AW01-02 NG")
 
 """
 W02 Create New Widget Step ❶
@@ -92,14 +100,44 @@ https://jaqool.atlassian.net/browse/GPT-774
 # 
 #Given ウィジェット番号がデフォルトで設定されている Widget number is set by default
 #When ウィジェット名横のペンシルボタンから名称を変更し、✓ボタンを押す Change the name from the pencil button next to the widget name and press the ✓ button.
+#ワークコードテストの名称を編集
+driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[1]/div[1]/div').click()
 #Then ウィジェット番号→指定した名前に変更されるWidget number → changed to the specified name. Name appears in chat header and initial messages.
+wait = WebDriverWait(driver, 300)
+wkcdname = wait.until(EC.visibility_of_element_located((By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[1]/div[1]/div[1]/form/div/div[1]/div/div[3]/input')))
+wkcdname.send_keys(Keys.COMMAND + "a" )
+wkcdname.send_keys( Keys.DELETE )
+wkcdname.send_keys('AW02-01 test')
+time.sleep(3)
+driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[1]/div[1]/div[2]').click()
+widget_setting = driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[1]/div[1]/h1')
+aw2_1 = widget_setting.text
+if 'AW02-01 test' == aw2_1:
+    #テキストの判別
+    print("AW02-01 OK")
 
 # [AW02-02]担当グループを割り当てる Assign a responsible group
 # https://jaqool.atlassian.net/browse/GPT-333
 # 
 #Given 担当グループ選択覧が空白である The group selection box is blank
+widget_setting = driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div/div[1]/div/div[3]/div/div/span')
+aw2_2 = widget_setting.text
+if '' == aw2_2:
+    #テキストの判別
+    print("空欄です")
 #When 担当グループ選択覧の▼をクリックし、グループ名をクリックする Click ▼ in the group selection box, and click the group name.
+driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div/div[1]/div').click()
+time.sleep(3)
+driver.find_element(By.XPATH,'/html/body/div[2]/div/div/div/div[3]').click()
+time.sleep(5)
 #Then 担当グループが設定される The group in charge is set
+widget_setting = driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div/div[1]/div/div[3]/div/div/span')
+aw2_2 = widget_setting.text
+if 'ごみ' == aw2_2:
+    #テキストの判別
+    print("AW02-02 OK")
+else :
+    print(aw2_2)
 
 # [AW02-03]担当グループの割り当てを外す Unassign a responsible group
 # https://jaqool.atlassian.net/browse/GPT-334
@@ -107,4 +145,19 @@ https://jaqool.atlassian.net/browse/GPT-774
 
 #Given 担当グループが設定されている The group in charge is set
 #When 担当グループ選択覧の✕をクリック Click ✕ in the group selection box
+driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div/div[1]/div/div[4]/i').click()
+time.sleep(3)
 #Then 担当グループ選択覧が空欄になる The group selection box is blank
+widget_setting = driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div/div[1]/div/div[3]/div/div/span')
+aw2_3 = widget_setting.text
+if '' == aw2_3:
+    #テキストの判別
+    print("AW02-03 OK")
+    
+"""
+W02Create New Widget Step ❷
+https://jaqool.atlassian.net/browse/GPT-775
+"""
+#いったん一覧に戻る
+driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[2]/div[1]/div/button').click()
+
