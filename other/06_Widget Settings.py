@@ -317,9 +317,10 @@ else:
     openW()
     time.sleep(15)
     driver.switch_to.window
-    wait = WebDriverWait(driver, 300)
-    notaccept = wait.until(EC.visibility_of_element_located((By.CLASS_NAME,'v-card__text d-flex flex-column justify-start px-4 pb-3')))
-    print(notaccept.text)
+    wait = WebDriverWait(driver, 180)
+    notaccept = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR,'#app > div.v-dialog__content.v-dialog__content--active > div > div > div.v-card__text.d-flex.flex-column.justify-start.px-4.pb-3')))
+    if notaccept.text[:13] == '受付時間は下記の通りです。':
+        print("AW03-01 OK")
 
 
 
