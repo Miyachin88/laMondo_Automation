@@ -25,9 +25,13 @@ now = datetime.now()
 weekday = calendar.day_name[now.weekday()]
 # 日付のフォーマットを指定
 #date_format = now.strftime("%Y/%m/%d %a %H:%M")
+#現在時刻
 date_format = now.strftime("%H:%M")
+#今日の日付
+monthday_format = now.strftime("%m%d")
 # 出力する日付を表示
 print(date_format)
+print(monthday_format)
 
 """
 ウィジェット(自動化用)を開く
@@ -336,11 +340,12 @@ driver.switch_to.window(first_tab_handle)
 cur_url = driver.current_url
 driver.refresh()
 time.sleep(10)
+#AW03-01の終わり
 
 # [AW03-02]チャットの営業可能時間を設定する（曜日） Set chat business hours (day of the week)
 # https://jaqool.atlassian.net/browse/GPT-777
 # 
-
+"""
 #ウィジェットを閉じる必要あり
 # 自動化用のウィジェットの鉛筆マークをクリック
 driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div/div[3]/div/table/tbody/tr[2]/td[7]/div/div/button').click()
@@ -417,10 +422,113 @@ else:
     if notaccept.text[:13] == '受付時間は下記の通りです。':
         print("AW03-02 OK")
 
+driver.close()
+# タブのハンドルを取得する
+tab_handles = driver.window_handles
+# 1番目のタブに切り替える
+first_tab_handle = tab_handles[0]
+driver.switch_to.window(first_tab_handle)
+cur_url = driver.current_url
+driver.refresh()
+time.sleep(10)
+"""
+#AW03-02の終わり
 
 # [AW03-03]チャットの営業可能時間を設定する（特定の日のみ）Set chat business hours (only on specific days)
 # https://jaqool.atlassian.net/browse/GPT-778
 # 
+#ウィジェットを閉じる必要あり
+# 自動化用のウィジェットの鉛筆マークをクリック
+driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div/div[3]/div/table/tbody/tr[2]/td[7]/div/div/button').click()
+time.sleep(3)
+# 自動化用のウィジェットの①担当グループにて”保存して次へ”をクリック
+driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[2]/div[2]/div[2]/button').click()
+time.sleep(5)
+##タイプのプルダウンから"受付時間"を選択 / Select "Business Hours" as Type
+#パターン1：受付時間のプルダウンが表示されてない
+eigyo_type = driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[1]/div[1]/div[2]/div[1]/div/div[3]/div/div/span').text 
+if '' == eigyo_type:
+    #プルダウンをクリック
+    driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[1]/div[1]/div[2]/div[1]/div').click()
+    time.sleep(5)
+else :
+#パターン2：すでに受付時間のプルダウンが表示
+    #ゴミ箱をクリック
+    driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[1]/div[2]/div/div[1]/div[2]').click()
+    #ばつボタンをクリック
+    driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[1]/div[1]/div[2]/div[1]/div/div[4]/i').click()
+    time.sleep(5)
+    #プルダウンをクリック
+    driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[1]/div[1]/div[2]/div[1]/div').click()
+    time.sleep(5) 
+
+#受付時間をクリック
+driver.find_element(By.XPATH,'/html/body/div[2]/div/div/div/div[1]/div[2]/div').click()
+time.sleep(10)
+#受付時間追加ボタンをクリック
+wait = WebDriverWait(driver, 300)
+add_businessh = wait.until(EC.visibility_of_element_located((By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[2]/button')))
+add_businessh.click()
+#タイトルを入力
+wait = WebDriverWait(driver, 300)
+businessh_name = wait.until(EC.visibility_of_element_located((By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[1]/div[2]/div/div[3]/form/div/div[1]/div/div[3]/input')))
+businessh_name.send_keys('AW03-03 title')
+time.sleep(10)
+#対象をクリック 曜日を指定
+driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[1]/div[2]/div/div[4]/div/div[2]').click()
+time.sleep(5)
+#対象をクリック
+driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[1]/div[2]/div/div[4]/div/div[2]/div[1]/div').click()
+time.sleep(10)
+#日を指定をクリック
+driver.find_element(By.XPATH,'/html/body/div[2]/div/div/div/div[3]/div[2]/div').click()
+time.sleep(5)
+#日をクリック
+wait = WebDriverWait(driver, 300)
+add_businessh = wait.until(EC.visibility_of_element_located((By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[1]/div[2]/div/div[4]/div[2]/div[2]/div/div/div/input')))
+add_businessh.click()
+time.sleep(10)
+
+
+for i in range(6):  # 配列の長さまたは6の少ない方をループ回数とする
+    #週を探索および設置
+    flag = False 
+    hello1 = str(i + 1)
+    setsearchweek = "/div[" + str(hello1) + "]"
+    for j in range(7):  # i+1回数の少ない方をループ回数とする
+        #曜日を探索および設置
+        hello2 = str(j + 1)
+        setsearchdayoftheweek = "/div[" + hello2 + "]"        
+        setpath = "/html/body/div[3]/div[2]/div/div[1]/div/div[2]/div/div/div[3]" + setsearchweek + setsearchdayoftheweek
+        dateset = driver.find_element(By.XPATH,setpath)
+        widget = dateset.text
+        #日付が合致していたらクリックする
+        if widget == monthday_format[-2:]: 
+            dateset.click()
+            time.sleep(10)
+            #選択ボタンをクリック
+            driver.find_element(By.XPATH,'/html/body/div[3]/div[3]/div/div[1]/button').click()            
+            #保存して閉じますをクリック
+            time.sleep(5)
+            driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[2]/div[2]/div[1]/button').click()
+            time.sleep(10)  
+            flag = True  # フラグをTrueに設定
+            break;
+        else:
+            print('chinchin')
+    if flag:  # フラグがTrueの場合、外側のループを抜ける
+        break
+
+#16日
+#/html/body/div[3]/div[2]/div/div[1]/div/div[2]/div/div/div[3]/div[3]/div[2]
+#22日
+#/html/body/div[3]/div[2]/div/div[1]/div/div[2]/div/div/div[3]/div[4]/div[1]
+#23日
+#/html/body/div[3]/div[2]/div/div[1]/div/div[2]/div/div/div[3]/div[4]/div[2]
+
+
+
+
 
 # [AW03-04]チャットの対応不可時間を設定する（毎日）Set chat unavailable hours (Daily)
 # https://jaqool.atlassian.net/browse/GPT-779
