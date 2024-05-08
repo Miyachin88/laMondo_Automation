@@ -1,13 +1,13 @@
-<testsuite name="admin.widget.6W_A11.新規ウィジェットを作成する Create a new widget" tests="2" errors="1" failures="1" skipped="0" time="5.028374" timestamp="2024-04-24T13:00:12.171357" hostname="Kentas-MacBook-Pro.local"><testcase classname="admin.widget.6W_A11.新規ウィジェットを作成する Create a new widget" name="[A11-01]ウィジェット設定画面を開く Open the widget setting screen" status="failed" time="5.023451"><error type="NoSuchElementException" message="Message: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div/div[1]&quot;}&#10;  (Session info: chrome=124.0.6367.80); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception&#10;Stacktrace:&#10;0   chromedriver                        0x000000010095e8dc chromedriver + 4368604&#10;1   chromedriver                        0x0000000100956d70 chromedriver + 4337008&#10;2   chromedriver                        0x000000010057ac04 chromedriver + 289796&#10;3   chromedriver                        0x00000001005bce00 chromedriver + 560640&#10;4   chromedriver                        0x00000001005f55ec chromedriver + 792044&#10;5   chromedriver                        0x00000001005b1ab4 chromedriver + 514740&#10;6   chromedriver                        0x00000001005b250c chromedriver + 517388&#10;7   chromedriver                        0x0000000100922df8 chromedriver + 4124152&#10;8   chromedriver                        0x0000000100927be8 chromedriver + 4144104&#10;9   chromedriver                        0x00000001009087c0 chromedriver + 4016064&#10;10  chromedriver                        0x0000000100928518 chromedriver + 4146456&#10;11  chromedriver                        0x00000001008fa274 chromedriver + 3957364&#10;12  chromedriver                        0x0000000100947e60 chromedriver + 4275808&#10;13  chromedriver                        0x0000000100947fdc chromedriver + 4276188&#10;14  chromedriver                        0x00000001009569d0 chromedriver + 4336080&#10;15  libsystem_pthread.dylib             0x000000019e886f94 _pthread_start + 136&#10;16  libsystem_pthread.dylib             0x000000019e881d34 thread_start + 8">
+<testsuite name="admin.widget.6W_A11.新規ウィジェットを作成する Create a new widget" tests="2" errors="1" failures="1" skipped="0" time="5.026652" timestamp="2024-05-08T12:52:33.668313" hostname="Kentas-MacBook-Pro.local"><testcase classname="admin.widget.6W_A11.新規ウィジェットを作成する Create a new widget" name="[A11-01]ウィジェット設定画面を開く Open the widget setting screen" status="failed" time="5.021836"><error type="NoSuchElementException" message="Message: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div/div[1]&quot;}&#10;  (Session info: chrome=124.0.6367.119); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception&#10;Stacktrace:&#10;0   chromedriver                        0x0000000104586924 chromedriver + 4368676&#10;1   chromedriver                        0x000000010457edb8 chromedriver + 4337080&#10;2   chromedriver                        0x00000001041a2c04 chromedriver + 289796&#10;3   chromedriver                        0x00000001041e4e00 chromedriver + 560640&#10;4   chromedriver                        0x000000010421d5ec chromedriver + 792044&#10;5   chromedriver                        0x00000001041d9ab4 chromedriver + 514740&#10;6   chromedriver                        0x00000001041da50c chromedriver + 517388&#10;7   chromedriver                        0x000000010454ae40 chromedriver + 4124224&#10;8   chromedriver                        0x000000010454fc30 chromedriver + 4144176&#10;9   chromedriver                        0x0000000104530808 chromedriver + 4016136&#10;10  chromedriver                        0x0000000104550560 chromedriver + 4146528&#10;11  chromedriver                        0x00000001045222bc chromedriver + 3957436&#10;12  chromedriver                        0x000000010456fea8 chromedriver + 4275880&#10;13  chromedriver                        0x0000000104570024 chromedriver + 4276260&#10;14  chromedriver                        0x000000010457ea18 chromedriver + 4336152&#10;15  libsystem_pthread.dylib             0x0000000192926f94 _pthread_start + 136&#10;16  libsystem_pthread.dylib             0x0000000192921d34 thread_start + 8">
 <![CDATA[
-Failing step: When 左のメニューバーから「ウィジェット設定」をクリックする Click "Widget Settings" from the left menu bar ... failed in 5.023s
+Failing step: When 左のメニューバーから「ウィジェット設定」をクリックする Click "Widget Settings" from the left menu bar ... failed in 5.022s
 Location: 6W_A11.feature:7
 Traceback (most recent call last):
   File "/opt/homebrew/lib/python3.11/site-packages/behave/model.py", line 1812, in run
     match.run(runner.context)
   File "/opt/homebrew/lib/python3.11/site-packages/behave/matchers.py", line 103, in run
     self.func(context, *args, **kwargs)
-  File "../../steps/6W_A11.py", line 42, in chinsara_W
+  File "../../steps/6W_A11.py", line 43, in chinsara_W
     widget_06.test_A11_01w()
   File "/Users/kentamiyachi/PythonPro/laMondo/features/steps/func/widget_06.py", line 114, in test_A11_01w
     widget_setting = driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div/div[1]')  # dev要素をCSSセレクタで見つける場合
@@ -20,29 +20,29 @@ Traceback (most recent call last):
   File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/errorhandler.py", line 229, in check_response
     raise exception_class(message, screen, stacktrace)
 selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div/div[1]"}
-  (Session info: chrome=124.0.6367.80); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+  (Session info: chrome=124.0.6367.119); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Stacktrace:
-0   chromedriver                        0x000000010095e8dc chromedriver + 4368604
-1   chromedriver                        0x0000000100956d70 chromedriver + 4337008
-2   chromedriver                        0x000000010057ac04 chromedriver + 289796
-3   chromedriver                        0x00000001005bce00 chromedriver + 560640
-4   chromedriver                        0x00000001005f55ec chromedriver + 792044
-5   chromedriver                        0x00000001005b1ab4 chromedriver + 514740
-6   chromedriver                        0x00000001005b250c chromedriver + 517388
-7   chromedriver                        0x0000000100922df8 chromedriver + 4124152
-8   chromedriver                        0x0000000100927be8 chromedriver + 4144104
-9   chromedriver                        0x00000001009087c0 chromedriver + 4016064
-10  chromedriver                        0x0000000100928518 chromedriver + 4146456
-11  chromedriver                        0x00000001008fa274 chromedriver + 3957364
-12  chromedriver                        0x0000000100947e60 chromedriver + 4275808
-13  chromedriver                        0x0000000100947fdc chromedriver + 4276188
-14  chromedriver                        0x00000001009569d0 chromedriver + 4336080
-15  libsystem_pthread.dylib             0x000000019e886f94 _pthread_start + 136
-16  libsystem_pthread.dylib             0x000000019e881d34 thread_start + 8
+0   chromedriver                        0x0000000104586924 chromedriver + 4368676
+1   chromedriver                        0x000000010457edb8 chromedriver + 4337080
+2   chromedriver                        0x00000001041a2c04 chromedriver + 289796
+3   chromedriver                        0x00000001041e4e00 chromedriver + 560640
+4   chromedriver                        0x000000010421d5ec chromedriver + 792044
+5   chromedriver                        0x00000001041d9ab4 chromedriver + 514740
+6   chromedriver                        0x00000001041da50c chromedriver + 517388
+7   chromedriver                        0x000000010454ae40 chromedriver + 4124224
+8   chromedriver                        0x000000010454fc30 chromedriver + 4144176
+9   chromedriver                        0x0000000104530808 chromedriver + 4016136
+10  chromedriver                        0x0000000104550560 chromedriver + 4146528
+11  chromedriver                        0x00000001045222bc chromedriver + 3957436
+12  chromedriver                        0x000000010456fea8 chromedriver + 4275880
+13  chromedriver                        0x0000000104570024 chromedriver + 4276260
+14  chromedriver                        0x000000010457ea18 chromedriver + 4336152
+15  libsystem_pthread.dylib             0x0000000192926f94 _pthread_start + 136
+16  libsystem_pthread.dylib             0x0000000192921d34 thread_start + 8
 
 
 Captured stdout:
-<behave.runner.Context object at 0x102561690>]]>
+<behave.runner.Context object at 0x1007c1650>]]>
 </error><system-out>
 <![CDATA[
 @scenario.begin
@@ -50,7 +50,7 @@ Captured stdout:
   @BDDTEST-GPT-328 @BDD_autmation
   Scenario: [A11-01]ウィジェット設定画面を開く Open the widget setting screen
     Given 基本設定の画面が表示されている The basic setting screen is displayed ... passed in 0.000s
-    When 左のメニューバーから「ウィジェット設定」をクリックする Click "Widget Settings" from the left menu bar ... failed in 5.023s
+    When 左のメニューバーから「ウィジェット設定」をクリックする Click "Widget Settings" from the left menu bar ... failed in 5.022s
     Then 現在登録されているウィジェット一覧が表示されるA list of currently registered widgets is displayed. ... skipped in 0.000s
     And GPTと連携しているウィジェットのGPTステータスには✓が入っている ... skipped in 0.000s
 
@@ -58,10 +58,10 @@ Captured stdout:
 --------------------------------------------------------------------------------
 
 Captured stdout:
-<behave.runner.Context object at 0x102561690>
+<behave.runner.Context object at 0x1007c1650>
 
 ]]>
-</system-out></testcase><testcase classname="admin.widget.6W_A11.新規ウィジェットを作成する Create a new widget" name="[A11-02]新規ウィジェット作成画面に進む Go to the new widget creation screen" status="failed" time="0.004923"><failure type="AssertionError" message="">
+</system-out></testcase><testcase classname="admin.widget.6W_A11.新規ウィジェットを作成する Create a new widget" name="[A11-02]新規ウィジェット作成画面に進む Go to the new widget creation screen" status="failed" time="0.004816"><failure type="AssertionError" message="">
 <![CDATA[
 Failing step: Then 「1担当グループ」から「8スニペット」までの登録面に遷移するTransition to the registration side from "1charge group" to "7 snippet" ... failed in 0.000s
 Location: 6W_A11.feature:16
@@ -70,13 +70,13 @@ Traceback (most recent call last):
     match.run(runner.context)
   File "/opt/homebrew/lib/python3.11/site-packages/behave/matchers.py", line 103, in run
     self.func(context, *args, **kwargs)
-  File "../../steps/6W_A11.py", line 68, in chinsara_T
+  File "../../steps/6W_A11.py", line 69, in chinsara_T
     assert widget_06.result_a11_02 == 'AW01-02 OK'
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 AssertionError
 
 Captured stdout:
-<behave.runner.Context object at 0x102561690>
+<behave.runner.Context object at 0x1007c1650>
 AW01-02 NG]]>
 </failure><system-out>
 <![CDATA[
@@ -92,7 +92,7 @@ AW01-02 NG]]>
 --------------------------------------------------------------------------------
 
 Captured stdout:
-<behave.runner.Context object at 0x102561690>
+<behave.runner.Context object at 0x1007c1650>
 AW01-02 NG
 
 ]]>
