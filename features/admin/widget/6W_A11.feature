@@ -13,4 +13,4 @@ Feature: 新規ウィジェットを作成する Create a new widget
   Scenario: [A11-02]新規ウィジェット作成画面に進む Go to the new widget creation screen
     Given 現在登録されているウィジェット一覧が表示されているA list of currently registered widgets is displayed.
     When 右上の追加ボタンをクリックするClick the add button in the upper right
-    Then 「❶担当グループ」から「❼スニペット」までの登録面に遷移するTransition to the registration side from "❶ charge group" to "❼ snippet"
+    Then 「1担当グループ」から「8スニペット」までの登録面に遷移するTransition to the registration side from "1charge group" to "7 snippet"

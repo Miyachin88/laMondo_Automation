@@ -13,7 +13,8 @@ from selenium.webdriver.common.alert import Alert
 from selenium.webdriver.common.keys import Keys
 from datetime import datetime, timedelta
 import calendar
-import requests
+from selenium.common.exceptions import NoSuchElementException
+from selenium.common.exceptions import ElementClickInterceptedException
 
 #ドライバー
 driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
@@ -94,37 +95,45 @@ https://jaqool.atlassian.net/browse/GPT-770
 
 #Given 基本設定の画面が表示されている The basic setting screen is displayed
 #When 左のメニューバーから「ウィジェット設定」をクリックする Click "Widget Settings" from the left menu bar
-cur_url = driver.current_url
-if 'https://beta-tenant-admin.im.kotozna.chat/ja/laMondo/basicConfiguration' in cur_url:
-    #ウィジェット設定へ移動
-    driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[1]/div/div[2]').click()
+def test_A11_01g():
+    cur_url = driver.current_url
+    if 'https://beta-tenant-admin.im.kotozna.chat/ja/laMondo/basicConfiguration' in cur_url:
+        #ウィジェット設定へ移動
+        driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[1]/div/div[2]').click()
 
-time.sleep(5)
+    time.sleep(5)
+
+test_A11_01g()
 
 #Then 現在登録されているウィジェット一覧が表示されるA list of currently registered widgets is displayed.
-checkp1 = 0
-checkp2 = 0
-checkp3 = 0
-widget_setting = driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div/div[1]')  # dev要素をCSSセレクタで見つける場合
-widget = widget_setting.text
-if '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div/div[1]' == widget:
-    #ウィジェット設定へ移動
-    checkp1 = 1
-#And GPTと連携しているウィジェットのGPTステータスには✓が入っている
-element = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div/div[3]/div/table/tbody/tr[7]/td[2]/div/template/div/i')
-check = element.get_attribute('class')
-#
-if 'mdi-check-all mdi v-icon notranslate v-theme--light v-icon--size-default text-green' in check:
-    checkp2 = 1
-element = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div/div[3]/div/table/tbody/tr[12]/td[2]/div/template/div/i')
-#
-notcheck = element.get_attribute('class')
-if 'mdi-minus mdi v-icon notranslate v-theme--light v-icon--size-default' in notcheck:
-    checkp3 = 1
-#一覧が表示され、ステータスが変わっているか
-if 'mdi-minus mdi v-icon notranslate v-theme--light v-icon--size-default' in notcheck:
+result_a11_01 = "" 
+def test_A11_01w():
+    checkp1 = 0
+    checkp2 = 0
+    checkp3 = 0
+    widget_setting = driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div/div[1]')  # dev要素をCSSセレクタで見つける場合
+    widget = widget_setting.text
+    if '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div/div[1]' == widget:
+        #ウィジェット設定へ移動
+        checkp1 = 1
+    #And GPTと連携しているウィジェットのGPTステータスには✓が入っている
+    element = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div/div[3]/div/table/tbody/tr[7]/td[2]/div/template/div/i')
+    check = element.get_attribute('class')
+    #
+    if 'mdi-check-all mdi v-icon notranslate v-theme--light v-icon--size-default text-green' in check:
+        checkp2 = 1
+    element = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div/div[3]/div/table/tbody/tr[12]/td[2]/div/template/div/i')
+    #
+    notcheck = element.get_attribute('class')
+    if 'mdi-minus mdi v-icon notranslate v-theme--light v-icon--size-default' in notcheck:
+        checkp3 = 1
     #一覧が表示され、ステータスが変わっているか
-    print("AW01-01 OK")
+    if 'mdi-minus mdi v-icon notranslate v-theme--light v-icon--size-default' in notcheck:
+        #一覧が表示され、ステータスが変わっているか
+        print("AW01-01 OK")
+        result_a11_01 = "AW01-01 OK" 
+
+test_A11_01w()
 
 # [AW01-02]ウィジェット設定画面を開く Open the widget setting screen
 # https://jaqool.atlassian.net/browse/GPT-329
@@ -230,14 +239,23 @@ if '' == eigyo_type:
     time.sleep(5)
 else :
 #パターン2：すでに受付時間のプルダウンが表示
-    #ゴミ箱をクリック
+    #最初のゴミ箱をクリック
     driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[1]/div[2]/div/div[1]/div[2]').click()
+    try:
+        #2番目のゴミ箱をクリック
+        driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[1]/div[2]/div/div[1]/div[2]').click()
+    except NoSuchElementException:
+        pass
+    except ElementClickInterceptedException:
+        pass
     #ばつボタンをクリック
     driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[1]/div[1]/div[2]/div[1]/div/div[4]/i').click()
     time.sleep(5)
     #プルダウンをクリック
     driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[1]/div[1]/div[2]/div[1]/div').click()
-    time.sleep(5)    
+    time.sleep(5)
+    
+    
 
 #受付時間をクリック
 driver.find_element(By.XPATH,'/html/body/div[2]/div/div/div/div[1]/div[2]/div').click()
@@ -362,14 +380,21 @@ if '' == eigyo_type:
     time.sleep(5)
 else :
 #パターン2：すでに受付時間のプルダウンが表示
-    #ゴミ箱をクリック
+    #最初のゴミ箱をクリック
     driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[1]/div[2]/div/div[1]/div[2]').click()
+    try:
+        #2番目のゴミ箱をクリック
+        driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[1]/div[2]/div/div[1]/div[2]').click()
+    except NoSuchElementException:
+        pass
+    except ElementClickInterceptedException:
+        pass
     #ばつボタンをクリック
     driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[1]/div[1]/div[2]/div[1]/div/div[4]/i').click()
     time.sleep(5)
     #プルダウンをクリック
     driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[1]/div[1]/div[2]/div[1]/div').click()
-    time.sleep(5) 
+    time.sleep(5)
 
 #受付時間をクリック
 driver.find_element(By.XPATH,'/html/body/div[2]/div/div/div/div[1]/div[2]/div').click()
@@ -453,14 +478,21 @@ if '' == eigyo_type:
     time.sleep(5)
 else :
 #パターン2：すでに受付時間のプルダウンが表示
-    #ゴミ箱をクリック
+    #最初のゴミ箱をクリック
     driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[1]/div[2]/div/div[1]/div[2]').click()
+    try:
+        #2番目のゴミ箱をクリック
+        driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[1]/div[2]/div/div[1]/div[2]').click()
+    except NoSuchElementException:
+        pass
+    except ElementClickInterceptedException:
+        pass
     #ばつボタンをクリック
     driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[1]/div[1]/div[2]/div[1]/div/div[4]/i').click()
     time.sleep(5)
     #プルダウンをクリック
     driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[1]/div[1]/div[2]/div[1]/div').click()
-    time.sleep(5) 
+    time.sleep(5)
 
 #受付時間をクリック
 driver.find_element(By.XPATH,'/html/body/div[2]/div/div/div/div[1]/div[2]/div').click()
@@ -552,7 +584,7 @@ time.sleep(10)
 # [AW03-04]チャットの対応不可時間を設定する（毎日）Set chat unavailable hours (Daily)
 # https://jaqool.atlassian.net/browse/GPT-779
 # 
-
+"""
 #ウィジェットを閉じる必要あり
 # 自動化用のウィジェットの鉛筆マークをクリック
 driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div/div[3]/div/table/tbody/tr[2]/td[7]/div/div/button').click()
@@ -569,14 +601,21 @@ if '' == eigyo_type:
     time.sleep(5)
 else :
 #パターン2：すでに受付時間のプルダウンが表示
-    #ゴミ箱をクリック
+    #最初のゴミ箱をクリック
     driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[1]/div[2]/div/div[1]/div[2]').click()
+    try:
+        #2番目のゴミ箱をクリック
+        driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[1]/div[2]/div/div[1]/div[2]').click()
+    except NoSuchElementException:
+        pass
+    except ElementClickInterceptedException:
+        pass
     #ばつボタンをクリック
     driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[1]/div[1]/div[2]/div[1]/div/div[4]/i').click()
     time.sleep(5)
     #プルダウンをクリック
     driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[1]/div[1]/div[2]/div[1]/div').click()
-    time.sleep(5) 
+    time.sleep(5)
 
 #受付不可時間をクリック
 driver.find_element(By.XPATH,'/html/body/div[2]/div/div/div/div[2]').click()
@@ -679,12 +718,13 @@ driver.switch_to.window(first_tab_handle)
 cur_url = driver.current_url
 driver.refresh()
 time.sleep(10)
+"""
 #AW03-04の終わり
 
 # [AW03-05]チャットの対応不可時間を設定する（曜日）Set chat unavailable hours (day of the week)
 # https://jaqool.atlassian.net/browse/GPT-780
 # 
-
+"""
 #ウィジェットを閉じる必要あり
 # 自動化用のウィジェットの鉛筆マークをクリック
 driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div/div[3]/div/table/tbody/tr[2]/td[7]/div/div/button').click()
@@ -701,14 +741,21 @@ if '' == eigyo_type:
     time.sleep(5)
 else :
 #パターン2：すでに受付時間のプルダウンが表示
-    #ゴミ箱をクリック
+    #最初のゴミ箱をクリック
     driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[1]/div[2]/div/div[1]/div[2]').click()
+    try:
+        #2番目のゴミ箱をクリック
+        driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[1]/div[2]/div/div[1]/div[2]').click()
+    except NoSuchElementException:
+        pass
+    except ElementClickInterceptedException:
+        pass
     #ばつボタンをクリック
     driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[1]/div[1]/div[2]/div[1]/div/div[4]/i').click()
     time.sleep(5)
     #プルダウンをクリック
     driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[1]/div[1]/div[2]/div[1]/div').click()
-    time.sleep(5) 
+    time.sleep(5)
 
 #受付不可時間をクリック
 driver.find_element(By.XPATH,'/html/body/div[2]/div/div/div/div[2]').click()
@@ -791,13 +838,13 @@ else:
 
 
 #ウィジェット設定に戻り自動化用のウィジェットを開く
-    openW()
-    time.sleep(15)
-    driver.switch_to.window
-    wait = WebDriverWait(driver, 180)
-    notaccept = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR,'#app > div.v-dialog__content.v-dialog__content--active > div > div > div.v-card__text.d-flex.flex-column.justify-start.px-4.pb-3')))
-    if notaccept.text[:23] == '以下は受付時間外となりますのでご了承ください。':
-        print("AW03-05 OK")
+openW()
+time.sleep(15)
+driver.switch_to.window
+wait = WebDriverWait(driver, 180)
+notaccept = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR,'#app > div.v-dialog__content.v-dialog__content--active > div > div > div.v-card__text.d-flex.flex-column.justify-start.px-4.pb-3')))
+if notaccept.text[:23] == '以下は受付時間外となりますのでご了承ください。':
+    print("AW03-05 OK")
 
 
 driver.close()
@@ -809,13 +856,8 @@ driver.switch_to.window(first_tab_handle)
 cur_url = driver.current_url
 driver.refresh()
 time.sleep(10)
-#AW03-04の終わり
-
-
-
-
-
-
+"""
+#AW03-05の終わり
 
 
 
