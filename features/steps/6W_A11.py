@@ -28,6 +28,7 @@ developer+kenta-lamondo@kotozna.com
 """
 
 widget_06.openW()
+print(widget_06.result_a11_01)
 
 # Scenario: [A11-01]ウィジェット設定画面を開く Open the widget setting screen
 # https://jaqool.atlassian.net/browse/GPT-328
