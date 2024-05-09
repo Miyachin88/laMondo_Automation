@@ -1546,7 +1546,8 @@ def test_AW04_01():
     if currentpage.text == "不在時のメール受信設定":
         print("AW04-01 OK")
     else :
-        print(currentpage.text)    
+        print(currentpage.text)
+        
 
 test_AW04_01()
 
@@ -1569,6 +1570,10 @@ def test_AW04_02():
         for _ in range(input_count):
             driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[2]/div[1]/div[2]/button').click()
             time.sleep(3)
+        # 不在判定時間を消去
+        driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[3]/div/form/div/div[1]/div/div[3]/input').send_keys(Keys.DELETE)
+        driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[3]/div/form/div/div[1]/div/div[3]/input').send_keys(Keys.BACK_SPACE)
+        driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[3]/div/form/div/div[1]/div/div[3]/input').send_keys(Keys.ENTER)
         #チェックボックスをクリック
         outofbusihour.click()
         time.sleep(3)
@@ -1601,8 +1606,24 @@ test_AW04_02()
 # https://jaqool.atlassian.net/browse/GPT-787
 # 
 
+def test_AW04_03():
 
+    # メールアドレスを入力
+    driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[2]/div[1]/div[1]/form/div/div[1]/div/div[3]/input').send_keys('aw04_03@kotozna.com')
+    # 不在判定時間を入力
+    driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[3]/div/form/div/div[1]/div/div[3]/input').send_keys(10)
 
+    element = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[2]/div[1]/div[1]/form/div/div[1]/div/div[3]/input')
+    mailaddress = element.get_attribute('value')
+    element = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[3]/div/form/div/div[1]/div/div[3]/input')
+    outoftime = element.get_attribute('value')
+    if (mailaddress == "aw04_03@kotozna.com") & (outoftime == "10"):
+        print("AW04-03 OK")
+    else :
+        print(mailaddress) 
+        print(outoftime)
+
+test_AW04_03()
 # [AW04-04]不在時メール送信先を追加する
 # https://jaqool.atlassian.net/browse/GPT-788
 # 
@@ -1614,3 +1635,4 @@ test_AW04_02()
 # [AW04-06]不在判定時間を設定する
 # https://jaqool.atlassian.net/browse/GPT-790
 # 
+
