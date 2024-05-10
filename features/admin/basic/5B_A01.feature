@@ -35,3 +35,10 @@ Feature: 日本人が管理画面にログインする Japanese administrator tr
     When 地球儀アイコンを押下し任意の言語を選択 Select the globe icon
     Then 管理画面の表示言語が選択した言語で表示される The display language of admin panel will be displayed in the selected language
     Then ただし、ワークコード名、ウィジェット名、グループ名、ユーザー名（アカウント名）は変わらない Work code names, widget names, group names, and user names wont be changed
+
+  @BDDTEST-GPT-1060
+  Scenario: [AB01-06]ハンバーガーボタンで表示方法を変更 Changing display with Hamburger button
+    Given 基本設定の画面が表示されている1 The basic setting screen is displayed
+    Given 左のメニューバーに「ウィジェット設定」など、設定機能名とアイコンが表示されている Settings names such as "Widget settings" and icons are listed on the left
+    When 左上のハンバーガーボタンをクリックする Click the Hamburger button on the upper left
+    Then 左のメニューバーの設定機能名が非表示になり、アイコン表示のみになる Only icons are displayed, and settings names are hidden

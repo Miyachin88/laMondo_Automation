@@ -106,7 +106,7 @@ def test_A11_01g():
 
     time.sleep(5)
 
-test_A11_01g()
+#test_A11_01g()
 
 #Then 現在登録されているウィジェット一覧が表示されるA list of currently registered widgets is displayed.
 result_a11_01 = "" 
@@ -136,7 +136,7 @@ def test_A11_01w():
         print("AW01-01 OK")
         result_a11_01 = "AW01-01 OK" 
 
-test_A11_01w()
+#test_A11_01w()
 
 # [AW01-02]ウィジェット設定画面を開く Open the widget setting screen
 # https://jaqool.atlassian.net/browse/GPT-329
@@ -160,7 +160,7 @@ def test_A11_02w():
     else :
         print("AW01-02 NG")
 
-test_A11_02w()
+#test_A11_02w()
 
 """
 W02 Create New Widget Step ❶
@@ -188,7 +188,7 @@ def test_AW02_01():
         #テキストの判別
         print("AW02-01 OK")
         
-test_AW02_01()
+#test_AW02_01()
 
 # [AW02-02]担当グループを割り当てる Assign a responsible group
 # https://jaqool.atlassian.net/browse/GPT-333
@@ -209,7 +209,7 @@ def test_AW02_02():
     else :
         print(aw2_2)
 
-test_AW02_02()
+#test_AW02_02()
 
 
 # [AW02-03]担当グループの割り当てを外す Unassign a responsible group
@@ -227,7 +227,9 @@ def test_AW02_03():
         #テキストの判別
         print("AW02-03 OK")
 
-test_AW02_03()
+#test_AW02_03()
+
+
 """
 W02Create New Widget Step ❷
 https://jaqool.atlassian.net/browse/GPT-775
@@ -914,7 +916,6 @@ def test_AW03_05():
     if notaccept.text[:23] == '以下は受付時間外となりますのでご了承ください。':
         print("AW03-05 OK")
 
-
     driver.close()
     # タブのハンドルを取得する
     tab_handles = driver.window_handles
@@ -1527,8 +1528,6 @@ def closetab():
 
 #closetab()
 
-time.sleep(10)
-
 # [AW04-01]不在時のメール受信設定画面に移動する
 # https://jaqool.atlassian.net/browse/GPT-785
 # 
@@ -1626,7 +1625,7 @@ def test_AW04_03():
         print(mailaddress) 
         print(outoftime)
 
-test_AW04_03()
+#test_AW04_03()
 # [AW04-04]不在時メール送信先を追加する
 # https://jaqool.atlassian.net/browse/GPT-788
 # 

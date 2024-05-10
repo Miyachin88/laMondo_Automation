@@ -3,7 +3,7 @@ Feature: 新規ウィジェットを作成する Create a new widget
   @BDDTEST-GPT-328
   @BDD_autmation
   Scenario: [A11-01]ウィジェット設定画面を開く Open the widget setting screen
-    Given 基本設定の画面が表示されている The basic setting screen is displayed
+    Given 基本設定の画面が表示されている2 The basic setting screen is displayed
     When 左のメニューバーから「ウィジェット設定」をクリックする Click "Widget Settings" from the left menu bar
     Then 現在登録されているウィジェット一覧が表示されるA list of currently registered widgets is displayed.
     And GPTと連携しているウィジェットのGPTステータスには✓が入っている
