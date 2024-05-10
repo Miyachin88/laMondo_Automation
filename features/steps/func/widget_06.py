@@ -68,21 +68,24 @@ def openW():
     time.sleep(10)
 
 #管理画面にログインする
-driver.get('https://beta-tenant-admin.im.kotozna.chat/ja/login')
-time.sleep(10)
+def login_admin():
+    driver.get('https://beta-tenant-admin.im.kotozna.chat/ja/login')
+    time.sleep(10)
 
-element = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div/div[2]/div[2]/form/div/div[1]/div/div[3]/input').send_keys('kenta+gpt-adminoshima-3096@kotozna.com')
-time.sleep(3)
+    element = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div/div[2]/div[2]/form/div/div[1]/div/div[3]/input').send_keys('kenta+gpt-adminoshima-3096@kotozna.com')
+    time.sleep(3)
 
-#ログインボタンを押下
-driver.find_element(By.XPATH, '//*[@id="app"]/div/div/div/div/div/div[2]/div[3]/button').click()
-time.sleep(5)
+    #ログインボタンを押下
+    driver.find_element(By.XPATH, '//*[@id="app"]/div/div/div/div/div/div[2]/div[3]/button').click()
+    time.sleep(5)
 
-#PINを入力してログイン
-driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div/div[2]/div[2]/form/div/div[1]/div/div[3]/input').send_keys('000000')
-time.sleep(10)
-driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div/div[2]/div[3]/button').click()
-time.sleep(10)
+    #PINを入力してログイン
+    driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div/div[2]/div[2]/form/div/div[1]/div/div[3]/input').send_keys('000000')
+    time.sleep(10)
+    driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div/div[2]/div[3]/button').click()
+    time.sleep(10)
+
+login_admin()
 
 """
 W01新規ウィジェットを作成する Create a new widget
