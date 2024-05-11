@@ -2,7 +2,7 @@
 Feature: 日本人が管理画面にログインする Japanese administrator tries to log in to the Admin Panel
   @BDDTEST-GPT-754
   Scenario: [A01-01]メールアドレスを入力する Enter your email address on the login screen
-    Given Open the lamondo admin panel
+    Given laMondo管理画面を開く Open the lamondo admin panel
     When メールアドレスを入力する Input email address
     Then PINコード入力画面に遷移し、PINコードが送信される Transit to the PIN code input screen and send the PIN code
 
@@ -14,7 +14,7 @@ Feature: 日本人が管理画面にログインする Japanese administrator tr
 
   @BDDTEST-GPT-756
   Scenario: [A01-03]使い方動画を閲覧する Watching how-to video
-    Given 管理画面にログインしている1 / You are logged in to the admin panel
+    Given laMondo管理画面にログインしている / You are logged in to the admin panel
     Given トップバーと基本設定画面が表示されている1 / The top bar and the basic settings are displayed
     When トップバーの[使い方動画を見る]ボタンを押下 / Select the [Using laMondo] button on the top bar
     Then ウィジェット1と記載されたウィンドウが開く / A window will open labeled Widget 1
@@ -32,7 +32,8 @@ Feature: 日本人が管理画面にログインする Japanese administrator tr
   Scenario: [A01-05]表示言語を変更する Changing display language
     Given 管理画面にログインしている3 You are logged in to the admin panel
     Given トップバーと基本設定画面が表示されている3 The top bar and the basic settings are displayed
-    When 地球儀アイコンを押下し任意の言語を選択 Select the globe icon
+    When 地球儀アイコンを押下 Select the globe icon
+    When 任意の言語を選択する Select any language  
     Then 管理画面の表示言語が選択した言語で表示される The display language of admin panel will be displayed in the selected language
     Then ただし、ワークコード名、ウィジェット名、グループ名、ユーザー名（アカウント名）は変わらない Work code names, widget names, group names, and user names wont be changed
 
