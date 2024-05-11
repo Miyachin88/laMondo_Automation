@@ -59,6 +59,9 @@ def test_AB01_01():
     if chinsara == "kenta+b230109-admin@kotozna.com":
         #テキストの判別
         print("AB01-01 OK")
+        #ログインボタンを押下
+        driver.find_element(By.XPATH, '//*[@id="app"]/div/div/div/div/div/div[2]/div[3]/button').click()
+        time.sleep(5)
 
 test_AB01_01()
 
@@ -66,9 +69,6 @@ test_AB01_01()
 # https://jaqool.atlassian.net/browse/GPT-755
 #
 def test_AB01_02():
-    #ログインボタンを押下
-    driver.find_element(By.XPATH, '//*[@id="app"]/div/div/div/div/div/div[2]/div[3]/button').click()
-    time.sleep(5)
 
     #PINを入力
     driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div/div[2]/div[2]/form/div/div[1]/div/div[3]/input').send_keys('000000')
@@ -136,7 +136,11 @@ def test_AB01_04():
     driver.switch_to.window(driver.window_handles[1])
     
     cur_url = driver.current_url
-    if 'https://lamondo.manual.kotozna.com/ja/home' == cur_url:
+    
+    judge_jpn = driver.find_element(By.XPATH, '/html/body/div[2]/div/div[2]/div/div[1]/div/div/div/div[1]/div/div/ul/div/li[1]/div/a/span/span').text
+    assert 'ホーム' == judge_jpn    
+    
+    if ('https://lamondo.manual.kotozna.com/ja/home' == cur_url) & ('ホーム' == judge_jpn):
         print('AB01-04 OK')
         # 現在のタブを閉じる
         driver.close()    
