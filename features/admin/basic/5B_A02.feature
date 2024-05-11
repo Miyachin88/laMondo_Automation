@@ -20,12 +20,15 @@ Feature: A02基本設定をする Set Basic Settings
     Given ステップ④ゲストによる評価の「ゲストによる評価を利用する」がOFFになっている
     When "チャット終了後の「ゲスト評価」を利用する。"のトグルをONにする Turn on the "Use the guest evaluation after the chat."
     Then ステップ④ゲストによる評価の「ゲストによる評価を利用する」がONになる
+    Then ゲスト画面で、GPTからの回答後ゲスト評価が表示される After GPT replies, the Guest Rating is displayed on the guest screen
 
   @BDDTEST-GPT-763
   Scenario: [A02-04]ゲストによる回答評価の利用を無にする（Survey）Eliminate the use of guest response ratings (Survey)
-    Given "チャット終了後の「ゲスト評価」を利用する。"トグルがONになっている""Use the" guest evaluation "after the chat. " is ON"
-    When 「チャット終了後の「ゲスト評価」を利用する。」のトグルをOFFにする"Use the" guest evaluation "after the chat. Toggle off"
-    Then ゲスト画面で、チャット終了後に回答評価が表示されなくなる On the guest screen, the answer rating is no longer displayed after the chat ends
+    Given "ゲスト評価"のトグルがONになっている "Guest Rating" is ON
+    Given ステップ④ゲストによる評価の「ゲストによる評価を利用する」がONになっている Guest Rating on the Step 4 is ON
+    When "ゲスト評価"のトグルをOFFにする Turn off the "Guest Rating"
+    Then ステップ④ゲストによる評価の「ゲストによる評価を利用する」がOFFになる Guest Rating on the Step 4 is turned OFF
+    Then ゲスト画面で、GPTからの回答後にゲスト評価が表示されなくなる On the guest screen, the Guest Rating is no longer displayed after GPT replies
 
   @BDDTEST-GPT-764
   Scenario: [A02-05]WorkCodeを追加する Add work code
@@ -35,7 +38,7 @@ Feature: A02基本設定をする Set Basic Settings
 
   @BDDTEST-GPT-765
   Scenario: [A02-06]WorkCodeを削除する Delete workcode
-    Given ワークコードマスタに現在登録されているワークコード一覧が表示されている / A list of work codes currently registered in the work code master is displayed.
+    Given ワークコードマスタに現在登録されているワークコード一覧が表示されている1 / A list of work codes currently registered in the work code master is displayed.
     When 削除したいワークコードに✅をし、ごみ箱ボタンをクリックする  /✅  on the work code you want to delete and click the Recycle Bin button
     Then ワークコード一覧から削除され、スタッフ画面にも反映されている / It has been deleted from the work code list and reflected on the staff screen.
 

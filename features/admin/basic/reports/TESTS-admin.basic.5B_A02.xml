@@ -1,0 +1,198 @@
+<testsuite name="admin.basic.5B_A02.A02基本設定をする Set Basic Settings" tests="7" errors="1" failures="2" skipped="0" time="287.648371" timestamp="2024-05-11T10:48:01.766851" hostname="Kentas-MacBook-Pro.local"><testcase classname="admin.basic.5B_A02.A02基本設定をする Set Basic Settings" name="[A02-01]ウィジェットを表示する Show widget" status="passed" time="113.370237"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-760
+  Scenario: [A02-01]ウィジェットを表示する Show widget
+    Given ゲスト画面にウィジェットが表示されていない / The widget is not displayed on the guest screen ... passed in 0.000s
+    When 「すべてのウィジェットを有効にする。」のトグルをONにする / Turn on the toggle for "Enable all widgets." ... passed in 103.282s
+    Then ゲスト画面で該当のウィジェットが表示されている / The corresponding widget is displayed on the guest screen ... passed in 0.000s
+    Then ゲスト画面を開くと、通常フローでGPT・スタッフに問い合わせが送信できる ... passed in 10.088s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+a
+a
+
+]]>
+</system-out></testcase><testcase classname="admin.basic.5B_A02.A02基本設定をする Set Basic Settings" name="[A02-02]ウィジェットを非表示にする Hide widget" status="passed" time="39.53395"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-761
+  Scenario: [A02-02]ウィジェットを非表示にする Hide widget
+    Given ゲスト画面にウィジェットが表示されている / The widget is displayed on the guest screen ... passed in 0.000s
+    When 「すべてのウィジェットを有効にする。」のトグルをOFFにする / Turn off the toggle for "Enable all widgets." ... passed in 26.454s
+    Then ゲスト画面で該当のウィジェットが表示されていない / The widget is not displayed on the guest screen ... passed in 0.000s
+    Then ゲスト画面を開くと、「チャット機能は現在ご利用できません」が表示される ... passed in 13.080s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+a
+a
+
+]]>
+</system-out></testcase><testcase classname="admin.basic.5B_A02.A02基本設定をする Set Basic Settings" name="[A02-03]ゲストによる回答評価の利用を有にする（Survey）Make use of guest response evaluation (Survey)" status="failed" time="0"><failure type="NoneType" message="None">
+<![CDATA[
+Failing step: Given "チャット終了後の「ゲスト評価」を利用する。"トグルがOFFになっている "Use the guest evaluation after the chat. " is OFF ... undefined in 0.000s
+Location: 5B_A02.feature:19
+None]]>
+</failure><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-762
+  Scenario: [A02-03]ゲストによる回答評価の利用を有にする（Survey）Make use of guest response evaluation (Survey)
+    Given "チャット終了後の「ゲスト評価」を利用する。"トグルがOFFになっている "Use the guest evaluation after the chat. " is OFF ... undefined in 0.000s
+    Given ステップ④ゲストによる評価の「ゲストによる評価を利用する」がOFFになっている ... undefined in 0.000s
+    When "チャット終了後の「ゲスト評価」を利用する。"のトグルをONにする Turn on the "Use the guest evaluation after the chat." ... undefined in 0.000s
+    Then ステップ④ゲストによる評価の「ゲストによる評価を利用する」がONになる ... undefined in 0.000s
+    Then ゲスト画面で、GPTからの回答後ゲスト評価が表示される After GPT replies, the Guest Rating is displayed on the guest screen ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="admin.basic.5B_A02.A02基本設定をする Set Basic Settings" name="[A02-04]ゲストによる回答評価の利用を無にする（Survey）Eliminate the use of guest response ratings (Survey)" status="failed" time="71.367402"><failure type="AssertionError" message="">
+<![CDATA[
+Failing step: Then ゲスト画面で、GPTからの回答後にゲスト評価が表示されなくなる On the guest screen, the Guest Rating is no longer displayed after GPT replies ... failed in 0.032s
+Location: 5B_A02.feature:31
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/model.py", line 1812, in run
+    match.run(runner.context)
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/matchers.py", line 103, in run
+    self.func(context, *args, **kwargs)
+  File "../../steps/5B_A02.py", line 244, in a02_04_t2
+    assert 'チャットを評価！' != element
+           ^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+
+Captured stdout:
+a
+a
+a]]>
+</failure><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-763
+  Scenario: [A02-04]ゲストによる回答評価の利用を無にする（Survey）Eliminate the use of guest response ratings (Survey)
+    Given "ゲスト評価"のトグルがONになっている "Guest Rating" is ON ... passed in 0.000s
+    Given ステップ④ゲストによる評価の「ゲストによる評価を利用する」がONになっている Guest Rating on the Step 4 is ON ... passed in 0.000s
+    When "ゲスト評価"のトグルをOFFにする Turn off the "Guest Rating" ... passed in 71.335s
+    Then ステップ④ゲストによる評価の「ゲストによる評価を利用する」がOFFになる Guest Rating on the Step 4 is turned OFF ... passed in 0.000s
+    Then ゲスト画面で、GPTからの回答後にゲスト評価が表示されなくなる On the guest screen, the Guest Rating is no longer displayed after GPT replies ... failed in 0.032s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+a
+a
+a
+
+]]>
+</system-out></testcase><testcase classname="admin.basic.5B_A02.A02基本設定をする Set Basic Settings" name="[A02-05]WorkCodeを追加する Add work code" status="passed" time="31.299778"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-764
+  Scenario: [A02-05]WorkCodeを追加する Add work code
+    Given 基本設定画面のワークコードマスタに、現在登録されているワークコード一覧が表示されている / A list of work codes currently registered in the work code master is displayed. ... passed in 0.000s
+    When 「＋」ボタンを押し、ワークコード名を入力して保存する / Press the "+" button, enter a name and save ... passed in 31.266s
+    Then ワークコード一覧に数字→アルファベット→ひらがな→漢字の順に新たなワークコードが追加され、スタッフ画面にも同様に表示される / A new work code is added to the work code list in the order of numbers → alphabet → hiragana → kanji, and the same is displayed on the staff screen. ... passed in 0.034s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+a
+
+]]>
+</system-out></testcase><testcase classname="admin.basic.5B_A02.A02基本設定をする Set Basic Settings" name="[A02-06]WorkCodeを削除する Delete workcode" status="passed" time="7.630046"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-765
+  Scenario: [A02-06]WorkCodeを削除する Delete workcode
+    Given ワークコードマスタに現在登録されているワークコード一覧が表示されている1 / A list of work codes currently registered in the work code master is displayed. ... passed in 0.000s
+    When 削除したいワークコードに✅をし、ごみ箱ボタンをクリックする  /✅  on the work code you want to delete and click the Recycle Bin button ... passed in 6.084s
+    Then ワークコード一覧から削除され、スタッフ画面にも反映されている / It has been deleted from the work code list and reflected on the staff screen. ... passed in 1.546s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+a
+
+]]>
+</system-out></testcase><testcase classname="admin.basic.5B_A02.A02基本設定をする Set Basic Settings" name="[A02-07]WorkCodeを編集する Edit workcode" status="failed" time="24.446958"><error type="ElementClickInterceptedException" message="Message: element click intercepted: Element &lt;i class=&quot;mdi-close-circle-outline mdi v-icon notranslate v-theme--light v-icon--size-small&quot; aria-hidden=&quot;true&quot; disabled=&quot;false&quot; data-v-2c14d385=&quot;&quot; style=&quot;color: rgb(109, 109, 109); cursor: pointer; width: 32px; height: 32px; padding: 8px;&quot;&gt;&lt;/i&gt; is not clickable at point (1168, 599). Other element would receive the click: &lt;tbody class=&quot;mx-4 app-table-content-body&quot; id=&quot;appTableContentBodyid&quot; data-v-9b4dfcda=&quot;&quot;&gt;...&lt;/tbody&gt;&#10;  (Session info: chrome=124.0.6367.158)&#10;Stacktrace:&#10;0   chromedriver                        0x0000000102a66998 chromedriver + 4368792&#10;1   chromedriver                        0x0000000102a5ee2c chromedriver + 4337196&#10;2   chromedriver                        0x0000000102682c04 chromedriver + 289796&#10;3   chromedriver                        0x00000001026ca88c chromedriver + 583820&#10;4   chromedriver                        0x00000001026c8e20 chromedriver + 577056&#10;5   chromedriver                        0x00000001026c6fac chromedriver + 569260&#10;6   chromedriver                        0x00000001026c613c chromedriver + 565564&#10;7   chromedriver                        0x00000001026bb940 chromedriver + 522560&#10;8   chromedriver                        0x00000001026bb368 chromedriver + 521064&#10;9   chromedriver                        0x00000001026fd5ec chromedriver + 792044&#10;10  chromedriver                        0x00000001026b9ab4 chromedriver + 514740&#10;11  chromedriver                        0x00000001026ba50c chromedriver + 517388&#10;12  chromedriver                        0x0000000102a2aeb4 chromedriver + 4124340&#10;13  chromedriver                        0x0000000102a2fca4 chromedriver + 4144292&#10;14  chromedriver                        0x0000000102a1087c chromedriver + 4016252&#10;15  chromedriver                        0x0000000102a305d4 chromedriver + 4146644&#10;16  chromedriver                        0x0000000102a02330 chromedriver + 3957552&#10;17  chromedriver                        0x0000000102a4ff1c chromedriver + 4275996&#10;18  chromedriver                        0x0000000102a50098 chromedriver + 4276376&#10;19  chromedriver                        0x0000000102a5ea8c chromedriver + 4336268&#10;20  libsystem_pthread.dylib             0x0000000191d22f94 _pthread_start + 136&#10;21  libsystem_pthread.dylib             0x0000000191d1dd34 thread_start + 8">
+<![CDATA[
+Failing step: When 編集したいワークコードのペンシルマークをクリックし、名前を編集する / Click the pencil mark of the work code you want to edit, and edit name ... failed in 24.447s
+Location: 5B_A02.feature:48
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/model.py", line 1812, in run
+    match.run(runner.context)
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/matchers.py", line 103, in run
+    self.func(context, *args, **kwargs)
+  File "../../steps/5B_A02.py", line 356, in a02_07_w
+    wkcd.click()
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webelement.py", line 94, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webelement.py", line 395, in _execute
+    return self._parent.execute(command, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 347, in execute
+    self.error_handler.check_response(response)
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.ElementClickInterceptedException: Message: element click intercepted: Element <i class="mdi-close-circle-outline mdi v-icon notranslate v-theme--light v-icon--size-small" aria-hidden="true" disabled="false" data-v-2c14d385="" style="color: rgb(109, 109, 109); cursor: pointer; width: 32px; height: 32px; padding: 8px;"></i> is not clickable at point (1168, 599). Other element would receive the click: <tbody class="mx-4 app-table-content-body" id="appTableContentBodyid" data-v-9b4dfcda="">...</tbody>
+  (Session info: chrome=124.0.6367.158)
+Stacktrace:
+0   chromedriver                        0x0000000102a66998 chromedriver + 4368792
+1   chromedriver                        0x0000000102a5ee2c chromedriver + 4337196
+2   chromedriver                        0x0000000102682c04 chromedriver + 289796
+3   chromedriver                        0x00000001026ca88c chromedriver + 583820
+4   chromedriver                        0x00000001026c8e20 chromedriver + 577056
+5   chromedriver                        0x00000001026c6fac chromedriver + 569260
+6   chromedriver                        0x00000001026c613c chromedriver + 565564
+7   chromedriver                        0x00000001026bb940 chromedriver + 522560
+8   chromedriver                        0x00000001026bb368 chromedriver + 521064
+9   chromedriver                        0x00000001026fd5ec chromedriver + 792044
+10  chromedriver                        0x00000001026b9ab4 chromedriver + 514740
+11  chromedriver                        0x00000001026ba50c chromedriver + 517388
+12  chromedriver                        0x0000000102a2aeb4 chromedriver + 4124340
+13  chromedriver                        0x0000000102a2fca4 chromedriver + 4144292
+14  chromedriver                        0x0000000102a1087c chromedriver + 4016252
+15  chromedriver                        0x0000000102a305d4 chromedriver + 4146644
+16  chromedriver                        0x0000000102a02330 chromedriver + 3957552
+17  chromedriver                        0x0000000102a4ff1c chromedriver + 4275996
+18  chromedriver                        0x0000000102a50098 chromedriver + 4276376
+19  chromedriver                        0x0000000102a5ea8c chromedriver + 4336268
+20  libsystem_pthread.dylib             0x0000000191d22f94 _pthread_start + 136
+21  libsystem_pthread.dylib             0x0000000191d1dd34 thread_start + 8
+
+
+Captured stdout:
+a]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-766
+  Scenario: [A02-07]WorkCodeを編集する Edit workcode
+    Given ワークコードマスタに現在登録されているワークコード一覧が表示されている2 / A list of work codes currently registered in the work code master is displayed. ... passed in 0.000s
+    When 編集したいワークコードのペンシルマークをクリックし、名前を編集する / Click the pencil mark of the work code you want to edit, and edit name ... failed in 24.447s
+    Then どこかをクリックすると保存され、スタッフ画面にも反映されている / Click anywhere to save it and reflect it on the staff screen ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+a
+
+]]>
+</system-out></testcase></testsuite>

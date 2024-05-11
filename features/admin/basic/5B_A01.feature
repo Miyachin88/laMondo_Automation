@@ -1,5 +1,5 @@
 @BDDSTORY-GPT-753
-Feature: 日本人が管理画面にログインする Japanese administrator tries to log in to the Admin Panel
+Feature: A01日本人が管理画面にログインする Japanese administrator tries to log in to the Admin Panel
   @BDDTEST-GPT-754
   Scenario: [A01-01]メールアドレスを入力する Enter your email address on the login screen
     Given laMondo管理画面を開く Open the lamondo admin panel
