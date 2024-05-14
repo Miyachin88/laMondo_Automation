@@ -380,6 +380,11 @@ def test_AW03_01():
 #test_AW03_01()
 #AW03-01の終わり
 
+
+
+
+
+
 # [AW03-02]チャットの営業可能時間を設定する（曜日） Set chat business hours (day of the week)
 # https://jaqool.atlassian.net/browse/GPT-777
 # 
