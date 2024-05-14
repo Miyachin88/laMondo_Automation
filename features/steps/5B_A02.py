@@ -141,13 +141,12 @@ def a02_02_t2(aaa):
 # Scenario: [A02-03]ゲストによる回答評価の利用を有にする（Survey）Make use of guest response evaluation (Survey)
 # https://jaqool.atlassian.net/browse/GPT-762
 
-@Given('"ゲスト評価"のトグルがOFFになっている "Guest Rating" is OFF')
+@Given('"チャット終了後の「ゲスト評価」を利用する。"トグルがOFFになっている "Use the guest evaluation after the chat. " is OFF')
 def a02_03_g(aaa):
     print('a')
-@Given('ステップ④ゲストによる評価の「ゲストによる評価を利用する」がOFFになっている Guest Rating on the Step 4 is OFF')
-def a02_03_w(aaa):
-    print('a')
-@When('"ゲスト評価"のトグルをONにする Turn on the "Guest Rating"')
+    print('b')
+    time.sleep(1)
+@When('"チャット終了後の「ゲスト評価」を利用する。"のトグルをONにする Turn on the "Use the guest evaluation after the chat."')
 def a02_03_t1(aaa):
     #ゲスト評価をON
     toggle_button = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[2]/div/div/div/div[2]/input')
@@ -191,20 +190,16 @@ def a02_03_t2(aaa):
 # Scenario: [A02-04]ゲストによる回答評価の利用を無にする（Survey）Eliminate the use of guest response ratings (Survey)
 # https://jaqool.atlassian.net/browse/GPT-763
 
-@Given('"ゲスト評価"のトグルがONになっている "Guest Rating" is ON')
-def a02_04_g(aaa):
-    print('a')
 @Given('ステップ④ゲストによる評価の「ゲストによる評価を利用する」がONになっている Guest Rating on the Step 4 is ON')
 def a02_04_g(aaa):
-    print('a')
-@When('"ゲスト評価"のトグルをOFFにする Turn off the "Guest Rating"')
-def a02_04_w(aaa):
     #これは元の画面に戻るだけ
     # タブのハンドルを取得する
     tab_handles = driver.window_handles
     # 1番目のタブに切り替える
     second_tab_handle = tab_handles[0]
     driver.switch_to.window(second_tab_handle)
+@When('"ゲスト評価"のトグルをOFFにする Turn off the "Guest Rating"')
+def a02_04_w(aaa):
     time.sleep(3)
     #ゲスト評価をOFF
     toggle_button = WebDriverWait(driver,30).until(EC.visibility_of_element_located((By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[2]/div/div/div')))
@@ -251,6 +246,7 @@ def a02_04_t2(aaa):
 @Given('基本設定画面のワークコードマスタに、現在登録されているワークコード一覧が表示されている / A list of work codes currently registered in the work code master is displayed.')
 def a02_05_g(aaa):
     print('a')
+    time.sleep(1)
 @When('「＋」ボタンを押し、ワークコード名を入力して保存する / Press the "+" button, enter a name and save')
 def a02_05_w(aaa):
     #Given 基本設定画面のワークコードマスタに、現在登録されているワークコード一覧が表示されている / A list of work codes currently registered in the work code master is displayed.
@@ -341,13 +337,11 @@ def a02_07_w(aaa):
     time.sleep(3)
     driver.refresh()
     time.sleep(5)
-    #ワークコードテストの名称を編集
+    #ワークコードテストの名称を編集(ワークコードテストの鉛筆ボタンをクリック)
     driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[3]/div[2]/div/table/tbody/tr[5]/td[3]/div/div/button').click()
     #ワークコードテストの名称を編集して
     wait = WebDriverWait(driver, 300)
     edittext = wait.until(EC.visibility_of_element_located((By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[3]/div[2]/div/table/tbody/tr[5]/td[2]/div/form/div/div/div/div[3]/input')))
-    edittext.clear()
-    time.sleep(3)
     edittext.send_keys('編集')
     time.sleep(3)
     #ワークコードのチェックボックスをチェック

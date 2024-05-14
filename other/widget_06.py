@@ -106,7 +106,7 @@ def test_A11_01g():
 
     time.sleep(5)
 
-#test_A11_01g()
+test_A11_01g()
 
 #Then 現在登録されているウィジェット一覧が表示されるA list of currently registered widgets is displayed.
 result_a11_01 = "" 
@@ -136,7 +136,7 @@ def test_A11_01w():
         print("AW01-01 OK")
         result_a11_01 = "AW01-01 OK" 
 
-#test_A11_01w()
+test_A11_01w()
 
 # [AW01-02]ウィジェット設定画面を開く Open the widget setting screen
 # https://jaqool.atlassian.net/browse/GPT-329
@@ -160,7 +160,7 @@ def test_A11_02w():
     else :
         print("AW01-02 NG")
 
-#test_A11_02w()
+test_A11_02w()
 
 """
 W02 Create New Widget Step ❶
@@ -188,7 +188,7 @@ def test_AW02_01():
         #テキストの判別
         print("AW02-01 OK")
         
-#test_AW02_01()
+test_AW02_01()
 
 # [AW02-02]担当グループを割り当てる Assign a responsible group
 # https://jaqool.atlassian.net/browse/GPT-333
@@ -209,7 +209,7 @@ def test_AW02_02():
     else :
         print(aw2_2)
 
-#test_AW02_02()
+test_AW02_02()
 
 
 # [AW02-03]担当グループの割り当てを外す Unassign a responsible group
@@ -227,7 +227,7 @@ def test_AW02_03():
         #テキストの判別
         print("AW02-03 OK")
 
-#test_AW02_03()
+test_AW02_03()
 
 
 """
@@ -1610,6 +1610,17 @@ test_AW04_02()
 
 def test_AW04_03():
 
+    staffunavailable = driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[1]/div[2]/div[1]/div[1]/div/div/div/input')
+    #不在時のチェックボックスがクリックされている
+    if staffunavailable.is_selected():
+        #チェックボックスをクリック
+        staffunavailable.click()
+        time.sleep(3)
+        #再度チェックボックスをクリック
+        staffunavailable.click()
+    else :   
+        staffunavailable.click()
+
     # メールアドレスを入力
     driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[2]/div[1]/div[1]/form/div/div[1]/div/div[3]/input').send_keys('aw04_03@kotozna.com')
     # 不在判定時間を入力
@@ -1625,16 +1636,49 @@ def test_AW04_03():
         print(mailaddress) 
         print(outoftime)
 
-#test_AW04_03()
+test_AW04_03()
+
 # [AW04-04]不在時メール送信先を追加する
 # https://jaqool.atlassian.net/browse/GPT-788
 # 
 
+def test_AW04_04():
+    # メールアドレス追加ボタンをクリック
+    driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[2]/div[2]/button').click()  
+    time.sleep(5)
+    element = driver.find_elements(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[2]/div[2]/div[1]/form/div/div[1]/div/div[3]/input')    
+    if len(element) > 0:
+        print("AW04-04 OK")
+
+test_AW04_04()
+
 # [AW04-05]不在時メール送信先を削除する
 # https://jaqool.atlassian.net/browse/GPT-789
 # 
+def test_AW04_05():
+    # 2番目のメールアドレスを入力
+    driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[2]/div[2]/div[1]/form/div/div[1]/div/div[3]/input').send_keys("aw04_05@kotozna.com")  
+    element = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[2]/div[2]/div[1]/form/div/div[1]/div/div[3]/input')
+    mailaddress2 = element.get_attribute('value')
+    if (mailaddress2 == "aw04_05@kotozna.com"):
+        print("AW04-05 OK")
+
+test_AW04_05()
 
 # [AW04-06]不在判定時間を設定する
 # https://jaqool.atlassian.net/browse/GPT-790
 # 
 
+def test_AW04_06():
+    # 不在判定時間を消去
+    driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[3]/div/form/div/div[1]/div/div[3]/input').send_keys(Keys.BACK_SPACE)
+    driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[3]/div/form/div/div[1]/div/div[3]/input').send_keys(Keys.BACK_SPACE)
+    driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[3]/div/form/div/div[1]/div/div[3]/input').send_keys(Keys.ENTER)
+    # 不在判定時間を入力
+    driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[3]/div/form/div/div[1]/div/div[3]/input').send_keys(5)
+    element = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[3]/div/form/div/div[1]/div/div[3]/input')
+    outoftime = element.get_attribute('value')
+    if outoftime == "5":
+        print("AW04-06 OK")
+        
+test_AW04_06()

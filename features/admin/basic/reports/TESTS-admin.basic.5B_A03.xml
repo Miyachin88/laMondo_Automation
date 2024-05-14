@@ -1,0 +1,14 @@
+<testsuite name="admin.basic.5B_A03.A03スタッフ画面に移動する Go to the staff panel" tests="1" errors="0" failures="0" skipped="0" time="58.783553" timestamp="2024-05-11T11:25:06.627227" hostname="Kentas-MacBook-Pro.local"><testcase classname="admin.basic.5B_A03.A03スタッフ画面に移動する Go to the staff panel" name="[A03-01]スタッフ画面へのリンクをクリックする Go to the staff panel via the link" status="passed" time="58.783553"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-768
+  Scenario: [A03-01]スタッフ画面へのリンクをクリックする Go to the staff panel via the link
+    Given 管理画面を開いている / The management screen is open ... passed in 38.711s
+    When 左下の「スタッフ画面を開く」をクリックする / Click "Open Staff Screen" at the bottom left ... passed in 10.063s
+    Then ログイン画面が開く / The log in screen will be displayed ... passed in 10.009s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase></testsuite>

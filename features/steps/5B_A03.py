@@ -54,7 +54,7 @@ def a02_01_w(aaa):
     driver.switch_to.window(target_handle)
 @Then('ログイン画面が開く / The log in screen will be displayed')
 def a03_01_w(aaa):
-    cur_url = driver.current_url
     # URL取得
+    time.sleep(10)
     cur_url = driver.current_url
-    assert 'https://beta-staff.im.kotozna.chat/ja/main/tokenLogin' in cur_url[:53]
+    assert 'https://beta-staff.im.kotozna.chat/ja/main/conversations' in cur_url

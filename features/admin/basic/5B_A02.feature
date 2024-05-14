@@ -17,14 +17,12 @@ Feature: A02基本設定をする Set Basic Settings
   @BDDTEST-GPT-762
   Scenario: [A02-03]ゲストによる回答評価の利用を有にする（Survey）Make use of guest response evaluation (Survey)
     Given "チャット終了後の「ゲスト評価」を利用する。"トグルがOFFになっている "Use the guest evaluation after the chat. " is OFF
-    Given ステップ④ゲストによる評価の「ゲストによる評価を利用する」がOFFになっている
     When "チャット終了後の「ゲスト評価」を利用する。"のトグルをONにする Turn on the "Use the guest evaluation after the chat."
-    Then ステップ④ゲストによる評価の「ゲストによる評価を利用する」がONになる
+    Then ステップ④ゲストによる評価の「ゲストによる評価を利用する」がONになる Guest Rating on the Step 4 is turned ON
     Then ゲスト画面で、GPTからの回答後ゲスト評価が表示される After GPT replies, the Guest Rating is displayed on the guest screen
 
   @BDDTEST-GPT-763
   Scenario: [A02-04]ゲストによる回答評価の利用を無にする（Survey）Eliminate the use of guest response ratings (Survey)
-    Given "ゲスト評価"のトグルがONになっている "Guest Rating" is ON
     Given ステップ④ゲストによる評価の「ゲストによる評価を利用する」がONになっている Guest Rating on the Step 4 is ON
     When "ゲスト評価"のトグルをOFFにする Turn off the "Guest Rating"
     Then ステップ④ゲストによる評価の「ゲストによる評価を利用する」がOFFになる Guest Rating on the Step 4 is turned OFF
