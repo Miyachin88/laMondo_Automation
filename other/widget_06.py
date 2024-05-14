@@ -84,6 +84,36 @@ def login_admin():
     time.sleep(10)
     driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div/div[2]/div[3]/button').click()
     time.sleep(10)
+    cur_url = driver.current_url
+    if 'https://beta-tenant-admin.im.kotozna.chat/ja/laMondo/basicConfiguration' in cur_url:
+        #ウィジェット設定へ移動
+        driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[1]/div/div[2]').click()
+    time.sleep(5)
+    # 自動化用のウィジェットの鉛筆マークをクリック
+    driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div/div[3]/div/table/tbody/tr[2]/td[7]/div/div/button').click()
+    time.sleep(3)
+    # 自動化用のウィジェットの①担当グループにて”保存して次へ”をクリック
+    driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[2]/div[2]/div[2]/button').click()
+    time.sleep(5)
+    # 自動化用のウィジェットの②営業時間にて”保存して次へ”をクリック
+    driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[2]/div[2]/div[2]/button').click()
+    time.sleep(5)    
+    #営業時間外をクリック
+    time.sleep(10)
+    outofbusihour = driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div/div[1]/div[1]/div[1]/div/div/div/input')
+    #営業時間外のチェックボックスがクリックされている
+    if outofbusihour.is_selected():
+        #クリックを解除
+        outofbusihour.click()    
+    #不在時をクリック
+    outoftime = driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div/div[2]/div[1]/div[1]/div/div/div/input')
+    #不在時のチェックボックスがクリックされている
+    if outoftime.is_selected():
+        #クリックを解除
+        outoftime.click()
+    # 自動化用のウィジェットの”保存して閉じます”をクリック
+    driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[2]/div[2]/div[1]/button').click()
+    time.sleep(5) 
 
 login_admin()
 
@@ -105,6 +135,7 @@ def test_A11_01g():
         driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[1]/div/div[2]').click()
 
     time.sleep(5)
+    print('chinchin')
 
 test_A11_01g()
 
@@ -119,8 +150,8 @@ def test_A11_01w():
     if '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div/div[1]' == widget:
         #ウィジェット設定へ移動
         checkp1 = 1
-    #And GPTと連携しているウィジェットのGPTステータスには✓が入っている
-    element = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div/div[3]/div/table/tbody/tr[7]/td[2]/div/template/div/i')
+    #GPTと連携しているウィジェットのGPTステータスには✓が入っている
+    element = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div/div[3]/div/table/tbody/tr[2]/td[2]/div/template/div/i')
     check = element.get_attribute('class')
     #
     if 'mdi-check-all mdi v-icon notranslate v-theme--light v-icon--size-default text-green' in check:
