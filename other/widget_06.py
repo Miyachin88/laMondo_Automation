@@ -135,7 +135,6 @@ def test_A11_01g():
         driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[1]/div/div[2]').click()
 
     time.sleep(5)
-    print('chinchin')
 
 test_A11_01g()
 
@@ -598,7 +597,8 @@ def test_AW03_03():
             widgetcolor = driver.find_element(By.XPATH,setpathcolor)
             color = widgetcolor.value_of_css_property('color')
             #日付が1-9日の時とそうでない時の条件分岐
-            if widget in ['1','2','3','4','5','6','7','8','9'] :
+            if widget.__len__ == 1 :
+                print(widget)
                 #日付が合致していたらクリックする
                 if (widget == monthday_format[-1:]) & (color == 'rgba(33, 33, 33, 1)'):
                     dateset.click()
@@ -620,7 +620,10 @@ def test_AW03_03():
                         businessm_1st.click()
                     #選択をクリック
                     time.sleep(5)
-                    driver.find_element(By.XPATH,'/html/body/div[3]/div[3]/div/div[1]/button').click()            
+                    driver.find_element(By.XPATH,'/html/body/div[3]/div[3]/div/div[1]/button').click()
+                    #保存をクリック
+                    time.sleep(5)
+                    driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[1]/div[2]/div/div[7]/div[2]/button').click()                                
                     #保存して閉じますをクリック
                     time.sleep(5)
                     driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[2]/div[2]/div[1]/button').click()
@@ -648,11 +651,19 @@ def test_AW03_03():
                     #時刻を設定
                     for _ in range(59): #59分に設定
                         businessm_1st.click()            
+                    #選択をクリック
+                    time.sleep(5)
+                    driver.find_element(By.XPATH,'/html/body/div[3]/div[3]/div/div[1]/button').click()                    
+                    #保存をクリック
+                    time.sleep(5)
+                    driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[1]/div[2]/div/div[7]/div[2]/button').click()    
+                    
                     #保存して閉じますをクリック
                     time.sleep(5)
                     driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[2]/div[2]/div[1]/button').click()
                     time.sleep(10)
-                    flag = True  # フラグをTrueに設定    
+                    flag = True  # フラグをTrueに設定
+                    break;    
         if flag:  # フラグがTrueの場合、外側のループを抜ける
             break
 
@@ -684,7 +695,7 @@ def test_AW03_03():
     #23日
     #/html/body/div[3]/div[2]/div/div[1]/div/div[2]/div/div/div[3]/div[4]/div[2]
 
-#test_AW03_03()
+test_AW03_03()
 #AW03-03の終わり
 
 # [AW03-04]チャットの対応不可時間を設定する（毎日）Set chat unavailable hours (Daily)
@@ -824,7 +835,7 @@ def test_AW03_04():
     cur_url = driver.current_url
     driver.refresh()
     time.sleep(10)
-#test_AW03_04()
+test_AW03_04()
 #AW03-04の終わり
 
 # [AW03-05]チャットの対応不可時間を設定する（曜日）Set chat unavailable hours (day of the week)
@@ -1048,7 +1059,7 @@ def test_AW03_06():
             widgetcolor = driver.find_element(By.XPATH,setpathcolor)
             color = widgetcolor.value_of_css_property('color')
             #日付が1-9日の時とそうでない時の条件分岐
-            if widget in ['1','2','3','4','5','6','7','8','9'] :
+            if widget.__len__ == 1 :
                 #日付が合致していたらクリックする
                 if (widget == monthday_format[-1:]) & (color == 'rgba(33, 33, 33, 1)'):
                     dateset.click()
@@ -1097,7 +1108,10 @@ def test_AW03_06():
                     businessm_1st = wait.until(EC.visibility_of_element_located((By.XPATH,'/html/body/div[3]/div[2]/div/div[2]/div/div/div/div/div/div[3]/div[1]')))
                     #時刻を設定
                     for _ in range(59): #59分に設定
-                        businessm_1st.click()            
+                        businessm_1st.click()
+                    #選択をクリック
+                    time.sleep(5)
+                    driver.find_element(By.XPATH,'/html/body/div[3]/div[3]/div/div[1]/button').click()               
                     #保存して閉じますをクリック
                     time.sleep(5)
                     driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[2]/div[2]/div[1]/button').click()
@@ -1291,7 +1305,7 @@ def test_AW03_07():
             widgetcolor = driver.find_element(By.XPATH,setpathcolor)
             color = widgetcolor.value_of_css_property('color')
             #日付が1-9日の時とそうでない時の条件分岐
-            if widget in ['1','2','3','4','5','6','7','8','9'] :
+            if widget.__len__ == 1 :
                 #日付が合致していたらクリックする
                 if (widget == monthday_format[-1:]) & (color == 'rgba(33, 33, 33, 1)'):
                     dateset.click()
@@ -1340,7 +1354,10 @@ def test_AW03_07():
                     businessm_1st = wait.until(EC.visibility_of_element_located((By.XPATH,'/html/body/div[3]/div[2]/div/div[2]/div/div/div/div/div/div[3]/div[1]')))
                     #時刻を設定
                     for _ in range(59): #59分に設定
-                        businessm_1st.click()            
+                        businessm_1st.click()
+                    #選択をクリック
+                    time.sleep(5)
+                    driver.find_element(By.XPATH,'/html/body/div[3]/div[3]/div/div[1]/button').click()              
                     #保存して閉じますをクリック
                     time.sleep(5)
                     driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[2]/div[2]/div[1]/button').click()
@@ -1527,7 +1544,7 @@ def test_AW03_08():
         #時刻を設定
         for _ in range(59): #59分に設定
             businessm_1st.click()  
-                #選択をクリック
+        #選択をクリック
         time.sleep(5)
         driver.find_element(By.XPATH,'/html/body/div[3]/div[3]/div/div[1]/button').click()
 
@@ -1587,7 +1604,7 @@ def test_AW04_01():
         print(currentpage.text)
         
 
-test_AW04_01()
+#test_AW04_01()
 
 # [AW04-02]メール送信用フォームを営業時間外に表示設定する
 # https://jaqool.atlassian.net/browse/GPT-786
@@ -1638,7 +1655,7 @@ def test_AW04_02():
         print(unavailable_Staff_Mail_Destination.text) 
         print(time_Staff_Did_Not_Respond.text)
 
-test_AW04_02()
+#test_AW04_02()
 
 # [AW04-03]不在時メール送信先を設定する
 # https://jaqool.atlassian.net/browse/GPT-787
@@ -1672,7 +1689,7 @@ def test_AW04_03():
         print(mailaddress) 
         print(outoftime)
 
-test_AW04_03()
+#test_AW04_03()
 
 # [AW04-04]不在時メール送信先を追加する
 # https://jaqool.atlassian.net/browse/GPT-788
@@ -1686,7 +1703,7 @@ def test_AW04_04():
     if len(element) > 0:
         print("AW04-04 OK")
 
-test_AW04_04()
+#test_AW04_04()
 
 # [AW04-05]不在時メール送信先を削除する
 # https://jaqool.atlassian.net/browse/GPT-789
@@ -1699,7 +1716,7 @@ def test_AW04_05():
     if (mailaddress2 == "aw04_05@kotozna.com"):
         print("AW04-05 OK")
 
-test_AW04_05()
+#test_AW04_05()
 
 # [AW04-06]不在判定時間を設定する
 # https://jaqool.atlassian.net/browse/GPT-790
@@ -1717,4 +1734,4 @@ def test_AW04_06():
     if outoftime == "5":
         print("AW04-06 OK")
         
-test_AW04_06()
+#test_AW04_06()

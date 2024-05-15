@@ -1,0 +1,279 @@
+<testsuite name="admin.widget.6W_A03.AW03 Create New Widget Step ❷" tests="8" errors="3" failures="0" skipped="0" time="1144.258036" timestamp="2024-05-15T16:00:52.354100" hostname="Kentas-MacBook-Pro.local"><testcase classname="admin.widget.6W_A03.AW03 Create New Widget Step ❷" name="[AW03-01]チャットの営業可能時間を設定する（毎日） Set chat business hours (Daily)" status="passed" time="273.772131"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-776
+  Scenario: [AW03-01]チャットの営業可能時間を設定する（毎日） Set chat business hours (Daily)
+    Given 営業時間の設定画面が表示されている1 ... passed in 81.411s
+    When タイプのプルダウンから"受付時間"を選択1 ... passed in 5.090s
+    When タイトル欄に任意のタイトルを入力1 ... passed in 28.400s
+    When 対象のプルダウンから"毎日"を選択1 ... passed in 5.060s
+    When 開始/終了時間を設定1 ... passed in 17.466s
+    When "保存"を押下1 ... passed in 15.059s
+    Then このウィジェットから受付時間外にお問い合わせを送ると、受付可能時間メッセージ、またはメール送信用フォームが表示される（設定による）1 ... passed in 121.285s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="admin.widget.6W_A03.AW03 Create New Widget Step ❷" name="[AW03-02]チャットの営業可能時間を設定する（曜日）" status="passed" time="205.493855"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-777
+  Scenario: [AW03-02]チャットの営業可能時間を設定する（曜日）
+    Given 営業時間の設定画面が表示されている2 ... passed in 8.106s
+    When タイプのプルダウンから"受付時間"を選択2 ... passed in 20.361s
+    When タイトル欄に任意のタイトルを入力2 ... passed in 10.155s
+    When 対象のプルダウンから"曜日（優先度中）"を選択1 ... passed in 20.247s
+    When 曜日のプルダウンから任意の曜日を選択1 ... passed in 10.122s
+    When 開始/終了時間を設定2 ... passed in 5.144s
+    When "保存"を押下2 ... passed in 10.070s
+    Then このウィジェットから受付時間外にお問い合わせを送ると、受付可能時間メッセージ、またはメール送信用フォームが表示される（設定による）2 ... passed in 121.288s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="admin.widget.6W_A03.AW03 Create New Widget Step ❷" name="[AW03-03]チャットの営業可能時間を設定する（特定の日のみ)" status="passed" time="239.938276"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-778
+  Scenario: [AW03-03]チャットの営業可能時間を設定する（特定の日のみ)
+    Given 営業時間の設定画面が表示されている3 ... passed in 18.309s
+    When タイプのプルダウンから"受付時間"を選択3 ... passed in 10.158s
+    When タイトル欄に任意のタイトルを入力3 ... passed in 10.166s
+    When 対象のプルダウンから"日を指定（優先度高）"を選択1 ... passed in 15.132s
+    When 曜日のプルダウンから任意の日を選択1 ... passed in 15.173s
+    When 開始/終了時間を設定3 ... passed in 0.000s
+    When "保存"を押下3 ... passed in 39.935s
+    Then このウィジェットから受付時間外にお問い合わせを送ると、受付可能時間メッセージ、またはメール送信用フォームが表示される（設定による）3 ... passed in 131.066s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+chinchin
+
+]]>
+</system-out></testcase><testcase classname="admin.widget.6W_A03.AW03 Create New Widget Step ❷" name="[AW03-04]チャットの対応不可時間を設定する（毎日）Set chat unavailable hours (Daily)" status="passed" time="205.38197"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-779
+  Scenario: [AW03-04]チャットの対応不可時間を設定する（毎日）Set chat unavailable hours (Daily)
+    Given 営業時間の設定画面が表示されている4 ... passed in 18.334s
+    When タイプのプルダウンから"受付不可時間"を選択1 ... passed in 10.239s
+    When タイトル欄に任意のタイトルを入力4 ... passed in 3.134s
+    When 対象のプルダウンから"毎日"を選択2 ... passed in 20.281s
+    When 開始/終了時間を設定4 ... passed in 0.000s
+    When "保存"を押下4 ... passed in 32.232s
+    Then このウィジェットから受付時間外にお問い合わせを送ると、受付可能時間メッセージ、またはメール送信用フォームが表示される（設定による）4 ... passed in 121.162s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+chinchin
+
+]]>
+</system-out></testcase><testcase classname="admin.widget.6W_A03.AW03 Create New Widget Step ❷" name="[AW03-05]チャットの対応不可時間を設定する（曜日）Set chat unavailable hours (day of the week)" status="passed" time="218.456787"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-780
+  Scenario: [AW03-05]チャットの対応不可時間を設定する（曜日）Set chat unavailable hours (day of the week)
+    Given 営業時間の設定画面が表示されている5 ... passed in 19.088s
+    When タイプのプルダウンから"受付不可時間"を選択2 ... passed in 10.117s
+    When タイトル欄に任意のタイトルを入力5 ... passed in 10.119s
+    When 対象のプルダウンから"曜日（優先度中）"を選択2 ... passed in 15.123s
+    When 曜日のプルダウンから任意の曜日を選択2 ... passed in 5.075s
+    When 開始/終了時間を設定5 ... passed in 0.000s
+    When "保存"を押下5 ... passed in 37.800s
+    Then このウィジェットから受付時間外にお問い合わせを送ると、受付可能時間メッセージ、またはメール送信用フォームが表示される（設定による）5 ... passed in 121.135s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+chinchin
+
+]]>
+</system-out></testcase><testcase classname="admin.widget.6W_A03.AW03 Create New Widget Step ❷" name="[AW03-06]チャットの対応不可時間を設定する（特定の日のみ）Set chat unavailable hours (only on specific days)" status="failed" time="1.20147"><error type="ElementClickInterceptedException" message="Message: element click intercepted: Element &lt;button type=&quot;button&quot; class=&quot;v-btn v-btn--disabled v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-elevated app-button-content&quot; disabled=&quot;&quot; fab=&quot;false&quot; large=&quot;false&quot; outlined=&quot;false&quot; small=&quot;true&quot; x-large=&quot;false&quot; x-small=&quot;false&quot; data-v-2c14d385=&quot;&quot; style=&quot;height: 43px; min-width: fit-content; width: fit-content; background-color: rgb(252, 254, 255); color: rgb(151, 148, 148); cursor: pointer;&quot;&gt;...&lt;/button&gt; is not clickable at point (759, 775). Other element would receive the click: &lt;div class=&quot;app-button&quot; data-v-2c14d385=&quot;&quot; data-v-4288582d=&quot;&quot;&gt;...&lt;/div&gt;&#10;  (Session info: chrome=124.0.6367.203)&#10;Stacktrace:&#10;0   chromedriver                        0x00000001006e2940 chromedriver + 4368704&#10;1   chromedriver                        0x00000001006dadd4 chromedriver + 4337108&#10;2   chromedriver                        0x00000001002fec04 chromedriver + 289796&#10;3   chromedriver                        0x000000010034688c chromedriver + 583820&#10;4   chromedriver                        0x0000000100344e20 chromedriver + 577056&#10;5   chromedriver                        0x0000000100342fac chromedriver + 569260&#10;6   chromedriver                        0x000000010034213c chromedriver + 565564&#10;7   chromedriver                        0x0000000100337940 chromedriver + 522560&#10;8   chromedriver                        0x0000000100337368 chromedriver + 521064&#10;9   chromedriver                        0x00000001003795ec chromedriver + 792044&#10;10  chromedriver                        0x0000000100335ab4 chromedriver + 514740&#10;11  chromedriver                        0x000000010033650c chromedriver + 517388&#10;12  chromedriver                        0x00000001006a6e5c chromedriver + 4124252&#10;13  chromedriver                        0x00000001006abc4c chromedriver + 4144204&#10;14  chromedriver                        0x000000010068c824 chromedriver + 4016164&#10;15  chromedriver                        0x00000001006ac57c chromedriver + 4146556&#10;16  chromedriver                        0x000000010067e2d8 chromedriver + 3957464&#10;17  chromedriver                        0x00000001006cbec4 chromedriver + 4275908&#10;18  chromedriver                        0x00000001006cc040 chromedriver + 4276288&#10;19  chromedriver                        0x00000001006daa34 chromedriver + 4336180&#10;20  libsystem_pthread.dylib             0x000000018e18ef94 _pthread_start + 136&#10;21  libsystem_pthread.dylib             0x000000018e189d34 thread_start + 8">
+<![CDATA[
+Failing step: Given 営業時間の設定画面が表示されている6 ... failed in 1.201s
+Location: 6W_A03.feature:58
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/model.py", line 1812, in run
+    match.run(runner.context)
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/matchers.py", line 103, in run
+    self.func(context, *args, **kwargs)
+  File "../../steps/6W_A03.py", line 913, in step_given_display_business_hours_setting_screen
+    driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[2]/div[2]/div[2]/button').click()
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webelement.py", line 94, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webelement.py", line 395, in _execute
+    return self._parent.execute(command, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 347, in execute
+    self.error_handler.check_response(response)
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.ElementClickInterceptedException: Message: element click intercepted: Element <button type="button" class="v-btn v-btn--disabled v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-elevated app-button-content" disabled="" fab="false" large="false" outlined="false" small="true" x-large="false" x-small="false" data-v-2c14d385="" style="height: 43px; min-width: fit-content; width: fit-content; background-color: rgb(252, 254, 255); color: rgb(151, 148, 148); cursor: pointer;">...</button> is not clickable at point (759, 775). Other element would receive the click: <div class="app-button" data-v-2c14d385="" data-v-4288582d="">...</div>
+  (Session info: chrome=124.0.6367.203)
+Stacktrace:
+0   chromedriver                        0x00000001006e2940 chromedriver + 4368704
+1   chromedriver                        0x00000001006dadd4 chromedriver + 4337108
+2   chromedriver                        0x00000001002fec04 chromedriver + 289796
+3   chromedriver                        0x000000010034688c chromedriver + 583820
+4   chromedriver                        0x0000000100344e20 chromedriver + 577056
+5   chromedriver                        0x0000000100342fac chromedriver + 569260
+6   chromedriver                        0x000000010034213c chromedriver + 565564
+7   chromedriver                        0x0000000100337940 chromedriver + 522560
+8   chromedriver                        0x0000000100337368 chromedriver + 521064
+9   chromedriver                        0x00000001003795ec chromedriver + 792044
+10  chromedriver                        0x0000000100335ab4 chromedriver + 514740
+11  chromedriver                        0x000000010033650c chromedriver + 517388
+12  chromedriver                        0x00000001006a6e5c chromedriver + 4124252
+13  chromedriver                        0x00000001006abc4c chromedriver + 4144204
+14  chromedriver                        0x000000010068c824 chromedriver + 4016164
+15  chromedriver                        0x00000001006ac57c chromedriver + 4146556
+16  chromedriver                        0x000000010067e2d8 chromedriver + 3957464
+17  chromedriver                        0x00000001006cbec4 chromedriver + 4275908
+18  chromedriver                        0x00000001006cc040 chromedriver + 4276288
+19  chromedriver                        0x00000001006daa34 chromedriver + 4336180
+20  libsystem_pthread.dylib             0x000000018e18ef94 _pthread_start + 136
+21  libsystem_pthread.dylib             0x000000018e189d34 thread_start + 8
+
+]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-781
+  Scenario: [AW03-06]チャットの対応不可時間を設定する（特定の日のみ）Set chat unavailable hours (only on specific days)
+    Given 営業時間の設定画面が表示されている6 ... failed in 1.201s
+    When タイプのプルダウンから"受付不可時間"を選択3 ... skipped in 0.000s
+    When タイトル欄に任意のタイトルを入力6 ... skipped in 0.000s
+    When 対象のプルダウンから"日を指定（優先度高）"を選択2 ... skipped in 0.000s
+    When 曜日のプルダウンから任意の日を選択2 ... skipped in 0.000s
+    When 開始/終了時間を設定6 ... skipped in 0.000s
+    When "保存"を押下6 ... skipped in 0.000s
+    Then このウィジェットから受付時間外にお問い合わせを送ると、受付可能時間メッセージ、またはメール送信用フォームが表示される（設定による）6 ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="admin.widget.6W_A03.AW03 Create New Widget Step ❷" name="[AW03-07]営業不可時間を複数設定する Set multiple Out of Business Hours" status="failed" time="0.006741"><error type="NoSuchElementException" message="Message: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div/div[3]/div/table/tbody/tr[2]/td[7]/div/div/button&quot;}&#10;  (Session info: chrome=124.0.6367.203); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception&#10;Stacktrace:&#10;0   chromedriver                        0x00000001006e2940 chromedriver + 4368704&#10;1   chromedriver                        0x00000001006dadd4 chromedriver + 4337108&#10;2   chromedriver                        0x00000001002fec04 chromedriver + 289796&#10;3   chromedriver                        0x0000000100340e00 chromedriver + 560640&#10;4   chromedriver                        0x00000001003795ec chromedriver + 792044&#10;5   chromedriver                        0x0000000100335ab4 chromedriver + 514740&#10;6   chromedriver                        0x000000010033650c chromedriver + 517388&#10;7   chromedriver                        0x00000001006a6e5c chromedriver + 4124252&#10;8   chromedriver                        0x00000001006abc4c chromedriver + 4144204&#10;9   chromedriver                        0x000000010068c824 chromedriver + 4016164&#10;10  chromedriver                        0x00000001006ac57c chromedriver + 4146556&#10;11  chromedriver                        0x000000010067e2d8 chromedriver + 3957464&#10;12  chromedriver                        0x00000001006cbec4 chromedriver + 4275908&#10;13  chromedriver                        0x00000001006cc040 chromedriver + 4276288&#10;14  chromedriver                        0x00000001006daa34 chromedriver + 4336180&#10;15  libsystem_pthread.dylib             0x000000018e18ef94 _pthread_start + 136&#10;16  libsystem_pthread.dylib             0x000000018e189d34 thread_start + 8">
+<![CDATA[
+Failing step: Given 営業時間の設定画面が表示されている7 ... failed in 0.007s
+Location: 6W_A03.feature:69
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/model.py", line 1812, in run
+    match.run(runner.context)
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/matchers.py", line 103, in run
+    self.func(context, *args, **kwargs)
+  File "../../steps/6W_A03.py", line 1092, in step_impl
+    driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div/div[3]/div/table/tbody/tr[2]/td[7]/div/div/button').click()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 741, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 347, in execute
+    self.error_handler.check_response(response)
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div/div[3]/div/table/tbody/tr[2]/td[7]/div/div/button"}
+  (Session info: chrome=124.0.6367.203); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+0   chromedriver                        0x00000001006e2940 chromedriver + 4368704
+1   chromedriver                        0x00000001006dadd4 chromedriver + 4337108
+2   chromedriver                        0x00000001002fec04 chromedriver + 289796
+3   chromedriver                        0x0000000100340e00 chromedriver + 560640
+4   chromedriver                        0x00000001003795ec chromedriver + 792044
+5   chromedriver                        0x0000000100335ab4 chromedriver + 514740
+6   chromedriver                        0x000000010033650c chromedriver + 517388
+7   chromedriver                        0x00000001006a6e5c chromedriver + 4124252
+8   chromedriver                        0x00000001006abc4c chromedriver + 4144204
+9   chromedriver                        0x000000010068c824 chromedriver + 4016164
+10  chromedriver                        0x00000001006ac57c chromedriver + 4146556
+11  chromedriver                        0x000000010067e2d8 chromedriver + 3957464
+12  chromedriver                        0x00000001006cbec4 chromedriver + 4275908
+13  chromedriver                        0x00000001006cc040 chromedriver + 4276288
+14  chromedriver                        0x00000001006daa34 chromedriver + 4336180
+15  libsystem_pthread.dylib             0x000000018e18ef94 _pthread_start + 136
+16  libsystem_pthread.dylib             0x000000018e189d34 thread_start + 8
+
+]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-782
+  Scenario: [AW03-07]営業不可時間を複数設定する Set multiple Out of Business Hours
+    Given 営業時間の設定画面が表示されている7 ... failed in 0.007s
+    Given 設定タイプが"営業不可時間"になっている ... skipped in 0.000s
+    When 「曜日」と「特定の日」を設定する(優先度：高) ... skipped in 0.000s
+    When 特定日について、受付時間内に設定する 例）4/10(月) 11:00にアクセスする場合は4/10の10:00 - 20:00 ... skipped in 0.000s
+    When 「曜日」と「特定の日」を設定する(優先度：中) ... skipped in 0.000s
+    When 曜日について、受付時間内に設定する 例）4/10(月) 11:00にアクセスする場合は火〜日の10:00 - 20:00 ... skipped in 0.000s
+    Then このウィジェットから受付時間外にお問い合わせを送ると、受付時間外メッセージが表示される(添付画像参照)7 ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="admin.widget.6W_A03.AW03 Create New Widget Step ❷" name="[AW03-08]営業可能時間を複数設定する" status="failed" time="0.006806"><error type="NoSuchElementException" message="Message: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div/div[3]/div/table/tbody/tr[2]/td[7]/div/div/button&quot;}&#10;  (Session info: chrome=124.0.6367.203); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception&#10;Stacktrace:&#10;0   chromedriver                        0x00000001006e2940 chromedriver + 4368704&#10;1   chromedriver                        0x00000001006dadd4 chromedriver + 4337108&#10;2   chromedriver                        0x00000001002fec04 chromedriver + 289796&#10;3   chromedriver                        0x0000000100340e00 chromedriver + 560640&#10;4   chromedriver                        0x00000001003795ec chromedriver + 792044&#10;5   chromedriver                        0x0000000100335ab4 chromedriver + 514740&#10;6   chromedriver                        0x000000010033650c chromedriver + 517388&#10;7   chromedriver                        0x00000001006a6e5c chromedriver + 4124252&#10;8   chromedriver                        0x00000001006abc4c chromedriver + 4144204&#10;9   chromedriver                        0x000000010068c824 chromedriver + 4016164&#10;10  chromedriver                        0x00000001006ac57c chromedriver + 4146556&#10;11  chromedriver                        0x000000010067e2d8 chromedriver + 3957464&#10;12  chromedriver                        0x00000001006cbec4 chromedriver + 4275908&#10;13  chromedriver                        0x00000001006cc040 chromedriver + 4276288&#10;14  chromedriver                        0x00000001006daa34 chromedriver + 4336180&#10;15  libsystem_pthread.dylib             0x000000018e18ef94 _pthread_start + 136&#10;16  libsystem_pthread.dylib             0x000000018e189d34 thread_start + 8">
+<![CDATA[
+Failing step: Given 営業時間の設定画面が表示されている8 ... failed in 0.007s
+Location: 6W_A03.feature:79
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/model.py", line 1812, in run
+    match.run(runner.context)
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/matchers.py", line 103, in run
+    self.func(context, *args, **kwargs)
+  File "../../steps/6W_A03.py", line 1353, in step_display_business_hours_setting_screen
+    driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div/div[3]/div/table/tbody/tr[2]/td[7]/div/div/button').click()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 741, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 347, in execute
+    self.error_handler.check_response(response)
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div/div[3]/div/table/tbody/tr[2]/td[7]/div/div/button"}
+  (Session info: chrome=124.0.6367.203); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+0   chromedriver                        0x00000001006e2940 chromedriver + 4368704
+1   chromedriver                        0x00000001006dadd4 chromedriver + 4337108
+2   chromedriver                        0x00000001002fec04 chromedriver + 289796
+3   chromedriver                        0x0000000100340e00 chromedriver + 560640
+4   chromedriver                        0x00000001003795ec chromedriver + 792044
+5   chromedriver                        0x0000000100335ab4 chromedriver + 514740
+6   chromedriver                        0x000000010033650c chromedriver + 517388
+7   chromedriver                        0x00000001006a6e5c chromedriver + 4124252
+8   chromedriver                        0x00000001006abc4c chromedriver + 4144204
+9   chromedriver                        0x000000010068c824 chromedriver + 4016164
+10  chromedriver                        0x00000001006ac57c chromedriver + 4146556
+11  chromedriver                        0x000000010067e2d8 chromedriver + 3957464
+12  chromedriver                        0x00000001006cbec4 chromedriver + 4275908
+13  chromedriver                        0x00000001006cc040 chromedriver + 4276288
+14  chromedriver                        0x00000001006daa34 chromedriver + 4336180
+15  libsystem_pthread.dylib             0x000000018e18ef94 _pthread_start + 136
+16  libsystem_pthread.dylib             0x000000018e189d34 thread_start + 8
+
+]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-783
+  Scenario: [AW03-08]営業可能時間を複数設定する
+    Given 営業時間の設定画面が表示されている8 ... failed in 0.007s
+    When 営業可能時間を1日の中で複数設定する。営業可能時間を設定 例）4/10(月) 13:00にアクセスする場合は毎日の10:00 - 13:00 ... skipped in 0.000s
+    When 営業可能時間を1日の中で複数設定する。営業外時間を設定 例）4/10(月) 13:00にアクセスする場合はの毎日の14:00 - 20:00 ... skipped in 0.000s
+    Then このウィジェットから受付時間外にお問い合わせを送ると、受付時間外メッセージが表示される8 ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase></testsuite>
