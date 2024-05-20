@@ -1,0 +1,32 @@
+<testsuite name="admin.widget.6W_A01.新規ウィジェットを作成する Create a new widget" tests="2" errors="0" failures="0" skipped="0" time="45.307715" timestamp="2024-05-20T17:14:31.179205" hostname="Kentas-MacBook-Pro.local"><testcase classname="admin.widget.6W_A01.新規ウィジェットを作成する Create a new widget" name="A11-01ウィジェット設定画面を開く Open the widget setting screen" status="passed" time="40.262311"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-328
+  Scenario: A11-01ウィジェット設定画面を開く Open the widget setting screen
+    Given 基本設定の画面が表示されている2 The basic setting screen is displayed ... passed in 35.079s
+    When 左のメニューバーから「ウィジェット設定」をクリックする Click "Widget Settings" from the left menu bar ... passed in 5.104s
+    Then 現在登録されているウィジェット一覧が表示されるA list of currently registered widgets is displayed. ... passed in 0.052s
+    And GPTと連携しているウィジェットのGPTステータスにはcheckが入っている ... passed in 0.027s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="admin.widget.6W_A01.新規ウィジェットを作成する Create a new widget" name="A11-02新規ウィジェット作成画面に進む Go to the new widget creation screen" status="passed" time="5.045404"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-329
+  Scenario: A11-02新規ウィジェット作成画面に進む Go to the new widget creation screen
+    Given 現在登録されているウィジェット一覧が表示されているA list of currently registered widgets is displayed. ... passed in 0.000s
+    When 右上の追加ボタンをクリックするClick the add button in the upper right ... passed in 5.041s
+    Then 「1担当グループ」から「8スニペット」までの登録面に遷移するTransition to the registration side from "1charge group" to "7 snippet" ... passed in 0.004s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+<behave.runner.Context object at 0x102e692d0>
+
+]]>
+</system-out></testcase></testsuite>

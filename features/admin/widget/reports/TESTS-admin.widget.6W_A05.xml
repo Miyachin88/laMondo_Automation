@@ -1,0 +1,117 @@
+<testsuite name="admin.widget.6W_A05.AW05Create New Widget Step ❹　ゲストによる評価設定" tests="4" errors="1" failures="0" skipped="0" time="53.465069" timestamp="2024-05-20T17:36:07.477164" hostname="Kentas-MacBook-Pro.local"><testcase classname="admin.widget.6W_A05.AW05Create New Widget Step ❹　ゲストによる評価設定" name="[AW05-01]メッセージ評価をONにする / Turn on Message Rating" status="failed" time="44.458163"><error type="ElementClickInterceptedException" message="Message: element click intercepted: Element &lt;button type=&quot;button&quot; class=&quot;v-btn v-btn--disabled v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-elevated app-button-content&quot; disabled=&quot;&quot; fab=&quot;false&quot; large=&quot;false&quot; outlined=&quot;false&quot; small=&quot;true&quot; x-large=&quot;false&quot; x-small=&quot;false&quot; data-v-2c14d385=&quot;&quot; style=&quot;height: 43px; min-width: fit-content; width: fit-content; background-color: rgb(252, 254, 255); color: rgb(151, 148, 148); cursor: pointer;&quot;&gt;...&lt;/button&gt; is not clickable at point (759, 610). Other element would receive the click: &lt;div class=&quot;app-button&quot; data-v-2c14d385=&quot;&quot; data-v-4288582d=&quot;&quot;&gt;...&lt;/div&gt;&#10;  (Session info: chrome=125.0.6422.61)&#10;Stacktrace:&#10;0   chromedriver                        0x000000010314e4a0 chromedriver + 4301984&#10;1   chromedriver                        0x0000000103146de8 chromedriver + 4271592&#10;2   chromedriver                        0x0000000102d7819c chromedriver + 278940&#10;3   chromedriver                        0x0000000102dbfd48 chromedriver + 572744&#10;4   chromedriver                        0x0000000102dbe2ec chromedriver + 565996&#10;5   chromedriver                        0x0000000102dbc47c chromedriver + 558204&#10;6   chromedriver                        0x0000000102dbb9cc chromedriver + 555468&#10;7   chromedriver                        0x0000000102db0e24 chromedriver + 511524&#10;8   chromedriver                        0x0000000102db085c chromedriver + 510044&#10;9   chromedriver                        0x0000000102df2c5c chromedriver + 781404&#10;10  chromedriver                        0x0000000102daf004 chromedriver + 503812&#10;11  chromedriver                        0x0000000102daf9ec chromedriver + 506348&#10;12  chromedriver                        0x00000001031164e8 chromedriver + 4072680&#10;13  chromedriver                        0x000000010311af94 chromedriver + 4091796&#10;14  chromedriver                        0x00000001030fd72c chromedriver + 3970860&#10;15  chromedriver                        0x000000010311b87c chromedriver + 4094076&#10;16  chromedriver                        0x00000001030f06ac chromedriver + 3917484&#10;17  chromedriver                        0x0000000103138ae0 chromedriver + 4213472&#10;18  chromedriver                        0x0000000103138c5c chromedriver + 4213852&#10;19  chromedriver                        0x00000001031469e0 chromedriver + 4270560&#10;20  libsystem_pthread.dylib             0x000000019d152f94 _pthread_start + 136&#10;21  libsystem_pthread.dylib             0x000000019d14dd34 thread_start + 8">
+<![CDATA[
+Failing step: Given Tenant Admin Panel Guest Rating setting is displayed/ ゲストによる評価設定画面を開いている ... failed in 44.458s
+Location: 6W_A05.feature:7
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/model.py", line 1812, in run
+    match.run(runner.context)
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/matchers.py", line 103, in run
+    self.func(context, *args, **kwargs)
+  File "../../steps/6W_A05.py", line 154, in chinsara_G
+    loginAdmin()
+  File "../../steps/6W_A05.py", line 88, in loginAdmin
+    driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[2]/div[2]/div[2]/button').click()
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webelement.py", line 94, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webelement.py", line 395, in _execute
+    return self._parent.execute(command, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 347, in execute
+    self.error_handler.check_response(response)
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.ElementClickInterceptedException: Message: element click intercepted: Element <button type="button" class="v-btn v-btn--disabled v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-elevated app-button-content" disabled="" fab="false" large="false" outlined="false" small="true" x-large="false" x-small="false" data-v-2c14d385="" style="height: 43px; min-width: fit-content; width: fit-content; background-color: rgb(252, 254, 255); color: rgb(151, 148, 148); cursor: pointer;">...</button> is not clickable at point (759, 610). Other element would receive the click: <div class="app-button" data-v-2c14d385="" data-v-4288582d="">...</div>
+  (Session info: chrome=125.0.6422.61)
+Stacktrace:
+0   chromedriver                        0x000000010314e4a0 chromedriver + 4301984
+1   chromedriver                        0x0000000103146de8 chromedriver + 4271592
+2   chromedriver                        0x0000000102d7819c chromedriver + 278940
+3   chromedriver                        0x0000000102dbfd48 chromedriver + 572744
+4   chromedriver                        0x0000000102dbe2ec chromedriver + 565996
+5   chromedriver                        0x0000000102dbc47c chromedriver + 558204
+6   chromedriver                        0x0000000102dbb9cc chromedriver + 555468
+7   chromedriver                        0x0000000102db0e24 chromedriver + 511524
+8   chromedriver                        0x0000000102db085c chromedriver + 510044
+9   chromedriver                        0x0000000102df2c5c chromedriver + 781404
+10  chromedriver                        0x0000000102daf004 chromedriver + 503812
+11  chromedriver                        0x0000000102daf9ec chromedriver + 506348
+12  chromedriver                        0x00000001031164e8 chromedriver + 4072680
+13  chromedriver                        0x000000010311af94 chromedriver + 4091796
+14  chromedriver                        0x00000001030fd72c chromedriver + 3970860
+15  chromedriver                        0x000000010311b87c chromedriver + 4094076
+16  chromedriver                        0x00000001030f06ac chromedriver + 3917484
+17  chromedriver                        0x0000000103138ae0 chromedriver + 4213472
+18  chromedriver                        0x0000000103138c5c chromedriver + 4213852
+19  chromedriver                        0x00000001031469e0 chromedriver + 4270560
+20  libsystem_pthread.dylib             0x000000019d152f94 _pthread_start + 136
+21  libsystem_pthread.dylib             0x000000019d14dd34 thread_start + 8
+
+]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-335 @BDD_autmation @ZFJ_Automation
+  Scenario: [AW05-01]メッセージ評価をONにする / Turn on Message Rating
+    Given Tenant Admin Panel Guest Rating setting is displayed/ ゲストによる評価設定画面を開いている ... failed in 44.458s
+    When Turn on "Message Rating"/ メッセージ評価を利用するのスイッチをONにする ... skipped in 0.000s
+    Then In Guest Screen, each message from GPT has clickable "thumbs up/down"/ ゲスト画面では、GPTからの返信毎にいいね！ボタンが表示される ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="admin.widget.6W_A05.AW05Create New Widget Step ❹　ゲストによる評価設定" name="[AW05-02]ゲストによる評価をONにする Turn &quot;Guest Rating&quot; option ON" status="passed" time="3.002291"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-336 @BDD_autmation @ZFJ_Automation
+  Scenario: [AW05-02]ゲストによる評価をONにする Turn "Guest Rating" option ON
+    Given ❹ゲストによる評価画面で、「ゲストによる評価を利用する」トグルがオフになっている/❹Guest Rating screen is displayed with Guest rating automatically off ... passed in 0.000s
+    When トグルをオンにする/Switch toggle to "ON" ... passed in 3.002s
+    Then ゲスト評価のデザイン選択肢が表示される/The four candidates of the design are displayed on the admin panel ... passed in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+<behave.runner.Context object at 0x102e692d0>
+<behave.runner.Context object at 0x102e692d0>
+
+]]>
+</system-out></testcase><testcase classname="admin.widget.6W_A05.AW05Create New Widget Step ❹　ゲストによる評価設定" name="[AW05-03]「５アイコン」に設定する If ON, Set Guest Rating to &quot;5 icons&quot;" status="passed" time="3.00345"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-337 @BDD_autmation @ZFJ_Automation
+  Scenario: [AW05-03]「５アイコン」に設定する If ON, Set Guest Rating to "5 icons"
+    Given ❹ゲストによる評価画面におり、トグルがオンになっている1/Guest Rating is turned on ... passed in 0.000s
+    When 「５アイコン」を選択する/Select "5 Icon" ... passed in 3.003s
+    Then 管理画面ではサンプルが表示され、ゲスト画面で会話終了後に５段階評価のアイコンが表示される/Guest rating survey is set to rate chat between 5 icons, display sample of "5 Icon" is automatically displayed ... passed in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+<behave.runner.Context object at 0x102e692d0>
+<behave.runner.Context object at 0x102e692d0>
+
+]]>
+</system-out></testcase><testcase classname="admin.widget.6W_A05.AW05Create New Widget Step ❹　ゲストによる評価設定" name="[AW05-04]「 星」に設定する If ON, Set Guest Rating to &quot;Stars&quot;" status="passed" time="3.001165"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-338 @BDD_autmation @ZFJ_Automation
+  Scenario: [AW05-04]「 星」に設定する If ON, Set Guest Rating to "Stars"
+    Given ❹ゲストによる評価画面におり、トグルがオンになっている2/Guest Rating is turned on ... passed in 0.000s
+    When 「星」を選択する/Select "Emoji" ... passed in 3.001s
+    Then 管理画面ではサンプルが表示され、ゲスト画面で会話終了後に星5段階評価のアイコンが表示されるGuest rating survey is set to rate chat between 5 icons, display sample of "Emoji" is automatically displayed ... passed in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+<behave.runner.Context object at 0x102e692d0>
+<behave.runner.Context object at 0x102e692d0>
+
+]]>
+</system-out></testcase></testsuite>

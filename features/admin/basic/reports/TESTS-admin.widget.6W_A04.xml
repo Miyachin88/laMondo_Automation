@@ -1,0 +1,341 @@
+<testsuite name="admin.widget.6W_A04.Create New Widget Step ❸　不在時のメール受信設定" tests="6" errors="6" failures="0" skipped="0" time="50.50471" timestamp="2024-05-15T20:06:40.872765" hostname="Kentas-MBP"><testcase classname="admin.widget.6W_A04.Create New Widget Step ❸　不在時のメール受信設定" name="[AW04-01]不在時のメール受信設定画面に移動する Move to Out of Business Hours Behavior Setting screen" status="failed" time="40.46733"><error type="NoSuchElementException" message="Message: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div/div[3]/div/table/tbody/tr[2]/td[7]/div/div/button&quot;}&#10;  (Session info: chrome=124.0.6367.203); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception&#10;Stacktrace:&#10;0   chromedriver                        0x00000001050da940 chromedriver + 4368704&#10;1   chromedriver                        0x00000001050d2dd4 chromedriver + 4337108&#10;2   chromedriver                        0x0000000104cf6c04 chromedriver + 289796&#10;3   chromedriver                        0x0000000104d38e00 chromedriver + 560640&#10;4   chromedriver                        0x0000000104d715ec chromedriver + 792044&#10;5   chromedriver                        0x0000000104d2dab4 chromedriver + 514740&#10;6   chromedriver                        0x0000000104d2e50c chromedriver + 517388&#10;7   chromedriver                        0x000000010509ee5c chromedriver + 4124252&#10;8   chromedriver                        0x00000001050a3c4c chromedriver + 4144204&#10;9   chromedriver                        0x0000000105084824 chromedriver + 4016164&#10;10  chromedriver                        0x00000001050a457c chromedriver + 4146556&#10;11  chromedriver                        0x00000001050762d8 chromedriver + 3957464&#10;12  chromedriver                        0x00000001050c3ec4 chromedriver + 4275908&#10;13  chromedriver                        0x00000001050c4040 chromedriver + 4276288&#10;14  chromedriver                        0x00000001050d2a34 chromedriver + 4336180&#10;15  libsystem_pthread.dylib             0x000000019b926f94 _pthread_start + 136&#10;16  libsystem_pthread.dylib             0x000000019b921d34 thread_start + 8">
+<![CDATA[
+Failing step: Given 営業時間の設定画面が表示されている ... failed in 40.467s
+Location: ../widget/6W_A04.feature:6
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/model.py", line 1812, in run
+    match.run(runner.context)
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/matchers.py", line 103, in run
+    self.func(context, *args, **kwargs)
+  File "../../steps/6W_A04.py", line 148, in step_impl
+    loginAdmin()
+  File "../../steps/6W_A04.py", line 87, in loginAdmin
+    driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div/div[3]/div/table/tbody/tr[2]/td[7]/div/div/button').click()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 741, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 347, in execute
+    self.error_handler.check_response(response)
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div/div[3]/div/table/tbody/tr[2]/td[7]/div/div/button"}
+  (Session info: chrome=124.0.6367.203); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+0   chromedriver                        0x00000001050da940 chromedriver + 4368704
+1   chromedriver                        0x00000001050d2dd4 chromedriver + 4337108
+2   chromedriver                        0x0000000104cf6c04 chromedriver + 289796
+3   chromedriver                        0x0000000104d38e00 chromedriver + 560640
+4   chromedriver                        0x0000000104d715ec chromedriver + 792044
+5   chromedriver                        0x0000000104d2dab4 chromedriver + 514740
+6   chromedriver                        0x0000000104d2e50c chromedriver + 517388
+7   chromedriver                        0x000000010509ee5c chromedriver + 4124252
+8   chromedriver                        0x00000001050a3c4c chromedriver + 4144204
+9   chromedriver                        0x0000000105084824 chromedriver + 4016164
+10  chromedriver                        0x00000001050a457c chromedriver + 4146556
+11  chromedriver                        0x00000001050762d8 chromedriver + 3957464
+12  chromedriver                        0x00000001050c3ec4 chromedriver + 4275908
+13  chromedriver                        0x00000001050c4040 chromedriver + 4276288
+14  chromedriver                        0x00000001050d2a34 chromedriver + 4336180
+15  libsystem_pthread.dylib             0x000000019b926f94 _pthread_start + 136
+16  libsystem_pthread.dylib             0x000000019b921d34 thread_start + 8
+
+]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-785 @ZFJ_Automation
+  Scenario: [AW04-01]不在時のメール受信設定画面に移動する Move to Out of Business Hours Behavior Setting screen
+    Given 営業時間の設定画面が表示されている ... failed in 40.467s
+    When 右下の「保存して次へ」をクリックする ... skipped in 0.000s
+    Then 「不在時のメール受信設定」画面が表示される ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="admin.widget.6W_A04.Create New Widget Step ❸　不在時のメール受信設定" name="[AW04-02]メール送信用フォームを営業時間外に表示設定する Set Email inquiries when staff are unavailable (Outside Business Hours)" status="failed" time="10.011525"><error type="NoSuchElementException" message="Message: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div/div[1]/div[1]/div[1]/div/div/div/input&quot;}&#10;  (Session info: chrome=124.0.6367.203); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception&#10;Stacktrace:&#10;0   chromedriver                        0x00000001050da940 chromedriver + 4368704&#10;1   chromedriver                        0x00000001050d2dd4 chromedriver + 4337108&#10;2   chromedriver                        0x0000000104cf6c04 chromedriver + 289796&#10;3   chromedriver                        0x0000000104d38e00 chromedriver + 560640&#10;4   chromedriver                        0x0000000104d715ec chromedriver + 792044&#10;5   chromedriver                        0x0000000104d2dab4 chromedriver + 514740&#10;6   chromedriver                        0x0000000104d2e50c chromedriver + 517388&#10;7   chromedriver                        0x000000010509ee5c chromedriver + 4124252&#10;8   chromedriver                        0x00000001050a3c4c chromedriver + 4144204&#10;9   chromedriver                        0x0000000105084824 chromedriver + 4016164&#10;10  chromedriver                        0x00000001050a457c chromedriver + 4146556&#10;11  chromedriver                        0x00000001050762d8 chromedriver + 3957464&#10;12  chromedriver                        0x00000001050c3ec4 chromedriver + 4275908&#10;13  chromedriver                        0x00000001050c4040 chromedriver + 4276288&#10;14  chromedriver                        0x00000001050d2a34 chromedriver + 4336180&#10;15  libsystem_pthread.dylib             0x000000019b926f94 _pthread_start + 136&#10;16  libsystem_pthread.dylib             0x000000019b921d34 thread_start + 8">
+<![CDATA[
+Failing step: Given 「不在時のメール受信設定」画面が表示されている1 ... failed in 10.012s
+Location: ../widget/6W_A04.feature:13
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/model.py", line 1812, in run
+    match.run(runner.context)
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/matchers.py", line 103, in run
+    self.func(context, *args, **kwargs)
+  File "../../steps/6W_A04.py", line 171, in step_impl
+    outofbusihour = driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div/div[1]/div[1]/div[1]/div/div/div/input')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 741, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 347, in execute
+    self.error_handler.check_response(response)
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div/div[1]/div[1]/div[1]/div/div/div/input"}
+  (Session info: chrome=124.0.6367.203); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+0   chromedriver                        0x00000001050da940 chromedriver + 4368704
+1   chromedriver                        0x00000001050d2dd4 chromedriver + 4337108
+2   chromedriver                        0x0000000104cf6c04 chromedriver + 289796
+3   chromedriver                        0x0000000104d38e00 chromedriver + 560640
+4   chromedriver                        0x0000000104d715ec chromedriver + 792044
+5   chromedriver                        0x0000000104d2dab4 chromedriver + 514740
+6   chromedriver                        0x0000000104d2e50c chromedriver + 517388
+7   chromedriver                        0x000000010509ee5c chromedriver + 4124252
+8   chromedriver                        0x00000001050a3c4c chromedriver + 4144204
+9   chromedriver                        0x0000000105084824 chromedriver + 4016164
+10  chromedriver                        0x00000001050a457c chromedriver + 4146556
+11  chromedriver                        0x00000001050762d8 chromedriver + 3957464
+12  chromedriver                        0x00000001050c3ec4 chromedriver + 4275908
+13  chromedriver                        0x00000001050c4040 chromedriver + 4276288
+14  chromedriver                        0x00000001050d2a34 chromedriver + 4336180
+15  libsystem_pthread.dylib             0x000000019b926f94 _pthread_start + 136
+16  libsystem_pthread.dylib             0x000000019b921d34 thread_start + 8
+
+]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-786 @ZFJ_Automation
+  Scenario: [AW04-02]メール送信用フォームを営業時間外に表示設定する Set Email inquiries when staff are unavailable (Outside Business Hours)
+    Given 「不在時のメール受信設定」画面が表示されている1 ... failed in 10.012s
+    When 「営業時間外」のチェックボックスに✓を入れる ... skipped in 0.000s
+    Then 「不在時メール送信先」と「不在判定時間」の入力が可能になる ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="admin.widget.6W_A04.Create New Widget Step ❸　不在時のメール受信設定" name="[AW04-03]不在時メール送信先を設定する Set  &quot;Unavailable Staff Mail Destination&quot;" status="failed" time="0.006093"><error type="NoSuchElementException" message="Message: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[1]/div[2]/div[1]/div[1]/div/div/div/input&quot;}&#10;  (Session info: chrome=124.0.6367.203); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception&#10;Stacktrace:&#10;0   chromedriver                        0x00000001050da940 chromedriver + 4368704&#10;1   chromedriver                        0x00000001050d2dd4 chromedriver + 4337108&#10;2   chromedriver                        0x0000000104cf6c04 chromedriver + 289796&#10;3   chromedriver                        0x0000000104d38e00 chromedriver + 560640&#10;4   chromedriver                        0x0000000104d715ec chromedriver + 792044&#10;5   chromedriver                        0x0000000104d2dab4 chromedriver + 514740&#10;6   chromedriver                        0x0000000104d2e50c chromedriver + 517388&#10;7   chromedriver                        0x000000010509ee5c chromedriver + 4124252&#10;8   chromedriver                        0x00000001050a3c4c chromedriver + 4144204&#10;9   chromedriver                        0x0000000105084824 chromedriver + 4016164&#10;10  chromedriver                        0x00000001050a457c chromedriver + 4146556&#10;11  chromedriver                        0x00000001050762d8 chromedriver + 3957464&#10;12  chromedriver                        0x00000001050c3ec4 chromedriver + 4275908&#10;13  chromedriver                        0x00000001050c4040 chromedriver + 4276288&#10;14  chromedriver                        0x00000001050d2a34 chromedriver + 4336180&#10;15  libsystem_pthread.dylib             0x000000019b926f94 _pthread_start + 136&#10;16  libsystem_pthread.dylib             0x000000019b921d34 thread_start + 8">
+<![CDATA[
+Failing step: Given 「不在時メール送信先」入力欄が表示されている ... failed in 0.006s
+Location: ../widget/6W_A04.feature:20
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/model.py", line 1812, in run
+    match.run(runner.context)
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/matchers.py", line 103, in run
+    self.func(context, *args, **kwargs)
+  File "../../steps/6W_A04.py", line 213, in step_impl
+    staffunavailable = driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[1]/div[2]/div[1]/div[1]/div/div/div/input')
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 741, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 347, in execute
+    self.error_handler.check_response(response)
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[1]/div[2]/div[1]/div[1]/div/div/div/input"}
+  (Session info: chrome=124.0.6367.203); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+0   chromedriver                        0x00000001050da940 chromedriver + 4368704
+1   chromedriver                        0x00000001050d2dd4 chromedriver + 4337108
+2   chromedriver                        0x0000000104cf6c04 chromedriver + 289796
+3   chromedriver                        0x0000000104d38e00 chromedriver + 560640
+4   chromedriver                        0x0000000104d715ec chromedriver + 792044
+5   chromedriver                        0x0000000104d2dab4 chromedriver + 514740
+6   chromedriver                        0x0000000104d2e50c chromedriver + 517388
+7   chromedriver                        0x000000010509ee5c chromedriver + 4124252
+8   chromedriver                        0x00000001050a3c4c chromedriver + 4144204
+9   chromedriver                        0x0000000105084824 chromedriver + 4016164
+10  chromedriver                        0x00000001050a457c chromedriver + 4146556
+11  chromedriver                        0x00000001050762d8 chromedriver + 3957464
+12  chromedriver                        0x00000001050c3ec4 chromedriver + 4275908
+13  chromedriver                        0x00000001050c4040 chromedriver + 4276288
+14  chromedriver                        0x00000001050d2a34 chromedriver + 4336180
+15  libsystem_pthread.dylib             0x000000019b926f94 _pthread_start + 136
+16  libsystem_pthread.dylib             0x000000019b921d34 thread_start + 8
+
+]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-787 @ZFJ_Automation
+  Scenario: [AW04-03]不在時メール送信先を設定する Set  "Unavailable Staff Mail Destination"
+    Given 「不在時メール送信先」入力欄が表示されている ... failed in 0.006s
+    When 入力欄にメールアドレスを入れる ... skipped in 0.000s
+    When 不在判定時間に1-10までの数字を半角で入力する1 ... skipped in 0.000s
+    Then 入力値が表示されている（未保存） ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="admin.widget.6W_A04.Create New Widget Step ❸　不在時のメール受信設定" name="[AW04-04]不在時メール送信先を追加する Add  &quot;Unavailable Staff Mail Destination&quot;" status="failed" time="0.006446"><error type="NoSuchElementException" message="Message: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[2]/div[2]/button&quot;}&#10;  (Session info: chrome=124.0.6367.203); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception&#10;Stacktrace:&#10;0   chromedriver                        0x00000001050da940 chromedriver + 4368704&#10;1   chromedriver                        0x00000001050d2dd4 chromedriver + 4337108&#10;2   chromedriver                        0x0000000104cf6c04 chromedriver + 289796&#10;3   chromedriver                        0x0000000104d38e00 chromedriver + 560640&#10;4   chromedriver                        0x0000000104d715ec chromedriver + 792044&#10;5   chromedriver                        0x0000000104d2dab4 chromedriver + 514740&#10;6   chromedriver                        0x0000000104d2e50c chromedriver + 517388&#10;7   chromedriver                        0x000000010509ee5c chromedriver + 4124252&#10;8   chromedriver                        0x00000001050a3c4c chromedriver + 4144204&#10;9   chromedriver                        0x0000000105084824 chromedriver + 4016164&#10;10  chromedriver                        0x00000001050a457c chromedriver + 4146556&#10;11  chromedriver                        0x00000001050762d8 chromedriver + 3957464&#10;12  chromedriver                        0x00000001050c3ec4 chromedriver + 4275908&#10;13  chromedriver                        0x00000001050c4040 chromedriver + 4276288&#10;14  chromedriver                        0x00000001050d2a34 chromedriver + 4336180&#10;15  libsystem_pthread.dylib             0x000000019b926f94 _pthread_start + 136&#10;16  libsystem_pthread.dylib             0x000000019b921d34 thread_start + 8">
+<![CDATA[
+Failing step: Given 「不在時のメール受信設定」画面が表示されている2 ... failed in 0.006s
+Location: ../widget/6W_A04.feature:28
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/model.py", line 1812, in run
+    match.run(runner.context)
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/matchers.py", line 103, in run
+    self.func(context, *args, **kwargs)
+  File "../../steps/6W_A04.py", line 253, in step_impl
+    driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[2]/div[2]/button').click()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 741, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 347, in execute
+    self.error_handler.check_response(response)
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[2]/div[2]/button"}
+  (Session info: chrome=124.0.6367.203); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+0   chromedriver                        0x00000001050da940 chromedriver + 4368704
+1   chromedriver                        0x00000001050d2dd4 chromedriver + 4337108
+2   chromedriver                        0x0000000104cf6c04 chromedriver + 289796
+3   chromedriver                        0x0000000104d38e00 chromedriver + 560640
+4   chromedriver                        0x0000000104d715ec chromedriver + 792044
+5   chromedriver                        0x0000000104d2dab4 chromedriver + 514740
+6   chromedriver                        0x0000000104d2e50c chromedriver + 517388
+7   chromedriver                        0x000000010509ee5c chromedriver + 4124252
+8   chromedriver                        0x00000001050a3c4c chromedriver + 4144204
+9   chromedriver                        0x0000000105084824 chromedriver + 4016164
+10  chromedriver                        0x00000001050a457c chromedriver + 4146556
+11  chromedriver                        0x00000001050762d8 chromedriver + 3957464
+12  chromedriver                        0x00000001050c3ec4 chromedriver + 4275908
+13  chromedriver                        0x00000001050c4040 chromedriver + 4276288
+14  chromedriver                        0x00000001050d2a34 chromedriver + 4336180
+15  libsystem_pthread.dylib             0x000000019b926f94 _pthread_start + 136
+16  libsystem_pthread.dylib             0x000000019b921d34 thread_start + 8
+
+]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-788 @ZFJ_Automation
+  Scenario: [AW04-04]不在時メール送信先を追加する Add  "Unavailable Staff Mail Destination"
+    Given 「不在時のメール受信設定」画面が表示されている2 ... failed in 0.006s
+    When 不在時メール送信先の＋ボタンをクリックする ... skipped in 0.000s
+    Then 入力欄が追加される ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="admin.widget.6W_A04.Create New Widget Step ❸　不在時のメール受信設定" name="[AW04-05]不在時メール送信先を削除する Delete  &quot;Unavailable Staff Mail Destination&quot;" status="failed" time="0.00623"><error type="NoSuchElementException" message="Message: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[2]/div[2]/div[1]/form/div/div[1]/div/div[3]/input&quot;}&#10;  (Session info: chrome=124.0.6367.203); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception&#10;Stacktrace:&#10;0   chromedriver                        0x00000001050da940 chromedriver + 4368704&#10;1   chromedriver                        0x00000001050d2dd4 chromedriver + 4337108&#10;2   chromedriver                        0x0000000104cf6c04 chromedriver + 289796&#10;3   chromedriver                        0x0000000104d38e00 chromedriver + 560640&#10;4   chromedriver                        0x0000000104d715ec chromedriver + 792044&#10;5   chromedriver                        0x0000000104d2dab4 chromedriver + 514740&#10;6   chromedriver                        0x0000000104d2e50c chromedriver + 517388&#10;7   chromedriver                        0x000000010509ee5c chromedriver + 4124252&#10;8   chromedriver                        0x00000001050a3c4c chromedriver + 4144204&#10;9   chromedriver                        0x0000000105084824 chromedriver + 4016164&#10;10  chromedriver                        0x00000001050a457c chromedriver + 4146556&#10;11  chromedriver                        0x00000001050762d8 chromedriver + 3957464&#10;12  chromedriver                        0x00000001050c3ec4 chromedriver + 4275908&#10;13  chromedriver                        0x00000001050c4040 chromedriver + 4276288&#10;14  chromedriver                        0x00000001050d2a34 chromedriver + 4336180&#10;15  libsystem_pthread.dylib             0x000000019b926f94 _pthread_start + 136&#10;16  libsystem_pthread.dylib             0x000000019b921d34 thread_start + 8">
+<![CDATA[
+Failing step: When 入力欄右横の×をクリックする ... failed in 0.006s
+Location: ../widget/6W_A04.feature:36
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/model.py", line 1812, in run
+    match.run(runner.context)
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/matchers.py", line 103, in run
+    self.func(context, *args, **kwargs)
+  File "../../steps/6W_A04.py", line 276, in step_impl
+    driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[2]/div[2]/div[1]/form/div/div[1]/div/div[3]/input').send_keys("aw04_05@kotozna.com")
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 741, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 347, in execute
+    self.error_handler.check_response(response)
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[2]/div[2]/div[1]/form/div/div[1]/div/div[3]/input"}
+  (Session info: chrome=124.0.6367.203); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+0   chromedriver                        0x00000001050da940 chromedriver + 4368704
+1   chromedriver                        0x00000001050d2dd4 chromedriver + 4337108
+2   chromedriver                        0x0000000104cf6c04 chromedriver + 289796
+3   chromedriver                        0x0000000104d38e00 chromedriver + 560640
+4   chromedriver                        0x0000000104d715ec chromedriver + 792044
+5   chromedriver                        0x0000000104d2dab4 chromedriver + 514740
+6   chromedriver                        0x0000000104d2e50c chromedriver + 517388
+7   chromedriver                        0x000000010509ee5c chromedriver + 4124252
+8   chromedriver                        0x00000001050a3c4c chromedriver + 4144204
+9   chromedriver                        0x0000000105084824 chromedriver + 4016164
+10  chromedriver                        0x00000001050a457c chromedriver + 4146556
+11  chromedriver                        0x00000001050762d8 chromedriver + 3957464
+12  chromedriver                        0x00000001050c3ec4 chromedriver + 4275908
+13  chromedriver                        0x00000001050c4040 chromedriver + 4276288
+14  chromedriver                        0x00000001050d2a34 chromedriver + 4336180
+15  libsystem_pthread.dylib             0x000000019b926f94 _pthread_start + 136
+16  libsystem_pthread.dylib             0x000000019b921d34 thread_start + 8
+
+
+Captured stdout:
+chinchin]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-789 @ZFJ_Automation
+  Scenario: [AW04-05]不在時メール送信先を削除する Delete  "Unavailable Staff Mail Destination"
+    Given 不在時メール送信先が設定されている ... passed in 0.000s
+    When 入力欄右横の×をクリックする ... failed in 0.006s
+    Then 該当の入力欄ごと消える ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+chinchin
+
+]]>
+</system-out></testcase><testcase classname="admin.widget.6W_A04.Create New Widget Step ❸　不在時のメール受信設定" name="[AW04-06]不在判定時間を設定する Set &quot;Time Staff Did Not Respond&quot;" status="failed" time="0.007087"><error type="NoSuchElementException" message="Message: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[3]/div/form/div/div[1]/div/div[3]/input&quot;}&#10;  (Session info: chrome=124.0.6367.203); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception&#10;Stacktrace:&#10;0   chromedriver                        0x00000001050da940 chromedriver + 4368704&#10;1   chromedriver                        0x00000001050d2dd4 chromedriver + 4337108&#10;2   chromedriver                        0x0000000104cf6c04 chromedriver + 289796&#10;3   chromedriver                        0x0000000104d38e00 chromedriver + 560640&#10;4   chromedriver                        0x0000000104d715ec chromedriver + 792044&#10;5   chromedriver                        0x0000000104d2dab4 chromedriver + 514740&#10;6   chromedriver                        0x0000000104d2e50c chromedriver + 517388&#10;7   chromedriver                        0x000000010509ee5c chromedriver + 4124252&#10;8   chromedriver                        0x00000001050a3c4c chromedriver + 4144204&#10;9   chromedriver                        0x0000000105084824 chromedriver + 4016164&#10;10  chromedriver                        0x00000001050a457c chromedriver + 4146556&#10;11  chromedriver                        0x00000001050762d8 chromedriver + 3957464&#10;12  chromedriver                        0x00000001050c3ec4 chromedriver + 4275908&#10;13  chromedriver                        0x00000001050c4040 chromedriver + 4276288&#10;14  chromedriver                        0x00000001050d2a34 chromedriver + 4336180&#10;15  libsystem_pthread.dylib             0x000000019b926f94 _pthread_start + 136&#10;16  libsystem_pthread.dylib             0x000000019b921d34 thread_start + 8">
+<![CDATA[
+Failing step: When 不在時のチェックボックスにチェックを入れる ... failed in 0.007s
+Location: ../widget/6W_A04.feature:43
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/model.py", line 1812, in run
+    match.run(runner.context)
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/matchers.py", line 103, in run
+    self.func(context, *args, **kwargs)
+  File "../../steps/6W_A04.py", line 296, in step_impl
+    driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[3]/div/form/div/div[1]/div/div[3]/input').send_keys(Keys.BACK_SPACE)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 741, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 347, in execute
+    self.error_handler.check_response(response)
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[3]/div/form/div/div[1]/div/div[3]/input"}
+  (Session info: chrome=124.0.6367.203); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+0   chromedriver                        0x00000001050da940 chromedriver + 4368704
+1   chromedriver                        0x00000001050d2dd4 chromedriver + 4337108
+2   chromedriver                        0x0000000104cf6c04 chromedriver + 289796
+3   chromedriver                        0x0000000104d38e00 chromedriver + 560640
+4   chromedriver                        0x0000000104d715ec chromedriver + 792044
+5   chromedriver                        0x0000000104d2dab4 chromedriver + 514740
+6   chromedriver                        0x0000000104d2e50c chromedriver + 517388
+7   chromedriver                        0x000000010509ee5c chromedriver + 4124252
+8   chromedriver                        0x00000001050a3c4c chromedriver + 4144204
+9   chromedriver                        0x0000000105084824 chromedriver + 4016164
+10  chromedriver                        0x00000001050a457c chromedriver + 4146556
+11  chromedriver                        0x00000001050762d8 chromedriver + 3957464
+12  chromedriver                        0x00000001050c3ec4 chromedriver + 4275908
+13  chromedriver                        0x00000001050c4040 chromedriver + 4276288
+14  chromedriver                        0x00000001050d2a34 chromedriver + 4336180
+15  libsystem_pthread.dylib             0x000000019b926f94 _pthread_start + 136
+16  libsystem_pthread.dylib             0x000000019b921d34 thread_start + 8
+
+
+Captured stdout:
+chinchin]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-790 @ZFJ_Automation
+  Scenario: [AW04-06]不在判定時間を設定する Set "Time Staff Did Not Respond"
+    Given 「不在時のメール受信設定」画面が表示される ... passed in 0.000s
+    When 不在時のチェックボックスにチェックを入れる ... failed in 0.007s
+    When 不在判定時間に1-10までの数字を半角で入力する2 ... skipped in 0.000s
+    Then ゲスト画面でスタッフ呼び出し後、設定した分数が経過すると、メール送信用フォームが表示される ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+chinchin
+
+]]>
+</system-out></testcase></testsuite>

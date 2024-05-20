@@ -1,0 +1,342 @@
+<testsuite name="admin.widget.6W_A03.AW03 Create New Widget Step ❷" tests="8" errors="4" failures="0" skipped="0" time="1042.679163" timestamp="2024-05-20T17:32:54.184221" hostname="Kentas-MacBook-Pro.local"><testcase classname="admin.widget.6W_A03.AW03 Create New Widget Step ❷" name="[AW03-01]チャットの営業可能時間を設定する（毎日） Set chat business hours (Daily)" status="passed" time="274.911246"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-776
+  Scenario: [AW03-01]チャットの営業可能時間を設定する（毎日） Set chat business hours (Daily)
+    Given 営業時間の設定画面が表示されている1 ... passed in 82.374s
+    When タイプのプルダウンから"受付時間"を選択1 ... passed in 5.108s
+    When タイトル欄に任意のタイトルを入力1 ... passed in 28.397s
+    When 対象のプルダウンから"毎日"を選択1 ... passed in 5.058s
+    When 開始/終了時間を設定1 ... passed in 17.477s
+    When "保存"を押下1 ... passed in 15.087s
+    Then このウィジェットから受付時間外にお問い合わせを送ると、受付可能時間メッセージ、またはメール送信用フォームが表示される（設定による）1 ... passed in 121.409s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="admin.widget.6W_A03.AW03 Create New Widget Step ❷" name="[AW03-02]チャットの営業可能時間を設定する（曜日）" status="passed" time="206.553231"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-777
+  Scenario: [AW03-02]チャットの営業可能時間を設定する（曜日）
+    Given 営業時間の設定画面が表示されている2 ... passed in 8.097s
+    When タイプのプルダウンから"受付時間"を選択2 ... passed in 21.200s
+    When タイトル欄に任意のタイトルを入力2 ... passed in 10.159s
+    When 対象のプルダウンから"曜日（優先度中）"を選択1 ... passed in 20.228s
+    When 曜日のプルダウンから任意の曜日を選択1 ... passed in 10.077s
+    When 開始/終了時間を設定2 ... passed in 5.054s
+    When "保存"を押下2 ... passed in 10.074s
+    Then このウィジェットから受付時間外にお問い合わせを送ると、受付可能時間メッセージ、またはメール送信用フォームが表示される（設定による）2 ... passed in 121.664s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="admin.widget.6W_A03.AW03 Create New Widget Step ❷" name="[AW03-03]チャットの営業可能時間を設定する（特定の日のみ)" status="passed" time="241.115952"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-778
+  Scenario: [AW03-03]チャットの営業可能時間を設定する（特定の日のみ)
+    Given 営業時間の設定画面が表示されている3 ... passed in 19.075s
+    When タイプのプルダウンから"受付時間"を選択3 ... passed in 10.127s
+    When タイトル欄に任意のタイトルを入力3 ... passed in 10.152s
+    When 対象のプルダウンから"日を指定（優先度高）"を選択1 ... passed in 15.113s
+    When 曜日のプルダウンから任意の日を選択1 ... passed in 15.149s
+    When 開始/終了時間を設定3 ... passed in 0.000s
+    When "保存"を押下3 ... passed in 39.769s
+    Then このウィジェットから受付時間外にお問い合わせを送ると、受付可能時間メッセージ、またはメール送信用フォームが表示される（設定による）3 ... passed in 131.730s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+chinchin
+
+]]>
+</system-out></testcase><testcase classname="admin.widget.6W_A03.AW03 Create New Widget Step ❷" name="[AW03-04]チャットの対応不可時間を設定する（毎日）Set chat unavailable hours (Daily)" status="passed" time="206.317289"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-779
+  Scenario: [AW03-04]チャットの対応不可時間を設定する（毎日）Set chat unavailable hours (Daily)
+    Given 営業時間の設定画面が表示されている4 ... passed in 19.033s
+    When タイプのプルダウンから"受付不可時間"を選択1 ... passed in 10.141s
+    When タイトル欄に任意のタイトルを入力4 ... passed in 3.119s
+    When 対象のプルダウンから"毎日"を選択2 ... passed in 20.151s
+    When 開始/終了時間を設定4 ... passed in 0.000s
+    When "保存"を押下4 ... passed in 32.191s
+    Then このウィジェットから受付時間外にお問い合わせを送ると、受付可能時間メッセージ、またはメール送信用フォームが表示される（設定による）4 ... passed in 121.682s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+chinchin
+
+]]>
+</system-out></testcase><testcase classname="admin.widget.6W_A03.AW03 Create New Widget Step ❷" name="[AW03-05]チャットの対応不可時間を設定する（曜日）Set chat unavailable hours (day of the week)" status="failed" time="110.401431"><error type="ElementClickInterceptedException" message="Message: element click intercepted: Element &lt;div class=&quot;app-icon-clickable app-icon d-flex justify-center align-center&quot; data-v-1142b6e4=&quot;&quot; data-v-d0ae1258=&quot;&quot; style=&quot;color: rgb(109, 109, 109); width: 24px; height: 24px; border-radius: 50%; cursor: pointer; background: transparent;&quot;&gt;...&lt;/div&gt; is not clickable at point (794, 462). Other element would receive the click: &lt;div class=&quot;v-overlay__scrim fade-transition-enter-from fade-transition-enter-active&quot;&gt;&lt;/div&gt;&#10;  (Session info: chrome=125.0.6422.61)&#10;Stacktrace:&#10;0   chromedriver                        0x000000010443e4a0 chromedriver + 4301984&#10;1   chromedriver                        0x0000000104436de8 chromedriver + 4271592&#10;2   chromedriver                        0x000000010406819c chromedriver + 278940&#10;3   chromedriver                        0x00000001040afd48 chromedriver + 572744&#10;4   chromedriver                        0x00000001040ae2ec chromedriver + 565996&#10;5   chromedriver                        0x00000001040ac47c chromedriver + 558204&#10;6   chromedriver                        0x00000001040ab9cc chromedriver + 555468&#10;7   chromedriver                        0x00000001040a0e24 chromedriver + 511524&#10;8   chromedriver                        0x00000001040a085c chromedriver + 510044&#10;9   chromedriver                        0x00000001040e2c5c chromedriver + 781404&#10;10  chromedriver                        0x000000010409f004 chromedriver + 503812&#10;11  chromedriver                        0x000000010409f9ec chromedriver + 506348&#10;12  chromedriver                        0x00000001044064e8 chromedriver + 4072680&#10;13  chromedriver                        0x000000010440af94 chromedriver + 4091796&#10;14  chromedriver                        0x00000001043ed72c chromedriver + 3970860&#10;15  chromedriver                        0x000000010440b87c chromedriver + 4094076&#10;16  chromedriver                        0x00000001043e06ac chromedriver + 3917484&#10;17  chromedriver                        0x0000000104428ae0 chromedriver + 4213472&#10;18  chromedriver                        0x0000000104428c5c chromedriver + 4213852&#10;19  chromedriver                        0x00000001044369e0 chromedriver + 4270560&#10;20  libsystem_pthread.dylib             0x000000019d152f94 _pthread_start + 136&#10;21  libsystem_pthread.dylib             0x000000019d14dd34 thread_start + 8">
+<![CDATA[
+Failing step: Then このウィジェットから受付時間外にお問い合わせを送ると、受付可能時間メッセージ、またはメール送信用フォームが表示される（設定による）5 ... failed in 11.215s
+Location: 6W_A03.feature:54
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/model.py", line 1812, in run
+    match.run(runner.context)
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/matchers.py", line 103, in run
+    self.func(context, *args, **kwargs)
+  File "../../steps/6W_A03.py", line 887, in step_then_verify_response_message_or_email_form
+    openW()
+  File "../../steps/6W_A03.py", line 42, in openW
+    driver.find_element(By.XPATH,'/html/body/div[2]/div/div[2]/div/div[3]/div/div/div[2]/div[2]').click()
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webelement.py", line 94, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webelement.py", line 395, in _execute
+    return self._parent.execute(command, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 347, in execute
+    self.error_handler.check_response(response)
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.ElementClickInterceptedException: Message: element click intercepted: Element <div class="app-icon-clickable app-icon d-flex justify-center align-center" data-v-1142b6e4="" data-v-d0ae1258="" style="color: rgb(109, 109, 109); width: 24px; height: 24px; border-radius: 50%; cursor: pointer; background: transparent;">...</div> is not clickable at point (794, 462). Other element would receive the click: <div class="v-overlay__scrim fade-transition-enter-from fade-transition-enter-active"></div>
+  (Session info: chrome=125.0.6422.61)
+Stacktrace:
+0   chromedriver                        0x000000010443e4a0 chromedriver + 4301984
+1   chromedriver                        0x0000000104436de8 chromedriver + 4271592
+2   chromedriver                        0x000000010406819c chromedriver + 278940
+3   chromedriver                        0x00000001040afd48 chromedriver + 572744
+4   chromedriver                        0x00000001040ae2ec chromedriver + 565996
+5   chromedriver                        0x00000001040ac47c chromedriver + 558204
+6   chromedriver                        0x00000001040ab9cc chromedriver + 555468
+7   chromedriver                        0x00000001040a0e24 chromedriver + 511524
+8   chromedriver                        0x00000001040a085c chromedriver + 510044
+9   chromedriver                        0x00000001040e2c5c chromedriver + 781404
+10  chromedriver                        0x000000010409f004 chromedriver + 503812
+11  chromedriver                        0x000000010409f9ec chromedriver + 506348
+12  chromedriver                        0x00000001044064e8 chromedriver + 4072680
+13  chromedriver                        0x000000010440af94 chromedriver + 4091796
+14  chromedriver                        0x00000001043ed72c chromedriver + 3970860
+15  chromedriver                        0x000000010440b87c chromedriver + 4094076
+16  chromedriver                        0x00000001043e06ac chromedriver + 3917484
+17  chromedriver                        0x0000000104428ae0 chromedriver + 4213472
+18  chromedriver                        0x0000000104428c5c chromedriver + 4213852
+19  chromedriver                        0x00000001044369e0 chromedriver + 4270560
+20  libsystem_pthread.dylib             0x000000019d152f94 _pthread_start + 136
+21  libsystem_pthread.dylib             0x000000019d14dd34 thread_start + 8
+
+
+Captured stdout:
+chinchin]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-780
+  Scenario: [AW03-05]チャットの対応不可時間を設定する（曜日）Set chat unavailable hours (day of the week)
+    Given 営業時間の設定画面が表示されている5 ... passed in 19.278s
+    When タイプのプルダウンから"受付不可時間"を選択2 ... passed in 10.289s
+    When タイトル欄に任意のタイトルを入力5 ... passed in 10.288s
+    When 対象のプルダウンから"曜日（優先度中）"を選択2 ... passed in 15.139s
+    When 曜日のプルダウンから任意の曜日を選択2 ... passed in 5.132s
+    When 開始/終了時間を設定5 ... passed in 0.000s
+    When "保存"を押下5 ... passed in 39.060s
+    Then このウィジェットから受付時間外にお問い合わせを送ると、受付可能時間メッセージ、またはメール送信用フォームが表示される（設定による）5 ... failed in 11.215s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+chinchin
+
+]]>
+</system-out></testcase><testcase classname="admin.widget.6W_A03.AW03 Create New Widget Step ❷" name="[AW03-06]チャットの対応不可時間を設定する（特定の日のみ）Set chat unavailable hours (only on specific days)" status="failed" time="1.099089"><error type="ElementClickInterceptedException" message="Message: element click intercepted: Element &lt;button type=&quot;button&quot; class=&quot;v-btn v-btn--elevated v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-elevated app-button-content&quot; fab=&quot;false&quot; large=&quot;false&quot; outlined=&quot;false&quot; small=&quot;true&quot; x-large=&quot;false&quot; x-small=&quot;false&quot; data-v-2c14d385=&quot;&quot; style=&quot;min-width: fit-content; width: fit-content; padding-inline-end: unset; background-color: transparent; color: rgb(109, 109, 109); box-shadow: unset !important; cursor: pointer;&quot;&gt;...&lt;/button&gt; is not clickable at point (1168, 294). Other element would receive the click: &lt;div class=&quot;v-overlay__scrim fade-transition-enter-from fade-transition-enter-active&quot;&gt;&lt;/div&gt;&#10;  (Session info: chrome=125.0.6422.61)&#10;Stacktrace:&#10;0   chromedriver                        0x000000010443e4a0 chromedriver + 4301984&#10;1   chromedriver                        0x0000000104436de8 chromedriver + 4271592&#10;2   chromedriver                        0x000000010406819c chromedriver + 278940&#10;3   chromedriver                        0x00000001040afd48 chromedriver + 572744&#10;4   chromedriver                        0x00000001040ae2ec chromedriver + 565996&#10;5   chromedriver                        0x00000001040ac47c chromedriver + 558204&#10;6   chromedriver                        0x00000001040ab9cc chromedriver + 555468&#10;7   chromedriver                        0x00000001040a0e24 chromedriver + 511524&#10;8   chromedriver                        0x00000001040a085c chromedriver + 510044&#10;9   chromedriver                        0x00000001040e2c5c chromedriver + 781404&#10;10  chromedriver                        0x000000010409f004 chromedriver + 503812&#10;11  chromedriver                        0x000000010409f9ec chromedriver + 506348&#10;12  chromedriver                        0x00000001044064e8 chromedriver + 4072680&#10;13  chromedriver                        0x000000010440af94 chromedriver + 4091796&#10;14  chromedriver                        0x00000001043ed72c chromedriver + 3970860&#10;15  chromedriver                        0x000000010440b87c chromedriver + 4094076&#10;16  chromedriver                        0x00000001043e06ac chromedriver + 3917484&#10;17  chromedriver                        0x0000000104428ae0 chromedriver + 4213472&#10;18  chromedriver                        0x0000000104428c5c chromedriver + 4213852&#10;19  chromedriver                        0x00000001044369e0 chromedriver + 4270560&#10;20  libsystem_pthread.dylib             0x000000019d152f94 _pthread_start + 136&#10;21  libsystem_pthread.dylib             0x000000019d14dd34 thread_start + 8">
+<![CDATA[
+Failing step: Given 営業時間の設定画面が表示されている6 ... failed in 1.099s
+Location: 6W_A03.feature:58
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/model.py", line 1812, in run
+    match.run(runner.context)
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/matchers.py", line 103, in run
+    self.func(context, *args, **kwargs)
+  File "../../steps/6W_A03.py", line 911, in step_given_display_business_hours_setting_screen
+    driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div/div[3]/div/table/tbody/tr[2]/td[7]/div/div/button').click()
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webelement.py", line 94, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webelement.py", line 395, in _execute
+    return self._parent.execute(command, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 347, in execute
+    self.error_handler.check_response(response)
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.ElementClickInterceptedException: Message: element click intercepted: Element <button type="button" class="v-btn v-btn--elevated v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-elevated app-button-content" fab="false" large="false" outlined="false" small="true" x-large="false" x-small="false" data-v-2c14d385="" style="min-width: fit-content; width: fit-content; padding-inline-end: unset; background-color: transparent; color: rgb(109, 109, 109); box-shadow: unset !important; cursor: pointer;">...</button> is not clickable at point (1168, 294). Other element would receive the click: <div class="v-overlay__scrim fade-transition-enter-from fade-transition-enter-active"></div>
+  (Session info: chrome=125.0.6422.61)
+Stacktrace:
+0   chromedriver                        0x000000010443e4a0 chromedriver + 4301984
+1   chromedriver                        0x0000000104436de8 chromedriver + 4271592
+2   chromedriver                        0x000000010406819c chromedriver + 278940
+3   chromedriver                        0x00000001040afd48 chromedriver + 572744
+4   chromedriver                        0x00000001040ae2ec chromedriver + 565996
+5   chromedriver                        0x00000001040ac47c chromedriver + 558204
+6   chromedriver                        0x00000001040ab9cc chromedriver + 555468
+7   chromedriver                        0x00000001040a0e24 chromedriver + 511524
+8   chromedriver                        0x00000001040a085c chromedriver + 510044
+9   chromedriver                        0x00000001040e2c5c chromedriver + 781404
+10  chromedriver                        0x000000010409f004 chromedriver + 503812
+11  chromedriver                        0x000000010409f9ec chromedriver + 506348
+12  chromedriver                        0x00000001044064e8 chromedriver + 4072680
+13  chromedriver                        0x000000010440af94 chromedriver + 4091796
+14  chromedriver                        0x00000001043ed72c chromedriver + 3970860
+15  chromedriver                        0x000000010440b87c chromedriver + 4094076
+16  chromedriver                        0x00000001043e06ac chromedriver + 3917484
+17  chromedriver                        0x0000000104428ae0 chromedriver + 4213472
+18  chromedriver                        0x0000000104428c5c chromedriver + 4213852
+19  chromedriver                        0x00000001044369e0 chromedriver + 4270560
+20  libsystem_pthread.dylib             0x000000019d152f94 _pthread_start + 136
+21  libsystem_pthread.dylib             0x000000019d14dd34 thread_start + 8
+
+]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-781
+  Scenario: [AW03-06]チャットの対応不可時間を設定する（特定の日のみ）Set chat unavailable hours (only on specific days)
+    Given 営業時間の設定画面が表示されている6 ... failed in 1.099s
+    When タイプのプルダウンから"受付不可時間"を選択3 ... skipped in 0.000s
+    When タイトル欄に任意のタイトルを入力6 ... skipped in 0.000s
+    When 対象のプルダウンから"日を指定（優先度高）"を選択2 ... skipped in 0.000s
+    When 曜日のプルダウンから任意の日を選択2 ... skipped in 0.000s
+    When 開始/終了時間を設定6 ... skipped in 0.000s
+    When "保存"を押下6 ... skipped in 0.000s
+    Then このウィジェットから受付時間外にお問い合わせを送ると、受付可能時間メッセージ、またはメール送信用フォームが表示される（設定による）6 ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="admin.widget.6W_A03.AW03 Create New Widget Step ❷" name="[AW03-07]営業不可時間を複数設定する Set multiple Out of Business Hours" status="failed" time="1.171142"><error type="ElementClickInterceptedException" message="Message: element click intercepted: Element &lt;button type=&quot;button&quot; class=&quot;v-btn v-btn--elevated v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-elevated app-button-content&quot; fab=&quot;false&quot; large=&quot;false&quot; outlined=&quot;false&quot; small=&quot;true&quot; x-large=&quot;false&quot; x-small=&quot;false&quot; data-v-2c14d385=&quot;&quot; style=&quot;min-width: fit-content; width: fit-content; padding-inline-end: unset; background-color: transparent; color: rgb(109, 109, 109); box-shadow: unset !important; cursor: pointer;&quot;&gt;...&lt;/button&gt; is not clickable at point (1168, 294). Other element would receive the click: &lt;div class=&quot;v-overlay__scrim fade-transition-enter-from fade-transition-enter-active&quot;&gt;&lt;/div&gt;&#10;  (Session info: chrome=125.0.6422.61)&#10;Stacktrace:&#10;0   chromedriver                        0x000000010443e4a0 chromedriver + 4301984&#10;1   chromedriver                        0x0000000104436de8 chromedriver + 4271592&#10;2   chromedriver                        0x000000010406819c chromedriver + 278940&#10;3   chromedriver                        0x00000001040afd48 chromedriver + 572744&#10;4   chromedriver                        0x00000001040ae2ec chromedriver + 565996&#10;5   chromedriver                        0x00000001040ac47c chromedriver + 558204&#10;6   chromedriver                        0x00000001040ab9cc chromedriver + 555468&#10;7   chromedriver                        0x00000001040a0e24 chromedriver + 511524&#10;8   chromedriver                        0x00000001040a085c chromedriver + 510044&#10;9   chromedriver                        0x00000001040e2c5c chromedriver + 781404&#10;10  chromedriver                        0x000000010409f004 chromedriver + 503812&#10;11  chromedriver                        0x000000010409f9ec chromedriver + 506348&#10;12  chromedriver                        0x00000001044064e8 chromedriver + 4072680&#10;13  chromedriver                        0x000000010440af94 chromedriver + 4091796&#10;14  chromedriver                        0x00000001043ed72c chromedriver + 3970860&#10;15  chromedriver                        0x000000010440b87c chromedriver + 4094076&#10;16  chromedriver                        0x00000001043e06ac chromedriver + 3917484&#10;17  chromedriver                        0x0000000104428ae0 chromedriver + 4213472&#10;18  chromedriver                        0x0000000104428c5c chromedriver + 4213852&#10;19  chromedriver                        0x00000001044369e0 chromedriver + 4270560&#10;20  libsystem_pthread.dylib             0x000000019d152f94 _pthread_start + 136&#10;21  libsystem_pthread.dylib             0x000000019d14dd34 thread_start + 8">
+<![CDATA[
+Failing step: Given 営業時間の設定画面が表示されている7 ... failed in 1.171s
+Location: 6W_A03.feature:69
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/model.py", line 1812, in run
+    match.run(runner.context)
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/matchers.py", line 103, in run
+    self.func(context, *args, **kwargs)
+  File "../../steps/6W_A03.py", line 1092, in step_impl
+    driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div/div[3]/div/table/tbody/tr[2]/td[7]/div/div/button').click()
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webelement.py", line 94, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webelement.py", line 395, in _execute
+    return self._parent.execute(command, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 347, in execute
+    self.error_handler.check_response(response)
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.ElementClickInterceptedException: Message: element click intercepted: Element <button type="button" class="v-btn v-btn--elevated v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-elevated app-button-content" fab="false" large="false" outlined="false" small="true" x-large="false" x-small="false" data-v-2c14d385="" style="min-width: fit-content; width: fit-content; padding-inline-end: unset; background-color: transparent; color: rgb(109, 109, 109); box-shadow: unset !important; cursor: pointer;">...</button> is not clickable at point (1168, 294). Other element would receive the click: <div class="v-overlay__scrim fade-transition-enter-from fade-transition-enter-active"></div>
+  (Session info: chrome=125.0.6422.61)
+Stacktrace:
+0   chromedriver                        0x000000010443e4a0 chromedriver + 4301984
+1   chromedriver                        0x0000000104436de8 chromedriver + 4271592
+2   chromedriver                        0x000000010406819c chromedriver + 278940
+3   chromedriver                        0x00000001040afd48 chromedriver + 572744
+4   chromedriver                        0x00000001040ae2ec chromedriver + 565996
+5   chromedriver                        0x00000001040ac47c chromedriver + 558204
+6   chromedriver                        0x00000001040ab9cc chromedriver + 555468
+7   chromedriver                        0x00000001040a0e24 chromedriver + 511524
+8   chromedriver                        0x00000001040a085c chromedriver + 510044
+9   chromedriver                        0x00000001040e2c5c chromedriver + 781404
+10  chromedriver                        0x000000010409f004 chromedriver + 503812
+11  chromedriver                        0x000000010409f9ec chromedriver + 506348
+12  chromedriver                        0x00000001044064e8 chromedriver + 4072680
+13  chromedriver                        0x000000010440af94 chromedriver + 4091796
+14  chromedriver                        0x00000001043ed72c chromedriver + 3970860
+15  chromedriver                        0x000000010440b87c chromedriver + 4094076
+16  chromedriver                        0x00000001043e06ac chromedriver + 3917484
+17  chromedriver                        0x0000000104428ae0 chromedriver + 4213472
+18  chromedriver                        0x0000000104428c5c chromedriver + 4213852
+19  chromedriver                        0x00000001044369e0 chromedriver + 4270560
+20  libsystem_pthread.dylib             0x000000019d152f94 _pthread_start + 136
+21  libsystem_pthread.dylib             0x000000019d14dd34 thread_start + 8
+
+]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-782
+  Scenario: [AW03-07]営業不可時間を複数設定する Set multiple Out of Business Hours
+    Given 営業時間の設定画面が表示されている7 ... failed in 1.171s
+    Given 設定タイプが"営業不可時間"になっている ... skipped in 0.000s
+    When 「曜日」と「特定の日」を設定する(優先度：高) ... skipped in 0.000s
+    When 特定日について、受付時間内に設定する 例）4/10(月) 11:00にアクセスする場合は4/10の10:00 - 20:00 ... skipped in 0.000s
+    When 「曜日」と「特定の日」を設定する(優先度：中) ... skipped in 0.000s
+    When 曜日について、受付時間内に設定する 例）4/10(月) 11:00にアクセスする場合は火〜日の10:00 - 20:00 ... skipped in 0.000s
+    Then このウィジェットから受付時間外にお問い合わせを送ると、受付時間外メッセージが表示される(添付画像参照)7 ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="admin.widget.6W_A03.AW03 Create New Widget Step ❷" name="[AW03-08]営業可能時間を複数設定する" status="failed" time="1.109782"><error type="ElementClickInterceptedException" message="Message: element click intercepted: Element &lt;button type=&quot;button&quot; class=&quot;v-btn v-btn--elevated v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-elevated app-button-content&quot; fab=&quot;false&quot; large=&quot;false&quot; outlined=&quot;false&quot; small=&quot;true&quot; x-large=&quot;false&quot; x-small=&quot;false&quot; data-v-2c14d385=&quot;&quot; style=&quot;min-width: fit-content; width: fit-content; padding-inline-end: unset; background-color: transparent; color: rgb(109, 109, 109); box-shadow: unset !important; cursor: pointer;&quot;&gt;...&lt;/button&gt; is not clickable at point (1168, 294). Other element would receive the click: &lt;div class=&quot;v-overlay__scrim fade-transition-enter-from fade-transition-enter-active&quot;&gt;&lt;/div&gt;&#10;  (Session info: chrome=125.0.6422.61)&#10;Stacktrace:&#10;0   chromedriver                        0x000000010443e4a0 chromedriver + 4301984&#10;1   chromedriver                        0x0000000104436de8 chromedriver + 4271592&#10;2   chromedriver                        0x000000010406819c chromedriver + 278940&#10;3   chromedriver                        0x00000001040afd48 chromedriver + 572744&#10;4   chromedriver                        0x00000001040ae2ec chromedriver + 565996&#10;5   chromedriver                        0x00000001040ac47c chromedriver + 558204&#10;6   chromedriver                        0x00000001040ab9cc chromedriver + 555468&#10;7   chromedriver                        0x00000001040a0e24 chromedriver + 511524&#10;8   chromedriver                        0x00000001040a085c chromedriver + 510044&#10;9   chromedriver                        0x00000001040e2c5c chromedriver + 781404&#10;10  chromedriver                        0x000000010409f004 chromedriver + 503812&#10;11  chromedriver                        0x000000010409f9ec chromedriver + 506348&#10;12  chromedriver                        0x00000001044064e8 chromedriver + 4072680&#10;13  chromedriver                        0x000000010440af94 chromedriver + 4091796&#10;14  chromedriver                        0x00000001043ed72c chromedriver + 3970860&#10;15  chromedriver                        0x000000010440b87c chromedriver + 4094076&#10;16  chromedriver                        0x00000001043e06ac chromedriver + 3917484&#10;17  chromedriver                        0x0000000104428ae0 chromedriver + 4213472&#10;18  chromedriver                        0x0000000104428c5c chromedriver + 4213852&#10;19  chromedriver                        0x00000001044369e0 chromedriver + 4270560&#10;20  libsystem_pthread.dylib             0x000000019d152f94 _pthread_start + 136&#10;21  libsystem_pthread.dylib             0x000000019d14dd34 thread_start + 8">
+<![CDATA[
+Failing step: Given 営業時間の設定画面が表示されている8 ... failed in 1.110s
+Location: 6W_A03.feature:79
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/model.py", line 1812, in run
+    match.run(runner.context)
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/matchers.py", line 103, in run
+    self.func(context, *args, **kwargs)
+  File "../../steps/6W_A03.py", line 1353, in step_display_business_hours_setting_screen
+    driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div/div[3]/div/table/tbody/tr[2]/td[7]/div/div/button').click()
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webelement.py", line 94, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webelement.py", line 395, in _execute
+    return self._parent.execute(command, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 347, in execute
+    self.error_handler.check_response(response)
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.ElementClickInterceptedException: Message: element click intercepted: Element <button type="button" class="v-btn v-btn--elevated v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-elevated app-button-content" fab="false" large="false" outlined="false" small="true" x-large="false" x-small="false" data-v-2c14d385="" style="min-width: fit-content; width: fit-content; padding-inline-end: unset; background-color: transparent; color: rgb(109, 109, 109); box-shadow: unset !important; cursor: pointer;">...</button> is not clickable at point (1168, 294). Other element would receive the click: <div class="v-overlay__scrim fade-transition-enter-from fade-transition-enter-active"></div>
+  (Session info: chrome=125.0.6422.61)
+Stacktrace:
+0   chromedriver                        0x000000010443e4a0 chromedriver + 4301984
+1   chromedriver                        0x0000000104436de8 chromedriver + 4271592
+2   chromedriver                        0x000000010406819c chromedriver + 278940
+3   chromedriver                        0x00000001040afd48 chromedriver + 572744
+4   chromedriver                        0x00000001040ae2ec chromedriver + 565996
+5   chromedriver                        0x00000001040ac47c chromedriver + 558204
+6   chromedriver                        0x00000001040ab9cc chromedriver + 555468
+7   chromedriver                        0x00000001040a0e24 chromedriver + 511524
+8   chromedriver                        0x00000001040a085c chromedriver + 510044
+9   chromedriver                        0x00000001040e2c5c chromedriver + 781404
+10  chromedriver                        0x000000010409f004 chromedriver + 503812
+11  chromedriver                        0x000000010409f9ec chromedriver + 506348
+12  chromedriver                        0x00000001044064e8 chromedriver + 4072680
+13  chromedriver                        0x000000010440af94 chromedriver + 4091796
+14  chromedriver                        0x00000001043ed72c chromedriver + 3970860
+15  chromedriver                        0x000000010440b87c chromedriver + 4094076
+16  chromedriver                        0x00000001043e06ac chromedriver + 3917484
+17  chromedriver                        0x0000000104428ae0 chromedriver + 4213472
+18  chromedriver                        0x0000000104428c5c chromedriver + 4213852
+19  chromedriver                        0x00000001044369e0 chromedriver + 4270560
+20  libsystem_pthread.dylib             0x000000019d152f94 _pthread_start + 136
+21  libsystem_pthread.dylib             0x000000019d14dd34 thread_start + 8
+
+]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-783
+  Scenario: [AW03-08]営業可能時間を複数設定する
+    Given 営業時間の設定画面が表示されている8 ... failed in 1.110s
+    When 営業可能時間を1日の中で複数設定する。営業可能時間を設定 例）4/10(月) 13:00にアクセスする場合は毎日の10:00 - 13:00 ... skipped in 0.000s
+    When 営業可能時間を1日の中で複数設定する。営業外時間を設定 例）4/10(月) 13:00にアクセスする場合はの毎日の14:00 - 20:00 ... skipped in 0.000s
+    Then このウィジェットから受付時間外にお問い合わせを送ると、受付時間外メッセージが表示される8 ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase></testsuite>

@@ -69,7 +69,7 @@ def loginAdmin():
     #ログイン
     driver.get('https://beta-tenant-admin.im.kotozna.chat/ja/login')
     time.sleep(5)
-    element = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div/div[2]/div[2]/form/div/div[1]/div/div[3]/input').send_keys('kenta+b230109-admin@kotozna.com')
+    element = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div/div[2]/div[2]/form/div/div[1]/div/div[3]/input').send_keys('developer+kenta-lamondo@kotozna.com')
     time.sleep(3)
     driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div/div[2]/div[3]/button').click()
     time.sleep(5)
@@ -228,7 +228,7 @@ def step_impl(context):
 
 @When('不在判定時間に1-10までの数字を半角で入力する1')
 def step_impl(context):
-        # 不在判定時間を消去
+    # 不在判定時間を消去
     driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[3]/div/form/div/div[1]/div/div[3]/input').send_keys(Keys.BACK_SPACE)
     driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[3]/div/form/div/div[1]/div/div[3]/input').send_keys(Keys.BACK_SPACE)
     driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[3]/div/form/div/div[1]/div/div[3]/input').send_keys(Keys.ENTER)

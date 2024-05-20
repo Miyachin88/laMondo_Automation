@@ -1,0 +1,28 @@
+<testsuite name="admin.basic.5B_A03.A03スタッフ画面に移動する Go to the staff panel" tests="1" errors="0" failures="1" skipped="0" time="61.053827" timestamp="2024-05-20T17:13:45.866235" hostname="Kentas-MacBook-Pro.local"><testcase classname="admin.basic.5B_A03.A03スタッフ画面に移動する Go to the staff panel" name="[A03-01]スタッフ画面へのリンクをクリックする Go to the staff panel via the link" status="failed" time="61.053827"><failure type="AssertionError" message="">
+<![CDATA[
+Failing step: Then ログイン画面が開く / The log in screen will be displayed ... failed in 10.010s
+Location: ../basic/5B_A03.feature:7
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/model.py", line 1812, in run
+    match.run(runner.context)
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/matchers.py", line 103, in run
+    self.func(context, *args, **kwargs)
+  File "../../steps/5B_A03.py", line 60, in a03_01_w
+    assert 'https://beta-staff.im.kotozna.chat/ja/main/conversations' in cur_url
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+]]>
+</failure><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-768
+  Scenario: [A03-01]スタッフ画面へのリンクをクリックする Go to the staff panel via the link
+    Given 管理画面を開いている / The management screen is open ... passed in 40.919s
+    When 左下の「スタッフ画面を開く」をクリックする / Click "Open Staff Screen" at the bottom left ... passed in 10.125s
+    Then ログイン画面が開く / The log in screen will be displayed ... failed in 10.010s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase></testsuite>

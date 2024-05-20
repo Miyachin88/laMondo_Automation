@@ -72,7 +72,7 @@ def login_admin():
     driver.get('https://beta-tenant-admin.im.kotozna.chat/ja/login')
     time.sleep(10)
 
-    element = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div/div[2]/div[2]/form/div/div[1]/div/div[3]/input').send_keys('kenta+gpt-adminoshima-3096@kotozna.com')
+    element = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div/div[2]/div[2]/form/div/div[1]/div/div[3]/input').send_keys('developer+kenta-lamondo@kotozna.com')
     time.sleep(3)
 
     #ログインボタンを押下
@@ -695,7 +695,7 @@ def test_AW03_03():
     #23日
     #/html/body/div[3]/div[2]/div/div[1]/div/div[2]/div/div/div[3]/div[4]/div[2]
 
-test_AW03_03()
+#test_AW03_03()
 #AW03-03の終わり
 
 # [AW03-04]チャットの対応不可時間を設定する（毎日）Set chat unavailable hours (Daily)
@@ -835,7 +835,7 @@ def test_AW03_04():
     cur_url = driver.current_url
     driver.refresh()
     time.sleep(10)
-test_AW03_04()
+#test_AW03_04()
 #AW03-04の終わり
 
 # [AW03-05]チャットの対応不可時間を設定する（曜日）Set chat unavailable hours (day of the week)
@@ -1604,7 +1604,7 @@ def test_AW04_01():
         print(currentpage.text)
         
 
-#test_AW04_01()
+test_AW04_01()
 
 # [AW04-02]メール送信用フォームを営業時間外に表示設定する
 # https://jaqool.atlassian.net/browse/GPT-786
@@ -1655,7 +1655,7 @@ def test_AW04_02():
         print(unavailable_Staff_Mail_Destination.text) 
         print(time_Staff_Did_Not_Respond.text)
 
-#test_AW04_02()
+test_AW04_02()
 
 # [AW04-03]不在時メール送信先を設定する
 # https://jaqool.atlassian.net/browse/GPT-787
@@ -1677,6 +1677,8 @@ def test_AW04_03():
     # メールアドレスを入力
     driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[2]/div[1]/div[1]/form/div/div[1]/div/div[3]/input').send_keys('aw04_03@kotozna.com')
     # 不在判定時間を入力
+    driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[3]/div/form/div/div[1]/div/div[3]/input').send_keys(Keys.BACK_SPACE)
+    driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[3]/div/form/div/div[1]/div/div[3]/input').send_keys(Keys.BACK_SPACE)
     driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[3]/div/form/div/div[1]/div/div[3]/input').send_keys(10)
 
     element = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[2]/div[1]/div[1]/form/div/div[1]/div/div[3]/input')
@@ -1689,7 +1691,7 @@ def test_AW04_03():
         print(mailaddress) 
         print(outoftime)
 
-#test_AW04_03()
+test_AW04_03()
 
 # [AW04-04]不在時メール送信先を追加する
 # https://jaqool.atlassian.net/browse/GPT-788
@@ -1703,7 +1705,7 @@ def test_AW04_04():
     if len(element) > 0:
         print("AW04-04 OK")
 
-#test_AW04_04()
+test_AW04_04()
 
 # [AW04-05]不在時メール送信先を削除する
 # https://jaqool.atlassian.net/browse/GPT-789
@@ -1716,7 +1718,7 @@ def test_AW04_05():
     if (mailaddress2 == "aw04_05@kotozna.com"):
         print("AW04-05 OK")
 
-#test_AW04_05()
+test_AW04_05()
 
 # [AW04-06]不在判定時間を設定する
 # https://jaqool.atlassian.net/browse/GPT-790
@@ -1733,5 +1735,85 @@ def test_AW04_06():
     outoftime = element.get_attribute('value')
     if outoftime == "5":
         print("AW04-06 OK")
+
+
+test_AW04_06()
+
+
+
+"""
+AW05Create New Widget Step ❹　ゲストによる評価設定
+https://jaqool.atlassian.net/browse/GPT-791
+"""
+
+# [AW05-01]メッセージ評価をONにする / Turn on Message Rating
+# https://jaqool.atlassian.net/browse/GPT-335
+# 
+def test_AW05_01():
+    #Given Tenant Admin Panel Guest Rating setting is displayed/ ゲストによる評価設定画面を開いている
+    # 不在時のメール受信設定からゲストによる評価に移動する
+    driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[2]/div[2]/div[2]/button').click()  
+    time.sleep(10)
+
+    #When Turn on "Message Rating"/ メッセージ評価を利用するのスイッチをONにする
+    message_evaluation = driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div/div/div/div[2]/input')
+    #不在時のチェックボックスがクリックされている
+    if message_evaluation.is_selected():
+        #チェックボックスをクリック
+        message_evaluation.click()
+        time.sleep(3)
+        #再度チェックボックスをクリック
+        message_evaluation.click()
+        #保存して閉じますをクリック
+        driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[2]/div[2]/div[1]/button').click()
+        time.sleep(10)        
+    else :   
+        message_evaluation.click()
+        #保存して閉じますをクリック
+        driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[2]/div[2]/div[1]/button').click()
+        time.sleep(10)              
         
-#test_AW04_06()
+    #Then In Guest Screen, each message from GPT has clickable "thumbs up/down"/ ゲスト画面では、GPTからの返信毎にいいね！ボタンが表示される
+    openW()
+    #指定したタグの中にボタンがあるか判定
+    #ボタンThumbs up
+    try:
+        element = driver.find_element(By.XPATH, '/html/body/span/div/div[1]/div/main/div/div/div[2]/div[1]/div/div[11]/div/div/div[2]/div/div[2]/button[1]')    
+        tag_name1 = element.tag_name
+        #ボタンThumbs down
+        element = driver.find_element(By.XPATH, '/html/body/span/div/div[1]/div/main/div/div/div[2]/div[1]/div/div[11]/div/div/div[2]/div/div[2]/button[2]')
+        tag_name2 = element.tag_name
+    except NoSuchElementException:
+        pass
+        
+    if (tag_name1 == "button") & (tag_name2 == "button"):
+        print("AW05-01 OK")
+        
+
+test_AW05_01()
+    
+# [AW05-02]ゲストによる評価をONにする Turn "Guest Rating" option ON
+# https://jaqool.atlassian.net/browse/GPT-336
+# 
+
+#Given ❹ゲストによる評価画面で、「ゲストによる評価を利用する」トグルがオフになっている/❹Guest Rating screen is displayed with Guest rating automatically off
+#When トグルをオンにする/Switch toggle to "ON"
+#Then ゲスト評価のデザイン選択肢が表示される/The four candidates of the design are displayed on the admin panel
+
+
+# [AW05-03]「５アイコン」に設定する If ON, Set Guest Rating to "5 icons"
+# https://jaqool.atlassian.net/browse/GPT-337
+# 
+
+#Given ❹ゲストによる評価画面におり、トグルがオンになっている1/Guest Rating is turned on 
+#When 「５アイコン」を選択する/Select "5 Icon"
+#Then 管理画面ではサンプルが表示され、ゲスト画面で会話終了後に５段階評価のアイコンが表示される/Guest rating survey is set to rate chat between 5 icons, display sample of "5 Icon" is automatically displayed
+
+
+# [AW05-04]「 星」に設定する If ON, Set Guest Rating to "Stars"
+# https://jaqool.atlassian.net/browse/GPT-338
+# 
+
+#Given ❹ゲストによる評価画面におり、トグルがオンになっている2/Guest Rating is turned on
+#When 「星」を選択する/Select "Emoji"
+#Then 管理画面ではサンプルが表示され、ゲスト画面で会話終了後に星5段階評価のアイコンが表示されるGuest rating survey is set to rate chat between 5 icons, display sample of "Emoji" is automatically displayed
