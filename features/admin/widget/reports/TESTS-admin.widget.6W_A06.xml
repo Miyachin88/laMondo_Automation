@@ -1,66 +1,65 @@
-<testsuite name="admin.widget.6W_A06.Create New Widget Step ❺　システムメッセージ設定" tests="5" errors="0" failures="0" skipped="0" time="128.489732" timestamp="2024-06-02T11:55:46.260438" hostname="Kentas-MacBook-Pro.local"><testcase classname="admin.widget.6W_A06.Create New Widget Step ❺　システムメッセージ設定" name="[AW06-01]初期メッセージを変更する / Change Chat Messages" status="passed" time="107.171979"><system-out>
+<testsuite name="admin.widget.6W_A06.Create New Widget Step ❺　システムメッセージ設定" tests="5" errors="0" failures="0" skipped="0" time="132.046287" timestamp="2024-06-02T14:42:42.657870" hostname="Kentas-MacBook-Pro.local"><testcase classname="admin.widget.6W_A06.Create New Widget Step ❺　システムメッセージ設定" name="[AW06-01]初期メッセージを変更する / Change Chat Messages" status="passed" time="107.323108"><system-out>
 <![CDATA[
 @scenario.begin
 
   @BDDTEST-GPT-339 @BDD_autmation @ZFJ_Automation
   Scenario: [AW06-01]初期メッセージを変更する / Change Chat Messages
-    Given Tenant Admin Panel System Message Setting is displayed1/ システムメッセージ設定画面を開いている ... passed in 107.019s
-    When Change text in "Chat Messages (When beginning a new chat)" / 初期メッセージ設定欄のメッセージを（テナント言語で）変更 ... passed in 0.135s
+    Given Tenant Admin Panel System Message Setting is displayed1/ システムメッセージ設定画面を開いている ... passed in 107.163s
+    When Change text in "Chat Messages (When beginning a new chat)" / 初期メッセージ設定欄のメッセージを（テナント言語で）変更 ... passed in 0.142s
     Then Changed test is displayed1 (not saved yet)/ 変更値が表示されている（未保存） ... passed in 0.018s
 
 @scenario.end
 --------------------------------------------------------------------------------
 ]]>
-</system-out></testcase><testcase classname="admin.widget.6W_A06.Create New Widget Step ❺　システムメッセージ設定" name="[AW06-02]メッセージインプットプレースホルダーを変更する / Change Placeholder Message" status="passed" time="5.166231"><system-out>
+</system-out></testcase><testcase classname="admin.widget.6W_A06.Create New Widget Step ❺　システムメッセージ設定" name="[AW06-02]メッセージインプットプレースホルダーを変更する / Change Placeholder Message" status="passed" time="5.162627"><system-out>
 <![CDATA[
 @scenario.begin
 
   @BDDTEST-GPT-340 @BDD_autmation @ZFJ_Automation
   Scenario: [AW06-02]メッセージインプットプレースホルダーを変更する / Change Placeholder Message
-    Given Tenant Admin Panel System Message Setting is displayed2/ システムメッセージ設定画面を開いている ... passed in 5.005s
-    When Change text in "Placeholder Message2" / メッセージインプットプレースホルダー設定欄のメッセージを（テナント言語で）変更する ... passed in 0.143s
-    Then Changed test is displayed (not saved yet)/ 変更値が表示されている（未保存） ... passed in 0.018s
+    Given Tenant Admin Panel System Message Setting is displayed2/ システムメッセージ設定画面を開いている ... passed in 5.001s
+    When Change text in "Placeholder Message2" / メッセージインプットプレースホルダー設定欄のメッセージを（テナント言語で）変更する ... passed in 0.130s
+    Then Changed test is displayed (not saved yet)/ 変更値が表示されている（未保存） ... passed in 0.032s
 
 @scenario.end
 --------------------------------------------------------------------------------
 ]]>
-</system-out></testcase><testcase classname="admin.widget.6W_A06.Create New Widget Step ❺　システムメッセージ設定" name="[AW06-03]サンプル質問をONにする Turn ON the Sample Questions" status="passed" time="10.146354"><system-out>
+</system-out></testcase><testcase classname="admin.widget.6W_A06.Create New Widget Step ❺　システムメッセージ設定" name="[AW06-03]サンプル質問をONにする Turn ON the Sample Questions" status="passed" time="10.148403"><system-out>
 <![CDATA[
 @scenario.begin
 
   @BDDTEST-GPT-1235 @ZFJ_Automation
   Scenario: [AW06-03]サンプル質問をONにする Turn ON the Sample Questions
     Given Tenant Admin Panel System Message Setting is displayed3/ システムメッセージ設定画面を開いている ... passed in 0.000s
-    Given Sample Questions switch is OFF/ サンプル質問のツイッチがオフになっている ... passed in 0.026s
-    When Turn on "Sample Questions"/ サンプル質問のスイッチをONにする ... passed in 10.078s
-    Then Three input boxes for custom questions for guest screen will appear/ サンプル質問の入力欄が3つ表示される ... passed in 0.042s
+    Given Sample Questions switch is OFF/ サンプル質問のツイッチがオフになっている ... passed in 0.022s
+    When Turn on "Sample Questions"/ サンプル質問のスイッチをONにする ... passed in 10.086s
+    Then Three input boxes for custom questions for guest screen will appear/ サンプル質問の入力欄が3つ表示される ... passed in 0.040s
 
 @scenario.end
 --------------------------------------------------------------------------------
 
 Captured stdout:
-<behave.runner.Context object at 0x102301650>
+<behave.runner.Context object at 0x100cc9650>
 
 ]]>
-</system-out></testcase><testcase classname="admin.widget.6W_A06.Create New Widget Step ❺　システムメッセージ設定" name="[AW06-04]サンプル質問を追加する Add Sample Questions" status="passed" time="3.00109"><system-out>
+</system-out></testcase><testcase classname="admin.widget.6W_A06.Create New Widget Step ❺　システムメッセージ設定" name="[AW06-04]サンプル質問を追加する Add Sample Questions" status="passed" time="6.406477"><system-out>
 <![CDATA[
 @scenario.begin
 
   @BDDTEST-GPT-1236 @ZFJ_Automation
   Scenario: [AW06-04]サンプル質問を追加する Add Sample Questions
-    Given Three input boxes for custom questions for guest screen will appear/ サンプル質問の入力欄が3つ表示されている ... passed in 0.000s
-    When Input one or two sample question(s) in tenant language/ サンプル質問を1つまたは2つ（テナント言語で）入力する ... passed in 3.001s
-    Then "Save and Next" button becomes active/ "保存して次へ"ボタンがアクティブになっている ... passed in 0.000s
+    Given Three input boxes for custom questions for guest screen will appear/ サンプル質問の入力欄が3つ表示されている ... passed in 3.005s
+    When Input one or two sample question(s) in tenant language/ サンプル質問を1つまたは2つ（テナント言語で）入力する ... passed in 3.364s
+    Then "Save and Next" button becomes active/ "保存して次へ"ボタンがアクティブになっている ... passed in 0.038s
 
 @scenario.end
 --------------------------------------------------------------------------------
 
 Captured stdout:
-<behave.runner.Context object at 0x102301650>
-<behave.runner.Context object at 0x102301650>
+<behave.runner.Context object at 0x100cc9650>
 
 ]]>
-</system-out></testcase><testcase classname="admin.widget.6W_A06.Create New Widget Step ❺　システムメッセージ設定" name="[AW06-05]システムメッセージ設定の保存" status="passed" time="3.004078"><system-out>
+</system-out></testcase><testcase classname="admin.widget.6W_A06.Create New Widget Step ❺　システムメッセージ設定" name="[AW06-05]システムメッセージ設定の保存" status="passed" time="3.005672"><system-out>
 <![CDATA[
 @scenario.begin
 
@@ -68,7 +67,7 @@ Captured stdout:
   Scenario: [AW06-05]システムメッセージ設定の保存
     Given Tenant Admin Panel System Message Setting is displayed4/ システムメッセージ設定画面を開いている ... passed in 0.000s
     Given Texts are displayed in "Chat Messages (When beginning a new chat)", "Placeholder Message" field and "Sample Questions" field/ 初期メッセージ、メッセージインプットプレースホルダー、サンプル質問設定欄に文章が入力されている ... passed in 0.000s
-    When Press "SAVE AND NEXT" / "保存して次へ"を押下 ... passed in 3.004s
+    When Press "SAVE AND NEXT" / "保存して次へ"を押下 ... passed in 3.005s
     Then Design Setting screen is displayed/ デザイン設定画面に遷移する ... passed in 0.000s
     Then On the guest screen, "Chat Messages (When beginning a new chat)" and "Placeholder Message" are changed/ ゲスト画面の初期メッセージとメッセージ入力欄のメッセージが変更されている ... passed in 0.000s
     Then System Messages of all widgets in this tenant are changed/ システムメッセージが変更されている＊同テナントのウィジェット全て ... passed in 0.000s
@@ -78,12 +77,12 @@ Captured stdout:
 --------------------------------------------------------------------------------
 
 Captured stdout:
-<behave.runner.Context object at 0x102301650>
-<behave.runner.Context object at 0x102301650>
-<behave.runner.Context object at 0x102301650>
-<behave.runner.Context object at 0x102301650>
-<behave.runner.Context object at 0x102301650>
-<behave.runner.Context object at 0x102301650>
+<behave.runner.Context object at 0x100cc9650>
+<behave.runner.Context object at 0x100cc9650>
+<behave.runner.Context object at 0x100cc9650>
+<behave.runner.Context object at 0x100cc9650>
+<behave.runner.Context object at 0x100cc9650>
+<behave.runner.Context object at 0x100cc9650>
 
 ]]>
 </system-out></testcase></testsuite>

@@ -200,7 +200,6 @@ def chinsara_T(chinsara):
 # https://jaqool.atlassian.net/browse/GPT-1235
 # 
 
-
 #
 @given('Tenant Admin Panel System Message Setting is displayed3/ システムメッセージ設定画面を開いている')
 def chinsara_G(chinsara):
@@ -228,10 +227,8 @@ def chinsara_T(chinsara):
     chinsara2 = sample1.get_attribute('placeholder')
     sample2 = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[3]/div[6]/form/div/div[1]/div/div[3]/input')
     chinsara3 = sample1.get_attribute('placeholder')
-    assert (chinsara1 == "例: 今日の天気はどうですか？") & (chinsara2 == "例: 今日の天気はどうですか？") & (chinsara3 == "例: 今日の天気はどうですか？")
+    assert (chinsara1 == '例: 今日の天気はどうですか？') & (chinsara2 == '例: 今日の天気はどうですか？') & (chinsara3 == "例: 今日の天気はどうですか？")
     
-    
-
 
 # [AW06-04]サンプル質問を追加する Add Sample Questions
 # https://jaqool.atlassian.net/browse/GPT-1236
@@ -240,15 +237,33 @@ def chinsara_T(chinsara):
 @given('Three input boxes for custom questions for guest screen will appear/ サンプル質問の入力欄が3つ表示されている')
 def chinsara_G(chinsara):
     print(chinsara)
+    time.sleep(3)
 #
 @when('Input one or two sample question(s) in tenant language/ サンプル質問を1つまたは2つ（テナント言語で）入力する')
 def chinsara_W(chinsara):
+    sample1 = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[3]/div[4]/form/div/div[1]/div/div[3]/input')
+    sample1.send_keys(Keys.COMMAND + "a" )
+    sample1.send_keys( Keys.DELETE )
+    sample1.send_keys('W06-04のテスト1')
+    sample2 = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[3]/div[5]/form/div/div[1]/div/div[3]/input')
+    sample2.send_keys(Keys.COMMAND + "a" )
+    sample2.send_keys( Keys.DELETE )
+    sample2.send_keys('W06-04のテスト2')
+    sample3 = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[3]/div[6]/form/div/div[1]/div/div[3]/input')
+    sample3.send_keys(Keys.COMMAND + "a" )
+    sample3.send_keys( Keys.DELETE )
+    sample3.send_keys('W06-04のテスト3')
     time.sleep(3)
 #
 @then('"Save and Next" button becomes active/ "保存して次へ"ボタンがアクティブになっている')
 def chinsara_T(chinsara):
-    print(chinsara)
-    
+    sample1 = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[3]/div[4]/form/div/div[1]/div/div[3]/input')
+    chinsara1 = sample1.get_attribute('value')
+    sample2 = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[3]/div[5]/form/div/div[1]/div/div[3]/input')
+    chinsara2 = sample2.get_attribute('value')
+    sample3 = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[3]/div[6]/form/div/div[1]/div/div[3]/input')
+    chinsara3 = sample3.get_attribute('value')
+    assert (chinsara1 == "W06-04のテスト1") & (chinsara2 == "W06-04のテスト2") & (chinsara3 == "W06-04のテスト3")
     
 # [AW06-05]システムメッセージ設定の保存
 # https://jaqool.atlassian.net/browse/GPT-1055
