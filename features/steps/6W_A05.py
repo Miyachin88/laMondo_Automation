@@ -320,7 +320,7 @@ def chinsara_G(chinsara):
         time.sleep(10)
         driver.find_element(By.XPATH,'/html/body/div[2]/div/div/div/div[1]').click()
         time.sleep(10)
-#
+#　
 @when('「５アイコン」を選択する/Select "5 Icon"')
 def chinsara_W(chinsara):
     image_link = driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[4]/div[4]/div/div/div[4]/div[2]/div[1]/img[1]')

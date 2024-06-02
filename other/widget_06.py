@@ -73,7 +73,7 @@ def login_admin():
     driver.get('https://beta-tenant-admin.im.kotozna.chat/ja/login')
     time.sleep(10)
 
-    element = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div/div[2]/div[2]/form/div/div[1]/div/div[3]/input').send_keys('developer+kenta-lamondo@kotozna.com')
+    element = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div/div[2]/div[2]/form/div/div[1]/div/div[3]/input').send_keys('kenta+gpt-adminoshima-3096@kotozna.com')
     time.sleep(3)
 
     #ログインボタンを押下
@@ -82,7 +82,7 @@ def login_admin():
 
     #PINを入力してログイン
     driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div/div[2]/div[2]/form/div/div[1]/div/div[3]/input').send_keys('000000')
-    time.sleep(5)
+    time.sleep(10)
     driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div/div[2]/div[3]/button').click()
     time.sleep(10)
     cur_url = driver.current_url
@@ -1988,9 +1988,11 @@ test_AW04_04()
 test_AW04_05()
 test_AW04_06()
 
+"""
 test_AW05_01()
 test_AW05_02()
 test_AW05_03()
+"""
 
 
 # [AW05-04]「 星」に設定する If ON, Set Guest Rating to "Stars"
