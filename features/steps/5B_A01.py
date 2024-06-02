@@ -54,9 +54,9 @@ def chinsara_G(chinsara):
 #
 @when('PINコードを入力して「ログイン」をクリックEnter your PIN code and click "Login"')
 def chinsara_W(chinsara):
-    #PINを入力
+    #PINを入力してログイン
     driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div/div[2]/div[2]/form/div/div[1]/div/div[3]/input').send_keys('000000')
-    time.sleep(10)
+    time.sleep(5)
 
     #PINをクリック
     element = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div/div[2]/div[2]/form/div/div[1]/div/div[3]/input')

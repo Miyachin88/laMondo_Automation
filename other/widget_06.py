@@ -1,3 +1,4 @@
+from unittest import skip
 import webbrowser
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service as ChromeService
@@ -81,7 +82,7 @@ def login_admin():
 
     #PINを入力してログイン
     driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div/div[2]/div[2]/form/div/div[1]/div/div[3]/input').send_keys('000000')
-    time.sleep(10)
+    time.sleep(5)
     driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div/div[2]/div[3]/button').click()
     time.sleep(10)
     cur_url = driver.current_url
@@ -228,12 +229,12 @@ def test_AW02_02():
     #When 担当グループ選択覧の▼をクリックし、グループ名をクリックする Click ▼ in the group selection box, and click the group name.
     driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div/div[1]/div').click()
     time.sleep(3)
-    driver.find_element(By.XPATH,'/html/body/div[2]/div/div/div/div[3]').click()
+    driver.find_element(By.XPATH,'/html/body/div[2]/div/div/div/div[17]').click()
     time.sleep(5)
     #Then 担当グループが設定される The group in charge is set
     widget_setting = driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div/div[1]/div/div[3]/div/div/span')
     aw2_2 = widget_setting.text
-    if 'ごみ' == aw2_2:
+    if '自動化用グループ' == aw2_2:
         #テキストの判別
         print("AW02-02 OK")
     else :
@@ -303,7 +304,7 @@ def test_AW03_01():
         time.sleep(5)
         #プルダウンをクリック
         driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[1]/div[1]/div[2]/div[1]/div').click()
-        time.sleep(5)
+        time.sleep(10)
 
     #受付時間をクリック
     driver.find_element(By.XPATH,'/html/body/div[2]/div/div/div/div[1]/div[2]/div').click()
@@ -411,10 +412,6 @@ def test_AW03_01():
 #AW03-01の終わり
 
 
-
-
-
-
 # [AW03-02]チャットの営業可能時間を設定する（曜日） Set chat business hours (day of the week)
 # https://jaqool.atlassian.net/browse/GPT-777
 # 
@@ -432,7 +429,7 @@ def test_AW03_02():
     if '' == eigyo_type:
         #プルダウンをクリック
         driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[1]/div[1]/div[2]/div[1]/div').click()
-        time.sleep(5)
+        time.sleep(10)
     else :
     #パターン2：すでに受付時間のプルダウンが表示
         #最初のゴミ箱をクリック
@@ -449,7 +446,7 @@ def test_AW03_02():
         time.sleep(5)
         #プルダウンをクリック
         driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[1]/div[1]/div[2]/div[1]/div').click()
-        time.sleep(5)
+        time.sleep(10)
 
     #受付時間をクリック
     driver.find_element(By.XPATH,'/html/body/div[2]/div/div/div/div[1]/div[2]/div').click()
@@ -1604,7 +1601,7 @@ def test_AW04_01():
         print(currentpage.text)
         
 
-test_AW04_01()
+#test_AW04_01()
 
 # [AW04-02]メール送信用フォームを営業時間外に表示設定する
 # https://jaqool.atlassian.net/browse/GPT-786
@@ -1655,7 +1652,7 @@ def test_AW04_02():
         print(unavailable_Staff_Mail_Destination.text) 
         print(time_Staff_Did_Not_Respond.text)
 
-test_AW04_02()
+#test_AW04_02()
 
 # [AW04-03]不在時メール送信先を設定する
 # https://jaqool.atlassian.net/browse/GPT-787
@@ -1691,7 +1688,7 @@ def test_AW04_03():
         print(mailaddress) 
         print(outoftime)
 
-test_AW04_03()
+#test_AW04_03()
 
 # [AW04-04]不在時メール送信先を追加する
 # https://jaqool.atlassian.net/browse/GPT-788
@@ -1705,7 +1702,7 @@ def test_AW04_04():
     if len(element) > 0:
         print("AW04-04 OK")
 
-test_AW04_04()
+#test_AW04_04()
 
 # [AW04-05]不在時メール送信先を削除する
 # https://jaqool.atlassian.net/browse/GPT-789
@@ -1718,7 +1715,7 @@ def test_AW04_05():
     if (mailaddress2 == "aw04_05@kotozna.com"):
         print("AW04-05 OK")
 
-test_AW04_05()
+#test_AW04_05()
 
 # [AW04-06]不在判定時間を設定する
 # https://jaqool.atlassian.net/browse/GPT-790
@@ -1737,7 +1734,7 @@ def test_AW04_06():
         print("AW04-06 OK")
 
 
-test_AW04_06()
+#test_AW04_06()
 
 
 
@@ -1757,7 +1754,7 @@ def test_AW05_01():
 
     #When Turn on "Message Rating"/ メッセージ評価を利用するのスイッチをONにする
     message_evaluation = driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div/div/div/div[2]/input')
-    #不在時のチェックボックスがクリックされている
+    #メッセージ評価を利用するのクリックされている
     if message_evaluation.is_selected():
         #チェックボックスをクリック
         message_evaluation.click()
@@ -1788,26 +1785,212 @@ def test_AW05_01():
         
     if (tag_name1 == "button") & (tag_name2 == "button"):
         print("AW05-01 OK")
-        
+        driver.close()
+    # タブのハンドルを取得する
+    tab_handles = driver.window_handles
+    # 1番目のタブに切り替える
+    first_tab_handle = tab_handles[0]
+    driver.switch_to.window(first_tab_handle)
+    cur_url = driver.current_url
+    driver.refresh()
+    time.sleep(10)
 
-test_AW05_01()
+#test_AW05_01()
     
 # [AW05-02]ゲストによる評価をONにする Turn "Guest Rating" option ON
 # https://jaqool.atlassian.net/browse/GPT-336
 # 
 
-#Given ❹ゲストによる評価画面で、「ゲストによる評価を利用する」トグルがオフになっている/❹Guest Rating screen is displayed with Guest rating automatically off
-#When トグルをオンにする/Switch toggle to "ON"
-#Then ゲスト評価のデザイン選択肢が表示される/The four candidates of the design are displayed on the admin panel
+def test_AW05_02():
+    
+    #Given ❹ゲストによる評価画面で、「ゲストによる評価を利用する」トグルがオフになっている/❹Guest Rating screen is displayed with Guest rating automatically off
+    # ゲストによる評価に移動する
+    # 自動化用のウィジェットの鉛筆マークをクリック
+    driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div/div[3]/div/table/tbody/tr[2]/td[7]/div/div/button').click()
+    time.sleep(3)
+    # 自動化用のウィジェットの①担当グループにて”保存して次へ”をクリック
+    driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[2]/div[2]/div[2]/button').click()
+    time.sleep(5)
+    #営業時間の設定を解除
+    #パターン1：受付時間のプルダウンが表示されてない
+    eigyo_type = driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[1]/div[1]/div[2]/div[1]/div/div[3]/div/div/span').text 
+    if '' == eigyo_type:
+        #プルダウンをクリック
+        driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[1]/div[1]/div[2]/div[1]/div').click()
+        time.sleep(5)
+    else :
+    #パターン2：すでに受付時間のプルダウンが表示
+        #最初のゴミ箱をクリック
+        driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[1]/div[2]/div/div[1]/div[2]').click()
+        try:
+            #2番目のゴミ箱をクリック
+            driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[1]/div[2]/div/div[1]/div[2]').click()
+        except NoSuchElementException:
+            pass
+        except ElementClickInterceptedException:
+            pass
+        #ばつボタンをクリック
+        driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[1]/div[1]/div[2]/div[1]/div/div[4]/i').click()
+        time.sleep(5)
+        #プルダウンをクリック
+        driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[1]/div[1]/div[2]/div[1]/div').click()
+        time.sleep(5)     
+    # 自動化用のウィジェットの②営業時間にて”保存して次へ”をクリック
+    driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[2]/div[2]/div[2]/button').click()
+    time.sleep(5)   
+    #営業時間外をクリックして、設定を解除する
+    time.sleep(10)
+    outofbusihour = driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div/div[1]/div[1]/div[1]/div/div/div/input')
+    #営業時間外のチェックボックスがクリックされている
+    if outofbusihour.is_selected():
+        #クリックを解除
+        outofbusihour.click()    
+    #不在時をクリック
+    outoftime = driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div/div[2]/div[1]/div[1]/div/div/div/input')
+    #不在時のチェックボックスがクリックされている
+    if outoftime.is_selected():
+        #クリックを解除
+        outoftime.click()
 
+    # 自動化用のウィジェットの③不在時のメール受信設定にて”保存して閉じます”をクリックしてウィジェット設定へ移動
+    driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[2]/div[2]/div[1]/button').click()
+    time.sleep(10)
+    # 自動化用のウィジェットの鉛筆マークをクリック
+    driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div/div[3]/div/table/tbody/tr[2]/td[7]/div/div/button').click()
+    time.sleep(3)
+    # 自動化用のウィジェットの①担当グループにて”保存して次へ”をクリック
+    driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[2]/div[2]/div[2]/button').click()
+    time.sleep(5)
+    # 自動化用のウィジェットの②営業時間にて”保存して次へ”をクリック
+    driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[2]/div[2]/div[2]/button').click()
+    time.sleep(5)
+    # 自動化用のウィジェットの③不在時のメール受信設定にて”保存して次へ”をクリック
+    driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[2]/div[2]/div[2]/button').click()
+    time.sleep(10)
+    guest_evaluation = driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[3]/div/div/div/div[2]/input')
+    #ゲストによる評価を利用するがクリックされている
+    if guest_evaluation.is_selected():
+        #チェックボックスをクリック
+        guest_evaluation.click()
+        time.sleep(3)
+    #When トグルをオンにする/Switch toggle to "ON"
+    #トグルをオンにする/Switch toggle to "ON"
+    guest_evaluation = driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[3]/div/div/div/div[2]/input')
+    #チェックボックスをクリック
+    guest_evaluation.click()
+
+    #Then ゲスト評価のデザイン選択肢が表示される/The four candidates of the design are displayed on the admin panel    
+    #ゲスト評価のデザイン選択肢が表示される/The four candidates of the design are displayed on the admin panel
+    #タイプのプルダウンが表示
+    guest_type = driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[4]/div[1]/div[1]').text
+    #サーベイリンクを利用するが表示
+    guest_surveylink = driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[4]/div[2]/div/div/div/label').text  
+    #表示サンプルが表示
+    guest_sample = driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[4]/div[3]').text
+    if (guest_type == "タイプ*") & (guest_surveylink == "サーベイリンクを利用する") & (guest_sample == "表示サンプル"):
+        print("AW05-02 OK")
+    #(guest_type == "タイプ") & (guest_surveylink == "サーベイリンクを利用する") & (guest_sample == "表示サンプル")
 
 # [AW05-03]「５アイコン」に設定する If ON, Set Guest Rating to "5 icons"
 # https://jaqool.atlassian.net/browse/GPT-337
 # 
+def test_AW05_03():
+    #Given ❹ゲストによる評価画面におり、トグルがオンになっている1/Guest Rating is turned on 
+    ##タイプのプルダウンから"5アイコン"を選択 / Select "Business Hours" as Type
+    #パターン1：プルダウンが表示されている
+    #When 「５アイコン」を選択する/Select "5 Icon"
+    guestevaluate_type = driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[4]/div[1]/div[2]/div[1]/div/div[3]/div/div/span').text 
+    if '5 アイコン' == guestevaluate_type:
+        driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[4]/div[1]/div[2]/div[1]/div').click()
+        time.sleep(10)
+        driver.find_element(By.XPATH,'/html/body/div[2]/div/div/div/div[1]').click()
+        time.sleep(10)
+        #保存して閉じますをクリック
+        driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[2]/div[2]/div[1]/button').click()
+        time.sleep(10)  
+    else :
+    #パターン2："星"が選択
+        #ばつをクリック
+        driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[4]/div[1]/div[2]/div[1]/div/div[4]/i').click()
+        time.sleep(5)
+        #プルダウンをクリック
+        driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[4]/div[1]/div[2]/div[1]/div').click()        
+        time.sleep(10)
+        driver.find_element(By.XPATH,'/html/body/div[2]/div/div/div/div[1]').click()
+        time.sleep(10)
+        #保存して閉じますをクリック
+        driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[2]/div[2]/div[1]/button').click()
+        time.sleep(10)  
+    #Then 管理画面ではサンプルが表示され、ゲスト画面で会話終了後に５段階評価のアイコンが表示される/Guest rating survey is set to rate chat between 5 icons, display sample of "5 Icon" is automatically displayed
+    openW()
+    #メッセージアイコンをクリック後に”はじめる”を押下
+    driver.find_element(By.XPATH,'/html/body/span/div/div[1]/div[3]/div/div/div[3]/div/button[1]').click()
+    time.sleep(10)
+    #テキストフィールドに文字を入力
+    driver.find_element(By.XPATH,'/html/body/span/div/div[1]/div[3]/div/div/div[2]/div/div/div/div/div/div/div/textarea').send_keys('こんにちは')
+    time.sleep(5)
+    #”送信”を押下
+    driver.find_element(By.XPATH,'/html/body/span/div/div[1]/div[3]/div/div/div[3]/div/button[1]').click()
+    time.sleep(10)
+    #スタッフ画面を別タブで開く
+    # タブのハンドルを取得する
+    driver.execute_script("window.open('https://beta-staff.im.kotozna.chat/ja/login?theme=ktzn');")
+    time.sleep(20)
+    tab_handles = driver.window_handles
+    # 1番目のタブに切り替える
+    first_tab_handle = tab_handles[2]
+    driver.switch_to.window(first_tab_handle)
+    cur_url = driver.current_url
+    print(cur_url)
+    time.sleep(10)
+    
+"""
+    #受け取りボタンをクリック
+    /html/body/span/div/div[1]/div[3]/main/div/div/div[4]/div/div/div[2]/div/button
+    #ワークコードを押下
+    /html/body/span/div/div[1]/div[3]/main/div/div/div[2]/div/div/div[5]/div/div[2]/div/div[2]/div[1]/div/button
+    #ワークコードテストのチェックボックスをクリック
+    /html/body/span/div/div[1]/div[7]/div/div[2]/div/div[5]/div/div/div/div[1]/div/input
+    #どっか適当にクリック。今回は虫眼鏡
+    /html/body/span/div/div[1]/div[3]/main/div/div/div[2]/div/div/div[1]/div/div[1]/div[1]/div/button
+    #チャット完了ボタンを押下
+    /html/body/span/div/div[1]/div[3]/main/div/div/div[2]/div/div/div[3]/div/div[1]/div/div[1]/div[1]/button
+    #solveを押下
+    /html/body/span/div/div[1]/div[8]/div/div/div[2]/div/button[2]
+    #ゲスト画面に戻る
+    
+    #チャットのアイコンが5アイコンかを確認する
+    /html/body/span/div/div[1]/div[2]/main/div/div/div[2]/div/div[2]/div/span/button[1]
+    
 
-#Given ❹ゲストによる評価画面におり、トグルがオンになっている1/Guest Rating is turned on 
-#When 「５アイコン」を選択する/Select "5 Icon"
-#Then 管理画面ではサンプルが表示され、ゲスト画面で会話終了後に５段階評価のアイコンが表示される/Guest rating survey is set to rate chat between 5 icons, display sample of "5 Icon" is automatically displayed
+https://res.cloudinary.com/jaqool-inc-dev/image/upload/v1695782511/survey/Bad.svg
+https://res.cloudinary.com/jaqool-inc-dev/image/upload/v1695782511/survey/Bad.svg
+https://res.cloudinary.com/jaqool-inc-dev/image/upload/v1696217053/survey/Border.svg
+"""
+
+
+"""
+test_AW03_01()
+test_AW03_02()
+test_AW03_03()
+test_AW03_04()
+test_AW03_05()
+test_AW03_06()
+test_AW03_07()
+test_AW03_08()
+"""
+
+
+test_AW04_01()
+test_AW04_02()
+test_AW04_03()
+test_AW04_04()
+test_AW04_05()
+test_AW04_06()
+
+test_AW05_01()
+test_AW05_02()
+test_AW05_03()
 
 
 # [AW05-04]「 星」に設定する If ON, Set Guest Rating to "Stars"

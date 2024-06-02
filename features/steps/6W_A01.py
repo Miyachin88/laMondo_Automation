@@ -38,7 +38,7 @@ def chinsara_G(chinsara):
     driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div/div[2]/div[3]/button').click()
     time.sleep(5)
     driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div/div[2]/div[2]/form/div/div[1]/div/div[3]/input').send_keys('000000')
-    time.sleep(10)
+    time.sleep(5)
     driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div/div[2]/div[3]/button').click()
     # dev要素を見つけて、そのテキストを取得する
     time.sleep(10)

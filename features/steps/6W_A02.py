@@ -39,7 +39,7 @@ def chinsara_G(chinsara):
     driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div/div[2]/div[3]/button').click()
     time.sleep(5)
     driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div/div[2]/div[2]/form/div/div[1]/div/div[3]/input').send_keys('000000')
-    time.sleep(10)
+    time.sleep(5)
     driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div/div[2]/div[3]/button').click()
     # dev要素を見つけて、そのテキストを取得する
     time.sleep(10)
@@ -78,14 +78,14 @@ def chinsara_G(chinsara):
 
 @When('担当グループ選択覧の▼をクリックし、グループ名をクリックする Click ▼ in the group selection box, and click the group name.')
 def chinsara_G(chinsara):
-    driver.find_element(By.XPATH,'/html/body/div[2]/div/div/div/div[3]').click()
+    driver.find_element(By.XPATH,'/html/body/div[2]/div/div/div/div[17]').click()
     time.sleep(5)
 @Then('担当グループが設定される The group in charge is set')
 def chinsara_G(chinsara):
     #Then 担当グループが設定される The group in charge is set
     widget_setting = driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div/div[1]/div/div[3]/div/div/span')
     aw2_2 = widget_setting.text
-    assert 'ごみ' == aw2_2
+    assert '自動化用グループ' == aw2_2
 
 
 
