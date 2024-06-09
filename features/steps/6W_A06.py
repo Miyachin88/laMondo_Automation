@@ -22,6 +22,7 @@ Create New Widget Step ❺　システムメッセージ設定
 https://jaqool.atlassian.net/browse/GPT-1056
 kenta+b230109-admin@kotozna.com
 developer+kenta-lamondo@kotozna.com
+developer+kenta-lamondo+super@kotozna.com
 """
 
 #ドライバのインストール
@@ -67,7 +68,7 @@ def loginAdmin():
     #ログイン
     driver.get('https://beta-tenant-admin.im.kotozna.chat/ja/login')
     time.sleep(5)
-    element = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div/div[2]/div[2]/form/div/div[1]/div/div[3]/input').send_keys('kenta+gpt-adminoshima-3096@kotozna.com')
+    element = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div/div[2]/div[2]/form/div/div[1]/div/div[3]/input').send_keys('developer+kenta-lamondo+super@kotozna.com')
     time.sleep(3)
     driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div/div[2]/div[3]/button').click()
     time.sleep(10)

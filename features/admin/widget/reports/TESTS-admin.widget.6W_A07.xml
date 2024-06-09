@@ -1,0 +1,282 @@
+<testsuite name="admin.widget.6W_A07.Create New Widget Step ❻　デザイン設定" tests="11" errors="1" failures="3" skipped="0" time="229.884369" timestamp="2024-06-09T20:51:35.935685" hostname="Kentas-MBP"><testcase classname="admin.widget.6W_A07.Create New Widget Step ❻　デザイン設定" name="[AW07-01]ウィジェットロゴを設定する Set Widget Logo" status="passed" time="113.648345"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-341 @BDD_autmation @ZFJ_Automation
+  Scenario: [AW07-01]ウィジェットロゴを設定する Set Widget Logo
+    Given 「❻デザイン設定」画面が表示されている1 ❻Design Setting screen is displayed ... passed in 110.643s
+    When ウィジェットロゴの「ロゴを変更」をクリックし、画像データをアップロードするSelect "Change Logo" and upload an image to be used ... passed in 3.005s
+    Then 表示サンプルが選択したウィジェットロゴにて表示される。Preview displays selected widget logo, widget logo is set ... passed in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+<behave.runner.Context object at 0x102599690>
+
+]]>
+</system-out></testcase><testcase classname="admin.widget.6W_A07.Create New Widget Step ❻　デザイン設定" name="[AW07-02]チャットヘッダーの色を選択する Select Chat Header Color" status="passed" time="3.001834"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-342 @BDD_autmation @ZFJ_Automation
+  Scenario: [AW07-02]チャットヘッダーの色を選択する Select Chat Header Color
+    Given 「❻デザイン設定」画面が表示されている2Design Setting screen is displayed ... passed in 0.000s
+    When チャットヘッダーの色を既存の色から選択する。Select chat header color from existing colors ... passed in 3.002s
+    Then 表示サンプルのチャットヘッダーとウィジェットアイコンが選択した色にて表示される1。Preview displays selected chat color, chat color is set ... passed in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+<behave.runner.Context object at 0x102599690>
+<behave.runner.Context object at 0x102599690>
+
+]]>
+</system-out></testcase><testcase classname="admin.widget.6W_A07.Create New Widget Step ❻　デザイン設定" name="[AW07-03]チャットヘッダーの色をカスタム設定する Create Custom Chat Header Color" status="failed" time="3.038579"><failure type="AssertionError" message="">
+<![CDATA[
+Failing step: Then 表示サンプルのチャットヘッダーとウィジェットアイコンが選択した色にて表示される2。Preview displays set chat color, chat color is set ... failed in 0.033s
+Location: 6W_A07.feature:25
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/model.py", line 1812, in run
+    match.run(runner.context)
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/matchers.py", line 103, in run
+    self.func(context, *args, **kwargs)
+  File "../../steps/6W_A07.py", line 209, in chinsara_T
+    assert header_color == "rgb(0, 215, 167)"
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+
+Captured stdout:
+<behave.runner.Context object at 0x102599690>]]>
+</failure><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-343 @BDD_autmation @ZFJ_Automation
+  Scenario: [AW07-03]チャットヘッダーの色をカスタム設定する Create Custom Chat Header Color
+    Given 「❻デザイン設定」画面が表示されている3 Design Setting screen is displayed ... passed in 0.000s
+    When "カスタム"の横の入力欄に、6桁のHEXコードを入力する、またはカラーシートから選択するSelect input box next to custom and input 6 digit color HEX code, or select color box next to "Custom"and set ... passed in 3.005s
+    Then 表示サンプルのチャットヘッダーとウィジェットアイコンが選択した色にて表示される2。Preview displays set chat color, chat color is set ... failed in 0.033s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+<behave.runner.Context object at 0x102599690>
+
+]]>
+</system-out></testcase><testcase classname="admin.widget.6W_A07.Create New Widget Step ❻　デザイン設定" name="[AW07-04]チャットアイコンを設定する Set Chat Icon Image Setting" status="passed" time="3.003636"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-344 @BDD_autmation @ZFJ_Automation
+  Scenario: [AW07-04]チャットアイコンを設定する Set Chat Icon Image Setting
+    Given 「❻デザイン設定」画面が表示されている4Design Setting screen is displayed ... passed in 0.000s
+    When 「アイコン設定」の「アイコンを変更」から画像をアップロードするSelect "Change Icon" and upload an image to be used ... passed in 3.004s
+    Then 表示サンプルが選択したアイコンにて表示される1。Preview displays selected icon, icon is set ... passed in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+<behave.runner.Context object at 0x102599690>
+<behave.runner.Context object at 0x102599690>
+
+]]>
+</system-out></testcase><testcase classname="admin.widget.6W_A07.Create New Widget Step ❻　デザイン設定" name="[AW07-05]ウィジェットアイコンを設定する Set Widget Icon Image Setting" status="passed" time="3.000278"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-907 @ZFJ_Automation
+  Scenario: [AW07-05]ウィジェットアイコンを設定する Set Widget Icon Image Setting
+    Given 「❻デザイン設定」画面が表示されている5 ❻Design Setting screen is displayed ... passed in 0.000s
+    When ウィジェットが閉じている時のアイコンの「アイコンを変更」をクリックし、画像データをアップロードするSelect ""Change Icon"" and upload an image to be used ... passed in 3.000s
+    Then 表示サンプルが選択したアイコンにて表示される2。Preview displays selected widget icon, widget icon is set ... passed in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+<behave.runner.Context object at 0x102599690>
+<behave.runner.Context object at 0x102599690>
+
+]]>
+</system-out></testcase><testcase classname="admin.widget.6W_A07.Create New Widget Step ❻　デザイン設定" name="[AW07-06]ウィジェットアイコンのサイズを大きくする" status="failed" time="3.032025"><failure type="AssertionError" message="">
+<![CDATA[
+Failing step: Then 表示サンプルのウィジェットアイコンサイズが変わる1 Preview displays changed size, widget icon on Web page is set ... failed in 0.027s
+Location: 6W_A07.feature:49
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/model.py", line 1812, in run
+    match.run(runner.context)
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/matchers.py", line 103, in run
+    self.func(context, *args, **kwargs)
+  File "../../steps/6W_A07.py", line 265, in chinsara_T
+    assert image_width == "120px"
+           ^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+
+Captured stdout:
+<behave.runner.Context object at 0x102599690>]]>
+</failure><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-908 @ZFJ_Automation
+  Scenario: [AW07-06]ウィジェットアイコンのサイズを大きくする
+    Given 「❻デザイン設定」画面が表示されている6 Design Setting screen is displayed ... passed in 0.000s
+    When アイコンサイズ(px)の＋を押下1 Press "+" of Icon size(px) ... passed in 3.005s
+    Then 表示サンプルのウィジェットアイコンサイズが変わる1 Preview displays changed size, widget icon on Web page is set ... failed in 0.027s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+<behave.runner.Context object at 0x102599690>
+
+]]>
+</system-out></testcase><testcase classname="admin.widget.6W_A07.Create New Widget Step ❻　デザイン設定" name="[AW07-07]ウィジェットアイコンのサイズを小さくする" status="passed" time="3.02465"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-909 @ZFJ_Automation
+  Scenario: [AW07-07]ウィジェットアイコンのサイズを小さくする
+    Given 「❻デザイン設定」画面が表示されている7 Design Setting screen is displayed ... passed in 0.000s
+    When アイコンサイズ(px)の "-" を押下2 Press "-" of Icon size(px) ... passed in 3.005s
+    Then 表示サンプルのウィジェットアイコンサイズが変わる2 Preview displays changed size, widget icon on Web page is set ... passed in 0.019s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+<behave.runner.Context object at 0x102599690>
+
+]]>
+</system-out></testcase><testcase classname="admin.widget.6W_A07.Create New Widget Step ❻　デザイン設定" name="[AW07-08]ウィジェットアイコンのフォントサイズを大きくする" status="passed" time="48.777632"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-910 @ZFJ_Automation
+  Scenario: [AW07-08]ウィジェットアイコンのフォントサイズを大きくする
+    Given 「❻デザイン設定」画面が表示されている8 Design Setting screen is displayed ... passed in 0.000s
+    When フォントサイズ(px)の"＋"を押下1 Press "+" of Icon size(px) ... passed in 48.751s
+    Then 表示サンプルのウィジェット上「チャットする」のフォントサイズが変わる1 Preview displays changed size, widget icon on Web page is set ... passed in 0.027s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+<behave.runner.Context object at 0x102599690>
+
+]]>
+</system-out></testcase><testcase classname="admin.widget.6W_A07.Create New Widget Step ❻　デザイン設定" name="[AW07-09]ウィジェットアイコンのフォントサイズを小さくする" status="passed" time="48.742838"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-911 @ZFJ_Automation
+  Scenario: [AW07-09]ウィジェットアイコンのフォントサイズを小さくする
+    Given 「❻デザイン設定」画面が表示されている9 Design Setting screen is displayed ... passed in 0.000s
+    When フォントサイズ(px)の "-" を押下2 Press "-" of Icon size(px) ... passed in 48.716s
+    Then 表示サンプルのウィジェット上「チャットする」のフォントサイズが変わる2 Preview displays changed size, widget icon on Web page is set ... passed in 0.026s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+<behave.runner.Context object at 0x102599690>
+
+]]>
+</system-out></testcase><testcase classname="admin.widget.6W_A07.Create New Widget Step ❻　デザイン設定" name="[AW07-10]ウィジェットメッセージを変更する Change the Widget Message" status="failed" time="0.283707"><error type="NoSuchElementException" message="Message: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[3]/div[1]/form/div[2]/div[1]/div/div[3]/input&quot;}&#10;  (Session info: chrome=125.0.6422.142); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception&#10;Stacktrace:&#10;0   chromedriver                        0x0000000104aba4c8 chromedriver + 4302024&#10;1   chromedriver                        0x0000000104ab2e10 chromedriver + 4271632&#10;2   chromedriver                        0x00000001046e419c chromedriver + 278940&#10;3   chromedriver                        0x00000001047262c4 chromedriver + 549572&#10;4   chromedriver                        0x000000010475ec5c chromedriver + 781404&#10;5   chromedriver                        0x000000010471b004 chromedriver + 503812&#10;6   chromedriver                        0x000000010471b9ec chromedriver + 506348&#10;7   chromedriver                        0x0000000104a82510 chromedriver + 4072720&#10;8   chromedriver                        0x0000000104a86fbc chromedriver + 4091836&#10;9   chromedriver                        0x0000000104a69754 chromedriver + 3970900&#10;10  chromedriver                        0x0000000104a878a4 chromedriver + 4094116&#10;11  chromedriver                        0x0000000104a5c6d4 chromedriver + 3917524&#10;12  chromedriver                        0x0000000104aa4b08 chromedriver + 4213512&#10;13  chromedriver                        0x0000000104aa4c84 chromedriver + 4213892&#10;14  chromedriver                        0x0000000104ab2a08 chromedriver + 4270600&#10;15  libsystem_pthread.dylib             0x0000000194a22f94 _pthread_start + 136&#10;16  libsystem_pthread.dylib             0x0000000194a1dd34 thread_start + 8">
+<![CDATA[
+Failing step: Then 変更値が表示サンプルに表示されている（未保存)　Changed text is displayed (not saved yet) ... failed in 0.052s
+Location: 6W_A07.feature:85
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/model.py", line 1812, in run
+    match.run(runner.context)
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/matchers.py", line 103, in run
+    self.func(context, *args, **kwargs)
+  File "../../steps/6W_A07.py", line 369, in chinsara_T
+    element = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[3]/div[1]/form/div[2]/div[1]/div/div[3]/input')
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 741, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 347, in execute
+    self.error_handler.check_response(response)
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[3]/div[1]/form/div[2]/div[1]/div/div[3]/input"}
+  (Session info: chrome=125.0.6422.142); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+0   chromedriver                        0x0000000104aba4c8 chromedriver + 4302024
+1   chromedriver                        0x0000000104ab2e10 chromedriver + 4271632
+2   chromedriver                        0x00000001046e419c chromedriver + 278940
+3   chromedriver                        0x00000001047262c4 chromedriver + 549572
+4   chromedriver                        0x000000010475ec5c chromedriver + 781404
+5   chromedriver                        0x000000010471b004 chromedriver + 503812
+6   chromedriver                        0x000000010471b9ec chromedriver + 506348
+7   chromedriver                        0x0000000104a82510 chromedriver + 4072720
+8   chromedriver                        0x0000000104a86fbc chromedriver + 4091836
+9   chromedriver                        0x0000000104a69754 chromedriver + 3970900
+10  chromedriver                        0x0000000104a878a4 chromedriver + 4094116
+11  chromedriver                        0x0000000104a5c6d4 chromedriver + 3917524
+12  chromedriver                        0x0000000104aa4b08 chromedriver + 4213512
+13  chromedriver                        0x0000000104aa4c84 chromedriver + 4213892
+14  chromedriver                        0x0000000104ab2a08 chromedriver + 4270600
+15  libsystem_pthread.dylib             0x0000000194a22f94 _pthread_start + 136
+16  libsystem_pthread.dylib             0x0000000194a1dd34 thread_start + 8
+
+
+Captured stdout:
+<behave.runner.Context object at 0x102599690>]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-1237 @ZFJ_Automation
+  Scenario: [AW07-10]ウィジェットメッセージを変更する Change the Widget Message
+    Given ウィジェットメッセージ欄に「チャットする」と表示されている ... passed in 0.000s
+    When ウィジェットメッセージ欄の文言を（テナント言語で）変更する　Change the text in the "Widget Message" input field in tenant language ... passed in 0.231s
+    Then 変更値が表示サンプルに表示されている（未保存)　Changed text is displayed (not saved yet) ... failed in 0.052s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+<behave.runner.Context object at 0x102599690>
+
+]]>
+</system-out></testcase><testcase classname="admin.widget.6W_A07.Create New Widget Step ❻　デザイン設定" name="[AW07-11]ウィジェットメッセージの変更を保存する Save the change of Widget Message" status="failed" time="0.330845"><failure type="AssertionError" message="">
+<![CDATA[
+Failing step: Then 表示サンプルのウィジェットメッセージが書き換わる　Preview displays the changed text ... failed in 0.027s
+Location: 6W_A07.feature:93
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/model.py", line 1812, in run
+    match.run(runner.context)
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/matchers.py", line 103, in run
+    self.func(context, *args, **kwargs)
+  File "../../steps/6W_A07.py", line 398, in chinsara_T
+    assert chinsara == "W07-11のテスト"
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+
+Captured stdout:
+<behave.runner.Context object at 0x102599690>]]>
+</failure><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-1238 @ZFJ_Automation
+  Scenario: [AW07-11]ウィジェットメッセージの変更を保存する Save the change of Widget Message
+    Given ウィジェットメッセージ欄に変更済みの文言が表示されている　Changed text is displayed in the "Widget Message" input field (not saved yet) ... passed in 0.000s
+    When ウィジェットメッセージ入力欄横の"保存"を押下　Press "Save" next to the input field ... passed in 0.304s
+    Then 表示サンプルのウィジェットメッセージが書き換わる　Preview displays the changed text ... failed in 0.027s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+<behave.runner.Context object at 0x102599690>
+
+]]>
+</system-out></testcase></testsuite>
