@@ -69,7 +69,7 @@ def loginAdmin():
     driver.get('https://beta-tenant-admin.im.kotozna.chat/ja/login')
     time.sleep(5)
     element = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div/div[2]/div[2]/form/div/div[1]/div/div[3]/input').send_keys('developer+kenta-lamondo+super@kotozna.com')
-    time.sleep(3)
+    time.sleep(10)
     driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div/div[2]/div[3]/button').click()
     time.sleep(10)
     driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div/div[2]/div[2]/form/div/div[1]/div/div[3]/input').send_keys('000000')
@@ -167,7 +167,17 @@ def chinsara_W(chinsara):
 #
 @then('表示サンプルが選択したウィジェットロゴにて表示される。Preview displays selected widget logo, widget logo is set')
 def chinsara_T(chinsara):
-    print(chinsara)
+    #最初に表示サンプルのロゴのリンクを取得
+    firstsampleimage = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[6]/div[6]/div[1]/div[1]/div[1]/img')
+    image1 = firstsampleimage.get_attribute('currentSrc')
+    #画像を選択してアップ
+    driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[4]/button').send_keys('/Users/kentamiyachi/PythonPro/laMondo/other/pompom1.jpeg')
+    time.sleep(5)
+    
+    #画像を挿入後の表示サンプルのロゴのリンクを取得
+    secondsampleimage = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[6]/div[6]/div[1]/div[1]/div[1]/img')
+    image2 = secondsampleimage.get_attribute('currentSrc')
+    assert image1 != image2
     
 # [AW07-02]チャットヘッダーの色を選択する Select Chat Header Color
 # https://jaqool.atlassian.net/browse/GPT-342
@@ -180,11 +190,28 @@ def chinsara_G(chinsara):
 #
 @when('チャットヘッダーの色を既存の色から選択する。Select chat header color from existing colors')
 def chinsara_W(chinsara):
-    time.sleep(3)
+    element = driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[6]/div[1]/div[1]')
+    # 要素のクラス属性を取得
+    class_attribute = element.get_attribute("class")
+    #赤の時は緑に、それ以外は赤に変更
+    if class_attribute == "mx-2 lamondo-new-widget-design-color-selected":
+        driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[6]/div[1]/div[4]').click()
+    else :
+        driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[6]/div[1]/div[1]').click()
 #
 @then('表示サンプルのチャットヘッダーとウィジェットアイコンが選択した色にて表示される1。Preview displays selected chat color, chat color is set')
 def chinsara_T(chinsara):
-    print(chinsara)
+    element = driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[6]/div[1]/div[1]')
+    # 要素のクラス属性を取得
+    class_attribute = element.get_attribute("class")
+    backcolor = driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[6]/div[6]/div[1]/div[1]')
+    header_color = backcolor.value_of_css_property("background")
+    colorjudge = header_color[:16]
+    #赤の時
+    if class_attribute == "mx-2 lamondo-new-widget-design-color-selected":
+        assert colorjudge == "rgb(234, 84, 50)"
+    else :
+        assert colorjudge == "rgb(0, 215, 167)"
 
 
 
@@ -200,13 +227,19 @@ def chinsara_G(chinsara):
 #
 @when('"カスタム"の横の入力欄に、6桁のHEXコードを入力する、またはカラーシートから選択するSelect input box next to custom and input 6 digit color HEX code, or select color box next to "Custom"and set')
 def chinsara_W(chinsara):
-    time.sleep(3)
+    input_text = driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[6]/div[1]/input[2]')
+    input_text.send_keys(Keys.COMMAND + "a" )
+    input_text.send_keys( Keys.DELETE )
+    input_text.send_keys("#222222")
+    time.sleep(5)
 #
 @then('表示サンプルのチャットヘッダーとウィジェットアイコンが選択した色にて表示される2。Preview displays set chat color, chat color is set')
 def chinsara_T(chinsara):
-    element = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[6]/div[6]/div[1]/div[1]')   
-    header_color = element.value_of_css_property("background")
-    assert header_color == "rgb(0, 215, 167)"
+    backcolor = driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[6]/div[6]/div[1]/div[1]')
+    header_color = backcolor.value_of_css_property("background")
+    colorjudge = header_color[:15]
+    #赤の時
+    assert colorjudge == "rgb(34, 34, 34)"
     
 
 # [AW07-04]チャットアイコンを設定する Set Chat Icon Image Setting
@@ -238,11 +271,11 @@ def chinsara_G(chinsara):
 #
 @when('ウィジェットが閉じている時のアイコンの「アイコンを変更」をクリックし、画像データをアップロードするSelect ""Change Icon"" and upload an image to be used')
 def chinsara_W(chinsara):
-    time.sleep(3)
+    print('chinsara')
 #
 @then('表示サンプルが選択したアイコンにて表示される2。Preview displays selected widget icon, widget icon is set')
 def chinsara_T(chinsara):
-    print(chinsara)
+    print('chinsara')
     
 # [AW07-06]ウィジェットアイコンのサイズを大きくする
 # https://jaqool.atlassian.net/browse/GPT-908
@@ -256,7 +289,14 @@ def chinsara_G(chinsara):
 #
 @when('アイコンサイズ(px)の＋を押下1 Press "+" of Icon size(px)')
 def chinsara_W(chinsara):
-    time.sleep(3)
+    #アイコンサイズが120px以外であったときに、120pxになるようにボタンを押下
+    element = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[6]/div[4]/div[2]/div[2]/input')    
+    chinsara = element.get_attribute('value')
+
+    if chinsara != "120":
+        for _ in range(95):
+            driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[6]/div[4]/div[2]/div[2]/button[2]').click()
+    time.sleep(3)        
 #
 @then('表示サンプルのウィジェットアイコンサイズが変わる1 Preview displays changed size, widget icon on Web page is set')
 def chinsara_T(chinsara):
@@ -276,11 +316,18 @@ def chinsara_G(chinsara):
 #
 @when('アイコンサイズ(px)の "-" を押下2 Press "-" of Icon size(px)')
 def chinsara_W(chinsara):
-    time.sleep(3)
+    #アイコンサイズが25px以外であったときに、25pxになるようにボタンを押下
+    element = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[6]/div[4]/div[2]/div[2]/input')    
+    chinsara = element.get_attribute('value')
+
+    if chinsara != "25":
+        for _ in range(95):
+            driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[6]/div[4]/div[2]/div[2]/button[1]').click()
+    time.sleep(3)  
 #
 @then('表示サンプルのウィジェットアイコンサイズが変わる2 Preview displays changed size, widget icon on Web page is set')
 def chinsara_T(chinsara):
-    element = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[6]/div[6]/div[2]/div[2]/img')   
+    element = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[6]/div[6]/div[2]/div[2]/img')  
     image_width = element.value_of_css_property("width")
     assert image_width == "25px"
     
@@ -332,7 +379,7 @@ def chinsara_W(chinsara):
     if chinsara != "10":
         for _ in range(16):
             driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[6]/div[4]/div[3]/div[2]/button[1]').click()
-            time.sleep(3)
+    time.sleep(3)        
 #
 @then('表示サンプルのウィジェット上「チャットする」のフォントサイズが変わる2 Preview displays changed size, widget icon on Web page is set')
 def chinsara_T(chinsara):
