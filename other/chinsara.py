@@ -249,6 +249,21 @@ def loginAdmin():
 loginAdmin()
 #openW()
 
+
+#最初に表示サンプルのロゴのリンクを取得
+firstsampleimage = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[6]/div[6]/div[1]/div[1]/div[1]/img')
+image1 = firstsampleimage.get_attribute('currentSrc')
+print(image1)
+#画像を選択してアップ
+driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/input').send_keys('/Users/kentamiyachi/PythonPro/laMondo/other/pompom1.jpeg')
+time.sleep(15)
+secondsampleimage = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[6]/div[6]/div[1]/div[1]/div[1]/img')
+image2 = secondsampleimage.get_attribute('currentSrc')
+print(image2)
+if image1 != image2:
+    print("chinchin")
+
+
 element = driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[6]/div[1]/div[1]')
 # 要素のクラス属性を取得
 class_attribute = element.get_attribute("class")
@@ -260,4 +275,23 @@ first_fifteen = header_color[:16]
 print(first_fifteen)
 driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[6]/div[1]/input[2]').send_keys("#222222")
 
-time.sleep(60) 
+element = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[6]/div[4]/div[4]/div[2]/div/form/div/div[1]/div/div[3]/input').text
+if element != 'W07-11のテスト':
+    input_text = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[6]/div[4]/div[4]/div[2]/div/form/div/div[1]/div/div[3]/input')
+    input_text.send_keys(Keys.COMMAND + "a" )
+    input_text.send_keys( Keys.DELETE )
+    driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[6]/div[4]/div[4]/div[2]/div/form/div/div[1]/div/div[3]/input').send_keys('W07-11のテスト')
+    #どこか適当にクリック(この場合は色のボタン)
+    driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[6]/div[1]/div[4]').click()
+
+element = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[6]/div[6]/div[2]/div[1]/span')
+
+chinsara = element.text
+if chinsara == "W07-11のテスト":
+    print("W07-11のテスト")
+    print()
+
+print(chinsara)
+
+
+time.sleep(10) 

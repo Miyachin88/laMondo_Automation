@@ -167,16 +167,16 @@ def chinsara_W(chinsara):
 #
 @then('表示サンプルが選択したウィジェットロゴにて表示される。Preview displays selected widget logo, widget logo is set')
 def chinsara_T(chinsara):
-    #最初に表示サンプルのロゴのリンクを取得
+#最初に表示サンプルのロゴのリンクを取得
     firstsampleimage = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[6]/div[6]/div[1]/div[1]/div[1]/img')
     image1 = firstsampleimage.get_attribute('currentSrc')
+    print(image1)
     #画像を選択してアップ
-    driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[4]/button').send_keys('/Users/kentamiyachi/PythonPro/laMondo/other/pompom1.jpeg')
-    time.sleep(5)
-    
-    #画像を挿入後の表示サンプルのロゴのリンクを取得
+    driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/input').send_keys('/Users/kentamiyachi/PythonPro/laMondo/other/pompom1.jpeg')
+    time.sleep(15)
     secondsampleimage = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[6]/div[6]/div[1]/div[1]/div[1]/img')
     image2 = secondsampleimage.get_attribute('currentSrc')
+    print(image2)
     assert image1 != image2
     
 # [AW07-02]チャットヘッダーの色を選択する Select Chat Header Color
@@ -257,7 +257,17 @@ def chinsara_W(chinsara):
 #
 @then('表示サンプルが選択したアイコンにて表示される1。Preview displays selected icon, icon is set')
 def chinsara_T(chinsara):
-    print(chinsara)
+    #アイコン設定のリンクを取得
+    firstsampleimage = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[6]/div[6]/div[1]/div[2]/div[1]/img')
+    image1 = firstsampleimage.get_attribute('currentSrc')
+    print(image1)
+    #画像を選択してアップ
+    driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[6]/div[3]/input').send_keys('/Users/kentamiyachi/PythonPro/laMondo/other/pompom1.jpeg')
+    time.sleep(15)
+    secondsampleimage = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[6]/div[6]/div[1]/div[2]/div[1]/img')
+    image2 = secondsampleimage.get_attribute('currentSrc')
+    print(image2)
+    assert image1 != image2
     
 # [AW07-05]ウィジェットアイコンを設定する Set Widget Icon Image Setting
 # https://jaqool.atlassian.net/browse/GPT-907
@@ -275,7 +285,17 @@ def chinsara_W(chinsara):
 #
 @then('表示サンプルが選択したアイコンにて表示される2。Preview displays selected widget icon, widget icon is set')
 def chinsara_T(chinsara):
-    print('chinsara')
+    #アイコン設定のリンクを取得
+    firstsampleimage = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[6]/div[6]/div[2]/div[2]/img')
+    image1 = firstsampleimage.get_attribute('currentSrc')
+    print(image1)
+    #画像を選択してアップ
+    driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[6]/div[4]/div[1]/div[2]/input').send_keys('/Users/kentamiyachi/PythonPro/laMondo/other/pompom1.jpeg')
+    time.sleep(15)
+    secondsampleimage = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[6]/div[6]/div[2]/div[2]/img')
+    image2 = secondsampleimage.get_attribute('currentSrc')
+    print(image2)
+    assert image1 != image2
     
 # [AW07-06]ウィジェットアイコンのサイズを大きくする
 # https://jaqool.atlassian.net/browse/GPT-908
@@ -350,7 +370,7 @@ def chinsara_W(chinsara):
     if chinsara != "26":
         for _ in range(16):
             driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[6]/div[4]/div[3]/div[2]/button[2]').click()
-            time.sleep(3)
+    time.sleep(3)          
 
     
 #
@@ -410,6 +430,7 @@ def chinsara_W(chinsara):
         input_text.send_keys(Keys.COMMAND + "a" )
         input_text.send_keys( Keys.DELETE )
         driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[6]/div[4]/div[4]/div[2]/div/form/div/div[1]/div/div[3]/input').send_keys('W07-10のテスト')
+        time.sleep(10)
 #
 @then('変更値が表示サンプルに表示されている（未保存)　Changed text is displayed (not saved yet)')
 def chinsara_T(chinsara):
@@ -441,5 +462,5 @@ def chinsara_W(chinsara):
 @then('表示サンプルのウィジェットメッセージが書き換わる　Preview displays the changed text')
 def chinsara_T(chinsara):
     element = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[6]/div[6]/div[2]/div[1]/span')
-    chinsara = element.get_attribute('value')
+    chinsara = element.text
     assert chinsara == "W07-11のテスト"

@@ -23,6 +23,7 @@ https://jaqool.atlassian.net/browse/GPT-770
 
 kenta+b230109-admin@kotozna.com
 developer+kenta-lamondo@kotozna.com
+developer+kenta-lamondo+super@kotozna.com
 """
 
 

@@ -31,7 +31,7 @@ def a01_01_w(aaa):
     time.sleep(3)
     element = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div/div[2]/div[2]/form/div/div[1]/div/div[3]/input')
     chinsara = element.get_attribute('value')
-    if chinsara == "developer+kenta-lamondo@kotozna.com":
+    if chinsara == "developer+kenta-lamondo+super@kotozna.com":
         #テキストの判別
         print("AB01-01 OK")
         driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div/div[2]/div[3]/button').click()
