@@ -219,54 +219,101 @@ def chinsara_W(chinsara):
     toggle_switch.click()
     time.sleep(10)
 #
-@then('Three input boxes for custom questions for guest screen will appear/ サンプル質問の入力欄が3つ表示される')
+@Then('One input box and "+" button will appear/ サンプル質問の入力欄1つと"+"ボタンが表示される')
 def chinsara_T(chinsara):
     wait = WebDriverWait(driver, 300)
-    sample1 = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[3]/div[4]/form/div/div[1]/div/div[3]/input')
+    sample1 = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[3]/div[4]/div[1]/form/div/div/div/div[3]/input')
     chinsara1 = sample1.get_attribute('placeholder')
-    sample2 = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[3]/div[5]/form/div/div[1]/div/div[3]/input')
-    chinsara2 = sample1.get_attribute('placeholder')
-    sample2 = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[3]/div[6]/form/div/div[1]/div/div[3]/input')
-    chinsara3 = sample1.get_attribute('placeholder')
-    assert (chinsara1 == '例: 今日の天気はどうですか？') & (chinsara2 == '例: 今日の天気はどうですか？') & (chinsara3 == "例: 今日の天気はどうですか？")
+    assert (chinsara1 == '例: 今日の天気はどうですか？')
     
 
 # [AW06-04]サンプル質問を追加する Add Sample Questions
 # https://jaqool.atlassian.net/browse/GPT-1236
 # 
 
-@given('Three input boxes for custom questions for guest screen will appear/ サンプル質問の入力欄が3つ表示されている')
+#サンプル質問の入力欄が1つ表示されている
+@given('One input box for custom questions for guest screen will appear/ サンプル質問の入力欄が1つ表示されている')
 def chinsara_G(chinsara):
     print(chinsara)
     time.sleep(3)
-#
-@when('Input one or two sample question(s) in tenant language/ サンプル質問を1つまたは2つ（テナント言語で）入力する')
+#サンプル質問を（テナント言語で）入力する
+@when('Input sample question in tenant language/ サンプル質問を（テナント言語で）入力する')
 def chinsara_W(chinsara):
-    sample1 = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[3]/div[4]/form/div/div[1]/div/div[3]/input')
+    sample1 = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[3]/div[4]/div[1]/form/div/div/div/div[3]/input')
     sample1.send_keys(Keys.COMMAND + "a" )
     sample1.send_keys( Keys.DELETE )
     sample1.send_keys('W06-04のテスト1')
-    sample2 = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[3]/div[5]/form/div/div[1]/div/div[3]/input')
-    sample2.send_keys(Keys.COMMAND + "a" )
-    sample2.send_keys( Keys.DELETE )
-    sample2.send_keys('W06-04のテスト2')
-    sample3 = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[3]/div[6]/form/div/div[1]/div/div[3]/input')
-    sample3.send_keys(Keys.COMMAND + "a" )
-    sample3.send_keys( Keys.DELETE )
-    sample3.send_keys('W06-04のテスト3')
     time.sleep(3)
-#
+# 
 @then('"Save and Next" button becomes active/ "保存して次へ"ボタンがアクティブになっている')
 def chinsara_T(chinsara):
-    sample1 = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[3]/div[4]/form/div/div[1]/div/div[3]/input')
+    sample1 = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[3]/div[4]/div[1]/form/div/div/div/div[3]/input')
     chinsara1 = sample1.get_attribute('value')
-    sample2 = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[3]/div[5]/form/div/div[1]/div/div[3]/input')
-    chinsara2 = sample2.get_attribute('value')
-    sample3 = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[3]/div[6]/form/div/div[1]/div/div[3]/input')
-    chinsara3 = sample3.get_attribute('value')
-    assert (chinsara1 == "W06-04のテスト1") & (chinsara2 == "W06-04のテスト2") & (chinsara3 == "W06-04のテスト3")
+    assert (chinsara1 == "W06-04のテスト1")
+
+
+# [AW06-05]サンプル質問を追加する Add Sample Questions
+# https://jaqool.atlassian.net/browse/GPT-1325
+# 
+
+#サンプル質問がいくつか入力されている
+
+@Given('Some sample questions are displayed1/ サンプル質問が入力されている')
+def chinsara_G(chinsara):
+    sample_toggle = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[3]/div[3]/div/div/div/div[2]/input')
+    if sample_toggle.is_selected():
+        time.sleep(1)
+#
+@When('Press "+" to add an input field/ "+"を押下する')
+def chinsara_G1(chinsara):
+    for i in range(9):
+        param1 = i + 5
+        setparam = str(param1)
+        addbutton = "/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[3]/div[" + str(setparam) + "]/button"
+        chinsara = driver.find_element(By.XPATH, addbutton)
+        chinsara.click()
+        time.sleep(1)    
+
+#
+@Then('Sample question input field is added up to 10 "+" button becomes gray out/ サンプル質問入力欄が10個まで追加でき、"+"ボタンはグレーアウトする')
+def chinsara_T(chinsara):
+    sample_toggle = driver.find_element(By.CSS_SELECTOR, '#lamondo-new-widget-initial-messages > div.lamondo-new-widget-initial-messages-content.mt-4 > div.app-button > button')
+    assert not sample_toggle.is_selected()
+
+# [AW06-06]追加したサンプル質問を入力する Input Sample Questions in added Sample Questions
+# https://jaqool.atlassian.net/browse/GPT-1326
+# 
+
+#
+@given('Added sample question input fields are displayed and blank/ サンプル質問欄が追加され空欄である')
+def chinsara_G(chinsara):
+    print(chinsara)
+
+#    
+@when('Input sample question(s) in that input fields/ サンプル質問追加欄に質問を入力する')
+def chinsara_W(chinsara):
+    for i in range(9):
+        param1 = i + 5
+        setparam = str(param1)
+        inputsampleq = "/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[3]/div[" + str(setparam) + "]/div[1]/form/div/div/div/div[3]/input"
+        chinsara = driver.find_element(By.XPATH, inputsampleq)
+        tintin = i + 2
+        tintinstr = str(tintin)        
+        chinsara.send_keys('W06-06のテスト'+ tintinstr)
+        time.sleep(1)
+#
+@then('Added sample questions are displayed (not saved yet)/ 追加されたサンプル質問が表示されている')
+def chinsara_T(chinsara):
+    sample1 = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[3]/div[13]/div[1]/form/div/div/div/div[3]/input')
+    chinsara1 = sample1.get_attribute('value')
+    assert (chinsara1 == "W06-06のテスト10")
+#
+@then('"Save and Next" button becomes active2/ "保存して次へ"ボタンがアクティブになっている')
+def chinsara_T(chinsara):
+    sample_toggle = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[2]/div[2]/div[2]/button')
+    assert sample_toggle.is_enabled()
     
-# [AW06-05]システムメッセージ設定の保存
+# [AW06-07]システムメッセージ設定の保存
 # https://jaqool.atlassian.net/browse/GPT-1055
 # 
 
