@@ -1,0 +1,54 @@
+<testsuite name="admin.widget.6W_A21.エスカレーション機能の設定" tests="3" errors="0" failures="0" skipped="0" time="133.330382" timestamp="2024-07-07T16:42:06.095063" hostname="Kentas-MacBook-Pro.local"><testcase classname="admin.widget.6W_A21.エスカレーション機能の設定" name="[AW21-01]ウィジェット設定画面を開く" status="passed" time="37.702479"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-832 @ZFJ_Automation
+  Scenario: [AW21-01]ウィジェット設定画面を開く
+    Given 基本設定の画面が表示されている The basic setting screen is displayed ... passed in 32.551s
+    When 左のメニューバーから「ウィジェット設定」をクリックする2 Click "Widget Settings" from the left menu bar ... passed in 5.059s
+    Then 現在登録されているウィジェット一覧が表示される2 A list of currently registered widgets is displayed. ... passed in 0.006s
+    Then エスカレーションスイッチが全てオフになっている ... passed in 0.086s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="admin.widget.6W_A21.エスカレーション機能の設定" name="[AW21-02]エスカレーション機能をONにする" status="passed" time="95.627518"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-833 @ZFJ_Automation
+  Scenario: [AW21-02]エスカレーション機能をONにする
+    Given エスカレーションスイッチが全てオフになっている ... passed in 0.020s
+    When GPTステータスに✓が入っている任意のウィジェットのスイッチをオンにする ... passed in 0.071s
+    Then スイッチがピンク色に切り替わり、"レコードは正常に編集されました。"と表示される ... passed in 0.014s
+    Then ゲスト画面のメッセージ入力欄にはエスカレーションボタンが表示される ... passed in 95.523s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+chinsara
+
+]]>
+</system-out></testcase><testcase classname="admin.widget.6W_A21.エスカレーション機能の設定" name="[AW21-03]エスカレーション機能をOFFにする" status="passed" time="0.000385"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-834 @ZFJ_Automation
+  Scenario: [AW21-03]エスカレーション機能をOFFにする
+    Given エスカレーションスイッチ（GPTステータスの右隣）がオンになっているウィジェットがある ... passed in 0.000s
+    When スイッチをオフにする ... passed in 0.000s
+    Then スイッチがグレーに切り替わり、"レコードは正常に編集されました。"と表示される ... passed in 0.000s
+    Then ゲスト画面のメッセージ入力欄からエスカレーションボタンが非表示になる ... passed in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+susara
+susara
+susara
+susara
+
+]]>
+</system-out></testcase></testsuite>
