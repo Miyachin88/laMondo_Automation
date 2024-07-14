@@ -149,14 +149,14 @@ def loginAdmin():
     time.sleep(5)
 
 # [AW06-01]初期メッセージを変更する / Change Chat Messages
-# https://jaqool.atlassian.net/browse/GPT-339
+# https://jaqool.atlassian.net/browse/GPT-1373
 # 
 
-@given('Tenant Admin Panel System Message Setting is displayed1/ システムメッセージ設定画面を開いている')
+@Given('Tenant Admin Panel System Message Setting is displayed1/ システムメッセージ設定画面を開いている')
 def chinsara_G(chinsara):
     loginAdmin()
 #
-@when('Change text in "Chat Messages (When beginning a new chat)" / 初期メッセージ設定欄のメッセージを（テナント言語で）変更')
+@When('Change text in "Chat Messages (When beginning a new chat)" / 初期メッセージ設定欄のメッセージを（テナント言語で）変更')
 def chinsara_W(chinsara):
     element = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[3]/div[2]/form/div[2]/div[1]/div/div[3]/input').text
     if element != 'AW06-01のテスト':
@@ -165,21 +165,21 @@ def chinsara_W(chinsara):
         input_text.send_keys( Keys.DELETE )
         driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[3]/div[2]/form/div[2]/div[1]/div/div[3]/input').send_keys('W06-01のテスト')
 #
-@then('Changed test is displayed1 (not saved yet)/ 変更値が表示されている（未保存）')
+@Then('Changed test is displayed1 (not saved yet)/ 変更値が表示されている（未保存）')
 def chinsara_T(chinsara):
     element = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[3]/div[2]/form/div[2]/div[1]/div/div[3]/input')
     chinsara = element.get_attribute('value')
     assert chinsara == "W06-01のテスト"
     
 # [AW06-02]メッセージインプットプレースホルダーを変更する / Change Placeholder Message
-# https://jaqool.atlassian.net/browse/GPT-340
+# https://jaqool.atlassian.net/browse/GPT-1374
 # 
 
-@given('Tenant Admin Panel System Message Setting is displayed2/ システムメッセージ設定画面を開いている')
+@Given('Tenant Admin Panel System Message Setting is displayed2/ システムメッセージ設定画面を開いている')
 def chinsara_G(chinsara):
     time.sleep(5)
 #
-@when('Change text in "Placeholder Message2" / メッセージインプットプレースホルダー設定欄のメッセージを（テナント言語で）変更する')
+@When('Change text in "Placeholder Message2" / メッセージインプットプレースホルダー設定欄のメッセージを（テナント言語で）変更する')
 def chinsara_W(chinsara):
     element = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[3]/div[1]/form/div[2]/div[1]/div/div[3]/input').text
     if element != 'AW06-02のテスト':
@@ -188,34 +188,34 @@ def chinsara_W(chinsara):
         input_text.send_keys( Keys.DELETE )
         driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[3]/div[1]/form/div[2]/div[1]/div/div[3]/input').send_keys('W06-02のテスト')
 #
-@then('Changed test is displayed (not saved yet)/ 変更値が表示されている（未保存）')
+@Then('Changed test is displayed (not saved yet)/ 変更値が表示されている（未保存）')
 def chinsara_T(chinsara):
     element = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[3]/div[1]/form/div[2]/div[1]/div/div[3]/input')
     chinsara = element.get_attribute('value')
     assert chinsara == "W06-02のテスト"
 
 
-
-
 # [AW06-03]サンプル質問をONにする Turn ON the Sample Questions
-# https://jaqool.atlassian.net/browse/GPT-1235
+# https://jaqool.atlassian.net/browse/GPT-1375
 # 
 
 #
-@given('Tenant Admin Panel System Message Setting is displayed3/ システムメッセージ設定画面を開いている')
+@Given('Tenant Admin Panel System Message Setting is displayed3/ システムメッセージ設定画面を開いている')
 def chinsara_G(chinsara):
     print(chinsara)
 #
-@given('Sample Questions switch is OFF/ サンプル質問のツイッチがオフになっている')
+@Given('Sample Questions switch is OFF/ サンプル質問のツイッチがオフになっている')
 def chinsara_G(chinsara):
-    toggle_switch = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[3]/div[3]/div/div/div/div[2]/input')
+    toggle_switch = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[3]/div[3]/div[1]/div/div/div/div[2]/input')
     if toggle_switch.is_selected():    
         toggle_switch.click()
+    else :
+        time.sleep(3)
         
 #
-@when('Turn on "Sample Questions"/ サンプル質問のスイッチをONにする')
+@When('Turn on "Sample Questions"/ サンプル質問のスイッチをONにする')
 def chinsara_W(chinsara):
-    toggle_switch = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[3]/div[3]/div/div/div/div[2]/input')
+    toggle_switch = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[3]/div[3]/div[1]/div/div/div/div[2]/input')
     toggle_switch.click()
     time.sleep(10)
 #
@@ -232,12 +232,12 @@ def chinsara_T(chinsara):
 # 
 
 #サンプル質問の入力欄が1つ表示されている
-@given('One input box for custom questions for guest screen will appear/ サンプル質問の入力欄が1つ表示されている')
+@Given('One input box for custom questions for guest screen will appear/ サンプル質問の入力欄が1つ表示されている')
 def chinsara_G(chinsara):
     print(chinsara)
     time.sleep(3)
 #サンプル質問を（テナント言語で）入力する
-@when('Input sample question in tenant language/ サンプル質問を（テナント言語で）入力する')
+@When('Input sample question in tenant language/ サンプル質問を（テナント言語で）入力する')
 def chinsara_W(chinsara):
     sample1 = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[3]/div[4]/div[1]/form/div/div/div/div[3]/input')
     sample1.send_keys(Keys.COMMAND + "a" )
@@ -245,7 +245,7 @@ def chinsara_W(chinsara):
     sample1.send_keys('W06-04のテスト1')
     time.sleep(3)
 # 
-@then('"Save and Next" button becomes active/ "保存して次へ"ボタンがアクティブになっている')
+@Then('"Save and Next" button becomes active/ "保存して次へ"ボタンがアクティブになっている')
 def chinsara_T(chinsara):
     sample1 = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[3]/div[4]/div[1]/form/div/div/div/div[3]/input')
     chinsara1 = sample1.get_attribute('value')
@@ -260,7 +260,7 @@ def chinsara_T(chinsara):
 
 @Given('Some sample questions are displayed1/ サンプル質問が入力されている')
 def chinsara_G(chinsara):
-    sample_toggle = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[3]/div[3]/div/div/div/div[2]/input')
+    sample_toggle = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[3]/div[3]/div[1]/div/div/div/div[2]/input')
     if sample_toggle.is_selected():
         time.sleep(1)
 #
@@ -285,12 +285,12 @@ def chinsara_T(chinsara):
 # 
 
 #
-@given('Added sample question input fields are displayed and blank/ サンプル質問欄が追加され空欄である')
+@Given('Added sample question input fields are displayed and blank/ サンプル質問欄が追加され空欄である')
 def chinsara_G(chinsara):
     print(chinsara)
 
 #    
-@when('Input sample question(s) in that input fields/ サンプル質問追加欄に質問を入力する')
+@When('Input sample question(s) in that input fields/ サンプル質問追加欄に質問を入力する')
 def chinsara_W(chinsara):
     for i in range(9):
         param1 = i + 5
@@ -302,46 +302,322 @@ def chinsara_W(chinsara):
         chinsara.send_keys('W06-06のテスト'+ tintinstr)
         time.sleep(1)
 #
-@then('Added sample questions are displayed (not saved yet)/ 追加されたサンプル質問が表示されている')
+@Then('Added sample questions are displayed (not saved yet)/ 追加されたサンプル質問が表示されている')
 def chinsara_T(chinsara):
     sample1 = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[3]/div[13]/div[1]/form/div/div/div/div[3]/input')
     chinsara1 = sample1.get_attribute('value')
     assert (chinsara1 == "W06-06のテスト10")
 #
-@then('"Save and Next" button becomes active2/ "保存して次へ"ボタンがアクティブになっている')
+@Then('"Save and Next" button becomes active2/ "保存して次へ"ボタンがアクティブになっている')
 def chinsara_T(chinsara):
     sample_toggle = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[2]/div[2]/div[2]/button')
     assert sample_toggle.is_enabled()
-    
-# [AW06-07]システムメッセージ設定の保存
-# https://jaqool.atlassian.net/browse/GPT-1055
+
+
+# [AW06-07]サンプル質問表示中もメッセージ入力欄を表示する
+# https://jaqool.atlassian.net/browse/GPT-1379
 # 
 
 #
-@given('Tenant Admin Panel System Message Setting is displayed4/ システムメッセージ設定画面を開いている')
+@Given('Toggle of Display message input field when displaying sample questions is "OFF"  / ウィジェット設定にてサンプル質問表示中もメッセージ入力欄を表示するのトグルがOFF')
+def chinsara_G(chinsara):
+    # サンプル質問表示中もメッセージ入力欄を表示するのトグルをOFFにする
+    toggle_switch = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[3]/div[3]/div[2]/div/div/div/div[2]/input')
+    if toggle_switch.is_selected():    
+        toggle_switch.click()
+
+#
+@When('Change toggle of Display message input field when displaying sample questions is "ON"/ サンプル質問表示中もメッセージ入力欄を表示するのトグルをONにする')
+def chinsara_W(chinsara):
+    # サンプル質問表示中もメッセージ入力欄を表示するのトグルをONにする
+    toggle_switch = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[3]/div[3]/div[2]/div/div/div/div[2]/input') 
+    toggle_switch.click()
+    # 自動化用のウィジェットの③不在時のメール受信設定にて”保存して閉じます”をクリックしてウィジェット設定へ移動
+    driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[2]/div[2]/div[1]/button').click()
+    time.sleep(10)
+    
+    # ウィジェットを開く
+    #infoボタンをクリック
+    driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div/div[3]/div/table/tbody/tr[2]/td[6]/div/div/button').click()
+    driver.switch_to.window
+    time.sleep(10)
+    #ウィジェットを開く
+    driver.find_element(By.XPATH,'/html/body/div[2]/div/div[2]/div/div[3]/div/div/div[2]/div[2]').click()
+    time.sleep(30) 
+    # タブのハンドルを取得する
+    tab_handles = driver.window_handles
+    # 2番目のタブに切り替える
+    second_tab_handle = tab_handles[1]
+    driver.switch_to.window(second_tab_handle)
+    # iframeに切り替え
+    iframe = driver.find_element(By.ID,'ktzn-tm-frame')
+    driver.switch_to.frame(iframe)
+    time.sleep(10)
+    # スタートボタンを押下
+    element = driver.find_element(By.XPATH,'/html/body/span/div/div[1]/div/main/div/div/div[2]/div/div/div[7]/div/div')
+    driver.execute_script('arguments[0].click();', element)
+    time.sleep(15)
+    # メッセージを入力
+    element = driver.find_element(By.XPATH, '//*[@id="inputMessage"]')
+    element.send_keys('W06-07のテスト')
+#
+@Then('Sample message and message input box are displayed if you open guest screen / ゲスト画面を開くとサンプルメッセージおよびメッセージのテキストボックスが表示されている')
+def chinsara_T(chinsara):
+    sample1 = driver.find_element(By.XPATH, '/html/body/span/div/div[1]/div/main/div/div/div[2]/div[2]/div/textarea')
+    chinsara1 = sample1.get_attribute('value')
+    assert (chinsara1 == "W06-07のテスト")
+
+
+# [AW06-08]サンプル質問表示中もメッセージ入力欄を表示しない
+# https://jaqool.atlassian.net/browse/GPT-1380
+# 
+
+#
+@Given('Toggle of Display message input field when displaying sample questions is "ON"  / ウィジェット設定にてサンプル質問表示中もメッセージ入力欄を表示するのトグルが"ON"')
+def chinsara_G(chinsara):
+    driver.close()
+    # タブのハンドルを取得する
+    tab_handles = driver.window_handles
+    # 1番目のタブに切り替える
+    second_tab_handle = tab_handles[0]
+    driver.switch_to.window(second_tab_handle)
+    #戻るを押下
+    driver.find_element(By.XPATH,'/html/body/div[2]/div/div[2]/div/div[4]/div[2]/button').click()
+    time.sleep(5)
+    # 自動化用のウィジェットの鉛筆マークをクリック
+    driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div/div[3]/div/table/tbody/tr[2]/td[7]/div/div/button').click()
+    time.sleep(3)
+    # 自動化用のウィジェットの①担当グループにて”保存して次へ”をクリック
+    driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[2]/div[2]/div[2]/button').click()
+    time.sleep(5)
+    #営業時間の設定を解除
+    #パターン1：受付時間のプルダウンが表示されてない
+    eigyo_type = driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[1]/div[1]/div[2]/div[1]/div/div[3]/div/div/span').text 
+    if '' == eigyo_type:
+        #プルダウンをクリック
+        driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[1]/div[1]/div[2]/div[1]/div').click()
+        time.sleep(5)
+    else :
+    #パターン2：すでに受付時間のプルダウンが表示
+        #最初のゴミ箱をクリック
+        driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[1]/div[2]/div/div[1]/div[2]').click()
+        try:
+            #2番目のゴミ箱をクリック
+            driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[1]/div[2]/div/div[1]/div[2]').click()
+        except NoSuchElementException:
+            pass
+        except ElementClickInterceptedException:
+            pass
+        #ばつボタンをクリック
+        driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[1]/div[1]/div[2]/div[1]/div/div[4]/i').click()
+        time.sleep(5)
+        #プルダウンをクリック
+        driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[1]/div[1]/div[2]/div[1]/div').click()
+        time.sleep(5)     
+    # 自動化用のウィジェットの②営業時間にて”保存して次へ”をクリック
+    driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[2]/div[2]/div[2]/button').click()
+    time.sleep(5)   
+    #営業時間外をクリックして、設定を解除する
+    time.sleep(10)
+    outofbusihour = driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div/div[1]/div[1]/div[1]/div/div/div/input')
+    #営業時間外のチェックボックスがクリックされている
+    if outofbusihour.is_selected():
+        #クリックを解除
+        outofbusihour.click()    
+    #不在時をクリック
+    outoftime = driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div/div[2]/div[1]/div[1]/div/div/div/input')
+    #不在時のチェックボックスがクリックされている
+    if outoftime.is_selected():
+        #クリックを解除
+        outoftime.click()
+
+    # 自動化用のウィジェットの③不在時のメール受信設定にて”保存して閉じます”をクリックしてウィジェット設定へ移動
+    driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[2]/div[2]/div[1]/button').click()
+    time.sleep(10)
+    # 自動化用のウィジェットの鉛筆マークをクリック
+    driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div/div[3]/div/table/tbody/tr[2]/td[7]/div/div/button').click()
+    time.sleep(3)
+    # 自動化用のウィジェットの①担当グループにて”保存して次へ”をクリック
+    driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[2]/div[2]/div[2]/button').click()
+    time.sleep(5)
+    # 自動化用のウィジェットの②営業時間にて”保存して次へ”をクリック
+    driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[2]/div[2]/div[2]/button').click()
+    time.sleep(5)
+    # 自動化用のウィジェットの③不在時のメール受信設定にて”保存して次へ”をクリック
+    driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[2]/div[2]/div[2]/button').click()
+    time.sleep(5)
+    # 自動化用のウィジェットの④ゲストによる評価にて”保存して次へ”をクリック
+    driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[2]/div[2]/div[2]/button').click()
+    time.sleep(5)    
+    
+#
+@When('Change toggle of Display message input field when displaying sample questions is "OFF"/ サンプル質問表示中もメッセージ入力欄を表示するのトグルを"OFF"にする')
+def chinsara_W(chinsara):
+    # サンプル質問表示中もメッセージ入力欄を表示するのトグルをOFFにする
+    toggle_switch = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[3]/div[3]/div[2]/div/div/div/div[2]/input')
+    if toggle_switch.is_selected():    
+        toggle_switch.click()
+#
+@Then('Message input box is NOT displayed if you open guest screen / ゲスト画面を開くとメッセージのテキストボックスが表示されない')
+def chinsara_T(chinsara):
+    # 自動化用のウィジェットの③不在時のメール受信設定にて”保存して閉じます”をクリックしてウィジェット設定へ移動
+    driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[2]/div[2]/div[1]/button').click()
+    time.sleep(10)
+    
+    # ウィジェットを開く
+    #infoボタンをクリック
+    driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div/div[3]/div/table/tbody/tr[2]/td[6]/div/div/button').click()
+    driver.switch_to.window
+    time.sleep(10)
+    #ウィジェットを開く
+    driver.find_element(By.XPATH,'/html/body/div[2]/div/div[2]/div/div[3]/div/div/div[2]/div[2]').click()
+    time.sleep(30) 
+    # タブのハンドルを取得する
+    tab_handles = driver.window_handles
+    # 2番目のタブに切り替える
+    second_tab_handle = tab_handles[1]
+    driver.switch_to.window(second_tab_handle)
+    # iframeに切り替え
+    iframe = driver.find_element(By.ID,'ktzn-tm-frame')
+    driver.switch_to.frame(iframe)
+    time.sleep(5)
+    # スタートボタンを押下
+    element = driver.find_element(By.XPATH,'/html/body/span/div/div[1]/div/main/div/div/div[2]/div/div/div[7]/div/div')
+    driver.execute_script('arguments[0].click();', element)
+    time.sleep(15)
+    judge = "true"
+    try:
+        # 指定したDiv要素を検索
+        driver.find_element(By.ID, "inputMessage").send_keys('W06-08のテスト')
+    except NoSuchElementException:
+        judge = "false"
+    
+    assert judge == "false"
+    
+    #最後にタブを閉じて初期化する
+    driver.close()
+    # タブのハンドルを取得する
+    tab_handles = driver.window_handles
+    # 1番目のタブに切り替える
+    second_tab_handle = tab_handles[0]
+    driver.switch_to.window(second_tab_handle)
+    #戻るを押下
+    driver.find_element(By.XPATH,'/html/body/div[2]/div/div[2]/div/div[4]/div[2]/button').click()
+    time.sleep(5)
+    # 自動化用のウィジェットの鉛筆マークをクリック
+    driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div/div[3]/div/table/tbody/tr[2]/td[7]/div/div/button').click()
+    time.sleep(3)
+    # 自動化用のウィジェットの①担当グループにて”保存して次へ”をクリック
+    driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[2]/div[2]/div[2]/button').click()
+    time.sleep(5)
+    #営業時間の設定を解除
+    #パターン1：受付時間のプルダウンが表示されてない
+    eigyo_type = driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[1]/div[1]/div[2]/div[1]/div/div[3]/div/div/span').text 
+    if '' == eigyo_type:
+        #プルダウンをクリック
+        driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[1]/div[1]/div[2]/div[1]/div').click()
+        time.sleep(5)
+    else :
+    #パターン2：すでに受付時間のプルダウンが表示
+        #最初のゴミ箱をクリック
+        driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[1]/div[2]/div/div[1]/div[2]').click()
+        try:
+            #2番目のゴミ箱をクリック
+            driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[1]/div[2]/div/div[1]/div[2]').click()
+        except NoSuchElementException:
+            pass
+        except ElementClickInterceptedException:
+            pass
+        #ばつボタンをクリック
+        driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[1]/div[1]/div[2]/div[1]/div/div[4]/i').click()
+        time.sleep(5)
+        #プルダウンをクリック
+        driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[1]/div[1]/div[2]/div[1]/div').click()
+        time.sleep(5)     
+    # 自動化用のウィジェットの②営業時間にて”保存して次へ”をクリック
+    driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[2]/div[2]/div[2]/button').click()
+    time.sleep(5)   
+    #営業時間外をクリックして、設定を解除する
+    time.sleep(10)
+    outofbusihour = driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div/div[1]/div[1]/div[1]/div/div/div/input')
+    #営業時間外のチェックボックスがクリックされている
+    if outofbusihour.is_selected():
+        #クリックを解除
+        outofbusihour.click()    
+    #不在時をクリック
+    outoftime = driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div/div[2]/div[1]/div[1]/div/div/div/input')
+    #不在時のチェックボックスがクリックされている
+    if outoftime.is_selected():
+        #クリックを解除
+        outoftime.click()
+
+    # 自動化用のウィジェットの③不在時のメール受信設定にて”保存して閉じます”をクリックしてウィジェット設定へ移動
+    driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[2]/div[2]/div[1]/button').click()
+    time.sleep(10)
+    # 自動化用のウィジェットの鉛筆マークをクリック
+    driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div/div[3]/div/table/tbody/tr[2]/td[7]/div/div/button').click()
+    time.sleep(3)
+    # 自動化用のウィジェットの①担当グループにて”保存して次へ”をクリック
+    driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[2]/div[2]/div[2]/button').click()
+    time.sleep(5)
+    # 自動化用のウィジェットの②営業時間にて”保存して次へ”をクリック
+    driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[2]/div[2]/div[2]/button').click()
+    time.sleep(5)
+    # 自動化用のウィジェットの③不在時のメール受信設定にて”保存して次へ”をクリック
+    driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[2]/div[2]/div[2]/button').click()
+    time.sleep(5)
+    # 自動化用のウィジェットの④ゲストによる評価にて”保存して次へ”をクリック
+    driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[2]/div[2]/div[2]/button').click()
+    time.sleep(5)
+    
+    # サンプル質問を全て削除する
+    for _ in range(10):
+        driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[3]/div[4]/div[2]/button').click()
+        time.sleep(3)
+    
+    # サンプル質問表示中もメッセージ入力欄を表示するのトグルをOFFにする
+    toggle_switch = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[3]/div[3]/div[2]/div/div/div/div[2]/input')
+    if not toggle_switch.is_selected():    
+        toggle_switch.click()
+    
+    # 自動化用のウィジェットの③不在時のメール受信設定にて”保存して閉じます”をクリックしてウィジェット設定へ移動
+    driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[2]/div[2]/div[1]/button').click()
+    time.sleep(5)
+    
+# [AW06-09]システムメッセージ設定の保存
+# https://jaqool.atlassian.net/browse/GPT-1381
+# 
+
+#
+@Given('Tenant Admin Panel System Message Setting is displayed4/ システムメッセージ設定画面を開いている')
 def chinsara_G(chinsara):
     print(chinsara)
 #
-@given('Texts are displayed in "Chat Messages (When beginning a new chat)", "Placeholder Message" field and "Sample Questions" field/ 初期メッセージ、メッセージインプットプレースホルダー、サンプル質問設定欄に文章が入力されている')
+@Given('Texts are displayed in "Chat Messages (When beginning a new chat)", "Placeholder Message" field and "Sample Questions" field/ 初期メッセージ、メッセージインプットプレースホルダー、サンプル質問設定欄に文章が入力されている')
 def chinsara_G(chinsara):
     print(chinsara)
 #
-@when('Press "SAVE AND NEXT" / "保存して次へ"を押下')
+@When('Press "SAVE AND NEXT" / "保存して次へ"を押下')
 def chinsara_W(chinsara):
     time.sleep(3)
 #
-@then('Design Setting screen is displayed/ デザイン設定画面に遷移する')
+@Then('Design Setting screen is displayed/ デザイン設定画面に遷移する')
 def chinsara_T(chinsara):
     print(chinsara)
 #
-@then('On the guest screen, "Chat Messages (When beginning a new chat)" and "Placeholder Message" are changed/ ゲスト画面の初期メッセージとメッセージ入力欄のメッセージが変更されている')
+@Then('System Messages of all widgets in this tenant are changed/ 管理画面上でシステムメッセージが変更されている＊同テナント全てのウィジェット')
 def chinsara_T(chinsara):
     print(chinsara)
 #
-@then('System Messages of all widgets in this tenant are changed/ システムメッセージが変更されている＊同テナントのウィジェット全て')
+@Then('Sample Questions are displayed/ 管理画面上でサンプル質問が表示されている＊該当ウィジェットのみ')
 def chinsara_T(chinsara):
     print(chinsara)
 #
-@then('Sample Questions are displayed/ サンプル質問が表示されている＊同テナントのウィジェット全て')
+@Then('On the guest screen, "Chat Messages (When beginning a new chat)" and "Placeholder Message" are changed/ ゲスト画面で初期メッセージとメッセージ入力欄のメッセージが変更されている')
+def chinsara_T(chinsara):
+    print(chinsara)
+
+#
+@Then('On the guest screen,  "Chat Messages (When beginning a new chat)" and "Placeholder Message" are translated in the guest device language/ ゲスト画面で初期メッセージとメッセージ入力欄のメッセージが端末言語に機械翻訳されている')
 def chinsara_T(chinsara):
     print(chinsara)

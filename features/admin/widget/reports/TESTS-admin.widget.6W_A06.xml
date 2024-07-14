@@ -1,0 +1,240 @@
+<testsuite name="admin.widget.6W_A06.Create New Widget Step ❺　システムメッセージ設定" tests="9" errors="2" failures="2" skipped="0" time="441.336385" timestamp="2024-07-14T14:55:41.185249" hostname="Kentas-MacBook-Pro.local"><testcase classname="admin.widget.6W_A06.Create New Widget Step ❺　システムメッセージ設定" name="[AW06-01]初期メッセージを変更する / Change Chat Messages" status="passed" time="109.363724"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-1373 @BDD_autmation @ZFJ_Automation
+  Scenario: [AW06-01]初期メッセージを変更する / Change Chat Messages
+    Given Tenant Admin Panel System Message Setting is displayed1/ システムメッセージ設定画面を開いている ... passed in 109.193s
+    When Change text in "Chat Messages (When beginning a new chat)" / 初期メッセージ設定欄のメッセージを（テナント言語で）変更 ... passed in 0.146s
+    Then Changed test is displayed1 (not saved yet)/ 変更値が表示されている（未保存） ... passed in 0.024s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="admin.widget.6W_A06.Create New Widget Step ❺　システムメッセージ設定" name="[AW06-02]メッセージインプットプレースホルダーを変更する / Change Placeholder Message" status="passed" time="5.18359"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-1374 @BDD_autmation @ZFJ_Automation
+  Scenario: [AW06-02]メッセージインプットプレースホルダーを変更する / Change Placeholder Message
+    Given Tenant Admin Panel System Message Setting is displayed2/ システムメッセージ設定画面を開いている ... passed in 5.005s
+    When Change text in "Placeholder Message2" / メッセージインプットプレースホルダー設定欄のメッセージを（テナント言語で）変更する ... passed in 0.153s
+    Then Changed test is displayed (not saved yet)/ 変更値が表示されている（未保存） ... passed in 0.025s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="admin.widget.6W_A06.Create New Widget Step ❺　システムメッセージ設定" name="[AW06-03]サンプル質問をONにする Turn ON the Sample Questions" status="passed" time="10.162703"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-1375 @BDD_autmation @ZFJ_Automation
+  Scenario: [AW06-03]サンプル質問をONにする Turn ON the Sample Questions
+    Given Tenant Admin Panel System Message Setting is displayed3/ システムメッセージ設定画面を開いている ... passed in 0.000s
+    Given Sample Questions switch is OFF/ サンプル質問のツイッチがオフになっている ... passed in 0.066s
+    When Turn on "Sample Questions"/ サンプル質問のスイッチをONにする ... passed in 10.083s
+    Then One input box and "+" button will appear/ サンプル質問の入力欄1つと"+"ボタンが表示される ... passed in 0.013s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+<behave.runner.Context object at 0x102bc1390>
+
+]]>
+</system-out></testcase><testcase classname="admin.widget.6W_A06.Create New Widget Step ❺　システムメッセージ設定" name="[AW06-04]サンプル質問を登録する Input Sample Questions" status="passed" time="6.141737"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-1376 @BDD_autmation @ZFJ_Automation
+  Scenario: [AW06-04]サンプル質問を登録する Input Sample Questions
+    Given One input box for custom questions for guest screen will appear/ サンプル質問の入力欄が1つ表示されている ... passed in 3.001s
+    When Input sample question in tenant language/ サンプル質問を（テナント言語で）入力する ... passed in 3.127s
+    Then "Save and Next" button becomes active/ "保存して次へ"ボタンがアクティブになっている ... passed in 0.013s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+<behave.runner.Context object at 0x102bc1390>
+
+]]>
+</system-out></testcase><testcase classname="admin.widget.6W_A06.Create New Widget Step ❺　システムメッセージ設定" name="[AW06-05]サンプル質問を追加する Add Sample Questions最大10個まで設定可能（＝11個以上は設定不可）" status="failed" time="1.038023"><error type="NoSuchElementException" message="Message: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[3]/div[5]/button&quot;}&#10;  (Session info: chrome=126.0.6478.127); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception&#10;Stacktrace:&#10;0   chromedriver                        0x0000000104556a80 chromedriver + 4385408&#10;1   chromedriver                        0x000000010454f38c chromedriver + 4354956&#10;2   chromedriver                        0x000000010416cb0c chromedriver + 281356&#10;3   chromedriver                        0x00000001041af2f8 chromedriver + 553720&#10;4   chromedriver                        0x00000001041e7d24 chromedriver + 785700&#10;5   chromedriver                        0x00000001041a3eec chromedriver + 507628&#10;6   chromedriver                        0x00000001041a48c4 chromedriver + 510148&#10;7   chromedriver                        0x000000010451e43c chromedriver + 4154428&#10;8   chromedriver                        0x0000000104522ea0 chromedriver + 4173472&#10;9   chromedriver                        0x0000000104503ff8 chromedriver + 4046840&#10;10  chromedriver                        0x000000010452378c chromedriver + 4175756&#10;11  chromedriver                        0x00000001044f6fb8 chromedriver + 3993528&#10;12  chromedriver                        0x000000010454121c chromedriver + 4297244&#10;13  chromedriver                        0x0000000104541398 chromedriver + 4297624&#10;14  chromedriver                        0x000000010454ef84 chromedriver + 4353924&#10;15  libsystem_pthread.dylib             0x000000019228ef94 _pthread_start + 136&#10;16  libsystem_pthread.dylib             0x0000000192289d34 thread_start + 8">
+<![CDATA[
+Failing step: When Press "+" to add an input field/ "+"を押下する ... failed in 0.014s
+Location: 6W_A06.feature:43
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/model.py", line 1812, in run
+    match.run(runner.context)
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/matchers.py", line 103, in run
+    self.func(context, *args, **kwargs)
+  File "../../steps/6W_A06.py", line 273, in chinsara_G1
+    chinsara = driver.find_element(By.XPATH, addbutton)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 741, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 347, in execute
+    self.error_handler.check_response(response)
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[3]/div[5]/button"}
+  (Session info: chrome=126.0.6478.127); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+0   chromedriver                        0x0000000104556a80 chromedriver + 4385408
+1   chromedriver                        0x000000010454f38c chromedriver + 4354956
+2   chromedriver                        0x000000010416cb0c chromedriver + 281356
+3   chromedriver                        0x00000001041af2f8 chromedriver + 553720
+4   chromedriver                        0x00000001041e7d24 chromedriver + 785700
+5   chromedriver                        0x00000001041a3eec chromedriver + 507628
+6   chromedriver                        0x00000001041a48c4 chromedriver + 510148
+7   chromedriver                        0x000000010451e43c chromedriver + 4154428
+8   chromedriver                        0x0000000104522ea0 chromedriver + 4173472
+9   chromedriver                        0x0000000104503ff8 chromedriver + 4046840
+10  chromedriver                        0x000000010452378c chromedriver + 4175756
+11  chromedriver                        0x00000001044f6fb8 chromedriver + 3993528
+12  chromedriver                        0x000000010454121c chromedriver + 4297244
+13  chromedriver                        0x0000000104541398 chromedriver + 4297624
+14  chromedriver                        0x000000010454ef84 chromedriver + 4353924
+15  libsystem_pthread.dylib             0x000000019228ef94 _pthread_start + 136
+16  libsystem_pthread.dylib             0x0000000192289d34 thread_start + 8
+
+]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-1377 @BDD_autmation @ZFJ_Automation
+  Scenario: [AW06-05]サンプル質問を追加する Add Sample Questions最大10個まで設定可能（＝11個以上は設定不可）
+    Given Some sample questions are displayed1/ サンプル質問が入力されている ... passed in 1.025s
+    When Press "+" to add an input field/ "+"を押下する ... failed in 0.014s
+    Then Sample question input field is added up to 10 "+" button becomes gray out/ サンプル質問入力欄が10個まで追加でき、"+"ボタンはグレーアウトする ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="admin.widget.6W_A06.Create New Widget Step ❺　システムメッセージ設定" name="[AW06-06]追加したサンプル質問を入力する Input Sample Questions in added Sample Questions" status="failed" time="9.57846"><failure type="AssertionError" message="">
+<![CDATA[
+Failing step: Then Added sample questions are displayed (not saved yet)/ 追加されたサンプル質問が表示されている ... failed in 0.013s
+Location: 6W_A06.feature:52
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/model.py", line 1812, in run
+    match.run(runner.context)
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/matchers.py", line 103, in run
+    self.func(context, *args, **kwargs)
+  File "../../steps/6W_A06.py", line 309, in chinsara_T
+    assert (chinsara1 == "W06-06のテスト10")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+
+Captured stdout:
+<behave.runner.Context object at 0x102bc1390>]]>
+</failure><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-1378 @BDD_autmation @ZFJ_Automation
+  Scenario: [AW06-06]追加したサンプル質問を入力する Input Sample Questions in added Sample Questions
+    Given Added sample question input fields are displayed and blank/ サンプル質問欄が追加され空欄である ... passed in 0.000s
+    When Input sample question(s) in that input fields/ サンプル質問追加欄に質問を入力する ... passed in 9.565s
+    Then Added sample questions are displayed (not saved yet)/ 追加されたサンプル質問が表示されている ... failed in 0.013s
+    Then "Save and Next" button becomes active2/ "保存して次へ"ボタンがアクティブになっている ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+<behave.runner.Context object at 0x102bc1390>
+
+]]>
+</system-out></testcase><testcase classname="admin.widget.6W_A06.Create New Widget Step ❺　システムメッセージ設定" name="[AW06-07]サンプル質問表示中もメッセージ入力欄を表示する" status="failed" time="60.479849"><error type="NoSuchElementException" message="Message: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;/html/body/span/div/div[1]/div/main/div/div/div[2]/div/div/div[7]/div/div&quot;}&#10;  (Session info: chrome=126.0.6478.127); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception&#10;Stacktrace:&#10;0   chromedriver                        0x0000000104556a80 chromedriver + 4385408&#10;1   chromedriver                        0x000000010454f38c chromedriver + 4354956&#10;2   chromedriver                        0x000000010416cb0c chromedriver + 281356&#10;3   chromedriver                        0x00000001041af2f8 chromedriver + 553720&#10;4   chromedriver                        0x00000001041e7d24 chromedriver + 785700&#10;5   chromedriver                        0x00000001041a3eec chromedriver + 507628&#10;6   chromedriver                        0x00000001041a48c4 chromedriver + 510148&#10;7   chromedriver                        0x000000010451e43c chromedriver + 4154428&#10;8   chromedriver                        0x0000000104522ea0 chromedriver + 4173472&#10;9   chromedriver                        0x0000000104503ff8 chromedriver + 4046840&#10;10  chromedriver                        0x000000010452378c chromedriver + 4175756&#10;11  chromedriver                        0x00000001044f6fb8 chromedriver + 3993528&#10;12  chromedriver                        0x000000010454121c chromedriver + 4297244&#10;13  chromedriver                        0x0000000104541398 chromedriver + 4297624&#10;14  chromedriver                        0x000000010454ef84 chromedriver + 4353924&#10;15  libsystem_pthread.dylib             0x000000019228ef94 _pthread_start + 136&#10;16  libsystem_pthread.dylib             0x0000000192289d34 thread_start + 8">
+<![CDATA[
+Failing step: When Change toggle of Display message input field when displaying sample questions is "ON"/ サンプル質問表示中もメッセージ入力欄を表示するのトグルをONにする ... failed in 60.415s
+Location: 6W_A06.feature:60
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/model.py", line 1812, in run
+    match.run(runner.context)
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/matchers.py", line 103, in run
+    self.func(context, *args, **kwargs)
+  File "../../steps/6W_A06.py", line 357, in chinsara_W
+    element = driver.find_element(By.XPATH,'/html/body/span/div/div[1]/div/main/div/div/div[2]/div/div/div[7]/div/div')
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 741, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 347, in execute
+    self.error_handler.check_response(response)
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"/html/body/span/div/div[1]/div/main/div/div/div[2]/div/div/div[7]/div/div"}
+  (Session info: chrome=126.0.6478.127); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+0   chromedriver                        0x0000000104556a80 chromedriver + 4385408
+1   chromedriver                        0x000000010454f38c chromedriver + 4354956
+2   chromedriver                        0x000000010416cb0c chromedriver + 281356
+3   chromedriver                        0x00000001041af2f8 chromedriver + 553720
+4   chromedriver                        0x00000001041e7d24 chromedriver + 785700
+5   chromedriver                        0x00000001041a3eec chromedriver + 507628
+6   chromedriver                        0x00000001041a48c4 chromedriver + 510148
+7   chromedriver                        0x000000010451e43c chromedriver + 4154428
+8   chromedriver                        0x0000000104522ea0 chromedriver + 4173472
+9   chromedriver                        0x0000000104503ff8 chromedriver + 4046840
+10  chromedriver                        0x000000010452378c chromedriver + 4175756
+11  chromedriver                        0x00000001044f6fb8 chromedriver + 3993528
+12  chromedriver                        0x000000010454121c chromedriver + 4297244
+13  chromedriver                        0x0000000104541398 chromedriver + 4297624
+14  chromedriver                        0x000000010454ef84 chromedriver + 4353924
+15  libsystem_pthread.dylib             0x000000019228ef94 _pthread_start + 136
+16  libsystem_pthread.dylib             0x0000000192289d34 thread_start + 8
+
+]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-1379 @BDD_autmation @ZFJ_Automation
+  Scenario: [AW06-07]サンプル質問表示中もメッセージ入力欄を表示する
+    Given Toggle of Display message input field when displaying sample questions is "OFF"  / ウィジェット設定にてサンプル質問表示中もメッセージ入力欄を表示するのトグルがOFF ... passed in 0.065s
+    When Change toggle of Display message input field when displaying sample questions is "ON"/ サンプル質問表示中もメッセージ入力欄を表示するのトグルをONにする ... failed in 60.415s
+    Then Sample message and message input box are displayed if you open guest screen / ゲスト画面を開くとサンプルメッセージおよびメッセージのテキストボックスが表示されている ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="admin.widget.6W_A06.Create New Widget Step ❺　システムメッセージ設定" name="[AW06-08]サンプル質問表示中もメッセージ入力欄を表示しない" status="passed" time="239.388299"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-1380 @BDD_autmation @ZFJ_Automation
+  Scenario: [AW06-08]サンプル質問表示中もメッセージ入力欄を表示しない
+    Given Toggle of Display message input field when displaying sample questions is "ON"  / ウィジェット設定にてサンプル質問表示中もメッセージ入力欄を表示するのトグルが"ON" ... passed in 66.743s
+    When Change toggle of Display message input field when displaying sample questions is "OFF"/ サンプル質問表示中もメッセージ入力欄を表示するのトグルを"OFF"にする ... passed in 0.061s
+    Then Message input box is NOT displayed if you open guest screen / ゲスト画面を開くとメッセージのテキストボックスが表示されない ... passed in 172.584s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="admin.widget.6W_A06.Create New Widget Step ❺　システムメッセージ設定" name="[AW06-09]システムメッセージ設定の保存" status="failed" time="0"><failure type="NoneType" message="None">
+<![CDATA[
+Failing step: Given Tenant Admin Panel System Message Setting is displayed/ システムメッセージ設定画面を開いている ... undefined in 0.000s
+Location: 6W_A06.feature:75
+None]]>
+</failure><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-1381 @BDD_autmation @ZFJ_Automation
+  Scenario: [AW06-09]システムメッセージ設定の保存
+    Given Tenant Admin Panel System Message Setting is displayed/ システムメッセージ設定画面を開いている ... undefined in 0.000s
+    Given Texts are displayed in "Chat Messages (When beginning a new chat)", "Placeholder Message" field and "Sample Questions" field/ 初期メッセージ、メッセージインプットプレースホルダー、サンプル質問設定欄に文章が入力されている ... skipped in 0.000s
+    When Press "SAVE AND NEXT" / "保存して次へ"を押下 ... skipped in 0.000s
+    Then Design Setting screen is displayed/ デザイン設定画面に遷移する ... skipped in 0.000s
+    Then System Messages of all widgets in this tenant are changed/ 管理画面上でシステムメッセージが変更されている＊同テナント全てのウィジェット ... skipped in 0.000s
+    Then Sample Questions are displayed/ 管理画面上でサンプル質問が表示されている＊該当ウィジェットのみ ... skipped in 0.000s
+    Then On the guest screen, "Chat Messages (When beginning a new chat)" and "Placeholder Message" are changed/ ゲスト画面で初期メッセージとメッセージ入力欄のメッセージが変更されている ... skipped in 0.000s
+    Then On the guest screen,  "Chat Messages (When beginning a new chat)" and "Placeholder Message" are translated in the guest device language/ ゲスト画面で初期メッセージとメッセージ入力欄のメッセージが端末言語に機械翻訳されている ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase></testsuite>

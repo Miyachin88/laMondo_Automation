@@ -50,11 +50,12 @@ def openW():
     driver.switch_to.frame(iframe)
     time.sleep(5)
     # スタートボタンを押下
-    element = driver.find_element(By.XPATH,'/html/body/span/div/div[1]/div/main/div/div/div[2]/div/div/div[6]/div/div')
+    element = driver.find_element(By.XPATH,'/html/body/span/div/div[1]/div/main/div/div/div[2]/div/div/div[7]/div/div')
     driver.execute_script('arguments[0].click();', element)
-    time.sleep(10)
+    time.sleep(15)    
     # メッセージを入力
     element = driver.find_element(By.XPATH, '//*[@id="inputMessage"]').send_keys('こんにちは')
+    time.sleep(10)
     # メッセージを送信
     driver.find_element(By.XPATH,'/html/body/span/div/div[1]/div/main/div/div/div[2]/div[2]/div/button[2]').click()
     time.sleep(30)
@@ -167,12 +168,27 @@ def chinsara_T(chinsara):
 # 
 @given('エスカレーションスイッチ（GPTステータスの右隣）がオンになっているウィジェットがある')
 def chinsara_G(chinsara):
-    print('susara')
+    driver.close()
+    # タブのハンドルを取得する
+    tab_handles = driver.window_handles
+    # 1番目のタブに切り替える
+    second_tab_handle = tab_handles[0]
+    driver.switch_to.window(second_tab_handle)
+    #戻るを押下
+    driver.find_element(By.XPATH,'/html/body/div[2]/div/div[2]/div/div[4]/div[2]/button').click()
+    time.sleep(5)
 
 #
 @when('スイッチをオフにする')
 def chinsara_W(chinsara):
-    print('susara')
+    #自動化用のトグルを確認する
+    jidoukatoggle = driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div/div[3]/div/table/tbody/tr[2]/td[3]/div/div[1]/div/div/div[2]/input')
+    #①ONの場合は
+    if jidoukatoggle.is_selected():
+        #トグルをクリックしてOFFにする
+        jidoukatoggle.click()
+    else :
+        print('chinsara')
 
 #
 @then('スイッチがグレーに切り替わり、"レコードは正常に編集されました。"と表示される')
@@ -182,4 +198,55 @@ def chinsara_T(chinsara):
 #
 @then('ゲスト画面のメッセージ入力欄からエスカレーションボタンが非表示になる')
 def chinsara_T(chinsara):
-    print('susara')
+    #infoボタンをクリック
+    driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div/div[3]/div/table/tbody/tr[2]/td[6]/div/div/button').click()
+    driver.switch_to.window
+    time.sleep(10)
+    #ウィジェットを開く
+    driver.find_element(By.XPATH,'/html/body/div[2]/div/div[2]/div/div[3]/div/div/div[2]/div[2]').click()
+    time.sleep(30) 
+    # タブのハンドルを取得する
+    tab_handles = driver.window_handles
+    # 2番目のタブに切り替える
+    second_tab_handle = tab_handles[1]
+    driver.switch_to.window(second_tab_handle)
+    # iframeに切り替え
+    iframe = driver.find_element(By.ID,'ktzn-tm-frame')
+    driver.switch_to.frame(iframe)
+    time.sleep(5)
+    # スタートボタンを押下
+    element = driver.find_element(By.XPATH,'/html/body/span/div/div[1]/div/main/div/div/div[2]/div/div/div[7]/div/div')
+    driver.execute_script('arguments[0].click();', element)
+    time.sleep(15)    
+    # メッセージを入力
+    element = driver.find_element(By.XPATH, '//*[@id="inputMessage"]').send_keys('こんにちは')
+    time.sleep(10)
+    # メッセージを送信
+    driver.find_element(By.XPATH,'/html/body/span/div/div[1]/div/main/div/div/div[2]/div[2]/div/button').click()
+    time.sleep(30)
+
+    judge = "true"
+    try:
+        # 指定したDiv要素を検索 
+        driver.find_element(By.CSS_SELECTOR, "#app > div > main > div > div > div.mainConversationContainer > div.typer > div > button.input-area-btn.me-1.v-btn.v-btn--disabled.v-btn--icon.v-btn--round.theme--light.v-size--default").send_keys('W22-03のテスト')
+    except NoSuchElementException:
+        judge = "false"
+    
+    assert judge == "false"
+    
+    # 最後にタブを閉じて初期化する
+    driver.close()
+    # タブのハンドルを取得する
+    tab_handles = driver.window_handles
+    # 1番目のタブに切り替える
+    second_tab_handle = tab_handles[0]
+    driver.switch_to.window(second_tab_handle)
+    #戻るを押下
+    driver.find_element(By.XPATH,'/html/body/div[2]/div/div[2]/div/div[4]/div[2]/button').click()
+    time.sleep(5)
+
+    #自動化用のトグルを確認する
+    jidoukatoggle = driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/div[2]/div[2]/div/div/div/div[3]/div/table/tbody/tr[2]/td[3]/div/div[1]/div/div/div[2]/input')
+    #トグルをクリックしてONにする
+    jidoukatoggle.click()
+    time.sleep(5)

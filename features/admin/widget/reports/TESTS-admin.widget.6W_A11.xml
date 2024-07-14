@@ -1,0 +1,14 @@
+<testsuite name="admin.widget.6W_A11.Cancel Widget Creation　新規ウィジェット作成をキャンセルする" tests="1" errors="0" failures="0" skipped="0" time="83.778563" timestamp="2024-07-14T09:38:56.731956" hostname="Kentas-MacBook-Pro.local"><testcase classname="admin.widget.6W_A11.Cancel Widget Creation　新規ウィジェット作成をキャンセルする" name="[AW11-01]ウィジェット設定をキャンセルする Cancel Widget Creation" status="passed" time="83.778563"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-346 @BDD_autmation @ZFJ_Automation
+  Scenario: [AW11-01]ウィジェット設定をキャンセルする Cancel Widget Creation
+    Given 「❻デザイン設定」画面が表示されている❻Design Setting screen is displayed ... passed in 78.694s
+    When 右下の 「キャンセル 」（初回のみ）を選択するIn the lower right hand corner, select "Cancel" ＊ウィジェットを新規作成時（初回設定時）のみ出る ... passed in 5.080s
+    Then ウィジェットの新規作成処理がキャンセルされ、データが保存されないCreate new widget process is cancelled, no data is saved ... passed in 0.005s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase></testsuite>

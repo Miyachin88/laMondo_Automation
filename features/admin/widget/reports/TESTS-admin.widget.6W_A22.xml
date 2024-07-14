@@ -1,0 +1,744 @@
+<testsuite name="admin.widget.6W_A22.[A20] バリエーション設定" tests="14" errors="13" failures="0" skipped="0" time="46.151417" timestamp="2024-07-14T16:33:43.752919" hostname="Kentas-MacBook-Pro.local"><testcase classname="admin.widget.6W_A22.[A20] バリエーション設定" name="[AW22-01]バリエーション設定画面を開く" status="passed" time="40.862897"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-717 @ZFJ_Automation
+  Scenario: [AW22-01]バリエーション設定画面を開く
+    Given ウィジェット設定が開かれていて、登録済みのウィジェットがある ... passed in 35.806s
+    When ウィジェット右側のロケーションアイコンを押下 ... passed in 5.053s
+    Then バリエーション設定画面が表示される ... passed in 0.004s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="admin.widget.6W_A22.[A20] バリエーション設定" name="[AW22-02]バリエーション追加ボタンを押す" status="failed" time="5.254147"><error type="NoSuchWindowException" message="Message: no such window: target window already closed&#10;from unknown error: web view not found&#10;  (Session info: chrome=126.0.6478.127)&#10;Stacktrace:&#10;0   chromedriver                        0x00000001012faa80 chromedriver + 4385408&#10;1   chromedriver                        0x00000001012f338c chromedriver + 4354956&#10;2   chromedriver                        0x0000000100f10b0c chromedriver + 281356&#10;3   chromedriver                        0x0000000100eebaf0 chromedriver + 129776&#10;4   chromedriver                        0x0000000100f78314 chromedriver + 705300&#10;5   chromedriver                        0x0000000100f8b438 chromedriver + 783416&#10;6   chromedriver                        0x0000000100f47eec chromedriver + 507628&#10;7   chromedriver                        0x0000000100f488c4 chromedriver + 510148&#10;8   chromedriver                        0x00000001012c243c chromedriver + 4154428&#10;9   chromedriver                        0x00000001012c6ea0 chromedriver + 4173472&#10;10  chromedriver                        0x00000001012a7ff8 chromedriver + 4046840&#10;11  chromedriver                        0x00000001012c778c chromedriver + 4175756&#10;12  chromedriver                        0x000000010129afb8 chromedriver + 3993528&#10;13  chromedriver                        0x00000001012e521c chromedriver + 4297244&#10;14  chromedriver                        0x00000001012e5398 chromedriver + 4297624&#10;15  chromedriver                        0x00000001012f2f84 chromedriver + 4353924&#10;16  libsystem_pthread.dylib             0x000000019228ef94 _pthread_start + 136&#10;17  libsystem_pthread.dylib             0x0000000192289d34 thread_start + 8">
+<![CDATA[
+Failing step: Given バリエーション設定画面が表示されている ... failed in 5.254s
+Location: 6W_A22.feature:13
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/model.py", line 1812, in run
+    match.run(runner.context)
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/matchers.py", line 103, in run
+    self.func(context, *args, **kwargs)
+  File "../../steps/6W_A22.py", line 118, in chinsara_G
+    loginAdmin()
+  File "../../steps/6W_A22.py", line 74, in loginAdmin
+    element = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div/div[2]/div[2]/form/div/div[1]/div/div[3]/input').send_keys('developer+kenta-lamondo+super@kotozna.com')
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 741, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 347, in execute
+    self.error_handler.check_response(response)
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x00000001012faa80 chromedriver + 4385408
+1   chromedriver                        0x00000001012f338c chromedriver + 4354956
+2   chromedriver                        0x0000000100f10b0c chromedriver + 281356
+3   chromedriver                        0x0000000100eebaf0 chromedriver + 129776
+4   chromedriver                        0x0000000100f78314 chromedriver + 705300
+5   chromedriver                        0x0000000100f8b438 chromedriver + 783416
+6   chromedriver                        0x0000000100f47eec chromedriver + 507628
+7   chromedriver                        0x0000000100f488c4 chromedriver + 510148
+8   chromedriver                        0x00000001012c243c chromedriver + 4154428
+9   chromedriver                        0x00000001012c6ea0 chromedriver + 4173472
+10  chromedriver                        0x00000001012a7ff8 chromedriver + 4046840
+11  chromedriver                        0x00000001012c778c chromedriver + 4175756
+12  chromedriver                        0x000000010129afb8 chromedriver + 3993528
+13  chromedriver                        0x00000001012e521c chromedriver + 4297244
+14  chromedriver                        0x00000001012e5398 chromedriver + 4297624
+15  chromedriver                        0x00000001012f2f84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019228ef94 _pthread_start + 136
+17  libsystem_pthread.dylib             0x0000000192289d34 thread_start + 8
+
+]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-718 @ZFJ_Automation
+  Scenario: [AW22-02]バリエーション追加ボタンを押す
+    Given バリエーション設定画面が表示されている ... failed in 5.254s
+    When 右上のバリエーション追加ボタンを押下 ... skipped in 0.000s
+    Then バリエーションを追加するポップアップが表示される ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="admin.widget.6W_A22.[A20] バリエーション設定" name="[AW22-03] バリエーションの名前を入力する" status="failed" time="0.002695"><error type="NoSuchWindowException" message="Message: no such window: target window already closed&#10;from unknown error: web view not found&#10;  (Session info: chrome=126.0.6478.127)&#10;Stacktrace:&#10;0   chromedriver                        0x00000001012faa80 chromedriver + 4385408&#10;1   chromedriver                        0x00000001012f338c chromedriver + 4354956&#10;2   chromedriver                        0x0000000100f10b0c chromedriver + 281356&#10;3   chromedriver                        0x0000000100eebaf0 chromedriver + 129776&#10;4   chromedriver                        0x0000000100f78314 chromedriver + 705300&#10;5   chromedriver                        0x0000000100f8b438 chromedriver + 783416&#10;6   chromedriver                        0x0000000100f47eec chromedriver + 507628&#10;7   chromedriver                        0x0000000100f488c4 chromedriver + 510148&#10;8   chromedriver                        0x00000001012c243c chromedriver + 4154428&#10;9   chromedriver                        0x00000001012c6ea0 chromedriver + 4173472&#10;10  chromedriver                        0x00000001012a7ff8 chromedriver + 4046840&#10;11  chromedriver                        0x00000001012c778c chromedriver + 4175756&#10;12  chromedriver                        0x000000010129afb8 chromedriver + 3993528&#10;13  chromedriver                        0x00000001012e521c chromedriver + 4297244&#10;14  chromedriver                        0x00000001012e5398 chromedriver + 4297624&#10;15  chromedriver                        0x00000001012f2f84 chromedriver + 4353924&#10;16  libsystem_pthread.dylib             0x000000019228ef94 _pthread_start + 136&#10;17  libsystem_pthread.dylib             0x0000000192289d34 thread_start + 8">
+<![CDATA[
+Failing step: Given バリエーションを追加するポップアップが表示されていて名前欄が入力されていない ... failed in 0.003s
+Location: 6W_A22.feature:20
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/model.py", line 1812, in run
+    match.run(runner.context)
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/matchers.py", line 103, in run
+    self.func(context, *args, **kwargs)
+  File "../../steps/6W_A22.py", line 137, in chinsara_G
+    loginAdmin()
+  File "../../steps/6W_A22.py", line 72, in loginAdmin
+    driver.get('https://beta-tenant-admin.im.kotozna.chat/ja/login')
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 356, in get
+    self.execute(Command.GET, {"url": url})
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 347, in execute
+    self.error_handler.check_response(response)
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x00000001012faa80 chromedriver + 4385408
+1   chromedriver                        0x00000001012f338c chromedriver + 4354956
+2   chromedriver                        0x0000000100f10b0c chromedriver + 281356
+3   chromedriver                        0x0000000100eebaf0 chromedriver + 129776
+4   chromedriver                        0x0000000100f78314 chromedriver + 705300
+5   chromedriver                        0x0000000100f8b438 chromedriver + 783416
+6   chromedriver                        0x0000000100f47eec chromedriver + 507628
+7   chromedriver                        0x0000000100f488c4 chromedriver + 510148
+8   chromedriver                        0x00000001012c243c chromedriver + 4154428
+9   chromedriver                        0x00000001012c6ea0 chromedriver + 4173472
+10  chromedriver                        0x00000001012a7ff8 chromedriver + 4046840
+11  chromedriver                        0x00000001012c778c chromedriver + 4175756
+12  chromedriver                        0x000000010129afb8 chromedriver + 3993528
+13  chromedriver                        0x00000001012e521c chromedriver + 4297244
+14  chromedriver                        0x00000001012e5398 chromedriver + 4297624
+15  chromedriver                        0x00000001012f2f84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019228ef94 _pthread_start + 136
+17  libsystem_pthread.dylib             0x0000000192289d34 thread_start + 8
+
+]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-719 @ZFJ_Automation
+  Scenario: [AW22-03] バリエーションの名前を入力する
+    Given バリエーションを追加するポップアップが表示されていて名前欄が入力されていない ... failed in 0.003s
+    When 名前にValiation Name Aを入力する(例 Chanel) ... skipped in 0.000s
+    Then 名前欄にValiation Name Aが入力できる ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="admin.widget.6W_A22.[A20] バリエーション設定" name="[AW22-04] バリエーションを入力する" status="failed" time="0.004315"><error type="NoSuchWindowException" message="Message: no such window: target window already closed&#10;from unknown error: web view not found&#10;  (Session info: chrome=126.0.6478.127)&#10;Stacktrace:&#10;0   chromedriver                        0x00000001012faa80 chromedriver + 4385408&#10;1   chromedriver                        0x00000001012f338c chromedriver + 4354956&#10;2   chromedriver                        0x0000000100f10b0c chromedriver + 281356&#10;3   chromedriver                        0x0000000100eebaf0 chromedriver + 129776&#10;4   chromedriver                        0x0000000100f78314 chromedriver + 705300&#10;5   chromedriver                        0x0000000100f8b438 chromedriver + 783416&#10;6   chromedriver                        0x0000000100f47eec chromedriver + 507628&#10;7   chromedriver                        0x0000000100f488c4 chromedriver + 510148&#10;8   chromedriver                        0x00000001012c243c chromedriver + 4154428&#10;9   chromedriver                        0x00000001012c6ea0 chromedriver + 4173472&#10;10  chromedriver                        0x00000001012a7ff8 chromedriver + 4046840&#10;11  chromedriver                        0x00000001012c778c chromedriver + 4175756&#10;12  chromedriver                        0x000000010129afb8 chromedriver + 3993528&#10;13  chromedriver                        0x00000001012e521c chromedriver + 4297244&#10;14  chromedriver                        0x00000001012e5398 chromedriver + 4297624&#10;15  chromedriver                        0x00000001012f2f84 chromedriver + 4353924&#10;16  libsystem_pthread.dylib             0x000000019228ef94 _pthread_start + 136&#10;17  libsystem_pthread.dylib             0x0000000192289d34 thread_start + 8">
+<![CDATA[
+Failing step: Given バリエーションを追加するポップアップが表示されている ... failed in 0.004s
+Location: 6W_A22.feature:27
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/model.py", line 1812, in run
+    match.run(runner.context)
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/matchers.py", line 103, in run
+    self.func(context, *args, **kwargs)
+  File "../../steps/6W_A22.py", line 156, in chinsara_G
+    loginAdmin()
+  File "../../steps/6W_A22.py", line 72, in loginAdmin
+    driver.get('https://beta-tenant-admin.im.kotozna.chat/ja/login')
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 356, in get
+    self.execute(Command.GET, {"url": url})
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 347, in execute
+    self.error_handler.check_response(response)
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x00000001012faa80 chromedriver + 4385408
+1   chromedriver                        0x00000001012f338c chromedriver + 4354956
+2   chromedriver                        0x0000000100f10b0c chromedriver + 281356
+3   chromedriver                        0x0000000100eebaf0 chromedriver + 129776
+4   chromedriver                        0x0000000100f78314 chromedriver + 705300
+5   chromedriver                        0x0000000100f8b438 chromedriver + 783416
+6   chromedriver                        0x0000000100f47eec chromedriver + 507628
+7   chromedriver                        0x0000000100f488c4 chromedriver + 510148
+8   chromedriver                        0x00000001012c243c chromedriver + 4154428
+9   chromedriver                        0x00000001012c6ea0 chromedriver + 4173472
+10  chromedriver                        0x00000001012a7ff8 chromedriver + 4046840
+11  chromedriver                        0x00000001012c778c chromedriver + 4175756
+12  chromedriver                        0x000000010129afb8 chromedriver + 3993528
+13  chromedriver                        0x00000001012e521c chromedriver + 4297244
+14  chromedriver                        0x00000001012e5398 chromedriver + 4297624
+15  chromedriver                        0x00000001012f2f84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019228ef94 _pthread_start + 136
+17  libsystem_pthread.dylib             0x0000000192289d34 thread_start + 8
+
+]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-720 @ZFJ_Automation
+  Scenario: [AW22-04] バリエーションを入力する
+    Given バリエーションを追加するポップアップが表示されている ... failed in 0.004s
+    When バリエーション欄にValiation Aを入力する(説明欄を参照) ... skipped in 0.000s
+    Then バリエーション欄にValiation Aが入力できる ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="admin.widget.6W_A22.[A20] バリエーション設定" name="[AW22-05] バリエーションを保存する" status="failed" time="0.002163"><error type="NoSuchWindowException" message="Message: no such window: target window already closed&#10;from unknown error: web view not found&#10;  (Session info: chrome=126.0.6478.127)&#10;Stacktrace:&#10;0   chromedriver                        0x00000001012faa80 chromedriver + 4385408&#10;1   chromedriver                        0x00000001012f338c chromedriver + 4354956&#10;2   chromedriver                        0x0000000100f10b0c chromedriver + 281356&#10;3   chromedriver                        0x0000000100eebaf0 chromedriver + 129776&#10;4   chromedriver                        0x0000000100f78314 chromedriver + 705300&#10;5   chromedriver                        0x0000000100f8b438 chromedriver + 783416&#10;6   chromedriver                        0x0000000100f47eec chromedriver + 507628&#10;7   chromedriver                        0x0000000100f488c4 chromedriver + 510148&#10;8   chromedriver                        0x00000001012c243c chromedriver + 4154428&#10;9   chromedriver                        0x00000001012c6ea0 chromedriver + 4173472&#10;10  chromedriver                        0x00000001012a7ff8 chromedriver + 4046840&#10;11  chromedriver                        0x00000001012c778c chromedriver + 4175756&#10;12  chromedriver                        0x000000010129afb8 chromedriver + 3993528&#10;13  chromedriver                        0x00000001012e521c chromedriver + 4297244&#10;14  chromedriver                        0x00000001012e5398 chromedriver + 4297624&#10;15  chromedriver                        0x00000001012f2f84 chromedriver + 4353924&#10;16  libsystem_pthread.dylib             0x000000019228ef94 _pthread_start + 136&#10;17  libsystem_pthread.dylib             0x0000000192289d34 thread_start + 8">
+<![CDATA[
+Failing step: Given バリエーションを追加するの名前欄とバリエーション欄が入力されている ... failed in 0.002s
+Location: 6W_A22.feature:34
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/model.py", line 1812, in run
+    match.run(runner.context)
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/matchers.py", line 103, in run
+    self.func(context, *args, **kwargs)
+  File "../../steps/6W_A22.py", line 175, in chinsara_G
+    loginAdmin()
+  File "../../steps/6W_A22.py", line 72, in loginAdmin
+    driver.get('https://beta-tenant-admin.im.kotozna.chat/ja/login')
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 356, in get
+    self.execute(Command.GET, {"url": url})
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 347, in execute
+    self.error_handler.check_response(response)
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x00000001012faa80 chromedriver + 4385408
+1   chromedriver                        0x00000001012f338c chromedriver + 4354956
+2   chromedriver                        0x0000000100f10b0c chromedriver + 281356
+3   chromedriver                        0x0000000100eebaf0 chromedriver + 129776
+4   chromedriver                        0x0000000100f78314 chromedriver + 705300
+5   chromedriver                        0x0000000100f8b438 chromedriver + 783416
+6   chromedriver                        0x0000000100f47eec chromedriver + 507628
+7   chromedriver                        0x0000000100f488c4 chromedriver + 510148
+8   chromedriver                        0x00000001012c243c chromedriver + 4154428
+9   chromedriver                        0x00000001012c6ea0 chromedriver + 4173472
+10  chromedriver                        0x00000001012a7ff8 chromedriver + 4046840
+11  chromedriver                        0x00000001012c778c chromedriver + 4175756
+12  chromedriver                        0x000000010129afb8 chromedriver + 3993528
+13  chromedriver                        0x00000001012e521c chromedriver + 4297244
+14  chromedriver                        0x00000001012e5398 chromedriver + 4297624
+15  chromedriver                        0x00000001012f2f84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019228ef94 _pthread_start + 136
+17  libsystem_pthread.dylib             0x0000000192289d34 thread_start + 8
+
+]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-721 @ZFJ_Automation
+  Scenario: [AW22-05] バリエーションを保存する
+    Given バリエーションを追加するの名前欄とバリエーション欄が入力されている ... failed in 0.002s
+    When 右下の"保存"ボタンを押下 ... skipped in 0.000s
+    Then バリエーション設定画面に、名前、バリエーション、スニペット、ゲスト画面URL、QRコードが生成され、追加される　＊画像参照 ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="admin.widget.6W_A22.[A20] バリエーション設定" name="[AW22-11] スニペットのコピー＆ペースト" status="failed" time="0.002377"><error type="NoSuchWindowException" message="Message: no such window: target window already closed&#10;from unknown error: web view not found&#10;  (Session info: chrome=126.0.6478.127)&#10;Stacktrace:&#10;0   chromedriver                        0x00000001012faa80 chromedriver + 4385408&#10;1   chromedriver                        0x00000001012f338c chromedriver + 4354956&#10;2   chromedriver                        0x0000000100f10b0c chromedriver + 281356&#10;3   chromedriver                        0x0000000100eebaf0 chromedriver + 129776&#10;4   chromedriver                        0x0000000100f78314 chromedriver + 705300&#10;5   chromedriver                        0x0000000100f8b438 chromedriver + 783416&#10;6   chromedriver                        0x0000000100f47eec chromedriver + 507628&#10;7   chromedriver                        0x0000000100f488c4 chromedriver + 510148&#10;8   chromedriver                        0x00000001012c243c chromedriver + 4154428&#10;9   chromedriver                        0x00000001012c6ea0 chromedriver + 4173472&#10;10  chromedriver                        0x00000001012a7ff8 chromedriver + 4046840&#10;11  chromedriver                        0x00000001012c778c chromedriver + 4175756&#10;12  chromedriver                        0x000000010129afb8 chromedriver + 3993528&#10;13  chromedriver                        0x00000001012e521c chromedriver + 4297244&#10;14  chromedriver                        0x00000001012e5398 chromedriver + 4297624&#10;15  chromedriver                        0x00000001012f2f84 chromedriver + 4353924&#10;16  libsystem_pthread.dylib             0x000000019228ef94 _pthread_start + 136&#10;17  libsystem_pthread.dylib             0x0000000192289d34 thread_start + 8">
+<![CDATA[
+Failing step: Given バリエーション設定のスニペットの項目にスニペットとコピーボタンが表示されている(Snippet A) ... failed in 0.002s
+Location: 6W_A22.feature:41
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/model.py", line 1812, in run
+    match.run(runner.context)
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/matchers.py", line 103, in run
+    self.func(context, *args, **kwargs)
+  File "../../steps/6W_A22.py", line 194, in chinsara_G
+    loginAdmin()
+  File "../../steps/6W_A22.py", line 72, in loginAdmin
+    driver.get('https://beta-tenant-admin.im.kotozna.chat/ja/login')
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 356, in get
+    self.execute(Command.GET, {"url": url})
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 347, in execute
+    self.error_handler.check_response(response)
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x00000001012faa80 chromedriver + 4385408
+1   chromedriver                        0x00000001012f338c chromedriver + 4354956
+2   chromedriver                        0x0000000100f10b0c chromedriver + 281356
+3   chromedriver                        0x0000000100eebaf0 chromedriver + 129776
+4   chromedriver                        0x0000000100f78314 chromedriver + 705300
+5   chromedriver                        0x0000000100f8b438 chromedriver + 783416
+6   chromedriver                        0x0000000100f47eec chromedriver + 507628
+7   chromedriver                        0x0000000100f488c4 chromedriver + 510148
+8   chromedriver                        0x00000001012c243c chromedriver + 4154428
+9   chromedriver                        0x00000001012c6ea0 chromedriver + 4173472
+10  chromedriver                        0x00000001012a7ff8 chromedriver + 4046840
+11  chromedriver                        0x00000001012c778c chromedriver + 4175756
+12  chromedriver                        0x000000010129afb8 chromedriver + 3993528
+13  chromedriver                        0x00000001012e521c chromedriver + 4297244
+14  chromedriver                        0x00000001012e5398 chromedriver + 4297624
+15  chromedriver                        0x00000001012f2f84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019228ef94 _pthread_start + 136
+17  libsystem_pthread.dylib             0x0000000192289d34 thread_start + 8
+
+]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-722 @ZFJ_Automation
+  Scenario: [AW22-11] スニペットのコピー＆ペースト
+    Given バリエーション設定のスニペットの項目にスニペットとコピーボタンが表示されている(Snippet A) ... failed in 0.002s
+    When Snippet Aの右のコピーボタンを押下し、テスト用サイトにペースト ... skipped in 0.000s
+    Then Snippet Aがペーストできる ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="admin.widget.6W_A22.[A20] バリエーション設定" name="[AW22-12] スニペットのウィジェットの実行" status="failed" time="0.001103"><error type="NoSuchWindowException" message="Message: no such window: target window already closed&#10;from unknown error: web view not found&#10;  (Session info: chrome=126.0.6478.127)&#10;Stacktrace:&#10;0   chromedriver                        0x00000001012faa80 chromedriver + 4385408&#10;1   chromedriver                        0x00000001012f338c chromedriver + 4354956&#10;2   chromedriver                        0x0000000100f10b0c chromedriver + 281356&#10;3   chromedriver                        0x0000000100eebaf0 chromedriver + 129776&#10;4   chromedriver                        0x0000000100f78314 chromedriver + 705300&#10;5   chromedriver                        0x0000000100f8b438 chromedriver + 783416&#10;6   chromedriver                        0x0000000100f47eec chromedriver + 507628&#10;7   chromedriver                        0x0000000100f488c4 chromedriver + 510148&#10;8   chromedriver                        0x00000001012c243c chromedriver + 4154428&#10;9   chromedriver                        0x00000001012c6ea0 chromedriver + 4173472&#10;10  chromedriver                        0x00000001012a7ff8 chromedriver + 4046840&#10;11  chromedriver                        0x00000001012c778c chromedriver + 4175756&#10;12  chromedriver                        0x000000010129afb8 chromedriver + 3993528&#10;13  chromedriver                        0x00000001012e521c chromedriver + 4297244&#10;14  chromedriver                        0x00000001012e5398 chromedriver + 4297624&#10;15  chromedriver                        0x00000001012f2f84 chromedriver + 4353924&#10;16  libsystem_pthread.dylib             0x000000019228ef94 _pthread_start + 136&#10;17  libsystem_pthread.dylib             0x0000000192289d34 thread_start + 8">
+<![CDATA[
+Failing step: Given テスト用サイトにSnippet Aがペーストされていて、ウィジェットが表示されている ... failed in 0.001s
+Location: 6W_A22.feature:48
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/model.py", line 1812, in run
+    match.run(runner.context)
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/matchers.py", line 103, in run
+    self.func(context, *args, **kwargs)
+  File "../../steps/6W_A22.py", line 213, in chinsara_G
+    loginAdmin()
+  File "../../steps/6W_A22.py", line 72, in loginAdmin
+    driver.get('https://beta-tenant-admin.im.kotozna.chat/ja/login')
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 356, in get
+    self.execute(Command.GET, {"url": url})
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 347, in execute
+    self.error_handler.check_response(response)
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x00000001012faa80 chromedriver + 4385408
+1   chromedriver                        0x00000001012f338c chromedriver + 4354956
+2   chromedriver                        0x0000000100f10b0c chromedriver + 281356
+3   chromedriver                        0x0000000100eebaf0 chromedriver + 129776
+4   chromedriver                        0x0000000100f78314 chromedriver + 705300
+5   chromedriver                        0x0000000100f8b438 chromedriver + 783416
+6   chromedriver                        0x0000000100f47eec chromedriver + 507628
+7   chromedriver                        0x0000000100f488c4 chromedriver + 510148
+8   chromedriver                        0x00000001012c243c chromedriver + 4154428
+9   chromedriver                        0x00000001012c6ea0 chromedriver + 4173472
+10  chromedriver                        0x00000001012a7ff8 chromedriver + 4046840
+11  chromedriver                        0x00000001012c778c chromedriver + 4175756
+12  chromedriver                        0x000000010129afb8 chromedriver + 3993528
+13  chromedriver                        0x00000001012e521c chromedriver + 4297244
+14  chromedriver                        0x00000001012e5398 chromedriver + 4297624
+15  chromedriver                        0x00000001012f2f84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019228ef94 _pthread_start + 136
+17  libsystem_pthread.dylib             0x0000000192289d34 thread_start + 8
+
+]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-723 @ZFJ_Automation
+  Scenario: [AW22-12] スニペットのウィジェットの実行
+    Given テスト用サイトにSnippet Aがペーストされていて、ウィジェットが表示されている ... failed in 0.001s
+    When ウィジェットを押下し、スタートを押下 ... skipped in 0.000s
+    Then laMondoを実行できる ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="admin.widget.6W_A22.[A20] バリエーション設定" name="[AW22-13] ゲスト画面URLを別タブで開く" status="failed" time="0.002202"><error type="NoSuchWindowException" message="Message: no such window: target window already closed&#10;from unknown error: web view not found&#10;  (Session info: chrome=126.0.6478.127)&#10;Stacktrace:&#10;0   chromedriver                        0x00000001012faa80 chromedriver + 4385408&#10;1   chromedriver                        0x00000001012f338c chromedriver + 4354956&#10;2   chromedriver                        0x0000000100f10b0c chromedriver + 281356&#10;3   chromedriver                        0x0000000100eebaf0 chromedriver + 129776&#10;4   chromedriver                        0x0000000100f78314 chromedriver + 705300&#10;5   chromedriver                        0x0000000100f8b438 chromedriver + 783416&#10;6   chromedriver                        0x0000000100f47eec chromedriver + 507628&#10;7   chromedriver                        0x0000000100f488c4 chromedriver + 510148&#10;8   chromedriver                        0x00000001012c243c chromedriver + 4154428&#10;9   chromedriver                        0x00000001012c6ea0 chromedriver + 4173472&#10;10  chromedriver                        0x00000001012a7ff8 chromedriver + 4046840&#10;11  chromedriver                        0x00000001012c778c chromedriver + 4175756&#10;12  chromedriver                        0x000000010129afb8 chromedriver + 3993528&#10;13  chromedriver                        0x00000001012e521c chromedriver + 4297244&#10;14  chromedriver                        0x00000001012e5398 chromedriver + 4297624&#10;15  chromedriver                        0x00000001012f2f84 chromedriver + 4353924&#10;16  libsystem_pthread.dylib             0x000000019228ef94 _pthread_start + 136&#10;17  libsystem_pthread.dylib             0x0000000192289d34 thread_start + 8">
+<![CDATA[
+Failing step: Given バリエーション設定のスニペットの項目にゲスト画面URLと、コピーボタン、別タブで開くボタンが表示されている ... failed in 0.002s
+Location: 6W_A22.feature:55
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/model.py", line 1812, in run
+    match.run(runner.context)
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/matchers.py", line 103, in run
+    self.func(context, *args, **kwargs)
+  File "../../steps/6W_A22.py", line 232, in chinsara_G
+    loginAdmin()
+  File "../../steps/6W_A22.py", line 72, in loginAdmin
+    driver.get('https://beta-tenant-admin.im.kotozna.chat/ja/login')
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 356, in get
+    self.execute(Command.GET, {"url": url})
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 347, in execute
+    self.error_handler.check_response(response)
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x00000001012faa80 chromedriver + 4385408
+1   chromedriver                        0x00000001012f338c chromedriver + 4354956
+2   chromedriver                        0x0000000100f10b0c chromedriver + 281356
+3   chromedriver                        0x0000000100eebaf0 chromedriver + 129776
+4   chromedriver                        0x0000000100f78314 chromedriver + 705300
+5   chromedriver                        0x0000000100f8b438 chromedriver + 783416
+6   chromedriver                        0x0000000100f47eec chromedriver + 507628
+7   chromedriver                        0x0000000100f488c4 chromedriver + 510148
+8   chromedriver                        0x00000001012c243c chromedriver + 4154428
+9   chromedriver                        0x00000001012c6ea0 chromedriver + 4173472
+10  chromedriver                        0x00000001012a7ff8 chromedriver + 4046840
+11  chromedriver                        0x00000001012c778c chromedriver + 4175756
+12  chromedriver                        0x000000010129afb8 chromedriver + 3993528
+13  chromedriver                        0x00000001012e521c chromedriver + 4297244
+14  chromedriver                        0x00000001012e5398 chromedriver + 4297624
+15  chromedriver                        0x00000001012f2f84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019228ef94 _pthread_start + 136
+17  libsystem_pthread.dylib             0x0000000192289d34 thread_start + 8
+
+]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-724 @ZFJ_Automation
+  Scenario: [AW22-13] ゲスト画面URLを別タブで開く
+    Given バリエーション設定のスニペットの項目にゲスト画面URLと、コピーボタン、別タブで開くボタンが表示されている ... failed in 0.002s
+    When 別タブで開くボタンを押下 ... skipped in 0.000s
+    Then ゲスト画面が開き、laMondoスタート画面が表示される ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="admin.widget.6W_A22.[A20] バリエーション設定" name="[AW22-14] 二次元バーコードのコピー＆ペースト" status="failed" time="0.003049"><error type="NoSuchWindowException" message="Message: no such window: target window already closed&#10;from unknown error: web view not found&#10;  (Session info: chrome=126.0.6478.127)&#10;Stacktrace:&#10;0   chromedriver                        0x00000001012faa80 chromedriver + 4385408&#10;1   chromedriver                        0x00000001012f338c chromedriver + 4354956&#10;2   chromedriver                        0x0000000100f10b0c chromedriver + 281356&#10;3   chromedriver                        0x0000000100eebaf0 chromedriver + 129776&#10;4   chromedriver                        0x0000000100f78314 chromedriver + 705300&#10;5   chromedriver                        0x0000000100f8b438 chromedriver + 783416&#10;6   chromedriver                        0x0000000100f47eec chromedriver + 507628&#10;7   chromedriver                        0x0000000100f488c4 chromedriver + 510148&#10;8   chromedriver                        0x00000001012c243c chromedriver + 4154428&#10;9   chromedriver                        0x00000001012c6ea0 chromedriver + 4173472&#10;10  chromedriver                        0x00000001012a7ff8 chromedriver + 4046840&#10;11  chromedriver                        0x00000001012c778c chromedriver + 4175756&#10;12  chromedriver                        0x000000010129afb8 chromedriver + 3993528&#10;13  chromedriver                        0x00000001012e521c chromedriver + 4297244&#10;14  chromedriver                        0x00000001012e5398 chromedriver + 4297624&#10;15  chromedriver                        0x00000001012f2f84 chromedriver + 4353924&#10;16  libsystem_pthread.dylib             0x000000019228ef94 _pthread_start + 136&#10;17  libsystem_pthread.dylib             0x0000000192289d34 thread_start + 8">
+<![CDATA[
+Failing step: Given バリエーション設定のスニペットの項目に二次元バーコードが表示されている(2D-code A) ... failed in 0.003s
+Location: 6W_A22.feature:62
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/model.py", line 1812, in run
+    match.run(runner.context)
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/matchers.py", line 103, in run
+    self.func(context, *args, **kwargs)
+  File "../../steps/6W_A22.py", line 252, in chinsara_G
+    loginAdmin()
+  File "../../steps/6W_A22.py", line 72, in loginAdmin
+    driver.get('https://beta-tenant-admin.im.kotozna.chat/ja/login')
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 356, in get
+    self.execute(Command.GET, {"url": url})
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 347, in execute
+    self.error_handler.check_response(response)
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x00000001012faa80 chromedriver + 4385408
+1   chromedriver                        0x00000001012f338c chromedriver + 4354956
+2   chromedriver                        0x0000000100f10b0c chromedriver + 281356
+3   chromedriver                        0x0000000100eebaf0 chromedriver + 129776
+4   chromedriver                        0x0000000100f78314 chromedriver + 705300
+5   chromedriver                        0x0000000100f8b438 chromedriver + 783416
+6   chromedriver                        0x0000000100f47eec chromedriver + 507628
+7   chromedriver                        0x0000000100f488c4 chromedriver + 510148
+8   chromedriver                        0x00000001012c243c chromedriver + 4154428
+9   chromedriver                        0x00000001012c6ea0 chromedriver + 4173472
+10  chromedriver                        0x00000001012a7ff8 chromedriver + 4046840
+11  chromedriver                        0x00000001012c778c chromedriver + 4175756
+12  chromedriver                        0x000000010129afb8 chromedriver + 3993528
+13  chromedriver                        0x00000001012e521c chromedriver + 4297244
+14  chromedriver                        0x00000001012e5398 chromedriver + 4297624
+15  chromedriver                        0x00000001012f2f84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019228ef94 _pthread_start + 136
+17  libsystem_pthread.dylib             0x0000000192289d34 thread_start + 8
+
+]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-725 @ZFJ_Automation
+  Scenario: [AW22-14] 二次元バーコードのコピー＆ペースト
+    Given バリエーション設定のスニペットの項目に二次元バーコードが表示されている(2D-code A) ... failed in 0.003s
+    When 二次元バーコードをクリックしてリンクをコピーし、別タブを開いてペースト ... skipped in 0.000s
+    Then 二次元バーコードが表示される ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="admin.widget.6W_A22.[A20] バリエーション設定" name="[AW22-15] 二次元バーコードの読み取り" status="failed" time="0.003136"><error type="NoSuchWindowException" message="Message: no such window: target window already closed&#10;from unknown error: web view not found&#10;  (Session info: chrome=126.0.6478.127)&#10;Stacktrace:&#10;0   chromedriver                        0x00000001012faa80 chromedriver + 4385408&#10;1   chromedriver                        0x00000001012f338c chromedriver + 4354956&#10;2   chromedriver                        0x0000000100f10b0c chromedriver + 281356&#10;3   chromedriver                        0x0000000100eebaf0 chromedriver + 129776&#10;4   chromedriver                        0x0000000100f78314 chromedriver + 705300&#10;5   chromedriver                        0x0000000100f8b438 chromedriver + 783416&#10;6   chromedriver                        0x0000000100f47eec chromedriver + 507628&#10;7   chromedriver                        0x0000000100f488c4 chromedriver + 510148&#10;8   chromedriver                        0x00000001012c243c chromedriver + 4154428&#10;9   chromedriver                        0x00000001012c6ea0 chromedriver + 4173472&#10;10  chromedriver                        0x00000001012a7ff8 chromedriver + 4046840&#10;11  chromedriver                        0x00000001012c778c chromedriver + 4175756&#10;12  chromedriver                        0x000000010129afb8 chromedriver + 3993528&#10;13  chromedriver                        0x00000001012e521c chromedriver + 4297244&#10;14  chromedriver                        0x00000001012e5398 chromedriver + 4297624&#10;15  chromedriver                        0x00000001012f2f84 chromedriver + 4353924&#10;16  libsystem_pthread.dylib             0x000000019228ef94 _pthread_start + 136&#10;17  libsystem_pthread.dylib             0x0000000192289d34 thread_start + 8">
+<![CDATA[
+Failing step: Given 二次元バーコードが表示されている ... failed in 0.003s
+Location: 6W_A22.feature:69
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/model.py", line 1812, in run
+    match.run(runner.context)
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/matchers.py", line 103, in run
+    self.func(context, *args, **kwargs)
+  File "../../steps/6W_A22.py", line 271, in chinsara_G
+    loginAdmin()
+  File "../../steps/6W_A22.py", line 72, in loginAdmin
+    driver.get('https://beta-tenant-admin.im.kotozna.chat/ja/login')
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 356, in get
+    self.execute(Command.GET, {"url": url})
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 347, in execute
+    self.error_handler.check_response(response)
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x00000001012faa80 chromedriver + 4385408
+1   chromedriver                        0x00000001012f338c chromedriver + 4354956
+2   chromedriver                        0x0000000100f10b0c chromedriver + 281356
+3   chromedriver                        0x0000000100eebaf0 chromedriver + 129776
+4   chromedriver                        0x0000000100f78314 chromedriver + 705300
+5   chromedriver                        0x0000000100f8b438 chromedriver + 783416
+6   chromedriver                        0x0000000100f47eec chromedriver + 507628
+7   chromedriver                        0x0000000100f488c4 chromedriver + 510148
+8   chromedriver                        0x00000001012c243c chromedriver + 4154428
+9   chromedriver                        0x00000001012c6ea0 chromedriver + 4173472
+10  chromedriver                        0x00000001012a7ff8 chromedriver + 4046840
+11  chromedriver                        0x00000001012c778c chromedriver + 4175756
+12  chromedriver                        0x000000010129afb8 chromedriver + 3993528
+13  chromedriver                        0x00000001012e521c chromedriver + 4297244
+14  chromedriver                        0x00000001012e5398 chromedriver + 4297624
+15  chromedriver                        0x00000001012f2f84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019228ef94 _pthread_start + 136
+17  libsystem_pthread.dylib             0x0000000192289d34 thread_start + 8
+
+]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-726 @ZFJ_Automation
+  Scenario: [AW22-15] 二次元バーコードの読み取り
+    Given 二次元バーコードが表示されている ... failed in 0.003s
+    When スマートフォンで読み取り実行 ... skipped in 0.000s
+    Then laMondoのスタート画面が表示される ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="admin.widget.6W_A22.[A20] バリエーション設定" name="[AW22-21] バリエーションの編集画面を表示する" status="failed" time="0.003995"><error type="NoSuchWindowException" message="Message: no such window: target window already closed&#10;from unknown error: web view not found&#10;  (Session info: chrome=126.0.6478.127)&#10;Stacktrace:&#10;0   chromedriver                        0x00000001012faa80 chromedriver + 4385408&#10;1   chromedriver                        0x00000001012f338c chromedriver + 4354956&#10;2   chromedriver                        0x0000000100f10b0c chromedriver + 281356&#10;3   chromedriver                        0x0000000100eebaf0 chromedriver + 129776&#10;4   chromedriver                        0x0000000100f78314 chromedriver + 705300&#10;5   chromedriver                        0x0000000100f8b438 chromedriver + 783416&#10;6   chromedriver                        0x0000000100f47eec chromedriver + 507628&#10;7   chromedriver                        0x0000000100f488c4 chromedriver + 510148&#10;8   chromedriver                        0x00000001012c243c chromedriver + 4154428&#10;9   chromedriver                        0x00000001012c6ea0 chromedriver + 4173472&#10;10  chromedriver                        0x00000001012a7ff8 chromedriver + 4046840&#10;11  chromedriver                        0x00000001012c778c chromedriver + 4175756&#10;12  chromedriver                        0x000000010129afb8 chromedriver + 3993528&#10;13  chromedriver                        0x00000001012e521c chromedriver + 4297244&#10;14  chromedriver                        0x00000001012e5398 chromedriver + 4297624&#10;15  chromedriver                        0x00000001012f2f84 chromedriver + 4353924&#10;16  libsystem_pthread.dylib             0x000000019228ef94 _pthread_start + 136&#10;17  libsystem_pthread.dylib             0x0000000192289d34 thread_start + 8">
+<![CDATA[
+Failing step: Given バリエーション設定のバリエーション(Vali-A)の右端に鉛筆ボタンが表示されている ... failed in 0.004s
+Location: 6W_A22.feature:76
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/model.py", line 1812, in run
+    match.run(runner.context)
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/matchers.py", line 103, in run
+    self.func(context, *args, **kwargs)
+  File "../../steps/6W_A22.py", line 290, in chinsara_G
+    loginAdmin()
+  File "../../steps/6W_A22.py", line 72, in loginAdmin
+    driver.get('https://beta-tenant-admin.im.kotozna.chat/ja/login')
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 356, in get
+    self.execute(Command.GET, {"url": url})
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 347, in execute
+    self.error_handler.check_response(response)
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x00000001012faa80 chromedriver + 4385408
+1   chromedriver                        0x00000001012f338c chromedriver + 4354956
+2   chromedriver                        0x0000000100f10b0c chromedriver + 281356
+3   chromedriver                        0x0000000100eebaf0 chromedriver + 129776
+4   chromedriver                        0x0000000100f78314 chromedriver + 705300
+5   chromedriver                        0x0000000100f8b438 chromedriver + 783416
+6   chromedriver                        0x0000000100f47eec chromedriver + 507628
+7   chromedriver                        0x0000000100f488c4 chromedriver + 510148
+8   chromedriver                        0x00000001012c243c chromedriver + 4154428
+9   chromedriver                        0x00000001012c6ea0 chromedriver + 4173472
+10  chromedriver                        0x00000001012a7ff8 chromedriver + 4046840
+11  chromedriver                        0x00000001012c778c chromedriver + 4175756
+12  chromedriver                        0x000000010129afb8 chromedriver + 3993528
+13  chromedriver                        0x00000001012e521c chromedriver + 4297244
+14  chromedriver                        0x00000001012e5398 chromedriver + 4297624
+15  chromedriver                        0x00000001012f2f84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019228ef94 _pthread_start + 136
+17  libsystem_pthread.dylib             0x0000000192289d34 thread_start + 8
+
+]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-727 @ZFJ_Automation
+  Scenario: [AW22-21] バリエーションの編集画面を表示する
+    Given バリエーション設定のバリエーション(Vali-A)の右端に鉛筆ボタンが表示されている ... failed in 0.004s
+    When 鉛筆ボタンを押下 ... skipped in 0.000s
+    Then バリエーションを編集するポップアップが表示され、Vali-Aの情報が表示される ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="admin.widget.6W_A22.[A20] バリエーション設定" name="[AW22-22] バリエーションを編集する" status="failed" time="0.003406"><error type="NoSuchWindowException" message="Message: no such window: target window already closed&#10;from unknown error: web view not found&#10;  (Session info: chrome=126.0.6478.127)&#10;Stacktrace:&#10;0   chromedriver                        0x00000001012faa80 chromedriver + 4385408&#10;1   chromedriver                        0x00000001012f338c chromedriver + 4354956&#10;2   chromedriver                        0x0000000100f10b0c chromedriver + 281356&#10;3   chromedriver                        0x0000000100eebaf0 chromedriver + 129776&#10;4   chromedriver                        0x0000000100f78314 chromedriver + 705300&#10;5   chromedriver                        0x0000000100f8b438 chromedriver + 783416&#10;6   chromedriver                        0x0000000100f47eec chromedriver + 507628&#10;7   chromedriver                        0x0000000100f488c4 chromedriver + 510148&#10;8   chromedriver                        0x00000001012c243c chromedriver + 4154428&#10;9   chromedriver                        0x00000001012c6ea0 chromedriver + 4173472&#10;10  chromedriver                        0x00000001012a7ff8 chromedriver + 4046840&#10;11  chromedriver                        0x00000001012c778c chromedriver + 4175756&#10;12  chromedriver                        0x000000010129afb8 chromedriver + 3993528&#10;13  chromedriver                        0x00000001012e521c chromedriver + 4297244&#10;14  chromedriver                        0x00000001012e5398 chromedriver + 4297624&#10;15  chromedriver                        0x00000001012f2f84 chromedriver + 4353924&#10;16  libsystem_pthread.dylib             0x000000019228ef94 _pthread_start + 136&#10;17  libsystem_pthread.dylib             0x0000000192289d34 thread_start + 8">
+<![CDATA[
+Failing step: Given バリエーションを編集するポップアップが表示され、Vali-Aの情報が表示されている ... failed in 0.003s
+Location: 6W_A22.feature:83
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/model.py", line 1812, in run
+    match.run(runner.context)
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/matchers.py", line 103, in run
+    self.func(context, *args, **kwargs)
+  File "../../steps/6W_A22.py", line 309, in chinsara_G
+    loginAdmin()
+  File "../../steps/6W_A22.py", line 72, in loginAdmin
+    driver.get('https://beta-tenant-admin.im.kotozna.chat/ja/login')
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 356, in get
+    self.execute(Command.GET, {"url": url})
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 347, in execute
+    self.error_handler.check_response(response)
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x00000001012faa80 chromedriver + 4385408
+1   chromedriver                        0x00000001012f338c chromedriver + 4354956
+2   chromedriver                        0x0000000100f10b0c chromedriver + 281356
+3   chromedriver                        0x0000000100eebaf0 chromedriver + 129776
+4   chromedriver                        0x0000000100f78314 chromedriver + 705300
+5   chromedriver                        0x0000000100f8b438 chromedriver + 783416
+6   chromedriver                        0x0000000100f47eec chromedriver + 507628
+7   chromedriver                        0x0000000100f488c4 chromedriver + 510148
+8   chromedriver                        0x00000001012c243c chromedriver + 4154428
+9   chromedriver                        0x00000001012c6ea0 chromedriver + 4173472
+10  chromedriver                        0x00000001012a7ff8 chromedriver + 4046840
+11  chromedriver                        0x00000001012c778c chromedriver + 4175756
+12  chromedriver                        0x000000010129afb8 chromedriver + 3993528
+13  chromedriver                        0x00000001012e521c chromedriver + 4297244
+14  chromedriver                        0x00000001012e5398 chromedriver + 4297624
+15  chromedriver                        0x00000001012f2f84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019228ef94 _pthread_start + 136
+17  libsystem_pthread.dylib             0x0000000192289d34 thread_start + 8
+
+]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-728 @ZFJ_Automation
+  Scenario: [AW22-22] バリエーションを編集する
+    Given バリエーションを編集するポップアップが表示され、Vali-Aの情報が表示されている ... failed in 0.003s
+    When 名前欄、バリエーション欄を編集し、保存を押下 ... skipped in 0.000s
+    Then バリエーション設定画面に戻り、Vali-Aの名前、バリエーションが変更されている ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="admin.widget.6W_A22.[A20] バリエーション設定" name="[AW22-23] バリエーションの削除確認を表示する" status="failed" time="0.002269"><error type="NoSuchWindowException" message="Message: no such window: target window already closed&#10;from unknown error: web view not found&#10;  (Session info: chrome=126.0.6478.127)&#10;Stacktrace:&#10;0   chromedriver                        0x00000001012faa80 chromedriver + 4385408&#10;1   chromedriver                        0x00000001012f338c chromedriver + 4354956&#10;2   chromedriver                        0x0000000100f10b0c chromedriver + 281356&#10;3   chromedriver                        0x0000000100eebaf0 chromedriver + 129776&#10;4   chromedriver                        0x0000000100f78314 chromedriver + 705300&#10;5   chromedriver                        0x0000000100f8b438 chromedriver + 783416&#10;6   chromedriver                        0x0000000100f47eec chromedriver + 507628&#10;7   chromedriver                        0x0000000100f488c4 chromedriver + 510148&#10;8   chromedriver                        0x00000001012c243c chromedriver + 4154428&#10;9   chromedriver                        0x00000001012c6ea0 chromedriver + 4173472&#10;10  chromedriver                        0x00000001012a7ff8 chromedriver + 4046840&#10;11  chromedriver                        0x00000001012c778c chromedriver + 4175756&#10;12  chromedriver                        0x000000010129afb8 chromedriver + 3993528&#10;13  chromedriver                        0x00000001012e521c chromedriver + 4297244&#10;14  chromedriver                        0x00000001012e5398 chromedriver + 4297624&#10;15  chromedriver                        0x00000001012f2f84 chromedriver + 4353924&#10;16  libsystem_pthread.dylib             0x000000019228ef94 _pthread_start + 136&#10;17  libsystem_pthread.dylib             0x0000000192289d34 thread_start + 8">
+<![CDATA[
+Failing step: Given バリエーション設定のバリエーション(Vali-A)の右端にゴミ箱ボタンが表示されている　＊デフォルトのバリエーションは削除ボタンが押せなくなっている ... failed in 0.002s
+Location: 6W_A22.feature:90
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/model.py", line 1812, in run
+    match.run(runner.context)
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/matchers.py", line 103, in run
+    self.func(context, *args, **kwargs)
+  File "../../steps/6W_A22.py", line 328, in chinsara_G
+    loginAdmin()
+  File "../../steps/6W_A22.py", line 72, in loginAdmin
+    driver.get('https://beta-tenant-admin.im.kotozna.chat/ja/login')
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 356, in get
+    self.execute(Command.GET, {"url": url})
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 347, in execute
+    self.error_handler.check_response(response)
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x00000001012faa80 chromedriver + 4385408
+1   chromedriver                        0x00000001012f338c chromedriver + 4354956
+2   chromedriver                        0x0000000100f10b0c chromedriver + 281356
+3   chromedriver                        0x0000000100eebaf0 chromedriver + 129776
+4   chromedriver                        0x0000000100f78314 chromedriver + 705300
+5   chromedriver                        0x0000000100f8b438 chromedriver + 783416
+6   chromedriver                        0x0000000100f47eec chromedriver + 507628
+7   chromedriver                        0x0000000100f488c4 chromedriver + 510148
+8   chromedriver                        0x00000001012c243c chromedriver + 4154428
+9   chromedriver                        0x00000001012c6ea0 chromedriver + 4173472
+10  chromedriver                        0x00000001012a7ff8 chromedriver + 4046840
+11  chromedriver                        0x00000001012c778c chromedriver + 4175756
+12  chromedriver                        0x000000010129afb8 chromedriver + 3993528
+13  chromedriver                        0x00000001012e521c chromedriver + 4297244
+14  chromedriver                        0x00000001012e5398 chromedriver + 4297624
+15  chromedriver                        0x00000001012f2f84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019228ef94 _pthread_start + 136
+17  libsystem_pthread.dylib             0x0000000192289d34 thread_start + 8
+
+]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-729 @ZFJ_Automation
+  Scenario: [AW22-23] バリエーションの削除確認を表示する
+    Given バリエーション設定のバリエーション(Vali-A)の右端にゴミ箱ボタンが表示されている　＊デフォルトのバリエーションは削除ボタンが押せなくなっている ... failed in 0.002s
+    When ゴミ箱ボタンを押下 ... skipped in 0.000s
+    Then 削除確認のポップアップが表示される ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="admin.widget.6W_A22.[A20] バリエーション設定" name="[AW22-24] バリエーションの削除の実行" status="failed" time="0.003662"><error type="NoSuchWindowException" message="Message: no such window: target window already closed&#10;from unknown error: web view not found&#10;  (Session info: chrome=126.0.6478.127)&#10;Stacktrace:&#10;0   chromedriver                        0x00000001012faa80 chromedriver + 4385408&#10;1   chromedriver                        0x00000001012f338c chromedriver + 4354956&#10;2   chromedriver                        0x0000000100f10b0c chromedriver + 281356&#10;3   chromedriver                        0x0000000100eebaf0 chromedriver + 129776&#10;4   chromedriver                        0x0000000100f78314 chromedriver + 705300&#10;5   chromedriver                        0x0000000100f8b438 chromedriver + 783416&#10;6   chromedriver                        0x0000000100f47eec chromedriver + 507628&#10;7   chromedriver                        0x0000000100f488c4 chromedriver + 510148&#10;8   chromedriver                        0x00000001012c243c chromedriver + 4154428&#10;9   chromedriver                        0x00000001012c6ea0 chromedriver + 4173472&#10;10  chromedriver                        0x00000001012a7ff8 chromedriver + 4046840&#10;11  chromedriver                        0x00000001012c778c chromedriver + 4175756&#10;12  chromedriver                        0x000000010129afb8 chromedriver + 3993528&#10;13  chromedriver                        0x00000001012e521c chromedriver + 4297244&#10;14  chromedriver                        0x00000001012e5398 chromedriver + 4297624&#10;15  chromedriver                        0x00000001012f2f84 chromedriver + 4353924&#10;16  libsystem_pthread.dylib             0x000000019228ef94 _pthread_start + 136&#10;17  libsystem_pthread.dylib             0x0000000192289d34 thread_start + 8">
+<![CDATA[
+Failing step: Given 削除確認のポップアップが表示されている ... failed in 0.004s
+Location: 6W_A22.feature:97
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/model.py", line 1812, in run
+    match.run(runner.context)
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/matchers.py", line 103, in run
+    self.func(context, *args, **kwargs)
+  File "../../steps/6W_A22.py", line 347, in chinsara_G
+    loginAdmin()
+  File "../../steps/6W_A22.py", line 72, in loginAdmin
+    driver.get('https://beta-tenant-admin.im.kotozna.chat/ja/login')
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 356, in get
+    self.execute(Command.GET, {"url": url})
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 347, in execute
+    self.error_handler.check_response(response)
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x00000001012faa80 chromedriver + 4385408
+1   chromedriver                        0x00000001012f338c chromedriver + 4354956
+2   chromedriver                        0x0000000100f10b0c chromedriver + 281356
+3   chromedriver                        0x0000000100eebaf0 chromedriver + 129776
+4   chromedriver                        0x0000000100f78314 chromedriver + 705300
+5   chromedriver                        0x0000000100f8b438 chromedriver + 783416
+6   chromedriver                        0x0000000100f47eec chromedriver + 507628
+7   chromedriver                        0x0000000100f488c4 chromedriver + 510148
+8   chromedriver                        0x00000001012c243c chromedriver + 4154428
+9   chromedriver                        0x00000001012c6ea0 chromedriver + 4173472
+10  chromedriver                        0x00000001012a7ff8 chromedriver + 4046840
+11  chromedriver                        0x00000001012c778c chromedriver + 4175756
+12  chromedriver                        0x000000010129afb8 chromedriver + 3993528
+13  chromedriver                        0x00000001012e521c chromedriver + 4297244
+14  chromedriver                        0x00000001012e5398 chromedriver + 4297624
+15  chromedriver                        0x00000001012f2f84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019228ef94 _pthread_start + 136
+17  libsystem_pthread.dylib             0x0000000192289d34 thread_start + 8
+
+]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+
+  @BDDTEST-GPT-730 @ZFJ_Automation
+  Scenario: [AW22-24] バリエーションの削除の実行
+    Given 削除確認のポップアップが表示されている ... failed in 0.004s
+    When 削除ボタンを押下 ... skipped in 0.000s
+    Then Vali-Aがバリエーション設定画面から非表示になる ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase></testsuite>

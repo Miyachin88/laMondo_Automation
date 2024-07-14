@@ -1,27 +1,72 @@
-<testsuite name="admin.widget.6W_A21.エスカレーション機能の設定" tests="3" errors="0" failures="0" skipped="0" time="133.330382" timestamp="2024-07-07T16:42:06.095063" hostname="Kentas-MacBook-Pro.local"><testcase classname="admin.widget.6W_A21.エスカレーション機能の設定" name="[AW21-01]ウィジェット設定画面を開く" status="passed" time="37.702479"><system-out>
+<testsuite name="admin.widget.6W_A21.エスカレーション機能の設定" tests="3" errors="1" failures="0" skipped="0" time="198.733174" timestamp="2024-07-14T16:01:27.600121" hostname="Kentas-MacBook-Pro.local"><testcase classname="admin.widget.6W_A21.エスカレーション機能の設定" name="[AW21-01]ウィジェット設定画面を開く" status="passed" time="37.578908"><system-out>
 <![CDATA[
 @scenario.begin
 
   @BDDTEST-GPT-832 @ZFJ_Automation
   Scenario: [AW21-01]ウィジェット設定画面を開く
-    Given 基本設定の画面が表示されている The basic setting screen is displayed ... passed in 32.551s
-    When 左のメニューバーから「ウィジェット設定」をクリックする2 Click "Widget Settings" from the left menu bar ... passed in 5.059s
-    Then 現在登録されているウィジェット一覧が表示される2 A list of currently registered widgets is displayed. ... passed in 0.006s
-    Then エスカレーションスイッチが全てオフになっている ... passed in 0.086s
+    Given 基本設定の画面が表示されている The basic setting screen is displayed ... passed in 32.498s
+    When 左のメニューバーから「ウィジェット設定」をクリックする2 Click "Widget Settings" from the left menu bar ... passed in 5.051s
+    Then 現在登録されているウィジェット一覧が表示される2 A list of currently registered widgets is displayed. ... passed in 0.003s
+    Then エスカレーションスイッチが全てオフになっている ... passed in 0.027s
 
 @scenario.end
 --------------------------------------------------------------------------------
 ]]>
-</system-out></testcase><testcase classname="admin.widget.6W_A21.エスカレーション機能の設定" name="[AW21-02]エスカレーション機能をONにする" status="passed" time="95.627518"><system-out>
+</system-out></testcase><testcase classname="admin.widget.6W_A21.エスカレーション機能の設定" name="[AW21-02]エスカレーション機能をONにする" status="failed" time="45.376298"><error type="NoSuchElementException" message="Message: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;/html/body/span/div/div[1]/div/main/div/div/div[2]/div/div/div[7]/div/div&quot;}&#10;  (Session info: chrome=126.0.6478.127); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception&#10;Stacktrace:&#10;0   chromedriver                        0x0000000102a8aa80 chromedriver + 4385408&#10;1   chromedriver                        0x0000000102a8338c chromedriver + 4354956&#10;2   chromedriver                        0x00000001026a0b0c chromedriver + 281356&#10;3   chromedriver                        0x00000001026e32f8 chromedriver + 553720&#10;4   chromedriver                        0x000000010271bd24 chromedriver + 785700&#10;5   chromedriver                        0x00000001026d7eec chromedriver + 507628&#10;6   chromedriver                        0x00000001026d88c4 chromedriver + 510148&#10;7   chromedriver                        0x0000000102a5243c chromedriver + 4154428&#10;8   chromedriver                        0x0000000102a56ea0 chromedriver + 4173472&#10;9   chromedriver                        0x0000000102a37ff8 chromedriver + 4046840&#10;10  chromedriver                        0x0000000102a5778c chromedriver + 4175756&#10;11  chromedriver                        0x0000000102a2afb8 chromedriver + 3993528&#10;12  chromedriver                        0x0000000102a7521c chromedriver + 4297244&#10;13  chromedriver                        0x0000000102a75398 chromedriver + 4297624&#10;14  chromedriver                        0x0000000102a82f84 chromedriver + 4353924&#10;15  libsystem_pthread.dylib             0x000000019228ef94 _pthread_start + 136&#10;16  libsystem_pthread.dylib             0x0000000192289d34 thread_start + 8">
+<![CDATA[
+Failing step: Then ゲスト画面のメッセージ入力欄にはエスカレーションボタンが表示される ... failed in 45.278s
+Location: 6W_A21.feature:16
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/model.py", line 1812, in run
+    match.run(runner.context)
+  File "/opt/homebrew/lib/python3.11/site-packages/behave/matchers.py", line 103, in run
+    self.func(context, *args, **kwargs)
+  File "../../steps/6W_A21.py", line 160, in chinsara_T
+    openW()
+  File "../../steps/6W_A21.py", line 53, in openW
+    element = driver.find_element(By.XPATH,'/html/body/span/div/div[1]/div/main/div/div/div[2]/div/div/div[7]/div/div')
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 741, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 347, in execute
+    self.error_handler.check_response(response)
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"/html/body/span/div/div[1]/div/main/div/div/div[2]/div/div/div[7]/div/div"}
+  (Session info: chrome=126.0.6478.127); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+0   chromedriver                        0x0000000102a8aa80 chromedriver + 4385408
+1   chromedriver                        0x0000000102a8338c chromedriver + 4354956
+2   chromedriver                        0x00000001026a0b0c chromedriver + 281356
+3   chromedriver                        0x00000001026e32f8 chromedriver + 553720
+4   chromedriver                        0x000000010271bd24 chromedriver + 785700
+5   chromedriver                        0x00000001026d7eec chromedriver + 507628
+6   chromedriver                        0x00000001026d88c4 chromedriver + 510148
+7   chromedriver                        0x0000000102a5243c chromedriver + 4154428
+8   chromedriver                        0x0000000102a56ea0 chromedriver + 4173472
+9   chromedriver                        0x0000000102a37ff8 chromedriver + 4046840
+10  chromedriver                        0x0000000102a5778c chromedriver + 4175756
+11  chromedriver                        0x0000000102a2afb8 chromedriver + 3993528
+12  chromedriver                        0x0000000102a7521c chromedriver + 4297244
+13  chromedriver                        0x0000000102a75398 chromedriver + 4297624
+14  chromedriver                        0x0000000102a82f84 chromedriver + 4353924
+15  libsystem_pthread.dylib             0x000000019228ef94 _pthread_start + 136
+16  libsystem_pthread.dylib             0x0000000192289d34 thread_start + 8
+
+
+Captured stdout:
+chinsara]]>
+</error><system-out>
 <![CDATA[
 @scenario.begin
 
   @BDDTEST-GPT-833 @ZFJ_Automation
   Scenario: [AW21-02]エスカレーション機能をONにする
-    Given エスカレーションスイッチが全てオフになっている ... passed in 0.020s
-    When GPTステータスに✓が入っている任意のウィジェットのスイッチをオンにする ... passed in 0.071s
-    Then スイッチがピンク色に切り替わり、"レコードは正常に編集されました。"と表示される ... passed in 0.014s
-    Then ゲスト画面のメッセージ入力欄にはエスカレーションボタンが表示される ... passed in 95.523s
+    Given エスカレーションスイッチが全てオフになっている ... passed in 0.010s
+    When GPTステータスに✓が入っている任意のウィジェットのスイッチをオンにする ... passed in 0.064s
+    Then スイッチがピンク色に切り替わり、"レコードは正常に編集されました。"と表示される ... passed in 0.024s
+    Then ゲスト画面のメッセージ入力欄にはエスカレーションボタンが表示される ... failed in 45.278s
 
 @scenario.end
 --------------------------------------------------------------------------------
@@ -30,24 +75,21 @@ Captured stdout:
 chinsara
 
 ]]>
-</system-out></testcase><testcase classname="admin.widget.6W_A21.エスカレーション機能の設定" name="[AW21-03]エスカレーション機能をOFFにする" status="passed" time="0.000385"><system-out>
+</system-out></testcase><testcase classname="admin.widget.6W_A21.エスカレーション機能の設定" name="[AW21-03]エスカレーション機能をOFFにする" status="passed" time="115.777968"><system-out>
 <![CDATA[
 @scenario.begin
 
   @BDDTEST-GPT-834 @ZFJ_Automation
   Scenario: [AW21-03]エスカレーション機能をOFFにする
-    Given エスカレーションスイッチ（GPTステータスの右隣）がオンになっているウィジェットがある ... passed in 0.000s
-    When スイッチをオフにする ... passed in 0.000s
+    Given エスカレーションスイッチ（GPTステータスの右隣）がオンになっているウィジェットがある ... passed in 5.125s
+    When スイッチをオフにする ... passed in 0.078s
     Then スイッチがグレーに切り替わり、"レコードは正常に編集されました。"と表示される ... passed in 0.000s
-    Then ゲスト画面のメッセージ入力欄からエスカレーションボタンが非表示になる ... passed in 0.000s
+    Then ゲスト画面のメッセージ入力欄からエスカレーションボタンが非表示になる ... passed in 110.575s
 
 @scenario.end
 --------------------------------------------------------------------------------
 
 Captured stdout:
-susara
-susara
-susara
 susara
 
 ]]>
